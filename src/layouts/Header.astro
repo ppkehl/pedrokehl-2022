@@ -1,7 +1,7 @@
 ---
 import ThemeToggle from "../components/ThemeToggle.svelte"
 import Menu from "../components/Menu.svelte"
-import logo from "../assets/Logo.svg";
+import Logo from "../components/Logo.svelte"
 const path = Astro.site;
 ---
 
@@ -11,7 +11,7 @@ const path = Astro.site;
 
       <a href={path}>
         <h1 id="logo" class="z-50 w-32 lg:w-40 h-16 lg:h-20 dark:invert relative">
-            <img class="absolute h-full w-full object-contain object-center" src={logo} alt="Logo">
+            <Logo />
           <span class="sr-only">Pedro Kehl - Webdesigner</span>
         </h1>
       </a>
