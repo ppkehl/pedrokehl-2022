@@ -1,0 +1,30 @@
+---
+import Head from 'astro-head';
+import Header from './Header.astro'
+import Footer from './Footer.astro'
+
+const title = 'Pedro Kehl | Web designer';
+const description = 'Short description of the page.';
+const analytics = {
+  provider: 'google',
+  id: 'XXXXXX',
+};
+---
+
+<html lang="en">
+
+  <head>
+    <Head {title} {description} {analytics} />
+  </head>
+
+  <body class="bg-gray-200 dark:bg-gray-900">
+
+    <Header />
+
+    <slot />
+
+    <Footer />
+
+  </body>
+
+</html>

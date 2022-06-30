@@ -1,0 +1,107 @@
+---
+import Title from '../components/Title.svelte'
+---
+<section class="px-6 py-32">
+
+  <div class="container mx-auto">
+
+    <div class="w-full space-y-8 z-10">
+
+      <Title>
+        <span slot="title">
+          About me
+        </span>
+        <span slot="subtitle">
+          I like to solve problems and think about the future
+        </span>
+      </Title>
+
+      <div class="flex flex-wrap">
+
+        <div class="w-full lg:w-4/12 space-y-8 z-10 relative mb-8">
+
+          <img class="relative object-cover w-full aspect-square overflow-hidden rounded-full z-10 dark:brightness-100" src="assets/pedro-last.png" alt="My picture">
+
+          <div class="blobs absolute top-0 w-full h-full">
+            <div class="absolute w-9/12 aspect-square rounded-full filter blur-xl opacity-100 animate-blob-hero dark:opacity-70 animation-spice-1"></div>
+            <div class="absolute w-9/12 aspect-square rounded-full filter blur-xl opacity-100 animate-blob-hero dark:opacity-70 "></div>
+            <div class="absolute w-9/12 aspect-square rounded-full filter blur-xl opacity-100 animate-blob-hero dark:opacity-70 animation-spice-2"></div>
+          </div>  
+
+        </div>
+
+        <div class="hidden lg:block lg:w-1/12 relative"></div>
+
+        <div class="w-full lg:w-6/12 space-y-4 relative dark:text-white">
+
+          <p>I gratuated in digital design, working for over 20 years as a freelancer in design, development, and brand identity.</p>
+          <p>I like to have a systemic approach to problem solving, and I'm always studying what is new in the field of technology.</p>
+          <h3 class="text-lg font-semibold">Main expertises:</h3>
+          <p>Design of interfaces using the best practices of UI/UX and applying the concept of design tokens for scallable development in different platafforms/products.</p> 
+          <p>Creation of custom websites using WordPress as a backend for fast and efficient results.</p>
+
+          <h3 class="text-lg font-semibold">Currently studying:</h3>
+
+          <p>I see three pillars for the future of webdesign:</p>
+          <ol class="list-decimal pl-4">
+            <li>Design tokens as an expression of one source of truth, even within small teams (Style Dictionary).</li>
+            <li>Decoupling front and backend, using headless CMS's (Strapi and other headless CMS's) </li>
+            <li>Blazing fast frontends and minimal. (Svelte, Astro)</li>
+          </ol>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style lang="scss">
+  .animation-spice-1 {
+    animation-delay: 2.5s;
+    animation-duration: 16.4s;
+  }
+  .animation-spice-2 {
+    animation-delay: 4s;
+    animation-duration: 20.2s;
+  }
+  .animate-blob-hero {
+    animation-name: blob-about;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 17s;
+  }
+  .blobs{
+    div:nth-child(1){
+      top: 10%;
+      left: -10%;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(45, 192, 166, 0.68) 0%, rgba(0, 196, 160, 0) 89.58%); 
+    }
+    div:nth-child(2){
+      top: 0;
+      left: 30%;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(151, 227, 115, 0.84) 0%, rgba(47, 209, 130, 0) 87.5%);
+    }
+    div:nth-child(3){
+      top: 0;
+      left: 20%;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(121, 247, 63, 0.84) 0%, rgba(47, 209, 130, 0) 87.5%);
+    }
+  }
+  @keyframes blob-about{
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30%, -10%) scale(1.5);
+    }
+    66% {
+        transform: translate(-20%, 60%) scale(0.9);
+    }
+    100% {
+        transform: tranlate(0, 0) scale(1);
+    }
+  }
+</style>

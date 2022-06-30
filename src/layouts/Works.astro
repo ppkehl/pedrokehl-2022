@@ -1,0 +1,103 @@
+---
+import Title from '../components/Title.svelte'
+import Project from '../components/Project.svelte'
+---
+<section class="px-6 py-32">
+
+  <div class="container mx-auto">
+
+    <div class="w-full space-y-8 z-10">
+
+      <Title>
+        <span slot="title">
+          Projects
+        </span>
+        <span slot="subtitle">
+          Some examples of projects executed on different plataforms with different teams
+        </span>
+      </Title>
+
+    </div>
+
+  </div>
+
+  <div class="container mx-auto flex gap-8">
+
+    <Project coverImg="assets/ledid-cover.png">
+      <span slot="title">
+        Ledidi
+      </span>
+      <span slot="description">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt nisi, aut vero eveniet laborum pariatur molestiae!
+      </span>
+    </Project>
+
+    <Project coverImg="assets/sbac-cover.png">
+      <span slot="title">
+        Ledidi
+      </span>
+      <span slot="description">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt nisi, aut vero eveniet laborum pariatur molestiae!
+      </span>
+    </Project>
+
+    <Project coverImg="assets/ipe-cover.png">
+      <span slot="title">
+        Ledidi
+      </span>
+      <span slot="description">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt nisi, aut vero eveniet laborum pariatur molestiae!
+      </span>
+    </Project>
+
+  </div>
+
+</section>
+
+<style lang="scss">
+  .animation-spice-1 {
+    animation-delay: 2.5s;
+    animation-duration: 16.4s;
+  }
+  .animation-spice-2 {
+    animation-delay: 4s;
+    animation-duration: 20.2s;
+  }
+  .animate-blob-hero {
+    animation-name: blob-about;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 17s;
+  }
+  .blobs{
+    div:nth-child(1){
+      top: 10%;
+      left: -10%;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(45, 192, 166, 0.68) 0%, rgba(0, 196, 160, 0) 89.58%); 
+    }
+    div:nth-child(2){
+      top: 0;
+      left: 30%;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(151, 227, 115, 0.84) 0%, rgba(47, 209, 130, 0) 87.5%);
+    }
+    div:nth-child(3){
+      top: 0;
+      left: 20%;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(121, 247, 63, 0.84) 0%, rgba(47, 209, 130, 0) 87.5%);
+    }
+  }
+  @keyframes blob-about{
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30%, -10%) scale(1.5);
+    }
+    66% {
+        transform: translate(-20%, 60%) scale(0.9);
+    }
+    100% {
+        transform: tranlate(0, 0) scale(1);
+    }
+  }
+</style>
