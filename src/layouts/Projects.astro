@@ -1,6 +1,10 @@
 ---
 import Title from '../components/Title.svelte'
-import Project from '../components/Project.svelte'
+import ProjectPreview from '../components/ProjectPreview.svelte'
+
+// Data Fetching
+import {getProjects} from '../lib/api.js';
+const projects = await getProjects();
 ---
 <section class="px-6 py-32">
 
@@ -23,32 +27,7 @@ import Project from '../components/Project.svelte'
 
   <div class="container mx-auto flex gap-8">
 
-    <Project coverImg="assets/ledid-cover.png">
-      <span slot="title">
-        Ledidi
-      </span>
-      <span slot="description">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt nisi, aut vero eveniet laborum pariatur molestiae!
-      </span>
-    </Project>
-
-    <Project coverImg="assets/sbac-cover.png">
-      <span slot="title">
-        Ledidi
-      </span>
-      <span slot="description">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt nisi, aut vero eveniet laborum pariatur molestiae!
-      </span>
-    </Project>
-
-    <Project coverImg="assets/ipe-cover.png">
-      <span slot="title">
-        Ledidi
-      </span>
-      <span slot="description">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt nisi, aut vero eveniet laborum pariatur molestiae!
-      </span>
-    </Project>
+    {projects.data.map(project => <ProjectPreview project={project} />)}
 
   </div>
 

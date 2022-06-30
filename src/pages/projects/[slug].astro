@@ -1,0 +1,26 @@
+--- 
+import Base from '../../layouts/Base.astro'
+import { getProjects } from '../../lib/api.js';
+
+// Data Fetching
+export async function getStaticPaths() {
+	const projects = await getProjects();
+	return projects.data.map((project, i) => {
+		return {
+			params: { slug: project.attributes.slug },
+			props: { project }
+		}
+	})
+}
+
+const { slug } = Astro.params;
+const { project } = Astro.props;
+---
+
+<Base>
+	<main class="overflow-hidden">
+
+		{project.attributes.Name}
+
+	</main>
+</Base>

@@ -1,15 +1,20 @@
 ---
 import ThemeToggle from "../components/ThemeToggle.svelte"
 import Menu from "../components/Menu.svelte"
+import logo from "../assets/Logo.svg";
+const path = Astro.site;
 ---
 
 <header class="z-50 fixed w-full top-0 before:content[''] before:w-full before:h-16 before:lg:h-24 before:absolute before:bg-gray-200 before:dark:bg-gray-900 before:backdrop-blur-xl before:dark:backdrop-blur-xl before:bg-opacity-50 before:dark:bg-opacity-50">
   <div class="container mx-auto px-6 h-16 lg:h-24">
     <div class="h-full flex flex-wrap lg:flex-nowrap justify-between items-center">
 
-      <h1 id="logo" class="z-50 bg-contain bg-center bg-no-repeat w-32 lg:w-40 h-16 lg:h-20 dark:invert" style="background-image: url(assets/Logo.svg);">
-        <span class="sr-only">Pedro Kehl - Webdesigner</span>
-      </h1>
+      <a href={path}>
+        <h1 id="logo" class="z-50 w-32 lg:w-40 h-16 lg:h-20 dark:invert relative">
+            <img class="absolute h-full w-full object-contain object-center" src={logo} alt="Logo">
+          <span class="sr-only">Pedro Kehl - Webdesigner</span>
+        </h1>
+      </a>
 
       <ThemeToggle client:load />
 
