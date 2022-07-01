@@ -1,5 +1,6 @@
 ---
 import Button from '../components/Button.svelte'
+const { content } = Astro.props;
 ---
 <section class="container mx-auto px-6 py-32 flex items-center min-h-screen relative">
 
@@ -7,24 +8,20 @@ import Button from '../components/Button.svelte'
 
     <div>
       <h3 class="text-2xl lg:text-3xl dark:text-white">
-        I believe the web should be:
+        {content.tagline}
       </h3>
       <h2 class="text-4xl sm:text-5xl lg:text-6xl font-semibold dark:text-white">
-        Beautiful,<br>
-        Performant & <br>
-        Practical<br>
+        {content.mainTagline}
       </h2>
     </div>
 
     <div class="text-xl lg:text-2xl dark:text-white">
-      My mission is to create smooth web experiences, 
-      leveling the best that technology can offer and 
-      choosing the best tech stack for each individual project.
+      {content.description}
     </div>
 
     <div class="lg:flex lg:space-x-6 space-y-6 lg:space-y-0">
-      <Button classes="bg-lime-400 shadow-lime-400">Contact me</Button>
-      <Button classes="bg-teal-400 shadow-teal-400">See my work</Button>
+      <Button classes="bg-lime-400 shadow-lime-400">{content.mainButton.label}</Button>
+      <Button classes="bg-teal-400 shadow-teal-400">{content.secondaryButton.label}</Button>
     </div>
     
   </div>

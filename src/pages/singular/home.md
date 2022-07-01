@@ -8,10 +8,8 @@ hero:
     active: true
     label: See My Work
     link: "#projects"
-  tagline: |-
-    ### I believe the web should be:
-
-    ## Beautiful, Performant & Practical
+  tagline: "I believe the web should be:"
+  mainTagline: "Beautiful, Performant & Practical"
   description: My mission is to create smooth web experiences, leveling the best
     that technology can offer and choosing the best tech stack for each
     individual project.

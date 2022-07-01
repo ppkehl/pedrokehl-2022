@@ -3,14 +3,18 @@ import Base from '../layouts/Base.astro'
 import Hero from '../layouts/Hero.astro'
 import About from '../layouts/About.astro'
 import Projects from '../layouts/Projects.astro'
+
+// Data Fetching: Get markdown file for the homepage
+let homepage = await Astro.glob('../pages/singular/home.md');
+console.log(homepage[0].frontmatter)
 ---
 
 <Base>
 	<main class="overflow-hidden">
 
-		<Hero />
-		<About />
-		<Projects />
+		<Hero content={homepage[0].frontmatter.hero} />
+		<About content={homepage[0].frontmatter.about} />
+		<Projects content={homepage[0].frontmatter.projects} />
 
 	</main>
 </Base>

@@ -1,6 +1,7 @@
 ---
 import Title from '../components/Title.svelte'
 import ProjectPreview from '../components/ProjectPreview.svelte'
+const { content } = Astro.props;
 
 // Data Fetching: List all Markdown projects in the repo.
 let allProjects = await Astro.glob('../pages/projects/*.md');
@@ -15,10 +16,10 @@ let firstProjects = allProjects.slice(0, 2);
 
       <Title>
         <span slot="title">
-          Projects
+          {content.title}
         </span>
         <span slot="subtitle">
-          Some examples of projects executed on different plataforms with different teams
+          {content.description}
         </span>
       </Title>
 
