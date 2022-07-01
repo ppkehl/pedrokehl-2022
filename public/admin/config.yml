@@ -22,6 +22,8 @@ collections:
   - name: "home"
     label: "Home"
     label_singular: "Home"
+    description: >
+      Add all infos regarding the portfolio frontpage
     i18n:
       structure: single_file
       locales: [en, pt]
