@@ -29,5 +29,11 @@ collections:
         media_library:
           config:
             multiple: false
-      - {label: "Project Images", name: "projectImages", widget: "image"}
+      - label: "Project Images"
+        name: "projectImages"
+        widget: "image"
+        allow_multiple: true
+        media_library:
+          config:
+            multiple: true
       - {label: "Body", name: "body", widget: "markdown"}
