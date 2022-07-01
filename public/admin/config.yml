@@ -100,8 +100,8 @@ collections:
               - {label: "Link", name: "link", widget: "string"}
 
       # ---- ABOUT
-      - name: 'About'
-        label: 'about'
+      - name: 'about'
+        label: 'About'
         file: 'src/pages/singular/about.md'
         description: 'About section settings'
         fields: 
@@ -117,7 +117,7 @@ collections:
               multiple: false
 
       # ---- ABOUT
-      - name: 'Projects'
+      - name: 'projects'
         label: 'Projects'
         file: 'src/pages/singular/projects.md'
         description: 'Projects section settings'
@@ -126,8 +126,8 @@ collections:
         - {label: "Description", name: "description", widget: "string"}
 
       # ---- BLOG
-      - name: 'Blog'
-        label: 'blog'
+      - name: 'blog'
+        label: 'Blog'
         file: 'src/pages/singular/blog.md'
         description: 'Blog section settings'
         fields: 
@@ -197,7 +197,7 @@ collections:
         media_library:
           config:
             multiple: true
-            
+
   # ----- BLOG
   - name: "blog"
     label: "Blog"
