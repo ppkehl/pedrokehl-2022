@@ -26,7 +26,7 @@ collections:
       locales: [en, pt]
     folder: "src/pages/home" 
     create: true
-    slug: "{{slug}}"
+    slug: "home"
     fields:
 
       # -- HERO
