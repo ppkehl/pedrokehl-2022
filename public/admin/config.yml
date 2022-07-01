@@ -135,8 +135,8 @@ collections:
         - {label: "Description", name: "description", widget: "string"}  
 
       # ---- CONTACT
-      - name: 'Contact'
-        label: 'contact'
+      - name: 'contact'
+        label: 'Contact'
         file: 'src/pages/singular/contact.md'
         description: 'Contact section settings'
         fields: 
