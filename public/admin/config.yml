@@ -30,24 +30,50 @@ collections:
     fields:
 
       # -- HERO
-      - {label: "Hero Tagline", name: "heroTagline", widget: "markdown"}
-      - {label: "Hero Description", name: "heroDescription", widget: "text"}
-      - label: "Hero Main Button"
-        name: "heroMainButton"
+      - label: "Hero"
+        name: "hero"
         widget: "object"
         collapsed: true
         fields: 
-          - {label: "Active", name: "active", widget: "boolean", default: true}
-          - {label: "Label", name: "label", widget: "string"}
-          - {label: "Link", name: "link", widget: "string"}
-      - label: "Hero Secondary Button"
-        name: "heroSecondaryButton"
-        widget: "object"
-        collapsed: true
-        fields: 
-          - {label: "Active", name: "active", widget: "boolean", default: true}
-          - {label: "Label", name: "label", widget: "string"}
-          - {label: "Link", name: "link", widget: "string"}  
+          - {label: "Tagline", name: "heroTagline", widget: "markdown"}
+          - {label: "Description", name: "heroDescription", widget: "text"}
+          - label: "Main Button"
+            name: "heroMainButton"
+            widget: "object"
+            collapsed: true
+            fields: 
+              - {label: "Active", name: "active", widget: "boolean", default: true}
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Link", name: "link", widget: "string"}
+          - label: "Secondary Button"
+            name: "SecondaryButton"
+            widget: "object"
+            collapsed: true
+            fields: 
+              - {label: "Active", name: "active", widget: "boolean", default: true}
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Link", name: "link", widget: "string"} 
+
+
+
+      # - {label: "Hero Tagline", name: "heroTagline", widget: "markdown"}
+      # - {label: "Hero Description", name: "heroDescription", widget: "text"}
+      # - label: "Hero Main Button"
+      #   name: "heroMainButton"
+      #   widget: "object"
+      #   collapsed: true
+      #   fields: 
+      #     - {label: "Active", name: "active", widget: "boolean", default: true}
+      #     - {label: "Label", name: "label", widget: "string"}
+      #     - {label: "Link", name: "link", widget: "string"}
+      # - label: "Hero Secondary Button"
+      #   name: "heroSecondaryButton"
+      #   widget: "object"
+      #   collapsed: true
+      #   fields: 
+      #     - {label: "Active", name: "active", widget: "boolean", default: true}
+      #     - {label: "Label", name: "label", widget: "string"}
+      #     - {label: "Link", name: "link", widget: "string"}  
 
       # -- ABOUT
       - {label: "About Title", name: "aboutTitle", widget: "string"}
