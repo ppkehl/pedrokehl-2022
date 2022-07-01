@@ -14,11 +14,11 @@
     "@astrojs/svelte": "^0.2.0",
     "@astrojs/tailwind": "^0.2.1",
     "astro": "^1.0.0-beta.57",
+    "preact": "^10.8.2",
     "sass": "^1.52.2",
     "svelte": "^3.46.4"
   },
   "dependencies": {
-    "astro-head": "^1.0.1",
-    "preact": "^10.7.3"
+    "astro-head": "^1.0.1"
   }
 }
