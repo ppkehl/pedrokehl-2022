@@ -1,0 +1,15 @@
+{
+  "tagline": "Teste",
+  "mainTagline": "teste",
+  "description": "tetsetse fgb xdfgdfg df gdfg xdfg dfgdfg df",
+  "mainButton": {
+    "active": true,
+    "label": "dsfsfs",
+    "link": "fsdfsdf"
+  },
+  "secondaryButton": {
+    "active": true,
+    "label": "dfsdfsdf",
+    "link": "sdfsdf"
+  }
+}
