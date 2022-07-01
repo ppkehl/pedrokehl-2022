@@ -18,6 +18,7 @@ editor:
   preview: false
 
 collections:
+  # ----- SETTINGS
   - name: 'settings'
     label: 'Settings'
     delete: false
@@ -50,9 +51,10 @@ collections:
                   required: false,
                 }
 
+      # ----- AUTHORS
       - name: 'authors'
         label: 'Authors'
-        file: '_data/authors.yml'
+        file: '_data/authors.json'
         description: 'Author descriptions'
         fields:
           - name: authors
@@ -63,15 +65,18 @@ collections:
               - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
               - { label: 'Description', name: 'description', widget: 'markdown' }
   
+  # ----- HOME
   - name: 'home'
     label: 'Home'
     delete: false
     editor:
       preview: false
     files:
+
+      # ---- HERO
       - name: 'hero'
         label: 'Hero'
-        file: '_data/hero.json'
+        file: 'src/pages/singular/hero.md'
         description: 'Hero section settings'
         fields:
           - {label: "Tagline", name: "tagline", widget: "string"}
@@ -93,3 +98,141 @@ collections:
               - {label: "Active", name: "active", widget: "boolean", default: true}
               - {label: "Label", name: "label", widget: "string"}
               - {label: "Link", name: "link", widget: "string"}
+
+      # ---- ABOUT
+      - name: 'About'
+        label: 'about'
+        file: 'src/pages/singular/about.md'
+        description: 'About section settings'
+        fields: 
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Description", name: "description", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown"}  
+        - label: "Image"
+          name: "image"
+          widget: "image"
+          allow_multiple: false
+          media_library:
+            config:
+              multiple: false
+
+      # ---- ABOUT
+      - name: 'Projects'
+        label: 'Projects'
+        file: 'src/pages/singular/projects.md'
+        description: 'Projects section settings'
+        fields: 
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Description", name: "description", widget: "string"}
+
+      # ---- BLOG
+      - name: 'Blog'
+        label: 'blog'
+        file: 'src/pages/singular/blog.md'
+        description: 'Blog section settings'
+        fields: 
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Description", name: "description", widget: "string"}  
+
+      # ---- CONTACT
+      - name: 'Contact'
+        label: 'contact'
+        file: 'src/pages/singular/contact.md'
+        description: 'Contact section settings'
+        fields: 
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Description", name: "description", widget: "string"}
+
+  # ----- PROJECTS
+  - name: "projects"
+    label: "Projects"
+    i18n:
+      structure: single_file
+      locales: [en, pt]
+    folder: "src/pages/projects"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      # Point to Astro layout
+      - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/ProjectSingle.astro"}
+      # Title
+      - {label: "Title", name: "title", widget: "string"}
+      # Date
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      # Tags
+      - label: "Tags"
+        name: "tags"
+        widget: "select"
+        multiple: true
+        min: 1
+        max: 12
+        options: ["Design", "UX", "UI", "Dev", "Migration", "Visual Identity"]
+      # Client  
+      - {label: "Client", name: "client", widget: "string"}
+      # URL
+      - {label: "URL", name: "url", widget: "string"}
+      # Tech Stack
+      - label: "Tech stack"
+        name: "techStack"
+        widget: "select"
+        multiple: true
+        min: 1
+        max: 12
+        options: ["WordPress", "Craft CMS", "Astro", "Sass", "Tailwind", "Netlify", "Svelte", "React", "Preact", "Jquery", ]
+      # Description  
+      - {label: "Description", name: "description", widget: "markdown"} 
+      # Featured Image  
+      - label: "Featured Image"
+        name: "featuredImage"
+        widget: "image"
+        allow_multiple: false
+        media_library:
+          config:
+            multiple: false   
+      # Images
+      - label: "Project Images"
+        name: "projectImages"
+        widget: "image"
+        allow_multiple: true
+        media_library:
+          config:
+            multiple: true
+            
+  # ----- BLOG
+  - name: "blog"
+    label: "Blog"
+    i18n:
+      structure: single_file
+      locales: [en, pt]
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      # Point to Astro layout
+      - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/blogSingle.astro"}
+      # Title
+      - {label: "Title", name: "title", widget: "string"}
+      # Date
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      # Author
+      - {label: "Author", name: "author", widget: "string", default: ["Pedro Kehl"]}
+      # Tags
+      - label: "Tags"
+        name: "tags"
+        widget: "select"
+        multiple: true
+        min: 1
+        max: 12
+        options: ["Design", "Visual Arts", "Random Thoughts", "Dev"]
+      # Description  
+      - {label: "Description", name: "description", widget: "text"}
+      # Body
+      - {label: "Body", name: "body", widget: "markdown"}  
+      # Featured Image  
+      - label: "Featured Image"
+        name: "featuredImage"
+        widget: "image"
+        allow_multiple: false
+        media_library:
+          config:
+            multiple: false      
