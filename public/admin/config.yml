@@ -1,39 +1,72 @@
 # public/admin/config.yml
 backend:
   name: git-gateway
-  branch: master # NOTE this relates to your GitHub branch
+  branch: master
+
 publish_mode: editorial_workflow
-local_backend: true # allows for you to locally mess with your CMS
+local_backend: true
+
 media_library:
   name: cloudinary
   config:
     cloud_name: dueymuhdz
     api_key: 865213366493329
-media_folder: "public/images/uploads" # Media files will be stored in the repo under public/images/uploads
-public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
 editor:
-  preview: false # we're going to hide the preview editor
+  preview: false
+
 collections:
-  - name: "projects" # Used in routes, e.g., /admin/collections/blog
-    label: "Projects" # Used in the UI
-    # Configure i18n for this collection.
+  # PROJECTS
+  - name: "projects"
+    label: "Projects"
     i18n:
       structure: single_file
       locales: [en, pt]
-    folder: "src/pages/projects" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
+    folder: "src/pages/projects"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      # Point to Astro layout
       - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/ProjectSingle.astro"}
+      # Title
       - {label: "Title", name: "title", widget: "string"}
+      # Date
       - {label: "Publish Date", name: "date", widget: "datetime"}
+      # Author
+      - {label: "Author", name: "author", widget: "string", default: ["Pedro Kehl"]}
+      # Tags
+      - label: "Tags"
+        name: "tags"
+        widget: "select"
+        multiple: true
+        min: 1
+        max: 12
+        options: ["Design", "UX", "UI", "Dev", "Migration", "Visual Identity"]
+      # Client  
+      - {label: "Client", name: "client", widget: "string"}
+      # URL
+      - {label: "URL", name: "url", widget: "string"}
+      # Tech Stack
+      - label: "Tech stack"
+        name: "techStack"
+        widget: "select"
+        multiple: true
+        min: 1
+        max: 12
+        options: ["WordPress", "Craft CMS", "Astro", "Sass", "Tailwind", "Netlify", "Svelte", "React", "Preact", "Jquery", ]
+      # Description  
+      - {label: "Description", name: "description", widget: "markdown"} 
+      # Featured Image  
       - label: "Featured Image"
         name: "featuredImage"
         widget: "image"
         allow_multiple: false
         media_library:
           config:
-            multiple: false
+            multiple: false   
+      # Images
       - label: "Project Images"
         name: "projectImages"
         widget: "image"
@@ -41,4 +74,41 @@ collections:
         media_library:
           config:
             multiple: true
-      - {label: "Body", name: "body", widget: "markdown"}
+  # BLOG
+  - name: "blog"
+    label: "Blog"
+    i18n:
+      structure: single_file
+      locales: [en, pt]
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      # Point to Astro layout
+      - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/blogSingle.astro"}
+      # Title
+      - {label: "Title", name: "title", widget: "string"}
+      # Date
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      # Author
+      - {label: "Author", name: "author", widget: "string", default: ["Pedro Kehl"]}
+      # Tags
+      - label: "Tags"
+        name: "tags"
+        widget: "select"
+        multiple: true
+        min: 1
+        max: 12
+        options: ["Design", "Visual Arts", "Random Thoughts", "Dev"]
+      # Description  
+      - {label: "Description", name: "description", widget: "text"}
+      # Body
+      - {label: "Body", name: "body", widget: "markdown"}  
+      # Featured Image  
+      - label: "Featured Image"
+        name: "featuredImage"
+        widget: "image"
+        allow_multiple: false
+        media_library:
+          config:
+            multiple: false
