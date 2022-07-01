@@ -1,6 +1,5 @@
 <script>
   export let project;
-  // console.log(project.frontmatter);
 </script>
 
 <div class="w-full lg:w-4/12 mb-8 dark:text-white">

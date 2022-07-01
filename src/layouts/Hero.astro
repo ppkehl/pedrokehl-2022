@@ -1,6 +1,10 @@
 ---
 import Button from '../components/Button.svelte'
-const { content } = Astro.props;
+
+// Data Fetching: Get markdown file
+let contentData = await Astro.glob('../pages/singular/hero.md');
+let content = contentData[0].frontmatter
+//console.log(content)
 ---
 <section class="container mx-auto px-6 py-32 flex items-center min-h-screen relative">
 

@@ -1,7 +1,10 @@
 ---
 import Title from '../components/Title.svelte'
-import { Markdown } from 'astro/components';
-const { section } = Astro.props;
+
+// Data Fetching: Get section markdown file
+let contentData = await Astro.glob('../pages/singular/about.md');
+let content = contentData[0]
+let contentBody = await content.compiledContent()
 ---
 <section class="py-32">
 
@@ -11,10 +14,10 @@ const { section } = Astro.props;
 
       <Title>
         <span slot="title">
-          {section.title}
+          {content.frontmatter.title}
         </span>
         <span slot="subtitle">
-          {section.description}
+          {content.frontmatter.description}
         </span>
       </Title>
 
@@ -22,7 +25,7 @@ const { section } = Astro.props;
 
         <div class="w-full lg:w-4/12 space-y-8 z-10 relative mb-8">
 
-          <img class="relative object-cover w-full aspect-square overflow-hidden rounded-full z-10 dark:brightness-100" src={section.image} alt="My picture">
+          <img class="relative object-cover w-full aspect-square overflow-hidden rounded-full z-10 dark:brightness-100" src={content.frontmatter.image} alt="My picture">
 
           <div class="blobs absolute top-0 w-full h-full">
             <div class="absolute w-9/12 aspect-square rounded-full filter blur-xl opacity-100 animate-blob-hero dark:opacity-70 animation-spice-1"></div>
@@ -35,7 +38,7 @@ const { section } = Astro.props;
         <div class="hidden lg:block lg:w-1/12 relative"></div>
 
         <div class="w-full lg:w-6/12 space-y-4 relative dark:text-white">
-          <Markdown content={section.aboutText} />
+          <Fragment set:html={contentBody}/>
         </div>
       </div>
 
