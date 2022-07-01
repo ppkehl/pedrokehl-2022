@@ -1,7 +1,7 @@
 # public/admin/config.yml
 backend:
   name: git-gateway
-  branch: main # NOTE this relates to your GitHub branch
+  branch: master # NOTE this relates to your GitHub branch
 publish_mode: editorial_workflow
 local_backend: true # allows for you to locally mess with your CMS
 media_folder: "public/images/uploads" # Media files will be stored in the repo under public/images/uploads
