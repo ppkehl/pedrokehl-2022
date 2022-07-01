@@ -21,6 +21,7 @@ collections:
   # ----- HOME
   - name: "home"
     label: "Home"
+    label_singular: "Home"
     i18n:
       structure: single_file
       locales: [en, pt]
@@ -35,8 +36,8 @@ collections:
         widget: "object"
         collapsed: true
         fields: 
-          - {label: "Tagline", name: "tagline", widget: "text"}
-          - {label: "Main Tagline", name: "mainTagline", widget: "text"}
+          - {label: "Tagline", name: "tagline", widget: "string"}
+          - {label: "Main Tagline", name: "mainTagline", widget: "string"}
           - {label: "Description", name: "description", widget: "text"}
           - label: "Main Button"
             name: "mainButton"
@@ -62,7 +63,7 @@ collections:
         collapsed: true
         fields: 
         - {label: "Title", name: "title", widget: "string"}
-        - {label: "Description", name: "description", widget: "text"}
+        - {label: "Description", name: "description", widget: "string"}
         - {label: "Text", name: "text", widget: "markdown"}  
         - label: "Image"
           name: "image"
@@ -79,7 +80,7 @@ collections:
         collapsed: true
         fields: 
         - {label: "Title", name: "title", widget: "string"}
-        - {label: "Description", name: "description", widget: "text"}  
+        - {label: "Description", name: "description", widget: "string"}  
      
       # -- BLOG
       - label: "Blog"
@@ -88,7 +89,7 @@ collections:
         collapsed: true
         fields: 
         - {label: "Title", name: "title", widget: "string"}
-        - {label: "Description", name: "description", widget: "text"} 
+        - {label: "Description", name: "description", widget: "string"} 
 
       # -- CONTACT
       - label: "Contact"
@@ -97,7 +98,7 @@ collections:
         collapsed: true
         fields: 
         - {label: "Title", name: "title", widget: "string"}
-        - {label: "Description", name: "description", widget: "text"} 
+        - {label: "Description", name: "description", widget: "string"} 
 
   # ----- PROJECTS
   - name: "projects"

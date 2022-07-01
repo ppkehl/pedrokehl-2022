@@ -17,7 +17,7 @@ about:
   title: About me
   description: I like to solve problems and think about the future
   image: https://res.cloudinary.com/dueymuhdz/image/upload/v1656685692/samples/cloudinary-icon.png
-  text: >-
+  aboutText: >-
     I graduated in digital design, working for over 20 years as a freelancer in
     design, development, and brand identity.\
 

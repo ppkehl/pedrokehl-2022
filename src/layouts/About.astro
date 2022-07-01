@@ -1,6 +1,7 @@
 ---
 import Title from '../components/Title.svelte'
-const { content } = Astro.props;
+import { Markdown } from 'astro/components';
+const { section } = Astro.props;
 ---
 <section class="py-32">
 
@@ -10,10 +11,10 @@ const { content } = Astro.props;
 
       <Title>
         <span slot="title">
-          {content.title}
+          {section.title}
         </span>
         <span slot="subtitle">
-          {content.description}
+          {section.description}
         </span>
       </Title>
 
@@ -21,7 +22,7 @@ const { content } = Astro.props;
 
         <div class="w-full lg:w-4/12 space-y-8 z-10 relative mb-8">
 
-          <img class="relative object-cover w-full aspect-square overflow-hidden rounded-full z-10 dark:brightness-100" src="assets/pedro-last.png" alt="My picture">
+          <img class="relative object-cover w-full aspect-square overflow-hidden rounded-full z-10 dark:brightness-100" src={section.image} alt="My picture">
 
           <div class="blobs absolute top-0 w-full h-full">
             <div class="absolute w-9/12 aspect-square rounded-full filter blur-xl opacity-100 animate-blob-hero dark:opacity-70 animation-spice-1"></div>
@@ -34,7 +35,7 @@ const { content } = Astro.props;
         <div class="hidden lg:block lg:w-1/12 relative"></div>
 
         <div class="w-full lg:w-6/12 space-y-4 relative dark:text-white">
-          {content.text}
+          <Markdown content={section.aboutText} />
         </div>
       </div>
 
