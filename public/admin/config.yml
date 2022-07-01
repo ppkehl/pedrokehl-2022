@@ -11,11 +11,23 @@ editor:
 collections:
   - name: "projects" # Used in routes, e.g., /admin/collections/blog
     label: "Projects" # Used in the UI
+    # Configure i18n for this collection.
+    i18n:
+      structure: single_file
+      locales: [en, pt]
     folder: "src/pages/projects" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/ProjectSingle.astro"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - label: "Featured Image"
+        name: "featuredImage"
+        widget: "image"
+        allow_multiple: false
+        media_library:
+          config:
+            multiple: false
+      - {label: "Project Images", name: "projectImages", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}

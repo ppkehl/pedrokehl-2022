@@ -9,7 +9,7 @@
 
   <a href="" class="block space-y-5">
     <div class="w-full aspect-video bg-slate-300">
-      <img class="object-cover w-full h-full" src="" alt="">
+      <img class="object-cover w-full h-full" src="{project.frontmatter.featuredImage}" alt="">
     </div>
     <h4 class="text-2xl font-semibold">
       {project.frontmatter.title}
