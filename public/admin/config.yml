@@ -17,63 +17,10 @@ public_folder: "/images/uploads"
 editor:
   preview: false
 
-collections: # A list of collections the CMS should be able to edit
-  - name: 'posts' # Used in routes, ie.: /admin/collections/:slug/edit
-    label: 'Posts' # Used in the UI
-    label_singular: 'Post' # Used in the UI, ie: "New Post"
-    description: >
-      The description is a great place for tone setting, high level information, and editing
-      guidelines that are specific to a collection.
-    folder: '_posts'
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
-    create: true # Allow users to create new documents in this collection
-    view_filters:
-      - label: Posts With Index
-        field: title
-        pattern: 'This is post #'
-      - label: Posts Without Index
-        field: title
-        pattern: front matter post
-      - label: Drafts
-        field: draft
-        pattern: true
-    view_groups:
-      - label: Year
-        field: date
-        pattern: \d{4}
-      - label: Drafts
-        field: draft
-    fields: # The fields each document in this collection have
-      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
-      - { label: 'Draft', name: 'draft', widget: 'boolean', default: false }
-      - {
-          label: 'Publish Date',
-          name: 'date',
-          widget: 'datetime',
-          date_format: 'YYYY-MM-DD',
-          time_format: 'HH:mm',
-          format: 'YYYY-MM-DD HH:mm',
-        }
-      - label: 'Cover Image'
-        name: 'image'
-        widget: 'image'
-        required: false
-        tagname: ''
-
-      - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
-
-  - name: 'faq' # Used in routes, ie.: /admin/collections/:slug/edit
-    label: 'FAQ' # Used in the UI
-    folder: '_faqs'
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection have
-      - { label: 'Question', name: 'title', widget: 'string', tagname: 'h1' }
-      - { label: 'Answer', name: 'body', widget: 'markdown' }
-
+collections:
   - name: 'settings'
     label: 'Settings'
-    delete: false # Prevent users from deleting documents in this collection
+    delete: false
     editor:
       preview: false
     files:
@@ -115,3 +62,34 @@ collections: # A list of collections the CMS should be able to edit
             fields:
               - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
               - { label: 'Description', name: 'description', widget: 'markdown' }
+  
+  - name: 'home'
+    label: 'Home'
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: 'hero'
+        label: 'Hero'
+        file: '_data/hero.json'
+        description: 'Hero section settings'
+        fields:
+          - {label: "Tagline", name: "tagline", widget: "string"}
+          - {label: "Main Tagline", name: "mainTagline", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - label: "Main Button"
+            name: "mainButton"
+            widget: "object"
+            collapsed: true
+            fields: 
+              - {label: "Active", name: "active", widget: "boolean", default: true}
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Link", name: "link", widget: "string"}
+          - label: "Secondary Button"
+            name: "secondaryButton"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Active", name: "active", widget: "boolean", default: true}
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Link", name: "link", widget: "string"}
