@@ -4,6 +4,11 @@ backend:
   branch: master # NOTE this relates to your GitHub branch
 publish_mode: editorial_workflow
 local_backend: true # allows for you to locally mess with your CMS
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: dueymuhdz
+    api_key: 865213366493329
 media_folder: "public/images/uploads" # Media files will be stored in the repo under public/images/uploads
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 editor:
