@@ -18,7 +18,61 @@ editor:
   preview: false
 
 collections:
-  # PROJECTS
+  # - HOME
+  - name: "home"
+    label: "Home"
+    i18n:
+      structure: single_file
+      locales: [en, pt]
+    folder: "src/pages/home" 
+    create: true
+    slug: "{{slug}}"
+    fields:
+
+      # -- HERO
+      - {label: "Hero Tagline", name: "heroTagline", widget: "markdown"}
+      - {label: "Hero Description", name: "heroDescription", widget: "text"}
+      - label: "Hero Main Button"
+        name: "heroMainButton"
+        widget: "object"
+        collapsed: true
+        fields: 
+          - {label: "Active", name: "active", widget: "boolean", default: true}
+          - {label: "Label", name: "label", widget: "string"}
+          - {label: "Link", name: "link", widget: "string"}
+      - label: "Hero Secondary Button"
+        name: "heroSecondaryButton"
+        widget: "object"
+        collapsed: true
+        fields: 
+          - {label: "Active", name: "active", widget: "boolean", default: true}
+          - {label: "Label", name: "label", widget: "string"}
+          - {label: "Link", name: "link", widget: "string"}  
+
+      # -- ABOUT
+      - {label: "About Title", name: "aboutTitle", widget: "string"}
+      - {label: "About Description", name: "aboutDescription", widget: "text"}  
+      - label: "About Image"
+        name: "aboutImage"
+        widget: "image"
+        allow_multiple: false
+        media_library:
+          config:
+            multiple: false 
+
+      # -- PROJECTS
+      - {label: "Projects Title", name: "projectsTitle", widget: "string"}
+      - {label: "Projects Description", name: "projectsDescription", widget: "text"}  
+     
+      # -- BLOG
+      - {label: "Blog Title", name: "blogTitle", widget: "string"}
+      - {label: "Blog Description", name: "blogDescription", widget: "text"}
+
+      # -- CONTACT
+      - {label: "Contact Title", name: "contactTitle", widget: "string"}
+      - {label: "Contact Description", name: "contactDescription", widget: "text"}
+
+  # - PROJECTS
   - name: "projects"
     label: "Projects"
     i18n:
@@ -34,8 +88,6 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       # Date
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      # Author
-      - {label: "Author", name: "author", widget: "string", default: ["Pedro Kehl"]}
       # Tags
       - label: "Tags"
         name: "tags"
@@ -74,7 +126,7 @@ collections:
         media_library:
           config:
             multiple: true
-  # BLOG
+  # ---- BLOG
   - name: "blog"
     label: "Blog"
     i18n:
