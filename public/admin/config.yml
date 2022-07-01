@@ -22,6 +22,7 @@ collections:
   - name: "home"
     label: "Home"
     label_singular: "Home"
+    delete: false
     description: >
       Add all infos regarding the portfolio frontpage
     i18n:
@@ -30,14 +31,13 @@ collections:
     folder: "src/pages/singular" 
     create: false
     slug: "home"
-    fields:
 
-      # -- HERO
-      - label: "Hero"
-        name: "hero"
-        widget: "object"
-        collapsed: true
-        fields: 
+    files:
+      - name: 'hero'
+        label: 'Hero'
+        file: 'hero.json'
+        description: 'Hero section settings'
+        fields:
           - {label: "Tagline", name: "tagline", widget: "string"}
           - {label: "Main Tagline", name: "mainTagline", widget: "string"}
           - {label: "Description", name: "description", widget: "text"}
@@ -58,49 +58,78 @@ collections:
               - {label: "Label", name: "label", widget: "string"}
               - {label: "Link", name: "link", widget: "string"} 
 
-      # -- ABOUT
-      - label: "About"
-        name: "about"
-        widget: "object"
-        collapsed: true
-        fields: 
-        - {label: "Title", name: "title", widget: "string"}
-        - {label: "Description", name: "description", widget: "string"}
-        - {label: "Text", name: "text", widget: "markdown"}  
-        - label: "Image"
-          name: "image"
-          widget: "image"
-          allow_multiple: false
-          media_library:
-            config:
-              multiple: false 
 
-      # -- PROJECTS
-      - label: "Projects"
-        name: "projects"
-        widget: "object"
-        collapsed: true
-        fields: 
-        - {label: "Title", name: "title", widget: "string"}
-        - {label: "Description", name: "description", widget: "string"}  
+    # fields:
+
+    #   # -- HERO
+    #   - label: "Hero"
+    #     name: "hero"
+    #     widget: "object"
+    #     collapsed: true
+    #     fields: 
+    #       - {label: "Tagline", name: "tagline", widget: "string"}
+    #       - {label: "Main Tagline", name: "mainTagline", widget: "string"}
+    #       - {label: "Description", name: "description", widget: "text"}
+    #       - label: "Main Button"
+    #         name: "mainButton"
+    #         widget: "object"
+    #         collapsed: true
+    #         fields: 
+    #           - {label: "Active", name: "active", widget: "boolean", default: true}
+    #           - {label: "Label", name: "label", widget: "string"}
+    #           - {label: "Link", name: "link", widget: "string"}
+    #       - label: "Secondary Button"
+    #         name: "secondaryButton"
+    #         widget: "object"
+    #         collapsed: true
+    #         fields: 
+    #           - {label: "Active", name: "active", widget: "boolean", default: true}
+    #           - {label: "Label", name: "label", widget: "string"}
+    #           - {label: "Link", name: "link", widget: "string"} 
+
+    #   # -- ABOUT
+    #   - label: "About"
+    #     name: "about"
+    #     widget: "object"
+    #     collapsed: true
+    #     fields: 
+    #     - {label: "Title", name: "title", widget: "string"}
+    #     - {label: "Description", name: "description", widget: "string"}
+    #     - {label: "Text", name: "text", widget: "markdown"}  
+    #     - label: "Image"
+    #       name: "image"
+    #       widget: "image"
+    #       allow_multiple: false
+    #       media_library:
+    #         config:
+    #           multiple: false 
+
+    #   # -- PROJECTS
+    #   - label: "Projects"
+    #     name: "projects"
+    #     widget: "object"
+    #     collapsed: true
+    #     fields: 
+    #     - {label: "Title", name: "title", widget: "string"}
+    #     - {label: "Description", name: "description", widget: "string"}  
      
-      # -- BLOG
-      - label: "Blog"
-        name: "blog"
-        widget: "object"
-        collapsed: true
-        fields: 
-        - {label: "Title", name: "title", widget: "string"}
-        - {label: "Description", name: "description", widget: "string"} 
+    #   # -- BLOG
+    #   - label: "Blog"
+    #     name: "blog"
+    #     widget: "object"
+    #     collapsed: true
+    #     fields: 
+    #     - {label: "Title", name: "title", widget: "string"}
+    #     - {label: "Description", name: "description", widget: "string"} 
 
-      # -- CONTACT
-      - label: "Contact"
-        name: "contact"
-        widget: "object"
-        collapsed: true
-        fields: 
-        - {label: "Title", name: "title", widget: "string"}
-        - {label: "Description", name: "description", widget: "string"} 
+    #   # -- CONTACT
+    #   - label: "Contact"
+    #     name: "contact"
+    #     widget: "object"
+    #     collapsed: true
+    #     fields: 
+    #     - {label: "Title", name: "title", widget: "string"}
+    #     - {label: "Description", name: "description", widget: "string"} 
 
   # ----- PROJECTS
   - name: "projects"
