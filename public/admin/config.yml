@@ -116,7 +116,7 @@ collections:
             config:
               multiple: false
 
-      # ---- ABOUT
+      # ---- PROJECTS
       - name: 'projects'
         label: 'Projects'
         file: 'src/pages/singular/projects.md'
@@ -124,6 +124,7 @@ collections:
         fields: 
         - {label: "Title", name: "title", widget: "string"}
         - {label: "Description", name: "description", widget: "string"}
+        - {label: "Number of projects on the homepage", name: "postsNum", widget: "number", default: 3, min: 3, max: 12}
 
       # ---- BLOG
       - name: 'blog'
@@ -132,7 +133,8 @@ collections:
         description: 'Blog section settings'
         fields: 
         - {label: "Title", name: "title", widget: "string"}
-        - {label: "Description", name: "description", widget: "string"}  
+        - {label: "Description", name: "description", widget: "string"} 
+        - {label: "Number of posts on the homepage", name: "postsNum", widget: "number", default: 3, min: 3, max: 12} 
 
       # ---- CONTACT
       - name: 'contact'
