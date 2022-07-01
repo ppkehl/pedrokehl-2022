@@ -17,209 +17,101 @@ public_folder: "/images/uploads"
 editor:
   preview: false
 
-collections:
-  # ----- HOME
-  - name: "home"
-    label: "Home"
-    label_singular: "Home"
-    delete: false
+collections: # A list of collections the CMS should be able to edit
+  - name: 'posts' # Used in routes, ie.: /admin/collections/:slug/edit
+    label: 'Posts' # Used in the UI
+    label_singular: 'Post' # Used in the UI, ie: "New Post"
     description: >
-      Add all infos regarding the portfolio frontpage
-    i18n:
-      structure: single_file
-      locales: [en, pt]
-    folder: "src/pages/singular" 
-    create: false
-    slug: "home"
+      The description is a great place for tone setting, high level information, and editing
+      guidelines that are specific to a collection.
+    folder: '_posts'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
+    create: true # Allow users to create new documents in this collection
+    view_filters:
+      - label: Posts With Index
+        field: title
+        pattern: 'This is post #'
+      - label: Posts Without Index
+        field: title
+        pattern: front matter post
+      - label: Drafts
+        field: draft
+        pattern: true
+    view_groups:
+      - label: Year
+        field: date
+        pattern: \d{4}
+      - label: Drafts
+        field: draft
+    fields: # The fields each document in this collection have
+      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
+      - { label: 'Draft', name: 'draft', widget: 'boolean', default: false }
+      - {
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'datetime',
+          date_format: 'YYYY-MM-DD',
+          time_format: 'HH:mm',
+          format: 'YYYY-MM-DD HH:mm',
+        }
+      - label: 'Cover Image'
+        name: 'image'
+        widget: 'image'
+        required: false
+        tagname: ''
 
+      - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
+
+  - name: 'faq' # Used in routes, ie.: /admin/collections/:slug/edit
+    label: 'FAQ' # Used in the UI
+    folder: '_faqs'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - { label: 'Question', name: 'title', widget: 'string', tagname: 'h1' }
+      - { label: 'Answer', name: 'body', widget: 'markdown' }
+
+  - name: 'settings'
+    label: 'Settings'
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: false
     files:
-      - name: 'hero'
-        label: 'Hero'
-        file: 'hero.json'
-        description: 'Hero section settings'
+      - name: 'general'
+        label: 'Site Settings'
+        file: '_data/settings.json'
+        description: 'General Site Settings'
         fields:
-          - {label: "Tagline", name: "tagline", widget: "string"}
-          - {label: "Main Tagline", name: "mainTagline", widget: "string"}
-          - {label: "Description", name: "description", widget: "text"}
-          - label: "Main Button"
-            name: "mainButton"
-            widget: "object"
-            collapsed: true
-            fields: 
-              - {label: "Active", name: "active", widget: "boolean", default: true}
-              - {label: "Label", name: "label", widget: "string"}
-              - {label: "Link", name: "link", widget: "string"}
-          - label: "Secondary Button"
-            name: "secondaryButton"
-            widget: "object"
-            collapsed: true
-            fields: 
-              - {label: "Active", name: "active", widget: "boolean", default: true}
-              - {label: "Label", name: "label", widget: "string"}
-              - {label: "Link", name: "link", widget: "string"} 
+          - { label: 'Global title', name: 'site_title', widget: 'string' }
+          - label: 'Post Settings'
+            name: posts
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Number of posts on frontpage',
+                  name: front_limit,
+                  widget: number,
+                  min: 1,
+                  max: 10,
+                }
+              - { label: 'Default Author', name: author, widget: string }
+              - {
+                  label: 'Default Thumbnail',
+                  name: thumb,
+                  widget: image,
+                  class: 'thumb',
+                  required: false,
+                }
 
-
-    # fields:
-
-    #   # -- HERO
-    #   - label: "Hero"
-    #     name: "hero"
-    #     widget: "object"
-    #     collapsed: true
-    #     fields: 
-    #       - {label: "Tagline", name: "tagline", widget: "string"}
-    #       - {label: "Main Tagline", name: "mainTagline", widget: "string"}
-    #       - {label: "Description", name: "description", widget: "text"}
-    #       - label: "Main Button"
-    #         name: "mainButton"
-    #         widget: "object"
-    #         collapsed: true
-    #         fields: 
-    #           - {label: "Active", name: "active", widget: "boolean", default: true}
-    #           - {label: "Label", name: "label", widget: "string"}
-    #           - {label: "Link", name: "link", widget: "string"}
-    #       - label: "Secondary Button"
-    #         name: "secondaryButton"
-    #         widget: "object"
-    #         collapsed: true
-    #         fields: 
-    #           - {label: "Active", name: "active", widget: "boolean", default: true}
-    #           - {label: "Label", name: "label", widget: "string"}
-    #           - {label: "Link", name: "link", widget: "string"} 
-
-    #   # -- ABOUT
-    #   - label: "About"
-    #     name: "about"
-    #     widget: "object"
-    #     collapsed: true
-    #     fields: 
-    #     - {label: "Title", name: "title", widget: "string"}
-    #     - {label: "Description", name: "description", widget: "string"}
-    #     - {label: "Text", name: "text", widget: "markdown"}  
-    #     - label: "Image"
-    #       name: "image"
-    #       widget: "image"
-    #       allow_multiple: false
-    #       media_library:
-    #         config:
-    #           multiple: false 
-
-    #   # -- PROJECTS
-    #   - label: "Projects"
-    #     name: "projects"
-    #     widget: "object"
-    #     collapsed: true
-    #     fields: 
-    #     - {label: "Title", name: "title", widget: "string"}
-    #     - {label: "Description", name: "description", widget: "string"}  
-     
-    #   # -- BLOG
-    #   - label: "Blog"
-    #     name: "blog"
-    #     widget: "object"
-    #     collapsed: true
-    #     fields: 
-    #     - {label: "Title", name: "title", widget: "string"}
-    #     - {label: "Description", name: "description", widget: "string"} 
-
-    #   # -- CONTACT
-    #   - label: "Contact"
-    #     name: "contact"
-    #     widget: "object"
-    #     collapsed: true
-    #     fields: 
-    #     - {label: "Title", name: "title", widget: "string"}
-    #     - {label: "Description", name: "description", widget: "string"} 
-
-  # ----- PROJECTS
-  - name: "projects"
-    label: "Projects"
-    i18n:
-      structure: single_file
-      locales: [en, pt]
-    folder: "src/pages/projects"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      # Point to Astro layout
-      - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/ProjectSingle.astro"}
-      # Title
-      - {label: "Title", name: "title", widget: "string"}
-      # Date
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      # Tags
-      - label: "Tags"
-        name: "tags"
-        widget: "select"
-        multiple: true
-        min: 1
-        max: 12
-        options: ["Design", "UX", "UI", "Dev", "Migration", "Visual Identity"]
-      # Client  
-      - {label: "Client", name: "client", widget: "string"}
-      # URL
-      - {label: "URL", name: "url", widget: "string"}
-      # Tech Stack
-      - label: "Tech stack"
-        name: "techStack"
-        widget: "select"
-        multiple: true
-        min: 1
-        max: 12
-        options: ["WordPress", "Craft CMS", "Astro", "Sass", "Tailwind", "Netlify", "Svelte", "React", "Preact", "Jquery", ]
-      # Description  
-      - {label: "Description", name: "description", widget: "markdown"} 
-      # Featured Image  
-      - label: "Featured Image"
-        name: "featuredImage"
-        widget: "image"
-        allow_multiple: false
-        media_library:
-          config:
-            multiple: false   
-      # Images
-      - label: "Project Images"
-        name: "projectImages"
-        widget: "image"
-        allow_multiple: true
-        media_library:
-          config:
-            multiple: true
-  # ----- BLOG
-  - name: "blog"
-    label: "Blog"
-    i18n:
-      structure: single_file
-      locales: [en, pt]
-    folder: "src/pages/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      # Point to Astro layout
-      - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/blogSingle.astro"}
-      # Title
-      - {label: "Title", name: "title", widget: "string"}
-      # Date
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      # Author
-      - {label: "Author", name: "author", widget: "string", default: ["Pedro Kehl"]}
-      # Tags
-      - label: "Tags"
-        name: "tags"
-        widget: "select"
-        multiple: true
-        min: 1
-        max: 12
-        options: ["Design", "Visual Arts", "Random Thoughts", "Dev"]
-      # Description  
-      - {label: "Description", name: "description", widget: "text"}
-      # Body
-      - {label: "Body", name: "body", widget: "markdown"}  
-      # Featured Image  
-      - label: "Featured Image"
-        name: "featuredImage"
-        widget: "image"
-        allow_multiple: false
-        media_library:
-          config:
-            multiple: false
+      - name: 'authors'
+        label: 'Authors'
+        file: '_data/authors.yml'
+        description: 'Author descriptions'
+        fields:
+          - name: authors
+            label: Authors
+            label_singular: 'Author'
+            widget: list
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
+              - { label: 'Description', name: 'description', widget: 'markdown' }
