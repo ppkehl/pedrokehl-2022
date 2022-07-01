@@ -18,7 +18,7 @@ editor:
   preview: false
 
 collections:
-  # - HOME
+  # ----- HOME
   - name: "home"
     label: "Home"
     i18n:
@@ -35,10 +35,10 @@ collections:
         widget: "object"
         collapsed: true
         fields: 
-          - {label: "Tagline", name: "heroTagline", widget: "markdown"}
-          - {label: "Description", name: "heroDescription", widget: "text"}
+          - {label: "Tagline", name: "tagline", widget: "markdown"}
+          - {label: "Description", name: "description", widget: "text"}
           - label: "Main Button"
-            name: "heroMainButton"
+            name: "mainButton"
             widget: "object"
             collapsed: true
             fields: 
@@ -46,7 +46,7 @@ collections:
               - {label: "Label", name: "label", widget: "string"}
               - {label: "Link", name: "link", widget: "string"}
           - label: "Secondary Button"
-            name: "SecondaryButton"
+            name: "secondaryButton"
             widget: "object"
             collapsed: true
             fields: 
@@ -54,51 +54,50 @@ collections:
               - {label: "Label", name: "label", widget: "string"}
               - {label: "Link", name: "link", widget: "string"} 
 
-
-
-      # - {label: "Hero Tagline", name: "heroTagline", widget: "markdown"}
-      # - {label: "Hero Description", name: "heroDescription", widget: "text"}
-      # - label: "Hero Main Button"
-      #   name: "heroMainButton"
-      #   widget: "object"
-      #   collapsed: true
-      #   fields: 
-      #     - {label: "Active", name: "active", widget: "boolean", default: true}
-      #     - {label: "Label", name: "label", widget: "string"}
-      #     - {label: "Link", name: "link", widget: "string"}
-      # - label: "Hero Secondary Button"
-      #   name: "heroSecondaryButton"
-      #   widget: "object"
-      #   collapsed: true
-      #   fields: 
-      #     - {label: "Active", name: "active", widget: "boolean", default: true}
-      #     - {label: "Label", name: "label", widget: "string"}
-      #     - {label: "Link", name: "link", widget: "string"}  
-
       # -- ABOUT
-      - {label: "About Title", name: "aboutTitle", widget: "string"}
-      - {label: "About Description", name: "aboutDescription", widget: "text"}  
-      - label: "About Image"
-        name: "aboutImage"
-        widget: "image"
-        allow_multiple: false
-        media_library:
-          config:
-            multiple: false 
+      - label: "About"
+        name: "about"
+        widget: "object"
+        collapsed: true
+        fields: 
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Description", name: "description", widget: "text"}  
+        - label: "Image"
+          name: "image"
+          widget: "image"
+          allow_multiple: false
+          media_library:
+            config:
+              multiple: false 
 
       # -- PROJECTS
-      - {label: "Projects Title", name: "projectsTitle", widget: "string"}
-      - {label: "Projects Description", name: "projectsDescription", widget: "text"}  
+      - label: "Projects"
+        name: "projects"
+        widget: "object"
+        collapsed: true
+        fields: 
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Description", name: "description", widget: "text"}  
      
       # -- BLOG
-      - {label: "Blog Title", name: "blogTitle", widget: "string"}
-      - {label: "Blog Description", name: "blogDescription", widget: "text"}
+      - label: "Blog"
+        name: "blog"
+        widget: "object"
+        collapsed: true
+        fields: 
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Description", name: "description", widget: "text"} 
 
       # -- CONTACT
-      - {label: "Contact Title", name: "contactTitle", widget: "string"}
-      - {label: "Contact Description", name: "contactDescription", widget: "text"}
+      - label: "Contact"
+        name: "contact"
+        widget: "object"
+        collapsed: true
+        fields: 
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Description", name: "description", widget: "text"} 
 
-  # - PROJECTS
+  # ----- PROJECTS
   - name: "projects"
     label: "Projects"
     i18n:
@@ -152,7 +151,7 @@ collections:
         media_library:
           config:
             multiple: true
-  # ---- BLOG
+  # ----- BLOG
   - name: "blog"
     label: "Blog"
     i18n:
