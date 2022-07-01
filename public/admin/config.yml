@@ -237,4 +237,5 @@ collections:
         allow_multiple: false
         media_library:
           config:
-            multiple: false      
+            multiple: false
+            
