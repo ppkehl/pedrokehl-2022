@@ -12,4 +12,8 @@ secondaryButton:
   active: true
   label: See My Work
   link: "#porjects"
+buttons:
+  - type: Primary
+    label: Contact Me
+    link: "#contact"
 ---
