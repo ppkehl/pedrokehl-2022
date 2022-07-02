@@ -1,0 +1,19 @@
+{
+  "colorSchemes": [
+    {
+      "primary": "#a3e635",
+      "secondary": "#2dd4bf",
+      "tertiary": "#79f73f",
+      "alert": "#ffa600",
+      "danger": "#ff2929"
+    },
+    {
+      "primary": "#1ca5e0",
+      "secondary": "#03d9c0",
+      "tertiary": "#49d7ff",
+      "alert": "#ff9e49",
+      "danger": "#ff4949"
+    }
+  ],
+  "site_title": "Pedro Kehl | Web Design"
+}
