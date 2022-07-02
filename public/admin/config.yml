@@ -158,7 +158,7 @@ collections:
       # Point to Astro layout
       - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/ProjectSingle.astro"}
       # Active
-      - {label: "Active", name: "active", widget: "boolean", default: true}
+      - {label: "Active", name: "draft", widget: "boolean", default: true}
       # Title
       - {label: "Title", name: "title", widget: "string"}
       # Date
@@ -215,7 +215,7 @@ collections:
       # Point to Astro layout
       - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/blogSingle.astro"}
       # Active
-      - {label: "Active", name: "active", widget: "boolean", default: true}
+      - {label: "Active", name: "draft", widget: "boolean", default: true}
       # Title
       - {label: "Title", name: "title", widget: "string"}
       # Date
