@@ -1,0 +1,19 @@
+{
+  "colorSchemes": [
+    {
+      "primary": "rgba(163, 230, 53, 0.99)",
+      "secondary": "rgba(45, 212, 191, 0.99)",
+      "tertiary": "rgba(121, 247, 63, 0.98)",
+      "alert": "rgba(255, 166, 0, 0.99)",
+      "danger": "rgba(255, 41, 41, 0.99)"
+    },
+    {
+      "primary": "rgba(28, 165, 224, 0.99)",
+      "secondary": "rgba(3, 217, 192, 0.99)",
+      "tertiary": "rgba(73, 215, 255, 0.99)",
+      "alert": "rgba(255, 158, 73, 0.99)",
+      "danger": "rgba(255, 73, 73, 0.99)"
+    }
+  ],
+  "site_title": "Pedro Kehl | Web Design"
+}
