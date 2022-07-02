@@ -168,6 +168,7 @@ collections:
         name: "tags"
         widget: "select"
         multiple: true
+        allow_add: true
         min: 1
         max: 12
         options: ["Design", "UX", "UI", "Dev", "Migration", "Visual Identity"]
@@ -180,6 +181,7 @@ collections:
         name: "techStack"
         widget: "select"
         multiple: true
+        allow_add: true
         min: 1
         max: 12
         options: ["WordPress", "Craft CMS", "Astro", "Sass", "Tailwind", "Netlify", "Svelte", "React", "Preact", "Jquery", ]
