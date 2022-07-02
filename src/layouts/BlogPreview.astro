@@ -1,15 +1,15 @@
 ---
-const { blog } = Astro.props;
-let contentBody = await blog.compiledContent()
+const { post } = Astro.props;
+//let contentBody = await blog.compiledContent()
 ---
-<div class="w-full lg:w-4/12 mb-8 dark:text-white">
+<div class="w-full lg:w-3/12 mb-8 dark:text-white">
 
-  <a href={blog.url} class="block space-y-5">
-    <div class="w-full aspect-video bg-slate-300">
-      <img class="object-cover w-full h-full" src={blog.frontmatter.featuredImage} alt="">
+  <a href={post.url} class="block space-y-5">
+    <div class="w-full aspect-square bg-slate-300">
+      <img class="object-cover w-full h-full" src={post.frontmatter.featuredImage} alt="">
     </div>
     <h4 class="text-2xl font-semibold">
-      {blog.frontmatter.title}
+      {post.frontmatter.title}
     </h4>
     <div class="text-xl">
       <!-- <Fragment set:html={contentBody}/> -->

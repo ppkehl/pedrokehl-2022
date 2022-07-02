@@ -27,34 +27,25 @@ collections:
     files:
       - name: 'general'
         label: 'Site Settings'
-        file: '_data/settings.json'
+        file: 'data/settings.json'
         description: 'General Site Settings'
         fields:
           - { label: 'Global title', name: 'site_title', widget: 'string' }
-          - label: 'Post Settings'
-            name: posts
-            widget: 'object'
+          - name: colorSchemes
+            label: Color Schemes
+            label_singular: 'Color Scheme'
+            widget: list
             fields:
-              - {
-                  label: 'Number of posts on frontpage',
-                  name: front_limit,
-                  widget: number,
-                  min: 1,
-                  max: 10,
-                }
-              - { label: 'Default Author', name: author, widget: string }
-              - {
-                  label: 'Default Thumbnail',
-                  name: thumb,
-                  widget: image,
-                  class: 'thumb',
-                  required: false,
-                }
+              - { label: 'Primary', name: 'primary', widget: 'color', enableAlpha: true, allowInput: true }
+              - { label: 'Secondary', name: 'secondary', widget: 'color', enableAlpha: true, allowInput: true }
+              - { label: 'Tertiary', name: 'tertiary', widget: 'color', enableAlpha: true, allowInput: true }
+              - { label: 'Alert', name: 'alert', widget: 'color', enableAlpha: true, allowInput: true }
+              - { label: 'Danger', name: 'danger', widget: 'color', enableAlpha: true, allowInput: true }
 
       # ----- AUTHORS
       - name: 'authors'
         label: 'Authors'
-        file: '_data/authors.json'
+        file: 'data/authors.json'
         description: 'Author descriptions'
         fields:
           - name: authors
@@ -62,7 +53,7 @@ collections:
             label_singular: 'Author'
             widget: list
             fields:
-              - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
+              - { label: 'Name', name: 'name', widget: 'string'}
               - { label: 'Description', name: 'description', widget: 'markdown' }
   
   # ----- HOME
@@ -213,7 +204,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       # Point to Astro layout
-      - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/blogSingle.astro"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogSingle.astro"}
       # Title
       - {label: "Title", name: "title", widget: "string"}
       # Date

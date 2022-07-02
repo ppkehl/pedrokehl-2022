@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/blogSingle.astro
+layout: ../../layouts/BlogSingle.astro
 title: Pirataria Digital
 date: 2022-07-02T15:36:36.521Z
 author: Pedro Kehl
