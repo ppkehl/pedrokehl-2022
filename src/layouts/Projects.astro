@@ -1,6 +1,7 @@
 ---
 import Title from '../components/Title.svelte'
 import ProjectPreview from '../components/ProjectPreview.svelte'
+import ConditionalLoading from '../components/ConditionalLoading.svelte'
 
 // Data Fetching: Get section markdown file
 let contentData = await Astro.glob('../pages/singular/projects.md');
@@ -11,32 +12,35 @@ let allProjects = await Astro.glob('../pages/projects/*.md');
 allProjects.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 let firstProjects = allProjects.slice(0, 3);
 ---
-<section class="py-32">
 
-  <div class="container mx-auto px-6">
+<ConditionalLoading load={content.frontmatter.active}>
+  <section class="py-32">
 
-    <div class="w-full space-y-8 z-10">
+    <div class="container mx-auto px-6">
 
-      <Title>
-        <span slot="title">
-          {content.frontmatter.title}
-        </span>
-        <span slot="subtitle">
-          {content.frontmatter.description}
-        </span>
-      </Title>
+      <div class="w-full space-y-8 z-10">
+
+        <Title>
+          <span slot="title">
+            {content.frontmatter.title}
+          </span>
+          <span slot="subtitle">
+            {content.frontmatter.description}
+          </span>
+        </Title>
+
+      </div>
 
     </div>
 
-  </div>
+    <div class="container mx-auto px-6 flex gap-8">
 
-  <div class="container mx-auto px-6 flex gap-8">
+      {firstProjects.map((project) => <ProjectPreview project={project} />)}
 
-    {firstProjects.map((project) => <ProjectPreview project={project} />)}
+    </div>
 
-  </div>
-
-</section>
+  </section>
+</ConditionalLoading>
 
 <style lang="scss">
   .animation-spice-1 {

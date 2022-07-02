@@ -1,5 +1,5 @@
 ---
-active: false
+active: true
 title: About me
 description: I like to solve problems and think about the future
 image: https://res.cloudinary.com/dueymuhdz/image/upload/v1656728600/pedro-kehl-400_xd6bmu.png
