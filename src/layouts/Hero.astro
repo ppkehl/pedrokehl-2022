@@ -28,10 +28,6 @@ let contentBody = await content.compiledContent()
 
       <div class="lg:flex lg:space-x-6 space-y-6 lg:space-y-0">
         {content.frontmatter.buttons.map((button) => <Button type={button.type} link={button.link}>{button.label}</Button>)}
-
-        <!-- {firstProjects.map((project) => <ProjectPreview project={project} />)}
-        <Button classes="bg-lime-400 shadow-lime-400">{content.mainButton.label}</Button>
-        <Button classes="bg-teal-400 shadow-teal-400">{content.secondaryButton.label}</Button> -->
       </div>
       
     </div>
@@ -69,20 +65,22 @@ let contentBody = await content.compiledContent()
     animation-duration: 16s;
   }
   .blobs{
+
+
     div:nth-child(1){
       top: 10%;
       left: -10%;
-      background: radial-gradient(50% 50% at 50% 50%, rgba(45, 192, 166, 0.68) 0%, rgba(0, 196, 160, 0) 89.58%); 
+      background: radial-gradient(50% 50% at 50% 50%, rgba(var(--primaryColor), 0.7) 0%, rgba(var(--primaryColor), 0) 89.58%); 
     }
     div:nth-child(2){
       top: 30%;
       left: 30%;
-      background: radial-gradient(50% 50% at 50% 50%, rgba(151, 227, 115, 0.84) 0%, rgba(47, 209, 130, 0) 87.5%);
+      background: radial-gradient(50% 50% at 50% 50%, rgba(var(--secondaryColor), 0.7) 0%, var(--secondaryColor) 87.5%);
     }
     div:nth-child(3){
       top: 40%;
       left: 20%;
-      background: radial-gradient(50% 50% at 50% 50%, rgba(121, 247, 63, 0.84) 0%, rgba(47, 209, 130, 0) 87.5%);
+      background: radial-gradient(50% 50% at 50% 50%, rgba(var(--tertiaryColor), 0.7) 0%, var(--tertiaryColor) 87.5%);
     }
   }
   @keyframes blob-hero{

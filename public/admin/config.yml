@@ -36,11 +36,12 @@ collections:
             label_singular: 'Color Scheme'
             widget: list
             fields:
-              - { label: 'Primary', name: 'primary', widget: 'color', enableAlpha: true, allowInput: true }
-              - { label: 'Secondary', name: 'secondary', widget: 'color', enableAlpha: true, allowInput: true }
-              - { label: 'Tertiary', name: 'tertiary', widget: 'color', enableAlpha: true, allowInput: true }
-              - { label: 'Alert', name: 'alert', widget: 'color', enableAlpha: true, allowInput: true }
-              - { label: 'Danger', name: 'danger', widget: 'color', enableAlpha: true, allowInput: true }
+              - { label: 'Scheme Name', name: 'schemeName', widget: 'string'}
+              - { label: 'Primary', name: 'primary', widget: 'color', allowInput: true }
+              - { label: 'Secondary', name: 'secondary', widget: 'color', allowInput: true }
+              - { label: 'Tertiary', name: 'tertiary', widget: 'color', allowInput: true }
+              - { label: 'Alert', name: 'alert', widget: 'color', allowInput: true }
+              - { label: 'Danger', name: 'danger', widget: 'color', allowInput: true }
 
       # ----- AUTHORS
       - name: 'authors'
