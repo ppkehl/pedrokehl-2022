@@ -177,7 +177,7 @@ collections:
         max: 12
         options: ["WordPress", "Craft CMS", "Astro", "Sass", "Tailwind", "Netlify", "Svelte", "React", "Preact", "Jquery", ]
       # Description  
-      - {label: "Description", name: "description", widget: "markdown"} 
+      - {label: "Description", name: "body", widget: "markdown"} 
       # Featured Image  
       - label: "Featured Image"
         name: "featuredImage"
@@ -224,7 +224,7 @@ collections:
       # Description  
       - {label: "Description", name: "description", widget: "text"}
       # Body
-      - {label: "Body", name: "body", widget: "markdown"}  
+      - {label: "Post", name: "body", widget: "markdown"}  
       # Featured Image  
       - label: "Featured Image"
         name: "featuredImage"
