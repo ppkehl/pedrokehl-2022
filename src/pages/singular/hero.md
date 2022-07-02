@@ -8,4 +8,7 @@ buttons:
   - type: Primary
     label: Contact Me
     link: "#contact"
+  - label: See my work
+    link: "#projects"
+    type: Secondary
 ---
