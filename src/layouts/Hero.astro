@@ -3,7 +3,8 @@ import Button from '../components/Button.svelte'
 
 // Data Fetching: Get markdown file
 let contentData = await Astro.glob('../pages/singular/hero.md');
-let content = contentData[0].frontmatter
+let content = contentData[0]
+let contentBody = await content.compiledContent()
 ---
 <section class="container mx-auto px-6 py-32 flex items-center min-h-screen relative">
 
@@ -11,19 +12,19 @@ let content = contentData[0].frontmatter
 
     <div>
       <h3 class="text-2xl lg:text-3xl dark:text-white">
-        {content.tagline}
+        {content.frontmatter.tagline}
       </h3>
       <h2 class="text-4xl sm:text-5xl lg:text-6xl font-semibold dark:text-white">
-        {content.mainTagline}
+        <Fragment set:html={contentBody}/>
       </h2>
     </div>
 
     <div class="text-xl lg:text-2xl dark:text-white">
-      {content.description}
+      {content.frontmatter.description}
     </div>
 
     <div class="lg:flex lg:space-x-6 space-y-6 lg:space-y-0">
-      {content.buttons.map((button) => <Button type={button.type} link={button.link}>{button.label}</Button>)}
+      {content.frontmatter.buttons.map((button) => <Button type={button.type} link={button.link}>{button.label}</Button>)}
 
       <!-- {firstProjects.map((project) => <ProjectPreview project={project} />)}
       <Button classes="bg-lime-400 shadow-lime-400">{content.mainButton.label}</Button>
