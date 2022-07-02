@@ -1,18 +1,18 @@
 {
   "colorSchemes": [
     {
-      "primary": "rgba(163, 230, 53, 0.99)",
-      "secondary": "rgba(45, 212, 191, 0.99)",
-      "tertiary": "rgba(121, 247, 63, 0.98)",
-      "alert": "rgba(255, 166, 0, 0.99)",
-      "danger": "rgba(255, 41, 41, 0.99)"
+      "primary": "#a3e635",
+      "secondary": "#2dd4bf",
+      "tertiary": "#79f73f",
+      "alert": "#ffa600",
+      "danger": "#ff2929"
     },
     {
-      "primary": "rgba(28, 165, 224, 0.99)",
-      "secondary": "rgba(3, 217, 192, 0.99)",
-      "tertiary": "rgba(73, 215, 255, 0.99)",
-      "alert": "rgba(255, 158, 73, 0.99)",
-      "danger": "rgba(255, 73, 73, 0.99)"
+      "primary": "#1ca5e0",
+      "secondary": "#03d9c0",
+      "tertiary": "#49d7ff",
+      "alert": "#ff9e49",
+      "danger": "#ff4949"
     }
   ],
   "site_title": "Pedro Kehl | Web Design"
