@@ -169,7 +169,7 @@ collections:
         allow_add: true
         min: 1
         max: 12
-        options: ["Design", "UX", "UI", "Dev", "Migration", "Visual Identity"]
+        options: ["Design", "UX", "UI", "Frontend", "Dev", "Migration", "Visual Identity"]
       # Client  
       - {label: "Client", name: "client", widget: "string"}
       # URL
@@ -182,7 +182,7 @@ collections:
         allow_add: true
         min: 1
         max: 12
-        options: ["WordPress", "Craft CMS", "Astro", "Sass", "Tailwind", "Netlify", "Svelte", "React", "Preact", "Jquery", ]
+        options: ["WordPress", "Craft CMS", "Astro", "Sass", "Tailwind", "Netlify", "Svelte", "React", "Preact", "Jquery", "GreenSock", "JavaScript"]
       # Description  
       - {label: "Description", name: "body", widget: "markdown"} 
       # Featured Image  
