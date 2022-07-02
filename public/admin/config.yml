@@ -89,6 +89,10 @@ collections:
             fields:
               - { label: 'Label', name: 'label', widget: 'string' }
               - { label: 'Link', name: 'link', widget: 'string' }
+              - label: "Type"
+                name: "type"
+                widget: "select"
+                options: ["Primary", "Secondary", "Alert"]
           # - label: "Main Button"
           #   name: "mainButton"
           #   widget: "object"
