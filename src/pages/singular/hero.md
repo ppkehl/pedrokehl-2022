@@ -12,8 +12,8 @@ buttons:
     link: "#projects"
     type: Secondary
 ---
-## Beautiful, 
+Beautiful,
 
-## Performant & 
+Performant &
 
-## Practical
+Practical
