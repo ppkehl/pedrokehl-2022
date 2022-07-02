@@ -9,7 +9,7 @@ local_backend: true
 media_library:
   name: cloudinary
   config:
-    cloud_name: dueymuhdz
+    cloud_name: ppkehl
     api_key: 865213366493329
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
