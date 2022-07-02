@@ -93,22 +93,6 @@ collections:
                 name: "type"
                 widget: "select"
                 options: ["Primary", "Secondary", "Alert"]
-          # - label: "Main Button"
-          #   name: "mainButton"
-          #   widget: "object"
-          #   collapsed: true
-          #   fields: 
-          #     - {label: "Active", name: "active", widget: "boolean", default: true}
-          #     - {label: "Label", name: "label", widget: "string"}
-          #     - {label: "Link", name: "link", widget: "string"}
-          # - label: "Secondary Button"
-          #   name: "secondaryButton"
-          #   widget: "object"
-          #   collapsed: true
-          #   fields:
-          #     - {label: "Active", name: "active", widget: "boolean", default: true}
-          #     - {label: "Label", name: "label", widget: "string"}
-          #     - {label: "Link", name: "link", widget: "string"}
 
       # ---- ABOUT
       - name: 'about'

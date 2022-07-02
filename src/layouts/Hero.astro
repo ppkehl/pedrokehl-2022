@@ -4,7 +4,6 @@ import Button from '../components/Button.svelte'
 // Data Fetching: Get markdown file
 let contentData = await Astro.glob('../pages/singular/hero.md');
 let content = contentData[0].frontmatter
-//console.log(content)
 ---
 <section class="container mx-auto px-6 py-32 flex items-center min-h-screen relative">
 
@@ -24,8 +23,11 @@ let content = contentData[0].frontmatter
     </div>
 
     <div class="lg:flex lg:space-x-6 space-y-6 lg:space-y-0">
+      {content.buttons.map((button) => <Button type={button.type} link={button.link}>{button.label}</Button>)}
+
+      <!-- {firstProjects.map((project) => <ProjectPreview project={project} />)}
       <Button classes="bg-lime-400 shadow-lime-400">{content.mainButton.label}</Button>
-      <Button classes="bg-teal-400 shadow-teal-400">{content.secondaryButton.label}</Button>
+      <Button classes="bg-teal-400 shadow-teal-400">{content.secondaryButton.label}</Button> -->
     </div>
     
   </div>
