@@ -13,22 +13,22 @@ const analytics = {
 
 <html lang="en">
 
-  <head>
-    <Head {title} {description} {analytics} />
-    <script defer type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  </head>
+<head>
+  <Head {title} {description} {analytics} />
+  <script defer type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
 
-  <body class="bg-gray-200 dark:bg-gray-900">
+<body class="bg-gray-200 dark:bg-gray-900">
 
-    <main class="overflow-hidden">
+  <main class="overflow-hidden">
 
-      <Header />
+    <Header />
 
-      <slot />
+    <slot />
 
-      <Footer />
+    <Footer />
 
-      <script>
+    <script>
         if (window.netlifyIdentity) {
           window.netlifyIdentity.on("init", user => {
             if (!user) {
@@ -40,8 +40,8 @@ const analytics = {
         }
       </script>
 
-    </main>
+  </main>
 
-  </body>
+</body>
 
 </html>
