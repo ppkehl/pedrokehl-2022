@@ -259,7 +259,7 @@ collections:
     i18n:
       structure: single_file
       locales: [en, pt]
-    folder: "src/pages/blog"
+    folder: "src/pages/test"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
