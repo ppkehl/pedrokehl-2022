@@ -19,6 +19,26 @@
         "alert": "#ff9e49",
         "danger": "#ff4949"
       }
+    },
+    {
+      "schemeName": "Purple",
+      "colors": {
+        "primary": "#b046d6",
+        "secondary": "#8544d1",
+        "tertiary": "#ac6be8",
+        "alert": "#ff9440",
+        "danger": "#ff3232"
+      }
+    },
+    {
+      "schemeName": "Juliana",
+      "colors": {
+        "primary": "#4d40d3",
+        "secondary": "#4ab986",
+        "tertiary": "#ae257e",
+        "alert": "#f7a24e",
+        "danger": "#f65454"
+      }
     }
   ],
   "site_title": "Pedro Kehl | Web Design"
