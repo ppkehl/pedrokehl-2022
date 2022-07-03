@@ -90,7 +90,7 @@ collections:
               - label: "Type"
                 name: "type"
                 widget: "select"
-                options: ["Primary", "Secondary", "Alert"]
+                options: ["Primary", "Secondary", "Tertiary", "Alert", "Danger"]
 
       # ---- ABOUT
       - name: 'about'

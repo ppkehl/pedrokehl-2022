@@ -1,0 +1,42 @@
+---
+const { colorSchemes } = Astro.props;
+
+// Convert HEX colors to RGB
+function hexToRgb(hex) {
+  if (/^#([0-9A-F]{3}){1,2}$/i.test(hex)) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    var parsed = result
+      ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
+      : null;
+    return parsed.r + "," + parsed.g + "," + parsed.b;
+  }
+}
+// Proccess colors to RGB - I spent an ridiculous amount of time here
+let processedColors = colorSchemes.map((ColorScheme) => {
+  return {"schemeName": ColorScheme.schemeName, "colors": Object.keys(ColorScheme.colors).reduce((acc, key) => { acc[key] = hexToRgb(ColorScheme.colors[key]); return acc; }, {})}
+});
+
+// Choose the first group of colors as default
+const primaryColor = processedColors[0].colors.primary;
+const secondaryColor = processedColors[0].colors.secondary;
+const tertiaryColor = processedColors[0].colors.tertiary;
+const alertColor = processedColors[0].colors.alert;
+const dangerColor = processedColors[0].colors.danger;
+---
+
+<style define:vars={{primaryColor,secondaryColor,tertiaryColor,alertColor,dangerColor}} is:global></style>
+
+<script define:vars={{processedColors}} is:global>
+  const randomScheme = Math.floor(Math.random() * processedColors.length);
+  const schemeColors = processedColors[randomScheme].colors;
+  let root = document.documentElement;
+  root.style.setProperty('--primaryColor', schemeColors.primary);
+  root.style.setProperty('--secondaryColor', schemeColors.secondary);
+  root.style.setProperty('--tertiaryColor', schemeColors.tertiary);
+  root.style.setProperty('--alertColor', schemeColors.alert);
+  root.style.setProperty('--dangerColor', schemeColors.danger);
+</script>

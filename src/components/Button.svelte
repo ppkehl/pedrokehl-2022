@@ -3,12 +3,31 @@
   export let link;
 </script>
 
-<a href="{link}" class="block bg-opacity-70 hover:bg-opacity-90 shadow-md py-3 px-6 rounded-md font-semibold cursor-pointer transition-all duration-300 w-fit" data-type={type}>
+<a
+  href={link}
+  class="block bg-opacity-70 hover:bg-opacity-90 shadow-md py-3 px-6 rounded-md font-semibold cursor-pointer transition-all duration-300 w-fit"
+  data-type={type}
+>
   <slot />
 </a>
 
 <style lang="scss">
-  div {
+  [data-type="Primary"] {
+    background-color: rgb(var(--primaryColor));
+  }
+  [data-type="Secondary"] {
+    background-color: rgb(var(--secondaryColor));
+  }
+  [data-type="Tertiary"] {
+    background-color: rgb(var(--tertiaryColor));
+  }
+  [data-type="Alert"] {
+    background-color: rgb(var(--alertColor));
+  }
+  [data-type="Danger"] {
+    background-color: rgb(var(--dangerColor));
+  }
+  a {
     &:after {
       content: "";
       width: 20px;

@@ -1,6 +1,7 @@
 ---
 import Head from 'astro-head';
 import Header from './Header.astro'
+import ColorSchemes from '../components/ColorSchemes.astro'
 import Footer from './Footer.astro'
 
 const title = 'Pedro Kehl | Web designer';
@@ -10,44 +11,32 @@ const analytics = {
   id: 'XXXXXX',
 };
 
-function hexToRgb(hex) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  var parsed = result ? {
-    r: parseInt(result[1], 16),
-    g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16)
-  } : null;
-  return parsed.r + "," + parsed.g + "," + parsed.b
-}
-
-
-const primaryColor = hexToRgb("#1ca5e0");
-const secondaryColor = "rgba(3, 217, 192, 0.99)";
-const tertiaryColor = "rgba(73, 215, 255, 0.99)";
-const alertColor = "rgba(255, 158, 73, 0.99)";
-const dangerColor = "rgba(255, 73, 73, 0.99)";
+const settingsData = await Astro.glob("../../data/settings.json");
 ---
 
 <html lang="en">
 
-  <style define:vars={{ primaryColor, secondaryColor, tertiaryColor, alertColor, dangerColor}} is:global></style>
+  <head>
 
-<head>
-  <Head {title} {description} {analytics} />
-  <script defer type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
+    <Head {title} {description} {analytics} />
 
-<body class="bg-gray-200 dark:bg-gray-900">
+    <ColorSchemes colorSchemes={settingsData[0].colorSchemes} />
 
-  <main class="overflow-hidden">
+    <script defer type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    
+  </head>
 
-    <Header />
+  <body class="bg-gray-200 dark:bg-gray-900">
 
-    <slot />
+    <main class="overflow-hidden">
 
-    <Footer />
+      <Header />
 
-    <script>
+      <slot />
+
+      <Footer />
+
+      <script>
         if (window.netlifyIdentity) {
           window.netlifyIdentity.on("init", user => {
             if (!user) {
@@ -57,10 +46,10 @@ const dangerColor = "rgba(255, 73, 73, 0.99)";
             }
           });
         }
-    </script>
+      </script>
 
-  </main>
+    </main>
 
-</body>
+  </body>
 
 </html>
