@@ -22,7 +22,7 @@ i18n:
   structure: multiple_folders
 
   # Required - a list of locales to show in the editor UI
-  locales: [en, pt]
+  locales: [en, pt, it]
 
   # Optional, defaults to the first item in locales.
   # The locale to be used for fields validation and as a baseline for the entry.
@@ -258,7 +258,7 @@ collections:
     label: "Test"
     i18n:
       structure: multiple_folders
-      locales: [en, pt]
+      locales: [en, pt, it]
     folder: "src/pages/test"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{fields.title}}"
