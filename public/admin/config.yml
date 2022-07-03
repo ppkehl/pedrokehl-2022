@@ -261,7 +261,7 @@ collections:
       locales: [en, pt]
     folder: "src/pages/test"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.title}}"
     fields:
       # Point to Astro layout
       - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogSingle.astro"}
