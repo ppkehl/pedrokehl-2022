@@ -1,6 +1,7 @@
 ---
 import Title from '../components/Title.svelte'
 import ConditionalLoading from '../components/ConditionalLoading.svelte'
+import Blobs from '../components/Blobs.svelte'
 
 // Data Fetching: Get section markdown file
 let contentData = await Astro.glob('../pages/singular/about.md');
@@ -30,11 +31,7 @@ let contentBody = await content.compiledContent()
 
             <img class="relative object-cover w-full aspect-square overflow-hidden rounded-full z-10 dark:brightness-100" src={content.frontmatter.image} alt="My picture">
 
-            <div class="blobs absolute top-0 w-full h-full">
-              <div class="absolute w-9/12 aspect-square rounded-full filter blur-xl opacity-100 animate-blob-hero dark:opacity-70 animation-spice-1"></div>
-              <div class="absolute w-9/12 aspect-square rounded-full filter blur-xl opacity-100 animate-blob-hero dark:opacity-70 "></div>
-              <div class="absolute w-9/12 aspect-square rounded-full filter blur-xl opacity-100 animate-blob-hero dark:opacity-70 animation-spice-2"></div>
-            </div>  
+            <Blobs/>
 
           </div>
 
@@ -51,51 +48,3 @@ let contentBody = await content.compiledContent()
 
   </section>
 </ConditionalLoading>
-
-<style lang="scss">
-  .animation-spice-1 {
-    animation-delay: 2.5s;
-    animation-duration: 16.4s;
-  }
-  .animation-spice-2 {
-    animation-delay: 4s;
-    animation-duration: 20.2s;
-  }
-  .animate-blob-hero {
-    animation-name: blob-about;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-duration: 17s;
-  }
-  .blobs{
-    div:nth-child(1){
-      top: 10%;
-      left: -10%;
-      background: radial-gradient(50% 50% at 50% 50%, rgba(45, 192, 166, 0.68) 0%, rgba(0, 196, 160, 0) 89.58%); 
-    }
-    div:nth-child(2){
-      top: 0;
-      left: 30%;
-      background: radial-gradient(50% 50% at 50% 50%, rgba(151, 227, 115, 0.84) 0%, rgba(47, 209, 130, 0) 87.5%);
-    }
-    div:nth-child(3){
-      top: 0;
-      left: 20%;
-      background: radial-gradient(50% 50% at 50% 50%, rgba(121, 247, 63, 0.84) 0%, rgba(47, 209, 130, 0) 87.5%);
-    }
-  }
-  @keyframes blob-about{
-    0% {
-      transform: translate(0, 0) scale(1);
-    }
-    33% {
-        transform: translate(30%, -10%) scale(1.5);
-    }
-    66% {
-        transform: translate(-20%, 60%) scale(0.9);
-    }
-    100% {
-        transform: tranlate(0, 0) scale(1);
-    }
-  }
-</style>
