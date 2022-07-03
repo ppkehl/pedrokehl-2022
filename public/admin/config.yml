@@ -266,6 +266,6 @@ collections:
       # Point to Astro layout
       - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogSingle.astro"}
       # Title
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Title", name: "title", widget: "string", i18n: true }
       # Date
-      - {label: "Publish Date", name: "date", widget: "datetime"}        
+      - {label: "Publish Date", name: "date", widget: "datetime", i18n: true }        
