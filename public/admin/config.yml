@@ -257,7 +257,7 @@ collections:
   - name: "test"
     label: "Test"
     i18n:
-      structure: single_file
+      structure: multiple_folders
       locales: [en, pt]
     folder: "src/pages/test"
     create: true
@@ -268,4 +268,6 @@ collections:
       # Title
       - {label: "Title", name: "title", widget: "string", i18n: true }
       # Date
-      - {label: "Publish Date", name: "date", widget: "datetime", i18n: true }        
+      - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate }   
+      # Body
+      - {label: "Post", name: "body", widget: "markdown"}       
