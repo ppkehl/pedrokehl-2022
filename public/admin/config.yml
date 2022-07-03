@@ -159,9 +159,9 @@ collections:
   # ----- PROJECTS
   - name: "projects"
     label: "Projects"
-    i18n:
-      structure: single_file
-      locales: [en, pt]
+    # i18n:
+    #   structure: single_file
+    #   locales: [en, pt]
     folder: "src/pages/projects"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -216,9 +216,9 @@ collections:
   # ----- BLOG
   - name: "blog"
     label: "Blog"
-    i18n:
-      structure: single_file
-      locales: [en, pt]
+    # i18n:
+    #   structure: single_file
+    #   locales: [en, pt]
     folder: "src/pages/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -251,3 +251,21 @@ collections:
         media_library:
           config:
             multiple: false
+
+
+  # ----- TEST
+  - name: "test"
+    label: "Test"
+    i18n:
+      structure: single_file
+      locales: [en, pt]
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      # Point to Astro layout
+      - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogSingle.astro"}
+      # Title
+      - {label: "Title", name: "title", widget: "string"}
+      # Date
+      - {label: "Publish Date", name: "date", widget: "datetime"}        
