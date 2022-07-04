@@ -19,7 +19,7 @@ i18n:
   # multiple_folders - persists files in `<folder>/<locale>/<slug>.<extension>`
   # multiple_files - persists files in `<folder>/<slug>.<locale>.<extension>`
   # single_file - persists a single file in `<folder>/<slug>.<extension>`
-  structure: multiple_files
+  structure: multiple_folders
 
   # Required - a list of locales to show in the editor UI
   locales: [en, pt]
