@@ -12,9 +12,10 @@ const analytics = {
 };
 
 const settingsData = await Astro.glob("../../data/settings.json");
+const { locale } = Astro.params;
 ---
 
-<html lang="en">
+<html lang={locale}>
 
   <head>
 

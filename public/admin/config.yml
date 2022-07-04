@@ -41,10 +41,15 @@ collections:
     files:
       - name: 'general'
         label: 'Site Settings'
-        file: 'data/settings.json'
+        file: 'src/data/generalSettings.json'
         description: 'General Site Settings'
         fields:
           - { label: 'Global title', name: 'site_title', widget: 'string' }
+      - name: 'colorSchemes'
+        label: 'Site Settings'
+        file: 'src/data/colorSchemes.json'
+        description: 'Color Schemes'
+        fields:
           - name: colorSchemes
             label: Color Schemes
             label_singular: 'Color Scheme'
@@ -59,13 +64,13 @@ collections:
                   - { label: 'Secondary', name: 'secondary', widget: 'color', allowInput: true }
                   - { label: 'Tertiary', name: 'tertiary', widget: 'color', allowInput: true }
                   - { label: 'Alert', name: 'alert', widget: 'color', allowInput: true }
-                  - { label: 'Danger', name: 'danger', widget: 'color', allowInput: true }
+                  - { label: 'Danger', name: 'danger', widget: 'color', allowInput: true }            
               
 
       # ----- AUTHORS
       - name: 'authors'
         label: 'Authors'
-        file: 'data/authors.json'
+        file: 'src/data/authors.json'
         description: 'Author descriptions'
         fields:
           - name: authors
