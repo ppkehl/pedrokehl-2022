@@ -41,13 +41,13 @@ collections:
     files:
       - name: 'general'
         label: 'Site Settings'
-        file: 'src/data/generalSettings.json'
+        file: 'src/data/settings/generalSettings.json'
         description: 'General Site Settings'
         fields:
           - { label: 'Global title', name: 'site_title', widget: 'string' }
       - name: 'colorSchemes'
         label: 'Color Schemes'
-        file: 'src/data/colorSchemes.json'
+        file: 'src/data/settings/colorSchemes.json'
         description: 'Color Schemes'
         fields:
           - name: colorSchemes
@@ -70,7 +70,7 @@ collections:
       # ----- AUTHORS
       - name: 'authors'
         label: 'Authors'
-        file: 'src/data/authors.json'
+        file: 'src/data/settings/authors.json'
         description: 'Author descriptions'
         fields:
           - name: authors
