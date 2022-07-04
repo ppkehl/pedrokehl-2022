@@ -1,38 +1,70 @@
 ---
 import Base from '../../../layouts/Base.astro'
+// import fs from 'fs'
 
+// Given a path, return the language id
 export function getLanguageFromURL(pathname: string) {
   const langCodeMatch = pathname.match(/\/([a-z]{2}-?[A-Z]{0,2})\//);
   return langCodeMatch ? langCodeMatch[1] : 'en';
 }
 
-export async function getStaticPaths() {
-  const posts = await Astro.glob('../../../data/test/**/*.md')
+// Given a post path, locales (other than the file's locale), 
+// return an array of the translated posts of a given post
+export async function getLocalizedPosts(postPath: string, locales:object, locale:string) {
+ 
+  const postPathParts = postPath.split('/');
+  const mdFileName = postPathParts.pop() || postPathParts.pop();
+  const localePath = postPathParts.pop();
 
+  const basepath = postPathParts.join('/');
+
+  // for (const key in locales[0].locales) {
+  //   const localeObj = locales[0].locales[key].locale
+    
+  //   if(localeObj != locale){
+
+  //     const relativePath = '../../test/' + localeObj + '/*.md'
+  //     const stringPath = relativePath.toString()
+  //     console.log(stringPath)
+
+
+  //     const translations = await Astro.glob(stringPath)
+
+  //   }
+
+  // }
+
+}
+
+export async function getStaticPaths() {
+
+  const localesJson = await Astro.glob("../../../data/settings/locales.json");
+  const posts = await Astro.glob('../../../data/test/**/*.md')
   const paths = posts.map(post => {
 
-    let locale = getLanguageFromURL(post.file)
+    const locale = getLanguageFromURL(post.file)
+    const localizedPosts = getLocalizedPosts(post.file, localesJson, locale)
 
     return {
       params: {
         locale: locale,
-        slug: post.frontmatter.slug 
+        slug: post.frontmatter.slug
       },
       props: {
         post
       }
     }
   })
-
   return paths;
 }
 
-const { locale} = Astro.params;
+const { locale } = Astro.params;
 const { Content } = Astro.props.post
 
 ---
+
 <Base locale={locale}>
 
-  <Content/>
-  
+<Content />
+
 </Base>
