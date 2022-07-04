@@ -262,7 +262,7 @@ collections:
   - name: "test"
     label: "Test"
     i18n:
-      structure: multiple_folders
+      structure: multiple_files
       locales: [en, pt, it]
     folder: 'src/data/test'
     create: true
