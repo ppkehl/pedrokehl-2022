@@ -1,0 +1,44 @@
+{
+  "colorSchemes": [
+    {
+      "schemeName": "Green",
+      "colors": {
+        "primary": "#2dc0a6",
+        "secondary": "#97e373",
+        "tertiary": "#79f73f",
+        "alert": "#ff9e49",
+        "danger": "#ff4949"
+      }
+    },
+    {
+      "schemeName": "Blue",
+      "colors": {
+        "primary": "#1ca5e0",
+        "secondary": "#03d9c0",
+        "tertiary": "#49d7ff",
+        "alert": "#ff9e49",
+        "danger": "#ff4949"
+      }
+    },
+    {
+      "schemeName": "Purple",
+      "colors": {
+        "primary": "#b046d6",
+        "secondary": "#8544d1",
+        "tertiary": "#ac6be8",
+        "alert": "#ff9440",
+        "danger": "#ff3232"
+      }
+    },
+    {
+      "schemeName": "Juliana",
+      "colors": {
+        "primary": "#4d40d3",
+        "secondary": "#4ab986",
+        "tertiary": "#ae257e",
+        "alert": "#f7a24e",
+        "danger": "#f65454"
+      }
+    }
+  ]
+}

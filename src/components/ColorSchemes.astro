@@ -1,5 +1,6 @@
 ---
-const { colorSchemes } = Astro.props;
+const colorSchemesJson = await Astro.glob("../data/settings/colorSchemes.json");
+const colorSchemes = colorSchemesJson[0].colorSchemes
 
 // Convert HEX colors to RGB
 function hexToRgb(hex) {

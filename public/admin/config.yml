@@ -46,7 +46,7 @@ collections:
         fields:
           - { label: 'Global title', name: 'site_title', widget: 'string' }
       - name: 'colorSchemes'
-        label: 'Site Settings'
+        label: 'Color Schemes'
         file: 'src/data/colorSchemes.json'
         description: 'Color Schemes'
         fields:

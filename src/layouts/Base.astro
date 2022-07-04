@@ -11,7 +11,6 @@ const analytics = {
   id: 'XXXXXX',
 };
 
-const settingsData = await Astro.glob("../../data/settings.json");
 const { locale } = Astro.params;
 ---
 
@@ -21,7 +20,7 @@ const { locale } = Astro.params;
 
     <Head {title} {description} {analytics} />
 
-    <ColorSchemes colorSchemes={settingsData[0].colorSchemes} />
+    <ColorSchemes />
 
     <script defer type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     
