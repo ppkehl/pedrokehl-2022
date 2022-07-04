@@ -259,22 +259,22 @@ collections:
 
 
   # ----- TEST
-  - name: "test"
-    label: "Test"
-    i18n:
-      structure: multiple_files
-      locales: [en, pt, it]
-    folder: 'src/data/test'
-    create: true
-    slug: "{{slug}}/{{locale}}"
-    fields:
-      # Point to Astro layout
-      - {label: "Layout", name: "layout", widget: "hidden", i18n: duplicate, default: "../../../layouts/BlogSingle.astro"}
-      # Title
-      - {label: "Title", name: "title", widget: "string", i18n: true }
-      # Slug
-      # - {label: "Slug", name: "slug", widget: "string", i18n: true }
-      # Date
-      - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate }   
-      # Body
-      - {label: "Post", name: "body", widget: "markdown", i18n: true }      
+  # - name: "test"
+  #   label: "Test"
+  #   i18n:
+  #     structure: multiple_files
+  #     locales: [en, pt, it]
+  #   folder: 'src/data/test'
+  #   create: true
+  #   slug: "{{slug}}/{{locale}}"
+  #   fields:
+  #     # Point to Astro layout
+  #     - {label: "Layout", name: "layout", widget: "hidden", i18n: duplicate, default: "../../../layouts/BlogSingle.astro"}
+  #     # Title
+  #     - {label: "Title", name: "title", widget: "string", i18n: true }
+  #     # Slug
+  #     # - {label: "Slug", name: "slug", widget: "string", i18n: true }
+  #     # Date
+  #     - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate }   
+  #     # Body
+  #     - {label: "Post", name: "body", widget: "markdown", i18n: true }      
