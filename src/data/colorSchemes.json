@@ -1,0 +1,14 @@
+{
+  "colorSchemes": [
+    {
+      "schemeName": "Teste",
+      "colors": {
+        "primary": "#ac2525",
+        "secondary": "#000000",
+        "tertiary": "#c63e3e",
+        "alert": "#1f5e27",
+        "danger": "#ca3a3a"
+      }
+    }
+  ]
+}
