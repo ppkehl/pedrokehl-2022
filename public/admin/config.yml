@@ -1,7 +1,8 @@
 # public/admin/config.yml
 backend:
   name: git-gateway
-  branch: master
+  # branch: master
+  branch: dev
 
 publish_mode: editorial_workflow
 local_backend: true
@@ -22,7 +23,7 @@ i18n:
   structure: multiple_folders
 
   # Required - a list of locales to show in the editor UI
-  locales: [en, pt]
+  locales: [en, pt, it]
 
   # Optional, defaults to the first item in locales.
   # The locale to be used for fields validation and as a baseline for the entry.
@@ -297,4 +298,25 @@ collections:
       # Date
       - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate }   
       # Body
-      - {label: "Post", name: "body", widget: "markdown", i18n: true }      
+      - {label: "Post", name: "body", widget: "markdown", i18n: true }   
+
+
+  - name: "testmulti"
+    label: "Test Multi"
+    i18n:
+      structure: multiple_files
+      locales: [en, pt, it]
+    folder: 'src/data/content/posts/testmulti'
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}.md"
+    fields:
+      # Point to Astro layout
+      - {label: "Layout", name: "layout", widget: "hidden", i18n: duplicate, default: "../../../layouts/BlogSingle.astro"}
+      # Define post type
+      - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "test"}
+      # Title
+      - {label: "Title", name: "title", widget: "string", i18n: true }
+      # Date
+      - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate }   
+      # Body
+      - {label: "Post", name: "body", widget: "markdown", i18n: true }            
