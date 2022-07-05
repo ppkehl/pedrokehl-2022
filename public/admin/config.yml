@@ -319,4 +319,5 @@ collections:
       # Date
       - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate }   
       # Body
-      - {label: "Post", name: "body", widget: "markdown", i18n: true }            
+      - {label: "Post", name: "body", widget: "markdown", i18n: true }
+            
