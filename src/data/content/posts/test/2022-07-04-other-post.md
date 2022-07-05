@@ -1,6 +1,7 @@
 ---
 en:
   layout: ../../../layouts/BlogSingle.astro
+  postType: test
   date: 2022-07-04T22:38:55.411Z
   title: Other post
   body: >-
@@ -22,6 +23,7 @@ en:
     Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.Sapien in monti palavris qui num significa nadis i pareci latim.Leite de capivaris, leite de mula manquis sem cabeça.Quem manda na minha terra sou euzis!
 pt:
   layout: ../../../layouts/BlogSingle.astro
+  postType: test
   date: 2022-07-04T22:38:55.411Z
   title: Outro post
   body: >-
@@ -42,6 +44,7 @@ pt:
     Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!Copo furadis é disculpa de bebadis, arcu quam euismod magna.Quem num gosta di mé, boa gentis num é.Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.
 it:
   layout: ../../../layouts/BlogSingle.astro
+  postType: test
   date: 2022-07-04T22:38:55.411Z
   title: Un Altro Post
   body: >-

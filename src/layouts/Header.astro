@@ -1,8 +1,12 @@
 ---
 import ThemeToggle from "../components/ThemeToggle.svelte"
+import LanguageToggle from "../components/LanguageToggle.svelte"
 import Menu from "../components/Menu.svelte"
 import Logo from "../components/Logo.svelte"
+
 const path = Astro.site;
+const { locale, postType } = Astro.params;
+const { translations } = Astro.props;
 ---
 
 <header class="z-50 fixed w-full top-0 before:content[''] before:w-full before:h-16 before:lg:h-24 before:absolute before:bg-gray-200 before:dark:bg-gray-900 before:backdrop-blur-xl before:dark:backdrop-blur-xl before:bg-opacity-50 before:dark:bg-opacity-50">
@@ -16,7 +20,10 @@ const path = Astro.site;
         </h1>
       </a>
 
-      <ThemeToggle client:load />
+      <div class="flex">
+        <LanguageToggle path={path} locale={locale} postType={postType} translations={translations} />
+        <ThemeToggle client:load />
+      </div>
 
       <Menu client:load />
 

@@ -290,6 +290,8 @@ collections:
     fields:
       # Point to Astro layout
       - {label: "Layout", name: "layout", widget: "hidden", i18n: duplicate, default: "../../../layouts/BlogSingle.astro"}
+      # Define post type
+      - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "test"}
       # Title
       - {label: "Title", name: "title", widget: "string", i18n: true }
       # Date

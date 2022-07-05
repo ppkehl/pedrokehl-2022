@@ -1,5 +1,5 @@
 ---
-import Head from 'astro-head';
+import Head from './Head.astro';
 import Header from './Header.astro'
 import ColorSchemes from '../components/ColorSchemes.astro'
 import Footer from './Footer.astro'
@@ -11,7 +11,8 @@ const analytics = {
   id: 'XXXXXX',
 };
 
-const { locale } = Astro.params;
+const { postType, locale } = Astro.params;
+const { translations } = Astro.props;
 ---
 
 <html lang={locale}>
@@ -30,7 +31,7 @@ const { locale } = Astro.params;
 
     <main class="overflow-hidden">
 
-      <Header />
+      <Header postType={postType} locale={locale} translations={translations} />
 
       <slot />
 

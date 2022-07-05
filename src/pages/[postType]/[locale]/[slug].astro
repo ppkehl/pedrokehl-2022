@@ -1,0 +1,68 @@
+---
+import Base from '../../../layouts/Base.astro'
+import { Markdown } from 'astro/components';
+
+export function slugify(text: string) {
+  return text
+    .toString()
+    .normalize('NFKD')
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-')
+}
+
+export async function getStaticPaths() {
+
+  const posts = await Astro.glob('../../../data/content/posts/test/*.md')
+
+  const dismemberedPosts = [];
+  const translatedPosts = [];
+  for (var post of Object.keys(posts)) {
+
+    for (var translatedPostKey of Object.keys(posts[post].frontmatter)) {
+      translatedPosts[translatedPostKey] = slugify(posts[post].frontmatter[translatedPostKey].title)
+    }
+
+    for (var dismemberedPostKey of Object.keys(posts[post].frontmatter)) {
+
+      posts[post].frontmatter[dismemberedPostKey].slug = slugify(posts[post].frontmatter[dismemberedPostKey].title)
+     
+      posts[post].frontmatter[dismemberedPostKey].locale = dismemberedPostKey
+
+      posts[post].frontmatter[dismemberedPostKey].translations = Object.assign({}, translatedPosts);
+
+      dismemberedPosts.push(posts[post].frontmatter[dismemberedPostKey])
+    }
+
+  }
+
+  return dismemberedPosts.map((post) => {
+    return {
+      params: {
+        postType: post.postType,
+        locale: post.locale,
+        slug: slugify(post.title)
+      },
+      props: {
+        post: post.body,
+        translations: post.translations
+      }
+    };
+  });
+}
+
+const { postType, locale } = Astro.params;
+const { post, translations } = Astro.props;
+
+// console.log(translations)
+---
+
+<Base postType={postType} locale={locale} translations={translations}>
+
+  <div class="container mx-auto lg:py-40 space-y-6">
+    <Markdown content={post} />
+  </div>
+
+</Base>
