@@ -1,5 +1,4 @@
 ---
-layout: ../../../layouts/BlogSingle.astro
 postType: test
 title: Ezra Miller Is Being Dumped As The Flash
 date: 2022-07-05T14:48:18.739Z

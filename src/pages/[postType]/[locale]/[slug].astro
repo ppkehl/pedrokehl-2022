@@ -2,8 +2,9 @@
 import Base from '../../../layouts/Base.astro'
 import { Markdown } from 'astro/components';
 
-export function slugify(text: string) {
-  return text
+export function slugify(text) {
+  const wordReducer = text.split(' ').slice(0, 12).join(' ');
+  return wordReducer
     .toString()
     .normalize('NFKD')
     .toLowerCase()
@@ -14,40 +15,69 @@ export function slugify(text: string) {
 }
 
 export async function getStaticPaths() {
+  const groupBy = keys => array =>
+  array.reduce((objectsByKeyValue, obj) => {
+    const value = keys.map(key => obj[key]).join('-');
+    objectsByKeyValue[value] = (objectsByKeyValue[value] || []).concat(obj);
+    return objectsByKeyValue;
+  }, {});
 
-  const posts = await Astro.glob('../../../data/content/posts/test/*.md')
+  const posts = await Astro.glob('../../../data/content/posts/testmulti/*.md')
 
-  const dismemberedPosts = [];
-  const translatedPosts = [];
-  for (var post of Object.keys(posts)) {
+  const metaList = [];
+  const siblingTranslatedPosts = [];
+  const postList = []
 
-    for (var translatedPostKey of Object.keys(posts[post].frontmatter)) {
-      translatedPosts[translatedPostKey] = slugify(posts[post].frontmatter[translatedPostKey].title)
+  for (let key of Object.keys(posts)) {
+    // Get post file and split it's path
+    let fileParts = posts[key].file.split('/');
+    // Get post file title and turn to slug
+    let postLocalizedSlug = slugify(posts[key].frontmatter.title);
+    // Get post filename
+    let file = fileParts.pop() || fileParts.pop();
+    // Get file language
+    let fileLocale = file.slice(-5, -3);
+    // Remove locale and file extension
+    let postSlug = file.slice(0, -6);
+    // Create a meta list of equal slugs
+    metaList.push({ 'key': key, 'slug': postSlug, "localizedSlug": postLocalizedSlug, 'locale': fileLocale })
+  }
+  // Group posts by the common slug
+  const groupBySlug = groupBy(['slug']);
+  const metaGrouped = groupBySlug(metaList)
+
+  // Loop through the meta posts group
+  for (let metaPostsKey of Object.keys(metaGrouped)) {
+
+    // Loop through each post group, pushing each  
+    for (let translatedPostKey of Object.keys(metaGrouped[metaPostsKey])) {
+      siblingTranslatedPosts[metaGrouped[metaPostsKey][translatedPostKey].locale] = metaGrouped[metaPostsKey][translatedPostKey].localizedSlug
     }
 
-    for (var dismemberedPostKey of Object.keys(posts[post].frontmatter)) {
+    for (let metaPostKey of Object.keys(metaGrouped[metaPostsKey])) {
+      const postKey = parseInt(metaGrouped[metaPostsKey][metaPostKey].key);
 
-      posts[post].frontmatter[dismemberedPostKey].slug = slugify(posts[post].frontmatter[dismemberedPostKey].title)
-     
-      posts[post].frontmatter[dismemberedPostKey].locale = dismemberedPostKey
+      //posts[postKey].frontmatter.slug = metaGrouped[metaPostsKey][metaPostKey].slug
+      posts[postKey].frontmatter.localizedSlug = metaGrouped[metaPostsKey][metaPostKey].localizedSlug
+      posts[postKey].frontmatter.locale = metaGrouped[metaPostsKey][metaPostKey].locale
+      posts[postKey].frontmatter.translations = Object.assign({}, siblingTranslatedPosts);
 
-      posts[post].frontmatter[dismemberedPostKey].translations = Object.assign({}, translatedPosts);
+      postList.push(posts[postKey])
 
-      dismemberedPosts.push(posts[post].frontmatter[dismemberedPostKey])
+      console.log(posts[postKey].frontmatter)
     }
-
   }
 
-  return dismemberedPosts.map((post) => {
+  return postList.map((post) => {
     return {
       params: {
-        postType: post.postType,
-        locale: post.locale,
-        slug: slugify(post.title)
+        postType: post.frontmatter.postType,
+        locale: post.frontmatter.locale,
+        slug: post.frontmatter.localizedSlug
       },
       props: {
         post: post.body,
-        translations: post.translations
+        translations: post.frontmatter.translations
       }
     };
   });
@@ -61,8 +91,8 @@ const { post, translations } = Astro.props;
 
 <Base postType={postType} locale={locale} translations={translations}>
 
-  <div class="container mx-auto lg:py-40 space-y-6">
-    <Markdown content={post} />
-  </div>
+<div class="container mx-auto lg:py-40 space-y-6">
+  <Markdown content={post} />
+</div>
 
 </Base>

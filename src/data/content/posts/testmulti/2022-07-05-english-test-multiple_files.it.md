@@ -1,5 +1,4 @@
 ---
-layout: ../../../layouts/BlogSingle.astro
 postType: test
 title: Italiano teste de multiple_files
 date: 2022-07-05T14:35:34.759Z
