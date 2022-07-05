@@ -308,7 +308,7 @@ collections:
       locales: [en, pt, it]
     folder: 'src/data/content/posts/testmulti'
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}.md"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
     fields:
       # Point to Astro layout
       - {label: "Layout", name: "layout", widget: "hidden", i18n: duplicate, default: "../../../layouts/BlogSingle.astro"}
@@ -320,4 +320,4 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate }   
       # Body
       - {label: "Post", name: "body", widget: "markdown", i18n: true }
-            
+
