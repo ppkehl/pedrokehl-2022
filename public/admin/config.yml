@@ -284,7 +284,7 @@ collections:
     i18n:
       structure: single_file
       locales: [en, pt, it]
-    folder: 'src/data/test'
+    folder: 'src/data/content/posts/test'
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -292,8 +292,6 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", i18n: duplicate, default: "../../../layouts/BlogSingle.astro"}
       # Title
       - {label: "Title", name: "title", widget: "string", i18n: true }
-      # Slug
-      - {label: "Slug for the translated URL", name: "slug", widget: "string", i18n: true }
       # Date
       - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate }   
       # Body

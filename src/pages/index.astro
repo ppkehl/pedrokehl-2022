@@ -5,6 +5,12 @@ import About from '../layouts/About.astro'
 import Projects from '../layouts/Projects.astro'
 import Blog from '../layouts/Blog.astro'
 import Contact from '../layouts/Contact.astro'
+
+
+const posts = await Astro.glob('../data/content/posts/test/*.md')
+console.log(posts)
+
+
 ---
 
 <Base>
