@@ -103,7 +103,7 @@ collections:
   - name: 'pages'
     label: 'Pages'
     i18n:
-      structure: multiple_folders
+      structure: single_file
       locales: [en, pt, it]
     delete: true
     editor:
@@ -342,50 +342,7 @@ collections:
         allow_multiple: false
         media_library:
           config:
-            multiple: false
-
-
-  # ----- TEST
-  # - name: "test"
-  #   label: "Test"
-  #   i18n:
-  #     structure: multiple_files
-  #     locales: [en, pt, it]
-  #   folder: 'src/data/test'
-  #   create: true
-  #   slug: "{{year}}-{{month}}-{{day}}-{{slug}}/index{{locale}}.md"
-  #   fields:
-  #     # Point to Astro layout
-  #     - {label: "Layout", name: "layout", widget: "hidden", i18n: duplicate, default: "../../../layouts/BlogSingle.astro"}
-  #     # Title
-  #     - {label: "Title", name: "title", widget: "string", i18n: true }
-  #     # Slug
-  #     # - {label: "Slug", name: "slug", widget: "string", i18n: true }
-  #     # Date
-  #     - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate }   
-  #     # Body
-  #     - {label: "Post", name: "body", widget: "markdown", i18n: true }      
-
-  - name: "test"
-    label: "Test"
-    i18n:
-      structure: single_file
-      locales: [en, pt, it]
-    folder: 'src/data/content/posts/test'
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      # Point to Astro layout
-      - {label: "Layout", name: "layout", widget: "hidden", i18n: duplicate, default: "../../../layouts/BlogSingle.astro"}
-      # Define post type
-      - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "test"}
-      # Title
-      - {label: "Title", name: "title", widget: "string", i18n: true }
-      # Date
-      - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate }   
-      # Body
-      - {label: "Post", name: "body", widget: "markdown", i18n: true }   
-
+            multiple: false  
 
   - name: "testmulti"
     label: "Test Multi"
