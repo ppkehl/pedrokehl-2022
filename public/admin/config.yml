@@ -121,6 +121,7 @@ collections:
               label: Buttons
               label_singular: 'Button'
               widget: list
+              i18n: true
               fields:
                 - { label: 'Label', name: 'label', widget: 'string', i18n: true }
                 - { label: 'Link', name: 'link', widget: 'string', i18n: true }
