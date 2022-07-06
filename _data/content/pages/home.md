@@ -90,14 +90,60 @@ pt:
         type: Primary
       - label: Veja meu trabalho
         link: "#projects"
-        type: Secondary  
+        type: Secondary
   about:
     active: true
     image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.png
+    tagline: Sobre mim
+    description: Eu gosto de resolver problemas e pensar sobre o futuro
+    text: >-
+      Sou formado em design digital, trabalhando há mais de 20 anos como
+      freelancer em design, desenvolvimento e identidade de marca.\
+
+      \
+
+      Gosto de ter uma abordagem sistêmica na resolução de problemas, e estou sempre estudando o que há de novo na área de tecnologia.\
+
+      \
+
+      **Principais conhecimentos:**\
+
+      \
+
+      Design de interfaces utilizando as melhores práticas de UI/UX e aplicando o conceito de design tokens para desenvolvimento escalável em diferentes plataformas/produtos.\
+
+      \
+
+      Criação de sites personalizados usando WordPress como backend para resultados rápidos e eficientes.
+
+
+      **Estudando atualmente:**\
+
+      \
+
+      Vejo três pilares para o futuro do web design:
+
+
+      1. Projete tokens como uma expressão de uma fonte de verdade, mesmo dentro de equipes pequenas (Style Dictionary).
+
+      2. Desacoplamento front-end e back-end, usando CMSs headless (Strapi e outros CMSs headless)
+
+      3. Frontends extremamente rápidos e mínimos. (Svelte, Astro)
   projects:
     postsNum: 3
+    active: true
+    title: Projects
+    description: Alguns exemplos de projetos executados em diferentes plataformas
+      com diferentes equipes
   blog:
     postsNum: 4
+    active: true
+    title: Ideas
+    description: Pensamentos sobre design, internet e outros interesses
+  contact:
+    active: true
+    title: Contato
+    description: Vamos conversar
 it:
   hero:
     active: true
@@ -107,7 +153,7 @@ it:
         type: Primary
       - label: Veja meu trabalho
         link: "#projects"
-        type: Secondary  
+        type: Secondary
   about:
     active: true
     image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.png
