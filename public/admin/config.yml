@@ -40,15 +40,19 @@ collections:
     editor:
       preview: false
     files:
+
+      # ---- General settings
       - name: 'general'
         label: 'Site Settings'
-        file: 'src/data/settings/generalSettings.json'
+        file: '_data/settings/generalSettings.json'
         description: 'General Site Settings'
         fields:
           - { label: 'Global title', name: 'site_title', widget: 'string' }
+
+      # ---- Color Schemes
       - name: 'colorSchemes'
         label: 'Color Schemes'
-        file: 'src/data/settings/colorSchemes.json'
+        file: '_data/settings/colorSchemes.json'
         description: 'Color Schemes'
         fields:
           - name: colorSchemes
@@ -71,7 +75,7 @@ collections:
       # ----- AUTHORS
       - name: 'authors'
         label: 'Authors'
-        file: 'src/data/settings/authors.json'
+        file: '_data/settings/authors.json'
         description: 'Author descriptions'
         fields:
           - name: authors
@@ -81,20 +85,21 @@ collections:
             fields:
               - { label: 'Name', name: 'name', widget: 'string'}
               - { label: 'Description', name: 'description', widget: 'markdown' }
-  
-  # ----- HOME
-  - name: 'home'
-    label: 'Home'
-    delete: false
+
+
+  # ----- PAGES
+  - name: 'pages'
+    label: 'Pages'
+    delete: true
     editor:
       preview: false
     files:
 
-      # ---- HERO
-      - name: 'hero'
-        label: 'Hero'
-        file: 'src/pages/singular/hero.md'
-        description: 'Hero section settings'
+      # ---- Home
+      - label: "Home"
+        name: "home"
+        file: '_data/content/pages/home'
+        widget: "object"
         fields:
           - {label: "Active", name: "active", widget: "boolean", default: true}
           - {label: "Tagline", name: "tagline", widget: "string"}
@@ -110,57 +115,90 @@ collections:
               - label: "Type"
                 name: "type"
                 widget: "select"
-                options: ["Primary", "Secondary", "Tertiary", "Alert", "Danger"]
+                options: ["Primary", "Secondary", "Tertiary", "Alert", "Danger"]       
+              
 
-      # ---- ABOUT
-      - name: 'about'
-        label: 'About'
-        file: 'src/pages/singular/about.md'
-        description: 'About section settings'
-        fields: 
-        - {label: "Active", name: "active", widget: "boolean", default: true}
-        - {label: "Title", name: "title", widget: "string"}
-        - {label: "Description", name: "description", widget: "string"}
-        - {label: "Body", name: "body", widget: "markdown"}  
-        - label: "Image"
-          name: "image"
-          widget: "image"
-          allow_multiple: false
-          media_library:
-            config:
-              multiple: false
+           
+  
+  # ----- HOME
+  # - name: 'home'
+  #   label: 'Home'
+  #   delete: false
+  #   editor:
+  #     preview: false
+  #   files:
 
-      # ---- PROJECTS
-      - name: 'projects'
-        label: 'Projects'
-        file: 'src/pages/singular/projects.md'
-        description: 'Projects section settings'
-        fields: 
-        - {label: "Active", name: "active", widget: "boolean", default: true}
-        - {label: "Title", name: "title", widget: "string"}
-        - {label: "Description", name: "description", widget: "string"}
-        - {label: "Number of projects on the homepage", name: "postsNum", widget: "number", default: 3, min: 0, max: 12}
+  #     # ---- HERO
+  #     - name: 'hero'
+  #       label: 'Hero'
+  #       file: 'src/pages/singular/hero.md'
+  #       description: 'Hero section settings'
+  #       fields:
+  #         - {label: "Active", name: "active", widget: "boolean", default: true}
+  #         - {label: "Tagline", name: "tagline", widget: "string"}
+  #         - {label: "Main Tagline", name: "body", widget: "markdown"}
+  #         - {label: "Description", name: "description", widget: "text"}
+  #         - name: buttons
+  #           label: Buttons
+  #           label_singular: 'Button'
+  #           widget: list
+  #           fields:
+  #             - { label: 'Label', name: 'label', widget: 'string' }
+  #             - { label: 'Link', name: 'link', widget: 'string' }
+  #             - label: "Type"
+  #               name: "type"
+  #               widget: "select"
+  #               options: ["Primary", "Secondary", "Tertiary", "Alert", "Danger"]
 
-      # ---- BLOG
-      - name: 'blog'
-        label: 'Blog'
-        file: 'src/pages/singular/blog.md'
-        description: 'Blog section settings'
-        fields: 
-        - {label: "Active", name: "active", widget: "boolean", default: true}
-        - {label: "Title", name: "title", widget: "string"}
-        - {label: "Description", name: "description", widget: "string"} 
-        - {label: "Number of posts on the homepage", name: "postsNum", widget: "number", default: 4, min: 0, max: 12} 
+  #     # ---- ABOUT
+  #     - name: 'about'
+  #       label: 'About'
+  #       file: 'src/pages/singular/about.md'
+  #       description: 'About section settings'
+  #       fields: 
+  #       - {label: "Active", name: "active", widget: "boolean", default: true}
+  #       - {label: "Title", name: "title", widget: "string"}
+  #       - {label: "Description", name: "description", widget: "string"}
+  #       - {label: "Body", name: "body", widget: "markdown"}  
+  #       - label: "Image"
+  #         name: "image"
+  #         widget: "image"
+  #         allow_multiple: false
+  #         media_library:
+  #           config:
+  #             multiple: false
 
-      # ---- CONTACT
-      - name: 'contact'
-        label: 'Contact'
-        file: 'src/pages/singular/contact.md'
-        description: 'Contact section settings'
-        fields: 
-        - {label: "Active", name: "active", widget: "boolean", default: true}
-        - {label: "Title", name: "title", widget: "string"}
-        - {label: "Description", name: "description", widget: "string"}
+  #     # ---- PROJECTS
+  #     - name: 'projects'
+  #       label: 'Projects'
+  #       file: 'src/pages/singular/projects.md'
+  #       description: 'Projects section settings'
+  #       fields: 
+  #       - {label: "Active", name: "active", widget: "boolean", default: true}
+  #       - {label: "Title", name: "title", widget: "string"}
+  #       - {label: "Description", name: "description", widget: "string"}
+  #       - {label: "Number of projects on the homepage", name: "postsNum", widget: "number", default: 3, min: 0, max: 12}
+
+  #     # ---- BLOG
+  #     - name: 'blog'
+  #       label: 'Blog'
+  #       file: 'src/pages/singular/blog.md'
+  #       description: 'Blog section settings'
+  #       fields: 
+  #       - {label: "Active", name: "active", widget: "boolean", default: true}
+  #       - {label: "Title", name: "title", widget: "string"}
+  #       - {label: "Description", name: "description", widget: "string"} 
+  #       - {label: "Number of posts on the homepage", name: "postsNum", widget: "number", default: 4, min: 0, max: 12} 
+
+  #     # ---- CONTACT
+  #     - name: 'contact'
+  #       label: 'Contact'
+  #       file: 'src/pages/singular/contact.md'
+  #       description: 'Contact section settings'
+  #       fields: 
+  #       - {label: "Active", name: "active", widget: "boolean", default: true}
+  #       - {label: "Title", name: "title", widget: "string"}
+  #       - {label: "Description", name: "description", widget: "string"}
 
   # ----- PROJECTS
   - name: "projects"

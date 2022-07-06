@@ -1,0 +1,8 @@
+---
+// Data Fetching
+import {metaDataPosts} from '../lib/api.js';
+const posts = await Astro.glob('../../_data/content/posts/testmulti/*.md')
+const data = await metaDataPosts(posts);
+
+console.log(data[0].frontmatter)
+---
