@@ -76,7 +76,10 @@ pt:
   hero:
     active: true
     Buttons:
-      ? type
+      type:
+        label: fgdf
+        link: sgdfgsdfg
+        type: Primary
     tagline: "Eu acredito que a web deva ser:"
     mainTagline: |-
       Bonita,
