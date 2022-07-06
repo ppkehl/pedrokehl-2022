@@ -75,11 +75,6 @@ en:
 pt:
   hero:
     active: true
-    Buttons:
-      type:
-        label: fgdf
-        link: sgdfgsdfg
-        type: Primary
     tagline: "Eu acredito que a web deva ser:"
     mainTagline: |-
       Bonita,
@@ -89,6 +84,13 @@ pt:
       Prática
     description: "Minha missão é criar experiências agradáveis, usando o melhor que
       a tecnologia pode oferecer "
+    Buttons:
+      - label: Fale comigo
+        link: "#contact"
+        type: Primary
+      - label: Veja meu trabalho
+        link: "#projects"
+        type: Secondary  
   about:
     active: true
     image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.png
@@ -100,7 +102,12 @@ it:
   hero:
     active: true
     Buttons:
-      ? type
+      - label: Fale comigo
+        link: "#contact"
+        type: Primary
+      - label: Veja meu trabalho
+        link: "#projects"
+        type: Secondary  
   about:
     active: true
     image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.png
