@@ -3,9 +3,10 @@ en:
   hero:
     active: true
     tagline: "I believe the web should be:"
-    description: My mission is to create smooth web experiences, leveling the best
-      that technology can offer and choosing the best tech stack for each
-      individual project.
+    description: |-
+      My mission is to create smooth web experiences, 
+      delivering the best that technology can offer and 
+      choosing the best tech stack for each individual project.
     mainTagline: |-
       Beautiful,
 
