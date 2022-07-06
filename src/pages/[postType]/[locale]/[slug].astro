@@ -56,15 +56,10 @@ export async function getStaticPaths() {
 
     for (let metaPostKey of Object.keys(metaGrouped[metaPostsKey])) {
       const postKey = parseInt(metaGrouped[metaPostsKey][metaPostKey].key);
-
-      //posts[postKey].frontmatter.slug = metaGrouped[metaPostsKey][metaPostKey].slug
       posts[postKey].frontmatter.localizedSlug = metaGrouped[metaPostsKey][metaPostKey].localizedSlug
       posts[postKey].frontmatter.locale = metaGrouped[metaPostsKey][metaPostKey].locale
       posts[postKey].frontmatter.translations = Object.assign({}, siblingTranslatedPosts);
-
       postList.push(posts[postKey])
-
-      console.log(posts[postKey].frontmatter)
     }
   }
 
@@ -76,7 +71,7 @@ export async function getStaticPaths() {
         slug: post.frontmatter.localizedSlug
       },
       props: {
-        post: post.body,
+        content: post,
         translations: post.frontmatter.translations
       }
     };
@@ -84,15 +79,16 @@ export async function getStaticPaths() {
 }
 
 const { postType, locale } = Astro.params;
-const { post, translations } = Astro.props;
+const { content, translations } = Astro.props;
 
-// console.log(translations)
+const Content = content.Content
+console.log(content.Content)
 ---
 
 <Base postType={postType} locale={locale} translations={translations}>
 
-<div class="container mx-auto lg:py-40 space-y-6">
-  <Markdown content={post} />
-</div>
+  <div class="container mx-auto lg:py-40 px-6 space-y-6 dark:text-white">
+    <Content/>
+  </div>
 
 </Base>
