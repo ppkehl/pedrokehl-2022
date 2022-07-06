@@ -99,9 +99,9 @@ collections:
       - label: "Home"
         name: "home"
         i18n:
-          structure: multiple_files
+          structure: multiple_folders
           locales: [en, pt, it]
-        file: '_data/content/pages/home'
+        file: '_data/content/pages/home.md'
         widget: "object"
         fields:
 
