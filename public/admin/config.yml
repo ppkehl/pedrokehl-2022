@@ -102,17 +102,17 @@ collections:
         widget: "object"
         fields:
 
+          # --- Hero
           - label: "Hero"
             name: "hero"
-            file: '_data/content/pages/home'
             widget: "object"
             collapsed: true
             fields:
             - {label: "Active", name: "active", widget: "boolean", default: true}
             - {label: "Tagline", name: "tagline", widget: "string"}
-            - {label: "Main Tagline", name: "body", widget: "markdown"}
+            - {label: "Main Tagline", name: "mainTagline", widget: "markdown"}
             - {label: "Description", name: "description", widget: "text"}
-            - name: buttons
+            - name: Buttons
               label: Buttons
               label_singular: 'Button'
               widget: list
@@ -122,10 +122,36 @@ collections:
                 - label: "Type"
                   name: "type"
                   widget: "select"
-                  options: ["Primary", "Secondary", "Tertiary", "Alert", "Danger"]       
-              
+                  options: ["Primary", "Secondary", "Tertiary", "Alert", "Danger"]      
 
-           
+          # --- About
+          - label: "About"
+            name: "about"
+            widget: "object"
+            collapsed: true
+            fields:    
+              - {label: "Active", name: "active", widget: "boolean", default: true}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
+              - {label: "Text", name: "text", widget: "markdown"}  
+              - label: "Image"
+                name: "image"
+                widget: "image"
+                allow_multiple: false
+                media_library:
+                  config:
+                    multiple: false
+
+          # --- Projects
+          - label: "Projects"
+            name: "projects"
+            widget: "object"
+            collapsed: true
+            fields: 
+              - {label: "Active", name: "active", widget: "boolean", default: true}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
+              - {label: "Number of projects on the homepage", name: "postsNum", widget: "number", default: 3, min: 0, max: 12}
   
   # ----- HOME
   # - name: 'home'
