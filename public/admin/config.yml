@@ -167,6 +167,27 @@ collections:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "string"}
               - {label: "Number of projects on the homepage", name: "postsNum", widget: "number", default: 3, min: 0, max: 12}
+
+          # --- Blog
+          - label: "Blog"
+            name: "blog"
+            widget: "object"
+            collapsed: true
+            fields: 
+              - {label: "Active", name: "active", widget: "boolean", default: true}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
+              - {label: "Number of posts on the homepage", name: "postsNum", widget: "number", default: 4, min: 0, max: 12}  
+
+          # --- Contact
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            collapsed: true
+            fields: 
+              - {label: "Active", name: "active", widget: "boolean", default: true}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"} 
   
   # ----- HOME
   # - name: 'home'
@@ -251,12 +272,12 @@ collections:
   # ----- PROJECTS
   - name: "projects"
     label: "Projects"
-    # i18n:
-    #   structure: single_file
-    #   locales: [en, pt]
-    folder: "src/pages/projects"
+    i18n:
+      structure: multiple_files
+      locales: [en, pt, it]
+    folder: '_data/content/posts/blog'
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
     fields:
       # Point to Astro layout
       - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/ProjectSingle.astro"}
@@ -308,12 +329,12 @@ collections:
   # ----- BLOG
   - name: "blog"
     label: "Blog"
-    # i18n:
-    #   structure: single_file
-    #   locales: [en, pt]
-    folder: "src/pages/blog"
+    i18n:
+      structure: multiple_files
+      locales: [en, pt, it]
+    folder: '_data/content/posts/blog'
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
     fields:
       # Point to Astro layout
       - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogSingle.astro"}
@@ -344,23 +365,23 @@ collections:
           config:
             multiple: false  
 
-  - name: "testmulti"
-    label: "Test Multi"
-    i18n:
-      structure: multiple_files
-      locales: [en, pt, it]
-    folder: 'src/data/content/posts/testmulti'
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
-    fields:
-      # Point to Astro layout
-      - {label: "Layout", name: "layout", widget: "hidden", i18n: duplicate, default: "../../../layouts/BlogSingle.astro"}
-      # Define post type
-      - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "test"}
-      # Title
-      - {label: "Title", name: "title", widget: "string", i18n: true }
-      # Date
-      - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate }   
-      # Body
-      - {label: "Post", name: "body", widget: "markdown", i18n: true }
+  # - name: "testmulti"
+  #   label: "Test Multi"
+  #   i18n:
+  #     structure: multiple_files
+  #     locales: [en, pt, it]
+  #   folder: 'src/data/content/posts/testmulti'
+  #   create: true
+  #   slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
+  #   fields:
+  #     # Point to Astro layout
+  #     - {label: "Layout", name: "layout", widget: "hidden", i18n: duplicate, default: "../../../layouts/BlogSingle.astro"}
+  #     # Define post type
+  #     - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "test"}
+  #     # Title
+  #     - {label: "Title", name: "title", widget: "string", i18n: true }
+  #     # Date
+  #     - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate }   
+  #     # Body
+  #     - {label: "Post", name: "body", widget: "markdown", i18n: true }
 
