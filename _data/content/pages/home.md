@@ -1,5 +1,6 @@
 ---
 en:
+  postType: page
   hero:
     active: true
     tagline: "I believe the web should be:"
@@ -73,6 +74,7 @@ en:
     title: Contact
     description: Drop me a line
 pt:
+  postType: page
   hero:
     active: true
     tagline: "Eu acredito que a web deva ser:"
@@ -145,6 +147,7 @@ pt:
     title: Contato
     description: Vamos conversar
 it:
+  postType: page
   hero:
     active: true
     Buttons:
@@ -167,7 +170,7 @@ it:
   about:
     active: true
     image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.png
-    tagline: " Su di me"
+    tagline: "Su di me"
     description: Mi piace risolvere i problemi e pensare al futuro
     text: >-
       Mi sono laureato in design digitale, lavorando per oltre 20 anni come
@@ -206,13 +209,13 @@ it:
     postsNum: 3
     active: true
     title: Progetti
-    description: " Alcuni esempi di progetti eseguiti su diverse piattaforme con
+    description: "Alcuni esempi di progetti eseguiti su diverse piattaforme con
       diversi team"
   blog:
     postsNum: 4
     active: true
     title: Idee
-    description: " Pensieri su design, web e altri interessi"
+    description: "Pensieri su design, web e altri interessi"
   contact:
     active: true
     title: Contatto

@@ -1,8 +1,15 @@
 ---
+import Base from '../layouts/Base.astro'
 // Data Fetching
-import {metaDataPosts} from '../lib/api.js';
-const posts = await Astro.glob('../../_data/content/posts/testmulti/*.md')
-const data = await metaDataPosts(posts);
+import {translationEngine} from '../lib/translationEngine';
+const posts = await Astro.glob('../../_data/content/pages/home.md')
+const postsData = await translationEngine(posts, "single_file");
 
-console.log(data[0].frontmatter)
+console.log(postsData)
 ---
+
+<Base>
+
+
+
+</Base>

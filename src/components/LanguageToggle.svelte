@@ -3,7 +3,7 @@
   export let postType;
   export let locale;
   export let translations;
-  const translationBasePath = path + postType + "/"
+  const translationBasePath = postType ? path + postType + "/" : path
 </script>
 
 {#if translations}

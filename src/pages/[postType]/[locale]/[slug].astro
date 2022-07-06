@@ -2,23 +2,23 @@
 import Base from '../../../layouts/Base.astro'
 
 // Data Fetching API
-import {metaDataPosts} from '../../../lib/api';
+import {translationEngine} from '../../../lib/translationEngine';
 
 export async function getStaticPaths() {
 
   const posts = await Astro.glob('../../../../_data/content/posts/testmulti/*.md')
-  const postsData = await metaDataPosts(posts);
+  const postsData = await translationEngine(posts, "multiple_files");
 
   return postsData.map((post) => {
     return {
       params: {
-        postType: post.frontmatter.postType,
-        locale: post.frontmatter.locale,
-        slug: post.frontmatter.localizedSlug
+        postType: post.postType,
+        locale: post.locale,
+        slug: post.slug
       },
       props: {
-        content: post,
-        translations: post.frontmatter.translations
+        content: post.body,
+        translations: post.translations
       }
     };
   });
@@ -26,14 +26,12 @@ export async function getStaticPaths() {
 
 const { postType, locale } = Astro.params;
 const { content, translations } = Astro.props;
-
-const Content = content.Content
 ---
 
 <Base postType={postType} locale={locale} translations={translations}>
 
   <div class="container mx-auto lg:py-40 px-6 space-y-6 dark:text-white">
-    <Content/>
+    <Fragment set:html={content} />
   </div>
 
 </Base>

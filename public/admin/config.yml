@@ -115,7 +115,7 @@ collections:
             fields:
             - {label: "Active", name: "active", widget: "boolean", i18n: duplicate, default: true}
             - {label: "Tagline", name: "tagline", widget: "string", i18n: true}
-            - {label: "Main Tagline", name: "mainTagline", widget: "markdown", i18n: true}
+            - {label: "Main Tagline", name: "mainTagline", widget: "string", i18n: true}
             - {label: "Description", name: "description", widget: "text", i18n: true}
             - name: Buttons
               label: Buttons
