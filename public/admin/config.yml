@@ -98,6 +98,9 @@ collections:
       # ---- Home
       - label: "Home"
         name: "home"
+        i18n:
+          structure: multiple_files
+          locales: [en, pt, it]
         file: '_data/content/pages/home'
         widget: "object"
         fields:
@@ -108,17 +111,17 @@ collections:
             widget: "object"
             collapsed: true
             fields:
-            - {label: "Active", name: "active", widget: "boolean", default: true}
-            - {label: "Tagline", name: "tagline", widget: "string"}
-            - {label: "Main Tagline", name: "mainTagline", widget: "markdown"}
-            - {label: "Description", name: "description", widget: "text"}
+            - {label: "Active", name: "active", widget: "boolean", i18n: duplicate, default: true}
+            - {label: "Tagline", name: "tagline", widget: "string", i18n: true}
+            - {label: "Main Tagline", name: "mainTagline", widget: "markdown", i18n: true}
+            - {label: "Description", name: "description", widget: "text", i18n: true}
             - name: Buttons
               label: Buttons
               label_singular: 'Button'
               widget: list
               fields:
-                - { label: 'Label', name: 'label', widget: 'string' }
-                - { label: 'Link', name: 'link', widget: 'string' }
+                - { label: 'Label', name: 'label', widget: 'string', i18n: true }
+                - { label: 'Link', name: 'link', widget: 'string', i18n: true }
                 - label: "Type"
                   name: "type"
                   widget: "select"
