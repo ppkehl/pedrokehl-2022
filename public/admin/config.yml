@@ -127,21 +127,24 @@ collections:
                 - label: "Type"
                   name: "type"
                   widget: "select"
+                  i18n: duplicate
                   options: ["Primary", "Secondary", "Tertiary", "Alert", "Danger"]      
 
           # --- About
           - label: "About"
             name: "about"
             widget: "object"
+            i18n: true
             collapsed: true
             fields:    
-              - {label: "Active", name: "active", widget: "boolean", default: true}
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: "string"}
-              - {label: "Text", name: "text", widget: "markdown"}  
+              - {label: "Active", name: "active", widget: "boolean", i18n: duplicate, default: true}
+              - {label: "Tagline", name: "tagline", widget: "string", i18n: true}
+              - {label: "Description", name: "description", widget: "string", i18n: true}
+              - {label: "Text", name: "text", widget: "markdown", i18n: true}  
               - label: "Image"
                 name: "image"
                 widget: "image"
+                i18n: duplicate
                 allow_multiple: false
                 media_library:
                   config:
@@ -151,33 +154,36 @@ collections:
           - label: "Projects"
             name: "projects"
             widget: "object"
+            i18n: true
             collapsed: true
             fields: 
-              - {label: "Active", name: "active", widget: "boolean", default: true}
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: "string"}
-              - {label: "Number of projects on the homepage", name: "postsNum", widget: "number", default: 3, min: 0, max: 12}
+              - {label: "Active", name: "active", widget: "boolean", i18n: true, default: true}
+              - {label: "Title", name: "title", widget: "string", i18n: true}
+              - {label: "Description", name: "description", i18n: true, widget: "string"}
+              - {label: "Number of projects on the homepage", name: "postsNum", widget: "number", i18n: duplicate, default: 3, min: 0, max: 12}
 
           # --- Blog
           - label: "Blog"
             name: "blog"
             widget: "object"
+            i18n: true
             collapsed: true
             fields: 
-              - {label: "Active", name: "active", widget: "boolean", default: true}
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: "string"}
-              - {label: "Number of posts on the homepage", name: "postsNum", widget: "number", default: 4, min: 0, max: 12}  
+              - {label: "Active", name: "active", widget: "boolean", i18n: true, default: true}
+              - {label: "Title", name: "title", widget: "string", i18n: true}
+              - {label: "Description", name: "description", i18n: true, widget: "string"}
+              - {label: "Number of projects on the homepage", name: "postsNum", widget: "number", i18n: duplicate, default: 3, min: 0, max: 12}
 
           # --- Contact
           - label: "Contact"
             name: "contact"
             widget: "object"
+            i18n: true
             collapsed: true
             fields: 
-              - {label: "Active", name: "active", widget: "boolean", default: true}
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: "string"} 
+              - {label: "Active", name: "active", widget: "boolean", i18n: true, default: true}
+              - {label: "Title", name: "title", widget: "string", i18n: true}
+              - {label: "Description", name: "description", i18n: true, widget: "string"} 
   
   # ----- HOME
   # - name: 'home'
