@@ -87,6 +87,18 @@ collections:
               - { label: 'Description', name: 'description', widget: 'markdown' }
 
 
+  # # ----- PAGES
+  # - name: 'testPages'
+  #   label: 'Teste Pages'
+  #   i18n:
+  #     structure: multiple_folders
+  #     locales: [en, pt, it]
+  #   # delete: true
+  #   editor:
+  #     preview: false
+  #   files:
+
+
   # ----- PAGES
   - name: 'pages'
     label: 'Pages'
@@ -102,7 +114,6 @@ collections:
       - label: "Home"
         name: "home"
         file: '_data/content/pages/home.md'
-        i18n: true
         widget: "object"
         fields:
 
@@ -110,7 +121,6 @@ collections:
           - label: "Hero"
             name: "hero"
             widget: "object"
-            i18n: true
             collapsed: true
             fields:
             - {label: "Active", name: "active", widget: "boolean", i18n: duplicate, default: true}
@@ -133,7 +143,6 @@ collections:
           - label: "About"
             name: "about"
             widget: "object"
-            i18n: true
             collapsed: true
             fields:    
               - {label: "Active", name: "active", widget: "boolean", default: true}
@@ -152,7 +161,6 @@ collections:
           - label: "Projects"
             name: "projects"
             widget: "object"
-            i18n: true
             collapsed: true
             fields: 
               - {label: "Active", name: "active", widget: "boolean", default: true}
