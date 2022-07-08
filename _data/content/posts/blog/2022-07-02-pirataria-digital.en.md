@@ -1,6 +1,6 @@
 ---
 postType: blog
-title: Pirataria Digital
+title: Digital Piracy
 date: 2022-07-02T15:36:36.521Z
 author: Pedro Kehl
 tags:
