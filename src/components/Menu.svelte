@@ -41,23 +41,6 @@
 </nav>
 
 <style lang="scss">
-  a {
-    > div:first-child {
-      padding-right: 35px;
-    }
-
-    &::before {
-      content: "";
-      width: 20px;
-      height: 20px;
-      background-image: url(../assets/arrow-top.svg);
-      background-repeat: no-repeat;
-      background-position: right top;
-      position: absolute;
-      right: 0;
-      top: 5px;
-    }
-  }
   //------------------------------------------------------------------------------------------
   // Mobile Menu Dynamic Switch Styling
   // Require Square Root Function

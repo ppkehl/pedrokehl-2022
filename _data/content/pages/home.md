@@ -14,7 +14,7 @@ en:
       Performant &
 
       Practical
-    Buttons:
+    buttons:
       - label: Contact Me
         link: "#contact"
         type: Primary
@@ -87,7 +87,7 @@ pt:
       Prática
     description: "Minha missão é criar experiências agradáveis, usando o melhor que
       a tecnologia pode oferecer "
-    Buttons:
+    buttons:
       - label: Fale comigo
         link: "#contact"
         type: Primary
@@ -151,7 +151,7 @@ it:
   postType: page
   hero:
     active: true
-    Buttons:
+    buttons:
       - label: Parla con me
         link: "#contact"
         type: Primary
@@ -162,7 +162,7 @@ it:
     mainTagline: |-
       Bella,
 
-      Veloca e
+      Veloce e
 
       Pratica
     description: La mia missione è creare esperienze web fluide, offrendo il meglio

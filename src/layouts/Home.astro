@@ -1,15 +1,217 @@
 ---
-import Base from '../layouts/Base.astro'
-// Data Fetching
-import {translationEngine} from '../lib/translationEngine';
-const posts = await Astro.glob('../../_data/content/pages/home.md')
-const postsData = await translationEngine(posts, "single_file");
+import { Debug } from 'astro/components';
 
-console.log(postsData)
+import ConditionalLoading from '../components/ConditionalLoading.svelte'
+import Title from '../components/Title.svelte'
+import Button from '../components/Button.svelte'
+import Blobs from '../components/Blobs.svelte'
+import ProjectPreview from '../layouts/ProjectPreview.astro'
+import {Markdown} from 'astro/components';
+import {translationEngine} from '../lib/translationEngine';
+
+// Get post from index.astro or [locale.astro]
+const { post } = Astro.props;
+
+// Data Fetching: List all Markdown projects in the repo.
+const projects = await Astro.glob('../../_data/content/posts/projects/*.md')
+const projectsData = await translationEngine({
+  posts: projects, 
+  structure: "multiple_files",
+  returnObj: 'grouped_posts'
+});
+projectsData.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+let selectedProjects = projectsData.slice(0, 3);
 ---
 
-<Base>
+<!-- <Debug {projectsData} /> -->
+
+<ConditionalLoading load={post.hero.active}>
+  <section class="container mx-auto px-6 py-32 flex items-center min-h-screen relative">
+
+    <div class="w-full md:w-8/12 lg:w-6/12 space-y-8 z-10">
+
+      <div>
+        <h3 class="text-2xl lg:text-3xl dark:text-white">
+          {post.hero.tagline}
+        </h3>
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-semibold dark:text-white">
+          <Markdown content={post.hero.mainTagline}/>
+        </h2>
+      </div>
+
+      <div class="text-xl lg:text-2xl dark:text-white">
+        {post.hero.description}
+      </div>
+
+      <div class="lg:flex lg:space-x-6 space-y-6 lg:space-y-0">
+        {post.hero.buttons.map((button) => <Button type={button.type} link={button.link}>{button.label}</Button>)}
+      </div>
+      
+    </div>
+
+    <div class="w-full h-full right-0 md:w-8/12 lg:w-6/12 absolute">
+
+      <Blobs/>
+
+    </div>
+
+  </section>
+</ConditionalLoading>
+
+<ConditionalLoading load={post.about.active}>
+  <section class="py-32">
+
+    <div class="container mx-auto px-6">
+
+      <div class="w-full space-y-8 z-10">
+
+        <Title>
+          <span slot="title">
+            {post.about.tagline}
+          </span>
+          <span slot="subtitle">
+            {post.about.description}
+          </span>
+        </Title>
+
+        <div class="flex flex-wrap">
+
+          <div class="w-full lg:w-4/12 space-y-8 z-10 relative mb-8">
+
+            <img class="relative object-cover w-full aspect-square overflow-hidden rounded-full z-10 dark:brightness-100" src={post.about.image} alt="My picture">
+
+            <Blobs/>
+
+          </div>
+
+          <div class="hidden lg:block lg:w-1/12 relative"></div>
+
+          <div class="w-full lg:w-6/12 space-y-4 relative dark:text-white">
+            <Markdown content={post.about.text}/>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+</ConditionalLoading>
 
 
+<ConditionalLoading load={post.projects.active}>
 
-</Base>
+  <section class="py-32 relative">
+
+    <div class="absolute w-5/12 h-1/3 right-0 bottom-1/3">
+      <Blobs/>
+    </div>
+    
+    <div class="container mx-auto px-6 relative z-10">
+
+      <div class="w-full space-y-8 z-10">
+
+        <Title>
+          <span slot="title">
+            {post.projects.title}
+          </span>
+          <span slot="subtitle">
+            {post.projects.description}
+          </span>
+        </Title>
+
+      </div>
+
+    </div>
+
+    <div class="container mx-auto px-6 flex gap-8 relative z-10">
+        {selectedProjects.map((project) => <ProjectPreview project={project}/>)}
+    </div>
+
+  </section>
+</ConditionalLoading>
+
+<ConditionalLoading load={post.blog.active}>
+  <section class="py-32 relative">
+
+    <div class="blobs absolute w-5/12 h-1/3 left-0 bottom-1/3">
+      <Blobs/>
+    </div> 
+
+    <div class="container mx-auto px-6 relative z-10">
+
+      <div class="w-full space-y-8 z-10">
+
+        <Title>
+          <span slot="title">
+            {post.blog.title}
+          </span>
+          <span slot="subtitle">
+            {post.blog.description}
+          </span>
+        </Title>
+
+      </div>
+
+    </div>
+
+    <div class="container mx-auto px-6 flex gap-8 relative z-10">
+
+      <!-- {firstPosts.map((post) => <BlogPreview post={post} />)} -->
+
+    </div>
+
+  </section>
+</ConditionalLoading>
+
+<ConditionalLoading load={post.contact.active}>
+  <section class="py-32 relative">
+
+    <div class="absolute w-5/12 h-1/3 right-0 bottom-1/3">
+      <Blobs />
+    </div> 
+
+    <div class="container mx-auto px-6 relative z-10">
+
+      <div class="w-full space-y-8 z-10">
+
+        <Title>
+          <span slot="title">
+            {post.contact.title}
+          </span>
+          <span slot="subtitle">
+            {post.contact.description}
+          </span>
+        </Title>
+
+      </div>
+
+    </div>
+
+    <div class="container mx-auto px-6 flex gap-8 relative z-10">
+
+      <form name="contact" method="POST" data-netlify="true">
+        <p>
+          <label>Your Name: <input type="text" name="name" /></label>
+        </p>
+        <p>
+          <label>Your Email: <input type="email" name="email" /></label>
+        </p>
+        <p>
+          <label>Your Role: <select name="role[]" multiple>
+            <option value="leader">Leader</option>
+            <option value="follower">Follower</option>
+          </select></label>
+        </p>
+        <p>
+          <label>Message: <textarea name="message"></textarea></label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
+
+    </div>
+
+  </section>
+</ConditionalLoading>

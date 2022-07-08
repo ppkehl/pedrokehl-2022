@@ -4,8 +4,9 @@ backend:
   # branch: master
   branch: dev
 
-publish_mode: editorial_workflow
 local_backend: true
+
+publish_mode: editorial_workflow
 
 media_library:
   name: cloudinary
@@ -117,7 +118,7 @@ collections:
             - {label: "Tagline", name: "tagline", widget: "string", i18n: true}
             - {label: "Main Tagline", name: "mainTagline", widget: "string", i18n: true}
             - {label: "Description", name: "description", widget: "text", i18n: true}
-            - name: Buttons
+            - name: buttons
               label: Buttons
               label_singular: 'Button'
               widget: list
@@ -186,86 +187,6 @@ collections:
               - {label: "Title", name: "title", widget: "string", i18n: true}
               - {label: "Description", name: "description", i18n: true, widget: "string"} 
   
-  # ----- HOME
-  # - name: 'home'
-  #   label: 'Home'
-  #   delete: false
-  #   editor:
-  #     preview: false
-  #   files:
-
-  #     # ---- HERO
-  #     - name: 'hero'
-  #       label: 'Hero'
-  #       file: 'src/pages/singular/hero.md'
-  #       description: 'Hero section settings'
-  #       fields:
-  #         - {label: "Active", name: "active", widget: "boolean", default: true}
-  #         - {label: "Tagline", name: "tagline", widget: "string"}
-  #         - {label: "Main Tagline", name: "body", widget: "markdown"}
-  #         - {label: "Description", name: "description", widget: "text"}
-  #         - name: buttons
-  #           label: Buttons
-  #           label_singular: 'Button'
-  #           widget: list
-  #           fields:
-  #             - { label: 'Label', name: 'label', widget: 'string' }
-  #             - { label: 'Link', name: 'link', widget: 'string' }
-  #             - label: "Type"
-  #               name: "type"
-  #               widget: "select"
-  #               options: ["Primary", "Secondary", "Tertiary", "Alert", "Danger"]
-
-  #     # ---- ABOUT
-  #     - name: 'about'
-  #       label: 'About'
-  #       file: 'src/pages/singular/about.md'
-  #       description: 'About section settings'
-  #       fields: 
-  #       - {label: "Active", name: "active", widget: "boolean", default: true}
-  #       - {label: "Title", name: "title", widget: "string"}
-  #       - {label: "Description", name: "description", widget: "string"}
-  #       - {label: "Body", name: "body", widget: "markdown"}  
-  #       - label: "Image"
-  #         name: "image"
-  #         widget: "image"
-  #         allow_multiple: false
-  #         media_library:
-  #           config:
-  #             multiple: false
-
-  #     # ---- PROJECTS
-  #     - name: 'projects'
-  #       label: 'Projects'
-  #       file: 'src/pages/singular/projects.md'
-  #       description: 'Projects section settings'
-  #       fields: 
-  #       - {label: "Active", name: "active", widget: "boolean", default: true}
-  #       - {label: "Title", name: "title", widget: "string"}
-  #       - {label: "Description", name: "description", widget: "string"}
-  #       - {label: "Number of projects on the homepage", name: "postsNum", widget: "number", default: 3, min: 0, max: 12}
-
-  #     # ---- BLOG
-  #     - name: 'blog'
-  #       label: 'Blog'
-  #       file: 'src/pages/singular/blog.md'
-  #       description: 'Blog section settings'
-  #       fields: 
-  #       - {label: "Active", name: "active", widget: "boolean", default: true}
-  #       - {label: "Title", name: "title", widget: "string"}
-  #       - {label: "Description", name: "description", widget: "string"} 
-  #       - {label: "Number of posts on the homepage", name: "postsNum", widget: "number", default: 4, min: 0, max: 12} 
-
-  #     # ---- CONTACT
-  #     - name: 'contact'
-  #       label: 'Contact'
-  #       file: 'src/pages/singular/contact.md'
-  #       description: 'Contact section settings'
-  #       fields: 
-  #       - {label: "Active", name: "active", widget: "boolean", default: true}
-  #       - {label: "Title", name: "title", widget: "string"}
-  #       - {label: "Description", name: "description", widget: "string"}
-
   # ----- PROJECTS
   - name: "projects"
     label: "Projects"
@@ -278,6 +199,8 @@ collections:
     fields:
       # Point to Astro layout
       - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/ProjectSingle.astro"}
+      # Define post type
+      - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "projects"}
       # Title
       - {label: "Title", name: "title", widget: "string"}
       # Date
@@ -335,6 +258,8 @@ collections:
     fields:
       # Point to Astro layout
       - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogSingle.astro"}
+      # Define post type
+      - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "projects"}
       # Title
       - {label: "Title", name: "title", widget: "string"}
       # Date

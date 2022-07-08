@@ -1,18 +1,20 @@
 ---
 import Base from '../layouts/Base.astro'
+import Home from '../layouts/Home.astro'
 
 // Data Fetching API
 import {translationEngine} from '../lib/translationEngine';
 
 export async function getStaticPaths() {
-
   const posts = await Astro.glob('../../_data/content/pages/home.md')
-  const postsData = await translationEngine(posts, "single_file");
-
+  const postsData = await translationEngine({
+    "posts": posts, 
+    "structure": "single_file"
+  });
   return postsData.map((post) => {
     return {
       params: {
-        locale: post.locale
+        locale: post.locale,
       },
       props: {
         post
@@ -20,17 +22,9 @@ export async function getStaticPaths() {
     };
   });
 }
-
-const { postType, locale } = Astro.params;
 const { post } = Astro.props;
-
 ---
 
-<Base postType={postType} locale={locale} translations={post.translations}>
-
-  <div class="container mx-auto lg:py-40 px-6 space-y-6 dark:text-white">
-    <Fragment set:html={post.about.text} />
-    <!-- <Content /> -->
-  </div>
-
+<Base translationsURL={post.translations}>
+  <Home post={post} />
 </Base>

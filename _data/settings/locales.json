@@ -1,16 +1,17 @@
 {
-  "locales": [
-    {
-      "language": "English",
-      "locale": "en"
-    },
-    {
-      "language": "Português",
-      "locale": "pt"
-    },
-    {
-      "language": "Italiano",
-      "locale": "it"
-    }
-  ]
+  "en": {
+    "en": "English",
+    "pt": "Portuguese",
+    "it": "Italian"
+  },
+  "pt": {
+    "en": "Inglês",
+    "pt": "Português",
+    "it": "Italiano"
+  },
+  "it": {
+    "en": "Inglese",
+    "pt": "Portoguese",
+    "it": "Italiano"
+  }
 }

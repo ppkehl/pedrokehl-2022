@@ -1,18 +1,33 @@
-<script>
-  export let path;
-  export let postType;
-  export let locale;
-  export let translations;
-  const translationBasePath = postType ? path + postType + "/" : path
+<script lang="ts">
+  export let locale:string
+  export let translationsURL:string
+  export let path:string
+  export let siteHome:string
+  
+  import locales from '../../_data/settings/locales.json'
+
+  // Filter URL removing common url between path (current url: http://localhost:3000/test/en/article-name/) 
+  // and siteHome (home url: http://localhost:3000/). Result (test/en/article-name/)
+  let filteredPath = path.replace(siteHome, '')
+  // Filter URL removing translation path. Result (test/en/)
+  let filteredTranslation = filteredPath.replace(translationsURL[locale] + '/', '')
+  // Filter URL removing url locale. Result (test/)
+  let filteredLocale = filteredTranslation.replace(locale + '/', '')
+  // Return absPath to post http://localhost:3000/test/
+  let absPath = siteHome + filteredLocale
 </script>
 
-{#if translations}
+{#if Object.keys(locales).length}
   <div class="relative z-10 dark:text-white mr-4"> 
     <ul class="flex space-x-2">
-      {#each Object.entries(translations) as [language, path]}
-        {#if language!=locale}
+      {#each Object.entries(locales[locale]) as [languageCode]}
+        {#if locale != languageCode}
           <li>
-            <a href="{translationBasePath  + language + "/" + path}">{language}</a>
+            {#if filteredPath == '' || filteredLocale == ''}
+              <a href="{absPath + languageCode}">{languageCode}</a>
+            {:else}
+              <a href="{absPath + languageCode + '/' + translationsURL[languageCode]}">{languageCode}</a>
+            {/if}
           </li>
         {/if}
       {/each}

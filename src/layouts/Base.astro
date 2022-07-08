@@ -1,8 +1,12 @@
 ---
-import Head from './Head.astro';
-import Header from './Header.astro'
-import ColorSchemes from '../components/ColorSchemes.astro'
+import Head from 'astro-head';
+import Menu from "../components/Menu.svelte"
+import Logo from "../components/Logo.svelte"
 import Footer from './Footer.astro'
+import ColorSchemes from '../components/ColorSchemes.astro'
+import ThemeToggle from "../components/ThemeToggle.svelte"
+import LanguageToggle from "../components/LanguageToggle.svelte"
+import { getLanguageFromURL } from '../lib/translationEngine'
 
 const title = 'Pedro Kehl | Web designer';
 const description = 'Short description of the page.';
@@ -11,8 +15,10 @@ const analytics = {
   id: 'XXXXXX',
 };
 
-const { postType, locale } = Astro.params;
-const { translations } = Astro.props;
+const siteHome = Astro.site;
+const path = Astro.canonicalURL.href;
+const locale = getLanguageFromURL(path);
+const { translationsURL } = Astro.props;
 ---
 
 <html lang={locale}>
@@ -31,25 +37,50 @@ const { translations } = Astro.props;
 
     <main class="overflow-hidden">
 
-      <Header postType={postType} locale={locale} translations={translations} />
+      <header class="z-50 fixed w-full top-0 before:content[''] before:w-full before:h-16 before:lg:h-24 before:absolute before:bg-gray-200 before:dark:bg-gray-900 before:backdrop-blur-xl before:dark:backdrop-blur-xl before:bg-opacity-50 before:dark:bg-opacity-50">
+        <div class="container mx-auto px-6 h-16 lg:h-24">
+          <div class="h-full flex flex-wrap lg:flex-nowrap justify-between items-center">
+      
+            <a href={siteHome}>
+              <h1 id="logo" class="z-50 w-32 lg:w-40 h-16 lg:h-20 dark:invert relative">
+      
+                  <Logo />
+      
+                <span class="sr-only">Pedro Kehl - Webdesigner</span>
+              </h1>
+            </a>
+      
+            <div class="flex">
+      
+              <LanguageToggle translationsURL={translationsURL} locale={locale} path={path} siteHome={siteHome}/>
+      
+              <ThemeToggle client:load />
+      
+            </div>
+      
+            <Menu />
+      
+          </div>
+        </div>
+      </header>
 
       <slot />
 
       <Footer />
 
-      <script>
-        if (window.netlifyIdentity) {
-          window.netlifyIdentity.on("init", user => {
-            if (!user) {
-              window.netlifyIdentity.on("login", () => {
-                document.location.href = "/admin/";
-              });
-            }
-          });
-        }
-      </script>
-
     </main>
+
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
 
   </body>
 
