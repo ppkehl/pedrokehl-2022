@@ -34,59 +34,114 @@ editor:
   preview: false
 
 collections:
-  # ----- SETTINGS
-  - name: 'settings'
-    label: 'Settings'
-    delete: false
-    editor:
-      preview: false
-    files:
 
-      # ---- General settings
-      - name: 'general'
-        label: 'Site Settings'
-        file: '_data/settings/generalSettings.json'
-        description: 'General Site Settings'
-        fields:
-          - { label: 'Global title', name: 'site_title', widget: 'string' }
-
-      # ---- Color Schemes
-      - name: 'colorSchemes'
-        label: 'Color Schemes'
-        file: '_data/settings/colorSchemes.json'
-        description: 'Color Schemes'
-        fields:
-          - name: colorSchemes
-            label: Color Schemes
-            label_singular: 'Color Scheme'
-            widget: list
-            fields:
-              - { label: 'Scheme Name', name: 'schemeName', widget: 'string'}
-              - label: "Colors"
-                name: "colors"
-                widget: "object"
-                fields:
-                  - { label: 'Primary', name: 'primary', widget: 'color', allowInput: true }
-                  - { label: 'Secondary', name: 'secondary', widget: 'color', allowInput: true }
-                  - { label: 'Tertiary', name: 'tertiary', widget: 'color', allowInput: true }
-                  - { label: 'Alert', name: 'alert', widget: 'color', allowInput: true }
-                  - { label: 'Danger', name: 'danger', widget: 'color', allowInput: true }            
-              
-
-      # ----- AUTHORS
-      - name: 'authors'
-        label: 'Authors'
-        file: '_data/settings/authors.json'
-        description: 'Author descriptions'
-        fields:
-          - name: authors
-            label: Authors
-            label_singular: 'Author'
-            widget: list
-            fields:
-              - { label: 'Name', name: 'name', widget: 'string'}
-              - { label: 'Description', name: 'description', widget: 'markdown' }
-
+  # ----- POSTS: PROJECTS
+  # This is a "post" type collection.  
+  - name: "projects"
+    label: "Projects"
+    i18n:
+      structure: multiple_files
+      locales: [en, pt, it]
+    folder: '_data/content/posts/projects'
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
+    fields:
+      # Point to Astro layout
+      # - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/ProjectSingle.astro"}
+      # Define post type
+      - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "projects"}
+      # Title
+      - {label: "Title", name: "title", widget: "string", i18n: true}
+      # Date
+      - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate}
+      # Tags
+      - label: "Tags"
+        name: "tags"
+        widget: "select"
+        i18n: duplicate
+        multiple: true
+        allow_add: true
+        min: 1
+        max: 12
+        options: ["Design", "UX", "UI", "Frontend", "Dev", "Migration", "Visual Identity"]
+      # Client  
+      - {label: "Client", name: "client", widget: "string", i18n: duplicate}
+      # URL
+      - {label: "URL", name: "url", widget: "string", i18n: duplicate}
+      # Tech Stack
+      - label: "Tech stack"
+        name: "techStack"
+        widget: "select"
+        i18n: duplicate
+        multiple: true
+        allow_add: true
+        min: 1
+        max: 12
+        options: ["WordPress", "Craft CMS", "Astro", "Sass", "Tailwind", "Netlify", "Svelte", "React", "Preact", "Jquery", "GreenSock", "JavaScript"]
+      # Description  
+      - {label: "Description", name: "body", widget: "markdown", i18n: true} 
+      # Featured Image  
+      - label: "Featured Image"
+        name: "featuredImage"
+        widget: "image"
+        i18n: duplicate
+        allow_multiple: false
+        media_library:
+          config:
+            multiple: false   
+      # Images
+      - label: "Project Images"
+        name: "projectImages"
+        widget: "image"
+        i18n: duplicate
+        allow_multiple: true
+        media_library:
+          config:
+            multiple: true
+  
+  # ----- POSTS: BLOG
+  # This is a "post" type collection. 
+  - name: "blog"
+    label: "Blog"
+    i18n:
+      structure: multiple_files
+      locales: [en, pt, it]
+    folder: '_data/content/posts/blog'
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
+    fields:
+      # Point to Astro layout
+      # - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogSingle.astro"}
+      # Define post type
+      - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "blog"}
+      # Title
+      - {label: "Title", name: "title", widget: "string", i18n: true}
+      # Date
+      - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate}
+      # Author
+      - {label: "Author", name: "author", widget: "string", default: "Pedro Kehl", i18n: duplicate}
+      # Tags
+      - label: "Tags"
+        name: "tags"
+        widget: "select"
+        i18n: duplicate
+        multiple: true
+        min: 1
+        max: 12
+        options: ["Design", "Visual Arts", "Random Thoughts", "Dev"]
+      # Description  
+      - {label: "Description", name: "description", widget: "text", i18n: true}
+      # Body
+      - {label: "Post", name: "body", widget: "markdown", i18n: true}  
+      # Featured Image  
+      - label: "Featured Image"
+        name: "featuredImage"
+        widget: "image"
+        i18n: duplicate
+        allow_multiple: false
+        media_library:
+          config:
+            multiple: false  
 
   # ----- PAGES
   - name: 'pages'
@@ -116,7 +171,7 @@ collections:
             fields:
             - {label: "Active", name: "active", widget: "boolean", i18n: duplicate, default: true}
             - {label: "Tagline", name: "tagline", widget: "string", i18n: true}
-            - {label: "Main Tagline", name: "mainTagline", widget: "string", i18n: true}
+            - {label: "Main Tagline", name: "mainTagline", widget: "text", i18n: true}
             - {label: "Description", name: "description", widget: "text", i18n: true}
             - name: buttons
               label: Buttons
@@ -186,130 +241,55 @@ collections:
               - {label: "Active", name: "active", widget: "boolean", i18n: true, default: true}
               - {label: "Title", name: "title", widget: "string", i18n: true}
               - {label: "Description", name: "description", i18n: true, widget: "string"} 
-  
-  # ----- PROJECTS
-  - name: "projects"
-    label: "Projects"
-    i18n:
-      structure: multiple_files
-      locales: [en, pt, it]
-    folder: '_data/content/posts/projects'
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
-    fields:
-      # Point to Astro layout
-      # - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/ProjectSingle.astro"}
-      # Define post type
-      - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "projects"}
-      # Title
-      - {label: "Title", name: "title", widget: "string", i18n: true}
-      # Date
-      - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate}
-      # Tags
-      - label: "Tags"
-        name: "tags"
-        widget: "select"
-        i18n: duplicate
-        multiple: true
-        allow_add: true
-        min: 1
-        max: 12
-        options: ["Design", "UX", "UI", "Frontend", "Dev", "Migration", "Visual Identity"]
-      # Client  
-      - {label: "Client", name: "client", widget: "string", i18n: duplicate}
-      # URL
-      - {label: "URL", name: "url", widget: "string", i18n: duplicate}
-      # Tech Stack
-      - label: "Tech stack"
-        name: "techStack"
-        widget: "select"
-        i18n: duplicate
-        multiple: true
-        allow_add: true
-        min: 1
-        max: 12
-        options: ["WordPress", "Craft CMS", "Astro", "Sass", "Tailwind", "Netlify", "Svelte", "React", "Preact", "Jquery", "GreenSock", "JavaScript"]
-      # Description  
-      - {label: "Description", name: "body", widget: "markdown", i18n: true} 
-      # Featured Image  
-      - label: "Featured Image"
-        name: "featuredImage"
-        widget: "image"
-        i18n: duplicate
-        allow_multiple: false
-        media_library:
-          config:
-            multiple: false   
-      # Images
-      - label: "Project Images"
-        name: "projectImages"
-        widget: "image"
-        i18n: duplicate
-        allow_multiple: true
-        media_library:
-          config:
-            multiple: true
 
-  # ----- BLOG
-  - name: "blog"
-    label: "Blog"
-    i18n:
-      structure: multiple_files
-      locales: [en, pt, it]
-    folder: '_data/content/posts/blog'
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
-    fields:
-      # Point to Astro layout
-      # - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogSingle.astro"}
-      # Define post type
-      - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "blog"}
-      # Title
-      - {label: "Title", name: "title", widget: "string", i18n: true}
-      # Date
-      - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate}
-      # Author
-      - {label: "Author", name: "author", widget: "string", default: "Pedro Kehl", i18n: duplicate}
-      # Tags
-      - label: "Tags"
-        name: "tags"
-        widget: "select"
-        i18n: duplicate
-        multiple: true
-        min: 1
-        max: 12
-        options: ["Design", "Visual Arts", "Random Thoughts", "Dev"]
-      # Description  
-      - {label: "Description", name: "description", widget: "text", i18n: true}
-      # Body
-      - {label: "Post", name: "body", widget: "markdown", i18n: true}  
-      # Featured Image  
-      - label: "Featured Image"
-        name: "featuredImage"
-        widget: "image"
-        i18n: duplicate
-        allow_multiple: false
-        media_library:
-          config:
-            multiple: false  
+  # ----- SETTINGS
+  - name: 'settings'
+    label: 'Settings'
+    delete: false
+    editor:
+      preview: false
+    files:
 
-  # - name: "testmulti"
-  #   label: "Test Multi"
-  #   i18n:
-  #     structure: multiple_files
-  #     locales: [en, pt, it]
-  #   folder: 'src/data/content/posts/testmulti'
-  #   create: true
-  #   slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
-  #   fields:
-  #     # Point to Astro layout
-  #     - {label: "Layout", name: "layout", widget: "hidden", i18n: duplicate, default: "../../../layouts/BlogSingle.astro"}
-  #     # Define post type
-  #     - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "test"}
-  #     # Title
-  #     - {label: "Title", name: "title", widget: "string", i18n: true }
-  #     # Date
-  #     - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate }   
-  #     # Body
-  #     - {label: "Post", name: "body", widget: "markdown", i18n: true }
+      # ---- General settings
+      - name: 'general'
+        label: 'Site Settings'
+        file: '_data/settings/generalSettings.json'
+        description: 'General Site Settings'
+        fields:
+          - { label: 'Global title', name: 'site_title', widget: 'string' }
 
+      # ---- Color Schemes
+      - name: 'colorSchemes'
+        label: 'Color Schemes'
+        file: '_data/settings/colorSchemes.json'
+        description: 'Color Schemes'
+        fields:
+          - name: colorSchemes
+            label: Color Schemes
+            label_singular: 'Color Scheme'
+            widget: list
+            fields:
+              - { label: 'Scheme Name', name: 'schemeName', widget: 'string'}
+              - label: "Colors"
+                name: "colors"
+                widget: "object"
+                fields:
+                  - { label: 'Primary', name: 'primary', widget: 'color', allowInput: true }
+                  - { label: 'Secondary', name: 'secondary', widget: 'color', allowInput: true }
+                  - { label: 'Tertiary', name: 'tertiary', widget: 'color', allowInput: true }
+                  - { label: 'Alert', name: 'alert', widget: 'color', allowInput: true }
+                  - { label: 'Danger', name: 'danger', widget: 'color', allowInput: true }
+
+      # ----- AUTHORS
+      - name: 'authors'
+        label: 'Authors'
+        file: '_data/settings/authors.json'
+        description: 'Author descriptions'
+        fields:
+          - name: authors
+            label: Authors
+            label_singular: 'Author'
+            widget: list
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string'}
+              - { label: 'Description', name: 'description', widget: 'markdown' }

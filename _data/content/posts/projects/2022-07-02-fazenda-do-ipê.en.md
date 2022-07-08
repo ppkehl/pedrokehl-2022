@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ProjectSingle.astro
 postType: projects
 title: Fazenda do Ipê
 date: 2022-07-02T14:57:26.314Z
