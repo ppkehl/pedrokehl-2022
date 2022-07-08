@@ -1,0 +1,24 @@
+{
+  "translations'": [
+    {
+      "english": "About",
+      "portuguese": "Sobre",
+      "italian": "Su di me"
+    },
+    {
+      "english": "Projects",
+      "portuguese": "Projetos",
+      "italian": "Progetti"
+    },
+    {
+      "english": "Ideas",
+      "portuguese": "Ideias",
+      "italian": "Idee"
+    },
+    {
+      "english": "Contact",
+      "portuguese": "Contato",
+      "italian": "Contatto"
+    }
+  ]
+}
