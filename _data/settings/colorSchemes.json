@@ -39,6 +39,26 @@
         "alert": "#f7a24e",
         "danger": "#f65454"
       }
+    },
+    {
+      "schemeName": "Dora",
+      "colors": {
+        "primary": "#b81600",
+        "secondary": "#1038e2",
+        "tertiary": "#960cd5",
+        "alert": "#ff7346",
+        "danger": "#f23535"
+      }
+    },
+    {
+      "schemeName": "Helena",
+      "colors": {
+        "primary": "#ffd100",
+        "secondary": "#0031ff",
+        "tertiary": "#00b134",
+        "alert": "#e17900",
+        "danger": "#ff3535"
+      }
     }
   ]
 }
