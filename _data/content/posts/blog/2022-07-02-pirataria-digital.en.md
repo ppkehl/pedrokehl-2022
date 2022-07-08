@@ -11,8 +11,6 @@ description: More than just a discussion about copyright, digital piracy has to
   structure of the internet.
 featuredImage: https://res.cloudinary.com/ppkehl/image/upload/v1656776422/pirate_pvkgrv.jpg
 ---
-![teste](https://res.cloudinary.com/ppkehl/image/upload/v1656686008/1-nunca_usq9w7.jpg "teste")
-
 Some time ago I followed a discussion on digital piracy via Twitter. It started like this:
 
 > Doing some research here, it seems that the big TABU THEME of the Brazilian technology press is to question the “piracy is ok and inevitable”
@@ -20,6 +18,14 @@ Some time ago I followed a discussion on digital piracy via Twitter. It started 
 > — Pedro Burgos (@Burgos) [October 30, 2013](https://twitter.com/Burgos/statuses/395622915578011648)
 
 And it went on for an infinity of tweets, discussing the validity of the argument. Pedro Burgos' post made me reconsider the issue of piracy of digital content, a topic that has lasted for decades. The finding seemed to me clearly valid – referring to the general tone of the publications – although I consider it biased in terms of locating the issue in the national media. I've read several articles on sites like the North Americans Gizmodo and Lifehacker showing tutorials on how to download and catalog music, movies and series, that is, instead of merely discussing the topic of piracy in a theoretical scope, it shows how to commit a misdemeanor (because yes, regardless of the philosophical argument, piracy is a crime).
+
+
+
+```typescript
+<Head {title} {description} {analytics} />
+
+<ColorSchemes />
+```
 
 ### HOW WE GET (OR I GET) HERE
 
