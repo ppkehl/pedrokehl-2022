@@ -262,10 +262,10 @@ collections:
 
       - name: 'translations'
         label: 'Site translations'
-        file: '_data/settings/generaltranslations.json'
+        file: '_data/settings/translations.json'
         description: 'General site translations'
         fields:
-          - name: translations'
+          - name: translations
             label: Translations
             label_singular: 'Translation'
             widget: list

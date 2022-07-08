@@ -1,9 +1,10 @@
 ---
 const { project } = Astro.props;
+const projectURL = '/' + project[0].postType + '/' + project[0].locale + '/' + project[0].translations[project[0].locale]
 ---
 
 <div class="w-full lg:w-4/12 mb-8 dark:text-white">
-  <a href="" class="block space-y-5">
+  <a href={projectURL} class="block space-y-5">
     <div class="w-full aspect-video bg-slate-300">
       <img class="object-cover w-full h-full" src={project[0]?.featuredImage} alt="">
     </div>
