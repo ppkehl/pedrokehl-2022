@@ -11,6 +11,8 @@ description: Mais do que uma discussão apenas sobre direitos autorais, a
   e produção artística e a própria estrutura da internet.
 featuredImage: https://res.cloudinary.com/ppkehl/image/upload/v1656776422/pirate_pvkgrv.jpg
 ---
+![teste](https://res.cloudinary.com/ppkehl/image/upload/v1656686008/1-nunca_usq9w7.jpg "teste")
+
 Tempos atrás acompanhei via Twitter uma discussão sobre pirataria digital. Ela começou assim:
 
 > Fazendo uma pesquisa aqui, parece que o grande TEMA TABU da imprensa de tecnologia do Brasil é questionar o “pirataria é ok e inevitável”
@@ -18,8 +20,6 @@ Tempos atrás acompanhei via Twitter uma discussão sobre pirataria digital. Ela
 > — Pedro Burgos (@Burgos) [October 30, 2013](https://twitter.com/Burgos/statuses/395622915578011648)
 
 E se estendeu por uma infinidade de tuites, discutindo a validade da argumentação. O post de Pedro Burgos me fez voltar a considerar a questão da pirataria de conteúdo digital, um tema que já perdura por décadas. A constatação para mim pareceu claramente válida – se referindo ao tom geral das publicações – apesar de a considerar parcial no que diz respeito a localizar a questão na mídia nacional. Já li diversos artigos em sites como os norte-americanos Gizmodo e Lifehacker mostrando tutoriais sobre como baixar e catalogar músicas, filmes e séries, ou seja, ao invés de meramente discutir o tema da pirataria em âmbito teórico, mostra como cometer a contravenção (porque sim, independentemente da argumentação filosófica, pirataria é um crime).
-
-
 
 ### COMO CHEGAMOS (OU EU CHEGUEI) AQUI
 
@@ -45,8 +45,6 @@ A revolução do compartilhamento na internet tem outras vertentes que a afastam
 
 Lógico que a indústria teve uma reação violenta frente às novas ameaças aos direitos autorais por eles representados. Softwares (como o Napster), sites de download direto (como o Megaupload) e de torrents (como o Isohunt)  são frequentemente derrubados por ordens judiciais.
 
-
-
 ### WHAC-A-MOLE
 
 A indústria dos produtores demorou a perceber que caminhava para um novo universo de compartilhamento aparentemente sem volta a curto ou médio prazo. Gigantes mudam de direção mais lentamente. A Microsoft precisou de um choque para perceber o potencial da internet e investir em seu Internet Explorer. Grandes gravadoras resistiram o quanto puderam para perceber a necessidade de readaptar seus modelos de negócio. Indústrias inteiras e outrora poderosas como a Blockbuster não perceberam que seu modelo ruía sob um novo paradigma tecnológico. A lógica estrutural da internet impedia ações concretas para coibir a pirataria. Derrubar um programa como o Napster fazia brotar 5 novos. Sites como o Piratebay, mesmo incessantemente caçados sempre acabam conseguindo se reestabelecer sob outra jurisdição mais frouxa. É uma corrida de gato e rato quase patética. O rato não só quase invariavelmente escapa como se reproduz com velocidade espantosa.
@@ -64,8 +62,6 @@ O que me interessa mais sobre a questão da pirataria não é necessariamente a 
 * Por vezes o material pirata é superior ao original. Sem apresentar as restrições de DRM denunciadas por projetos como o [Defective by Design ](http://www.defectivebydesign.org/)a cópia torna possível reprodução  em uma maior variedade de dispositivos.
 * As complexidades legais do processo de licenciamento em diferentes territórios ou escolhas dos produtores fazem com que muitas vezes conteúdos se tornem indisponíveis, [mesmo quando o usuário esta disposto a pagar por ele](http://theoatmeal.com/comics/game_of_thrones);
 * “Grátis”.
-
-
 
 ### UMA ESTRANHA BARGANHA
 
@@ -86,8 +82,6 @@ O próprio criador,  Vince Gilligan,  identificou a [importancia da pirataria
 A questão que coloco é que nos dias de hoje essa última premissa é inconsistente. Não haveria, de saida, forma das pessoas baixarem legalmente a série, especialmente a última temporada. Não há nenhum canal de distribuição universal de conteúdo que abarque o público compreendido pelos downloads ilegais, mesmo que as pessoas que baixaram ilegalmente a quisessem baixar legalmente.  Breaking Bad em especial foi tremendamente promovida pelo sucesso que fez no Netflix, a mais competente plataforma (legal) de distribuição de conteúdo audio-visual.
 
 O “piratocasting” é um modelo, ainda que indesejado, de promoção cultural digital. É o subproduto de um descompasso sensível entre a industria cultural tradicional e a  nova e poderosa revolução digital.
-
-
 
 ### DESCOMPASSO TEMPORÁRIO?
 
