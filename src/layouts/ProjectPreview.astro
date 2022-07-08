@@ -1,22 +1,14 @@
 ---
-import { Debug } from 'astro/components';
-
-import { getLanguageFromURL } from '../lib/translationEngine'
-
 const { project } = Astro.props;
-const locale = getLanguageFromURL(Astro.canonicalURL.href);
-const localizedProject = project.filter(localizedProject => (localizedProject.locale == locale));
 ---
 
 <div class="w-full lg:w-4/12 mb-8 dark:text-white">
-
   <a href="" class="block space-y-5">
     <div class="w-full aspect-video bg-slate-300">
-      <img class="object-cover w-full h-full" src={localizedProject[0]?.featuredImage} alt="">
+      <img class="object-cover w-full h-full" src={project[0]?.featuredImage} alt="">
     </div>
     <h4 class="text-2xl font-semibold">
-      {localizedProject[0]?.title}
+      {project[0]?.title}
     </h4>
   </a>
-
 </div>

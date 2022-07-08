@@ -1,19 +1,15 @@
 ---
 const { post } = Astro.props;
-//let contentBody = await blog.compiledContent()
 ---
-<div class="w-full lg:w-3/12 mb-8 dark:text-white">
+<div class="w-full lg:w-2/12 mb-8 dark:text-white">
 
   <a href={post.url} class="block space-y-5">
     <div class="w-full aspect-square bg-slate-300">
-      <img class="object-cover w-full h-full" src={post.frontmatter.featuredImage} alt="">
+      <img class="object-cover w-full h-full" src={post[0].featuredImage} alt="">
     </div>
     <h4 class="text-2xl font-semibold">
-      {post.frontmatter.title}
+      {post[0].title}
     </h4>
-    <div class="text-xl">
-      <!-- <Fragment set:html={contentBody}/> -->
-    </div>
   </a>
 
 </div>

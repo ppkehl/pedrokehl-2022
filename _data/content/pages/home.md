@@ -23,7 +23,7 @@ en:
         type: Secondary
   about:
     active: true
-    tagline: About me
+    title: About me
     description: I like to solve problems and think about the future
     text: >-
       I graduated in digital design, working for over 20 years as a freelancer
@@ -97,7 +97,7 @@ pt:
   about:
     active: true
     image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.png
-    tagline: Sobre mim
+    title: Sobre mim
     description: Eu gosto de resolver problemas e pensar sobre o futuro
     text: >-
       Sou formado em design digital, trabalhando há mais de 20 anos como
@@ -171,7 +171,7 @@ it:
   about:
     active: true
     image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.png
-    tagline: "Su di me"
+    title: "Su di me"
     description: Mi piace risolvere i problemi e pensare al futuro
     text: >-
       Mi sono laureato in design digitale, lavorando per oltre 20 anni come

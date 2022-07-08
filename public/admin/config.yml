@@ -195,7 +195,7 @@ collections:
             collapsed: true
             fields:    
               - {label: "Active", name: "active", widget: "boolean", i18n: duplicate, default: true}
-              - {label: "Tagline", name: "tagline", widget: "string", i18n: true}
+              - {label: "Title", name: "title", widget: "string", i18n: true}
               - {label: "Description", name: "description", widget: "string", i18n: true}
               - {label: "Text", name: "text", widget: "markdown", i18n: true}  
               - label: "Image"

@@ -112,5 +112,5 @@ export async function translationEngine(options: Translation) {
     }
 
   }
-  return postsList;
+  return [];
 }

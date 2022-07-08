@@ -1,20 +1,20 @@
 <script lang="ts">
   export let locale:string
-  export let translationsURL:string
+  export let translationsURL:object
   export let path:string
-  export let siteHome:string
+  export let siteHome:URL
   
   import locales from '../../_data/settings/locales.json'
 
   // Filter URL removing common url between path (current url: http://localhost:3000/test/en/article-name/) 
   // and siteHome (home url: http://localhost:3000/). Result (test/en/article-name/)
-  let filteredPath = path.replace(siteHome, '')
+  let filteredPath = path.toString().replace(siteHome.toString(), '')
   // Filter URL removing translation path. Result (test/en/)
   let filteredTranslation = filteredPath.replace(translationsURL[locale] + '/', '')
   // Filter URL removing url locale. Result (test/)
   let filteredLocale = filteredTranslation.replace(locale + '/', '')
   // Return absPath to post http://localhost:3000/test/
-  let absPath = siteHome + filteredLocale
+  let absPath = '/' + filteredLocale
 </script>
 
 {#if Object.keys(locales).length}

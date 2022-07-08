@@ -6,11 +6,15 @@ import Title from '../components/Title.svelte'
 import Button from '../components/Button.svelte'
 import Blobs from '../components/Blobs.svelte'
 import ProjectPreview from '../layouts/ProjectPreview.astro'
+import BlogPreview from '../layouts/BlogPreview.astro'
 import {Markdown} from 'astro/components';
-import {translationEngine} from '../lib/translationEngine';
+import {translationEngine, getLanguageFromURL} from '../lib/translationEngine';
 
 // Get post from index.astro or [locale.astro]
 const { post } = Astro.props;
+
+// Get locale from URL
+const locale = getLanguageFromURL(Astro.canonicalURL.href);
 
 // Data Fetching: List all Markdown projects in the repo.
 const projects = await Astro.glob('../../_data/content/posts/projects/*.md')
@@ -20,11 +24,28 @@ const projectsData = await translationEngine({
   returnObj: 'grouped_posts'
 });
 projectsData.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
-let selectedProjects = projectsData.slice(0, 3);
+const selectedProjects = projectsData.slice(0, 3);
+// Filter posts by locale
+const localizedProjects = []
+selectedProjects.map((project) => 
+  localizedProjects.push(project.filter(localizedProject => (localizedProject.locale == locale)))
+)
+
+// Data Fetching: List all Markdown blog posts in the repo.
+const posts = await Astro.glob('../../_data/content/posts/blog/*.md')
+const postsData = await translationEngine({
+  posts: posts, 
+  structure: "multiple_files",
+  returnObj: 'grouped_posts'
+});
+postsData.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+let selectedPosts = postsData.slice(0, 3);
+// Filter posts by locale
+const localizedPosts = []
+selectedPosts.map((project) => 
+  localizedPosts.push(project.filter(localizedPost => (localizedPost.locale == locale)))
+)
 ---
-
-<!-- <Debug {projectsData} /> -->
-
 <ConditionalLoading load={post.hero.active}>
   <section class="container mx-auto px-6 py-32 flex items-center min-h-screen relative">
 
@@ -66,12 +87,8 @@ let selectedProjects = projectsData.slice(0, 3);
       <div class="w-full space-y-8 z-10">
 
         <Title>
-          <span slot="title">
-            {post.about.tagline}
-          </span>
-          <span slot="subtitle">
-            {post.about.description}
-          </span>
+          <Fragment slot="title">{post.about.title}</Fragment>
+          <Fragment slot="subtitle">{post.about.description}</Fragment>
         </Title>
 
         <div class="flex flex-wrap">
@@ -112,12 +129,8 @@ let selectedProjects = projectsData.slice(0, 3);
       <div class="w-full space-y-8 z-10">
 
         <Title>
-          <span slot="title">
-            {post.projects.title}
-          </span>
-          <span slot="subtitle">
-            {post.projects.description}
-          </span>
+          <Fragment slot="title">{post.projects.title}</Fragment>
+          <Fragment slot="subtitle">{post.projects.description}</Fragment>
         </Title>
 
       </div>
@@ -125,7 +138,7 @@ let selectedProjects = projectsData.slice(0, 3);
     </div>
 
     <div class="container mx-auto px-6 flex gap-8 relative z-10">
-        {selectedProjects.map((project) => <ProjectPreview project={project}/>)}
+        {localizedProjects.map((project) => <ProjectPreview project={project}/>)}
     </div>
 
   </section>
@@ -143,12 +156,8 @@ let selectedProjects = projectsData.slice(0, 3);
       <div class="w-full space-y-8 z-10">
 
         <Title>
-          <span slot="title">
-            {post.blog.title}
-          </span>
-          <span slot="subtitle">
-            {post.blog.description}
-          </span>
+          <Fragment slot="title">{post.blog.title}</Fragment>
+          <Fragment slot="subtitle">{post.blog.description}</Fragment>
         </Title>
 
       </div>
@@ -156,9 +165,7 @@ let selectedProjects = projectsData.slice(0, 3);
     </div>
 
     <div class="container mx-auto px-6 flex gap-8 relative z-10">
-
-      <!-- {firstPosts.map((post) => <BlogPreview post={post} />)} -->
-
+      {localizedPosts.map((post) => <BlogPreview post={post}/>)}
     </div>
 
   </section>
@@ -176,12 +183,8 @@ let selectedProjects = projectsData.slice(0, 3);
       <div class="w-full space-y-8 z-10">
 
         <Title>
-          <span slot="title">
-            {post.contact.title}
-          </span>
-          <span slot="subtitle">
-            {post.contact.description}
-          </span>
+          <Fragment slot="title">{post.contact.title}</Fragment>
+          <Fragment slot="subtitle">{post.contact.description}</Fragment>
         </Title>
 
       </div>

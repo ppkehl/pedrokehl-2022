@@ -4,7 +4,7 @@ import Base from '../../../layouts/Base.astro'
 import {translationEngine} from '../../../lib/translationEngine';
 
 export async function getStaticPaths() {
-  const posts = await Astro.glob('../../../../_data/content/posts/projects/*.md')
+  const posts = await Astro.glob('../../../../_data/content/posts/**/*.md')
   const postsData = await translationEngine({
     posts: posts, 
     structure: "multiple_files",
