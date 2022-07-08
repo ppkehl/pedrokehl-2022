@@ -202,37 +202,40 @@ collections:
       # Define post type
       - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "projects"}
       # Title
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Title", name: "title", widget: "string", i18n: true}
       # Date
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate}
       # Tags
       - label: "Tags"
         name: "tags"
         widget: "select"
+        i18n: duplicate
         multiple: true
         allow_add: true
         min: 1
         max: 12
         options: ["Design", "UX", "UI", "Frontend", "Dev", "Migration", "Visual Identity"]
       # Client  
-      - {label: "Client", name: "client", widget: "string"}
+      - {label: "Client", name: "client", widget: "string", i18n: duplicate}
       # URL
-      - {label: "URL", name: "url", widget: "string"}
+      - {label: "URL", name: "url", widget: "string", i18n: duplicate}
       # Tech Stack
       - label: "Tech stack"
         name: "techStack"
         widget: "select"
+        i18n: duplicate
         multiple: true
         allow_add: true
         min: 1
         max: 12
         options: ["WordPress", "Craft CMS", "Astro", "Sass", "Tailwind", "Netlify", "Svelte", "React", "Preact", "Jquery", "GreenSock", "JavaScript"]
       # Description  
-      - {label: "Description", name: "body", widget: "markdown"} 
+      - {label: "Description", name: "body", widget: "markdown", i18n: true} 
       # Featured Image  
       - label: "Featured Image"
         name: "featuredImage"
         widget: "image"
+        i18n: duplicate
         allow_multiple: false
         media_library:
           config:
@@ -241,6 +244,7 @@ collections:
       - label: "Project Images"
         name: "projectImages"
         widget: "image"
+        i18n: duplicate
         allow_multiple: true
         media_library:
           config:
@@ -257,31 +261,33 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
     fields:
       # Point to Astro layout
-      - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogSingle.astro"}
+      # - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogSingle.astro"}
       # Define post type
-      - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "projects"}
+      - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "blog"}
       # Title
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Title", name: "title", widget: "string", i18n: true}
       # Date
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate}
       # Author
-      - {label: "Author", name: "author", widget: "string", default: "Pedro Kehl"}
+      - {label: "Author", name: "author", widget: "string", default: "Pedro Kehl", i18n: duplicate}
       # Tags
       - label: "Tags"
         name: "tags"
         widget: "select"
+        i18n: duplicate
         multiple: true
         min: 1
         max: 12
         options: ["Design", "Visual Arts", "Random Thoughts", "Dev"]
       # Description  
-      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Description", name: "description", widget: "text", i18n: true}
       # Body
-      - {label: "Post", name: "body", widget: "markdown"}  
+      - {label: "Post", name: "body", widget: "markdown", i18n: true}  
       # Featured Image  
       - label: "Featured Image"
         name: "featuredImage"
         widget: "image"
+        i18n: duplicate
         allow_multiple: false
         media_library:
           config:
