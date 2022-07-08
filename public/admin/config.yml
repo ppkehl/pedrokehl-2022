@@ -254,9 +254,29 @@ collections:
       - name: 'general'
         label: 'Site Settings'
         file: '_data/settings/generalSettings.json'
-        description: 'General Site Settings'
+        description: 'General site Settings'
         fields:
-          - { label: 'Global title', name: 'site_title', widget: 'string' }
+          - { label: 'Site title', name: 'site_title', widget: 'string' }
+          - { label: 'Site description', name: 'site_description', widget: 'text' }
+          - { label: 'Google Analitycs', name: 'site_analitycs', widget: 'text' }
+
+      - name: 'translations'
+        label: 'Site translations'
+        file: '_data/settings/generaltranslations.json'
+        description: 'General site translations'
+        fields:
+          - name: translations'
+            label: Translations
+            label_singular: 'Translation'
+            widget: list
+            fields:
+              - label: "Translation"
+                name: "translation"
+                widget: "object"
+                fields:
+                  - { label: 'English', name: 'english', widget: 'string' }
+                  - { label: 'Portuguese', name: 'portuguese', widget: 'string' }
+                  - { label: 'Italian', name: 'italian', widget: 'string' }
 
       # ---- Color Schemes
       - name: 'colorSchemes'
