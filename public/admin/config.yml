@@ -270,13 +270,9 @@ collections:
             label_singular: 'Translation'
             widget: list
             fields:
-              - label: "Translation"
-                name: "translation"
-                widget: "object"
-                fields:
-                  - { label: 'English', name: 'english', widget: 'string' }
-                  - { label: 'Portuguese', name: 'portuguese', widget: 'string' }
-                  - { label: 'Italian', name: 'italian', widget: 'string' }
+              - { label: 'English', name: 'english', widget: 'string' }
+              - { label: 'Portuguese', name: 'portuguese', widget: 'string' }
+              - { label: 'Italian', name: 'italian', widget: 'string' }
 
       # ---- Color Schemes
       - name: 'colorSchemes'
