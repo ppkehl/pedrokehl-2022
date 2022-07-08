@@ -19,17 +19,9 @@ Some time ago I followed a discussion on digital piracy via Twitter. It started 
 
 And it went on for an infinity of tweets, discussing the validity of the argument. Pedro Burgos' post made me reconsider the issue of piracy of digital content, a topic that has lasted for decades. The finding seemed to me clearly valid – referring to the general tone of the publications – although I consider it biased in terms of locating the issue in the national media. I've read several articles on sites like the North Americans Gizmodo and Lifehacker showing tutorials on how to download and catalog music, movies and series, that is, instead of merely discussing the topic of piracy in a theoretical scope, it shows how to commit a misdemeanor (because yes, regardless of the philosophical argument, piracy is a crime).
 
-
-
-```typescript
-<Head {title} {description} {analytics} />
-
-<ColorSchemes />
-```
-
 ### HOW WE GET (OR I GET) HERE
 
-I have always found “piracy” a curious term when applied to digital content. The same can be said of the expression “to steal”, “to subtract”, “to steal”, etc. Unlike classic pirates, digital piracy is not about expropriating an asset, but about copying it. In this exchange, what the pirate (software company, musician, record company, studio) loses is not the good itself, but the possibility of the fruits of the sale of the good. In the case of a copy for personal use, the producer loses a potential sale to that specific user. Why potential? Because of the premise that digital piracy does not involve costs for the user, the consideration of the validity or not of downloading certain content is much simpler. Get down in advance. If you don't like what you downloaded, just delete the file and move on to the next one. It is the logic that “for free even injection in the forehead”.
+I have always found “piracy” a curious term when applied to digital content. The same can be said of the expression “to steal”, “to subtract”, “to rob”, etc. Unlike classic pirates, digital piracy is not about expropriating an asset, but about copying it. In this exchange, what the copyright owner (software company, musician, record company, studio) loses is not the good itself, but the possibility of the fruits of the sale of the good. In the case of a copy for personal use, the producer loses a potential sale to that specific user. Why potential? Because of the premise that digital piracy does not involve costs for the user, the consideration of the validity or not of downloading certain content is much simpler. Get down in advance. If you don't like what you downloaded, just delete the file and move on to the next one. It is the logic that “for free even injection in the forehead”.
 
 In the 80s, in my childhood, we had restricted options for consuming audio visual content. There were cinema, theater and musical shows. For domestic use, movies, series (McGuiver, Super-Machine, Blue Thunder, Cosmos…) and music came through the air via radio waves, captured by TVs and radios. It was the famous broadcasting: limited information (in this case by the laws of physics) for a potentially unlimited audience. Few sender channels for many receivers.
 
