@@ -49,6 +49,16 @@
         "alert": "#ff7346",
         "danger": "#f23535"
       }
+    },
+    {
+      "schemeName": "Helena",
+      "colors": {
+        "primary": "#ffd100",
+        "secondary": "#0031ff",
+        "tertiary": "#00b134",
+        "alert": "#e17900",
+        "danger": "#ff3535"
+      }
     }
   ]
 }
