@@ -193,12 +193,12 @@ collections:
     i18n:
       structure: multiple_files
       locales: [en, pt, it]
-    folder: '_data/content/posts/blog'
+    folder: '_data/content/posts/projects'
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
     fields:
       # Point to Astro layout
-      - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/ProjectSingle.astro"}
+      # - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/ProjectSingle.astro"}
       # Define post type
       - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "projects"}
       # Title
