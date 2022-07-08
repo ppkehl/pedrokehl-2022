@@ -5,29 +5,29 @@ date: 2022-07-02T15:36:36.521Z
 author: Pedro Kehl
 tags:
   - Random Thoughts
-description: Mais do que uma discussão apenas sobre direitos autorais, a
-  pirataria digital tem que ser pensada sob uma perspectiva ampliada de
-  liberdades individuais, modelos de distribuição, acesso universal a informação
-  e produção artística e a própria estrutura da internet.
+description: More than just a discussion about copyright, digital piracy has to
+  be thought from an expanded perspective of individual freedoms, distribution
+  models, universal access to information and artistic production and the very
+  structure of the internet.
 featuredImage: https://res.cloudinary.com/ppkehl/image/upload/v1656776422/pirate_pvkgrv.jpg
 ---
-Tempos atrás acompanhei via Twitter uma discussão sobre pirataria digital. Ela começou assim:
+![teste](https://res.cloudinary.com/ppkehl/image/upload/v1656686008/1-nunca_usq9w7.jpg "teste")
 
-> Fazendo uma pesquisa aqui, parece que o grande TEMA TABU da imprensa de tecnologia do Brasil é questionar o “pirataria é ok e inevitável”
+Some time ago I followed a discussion on digital piracy via Twitter. It started like this:
+
+> Doing some research here, it seems that the big TABU THEME of the Brazilian technology press is to question the “piracy is ok and inevitable”
 >
 > — Pedro Burgos (@Burgos) [October 30, 2013](https://twitter.com/Burgos/statuses/395622915578011648)
 
-E se estendeu por uma infinidade de tuites, discutindo a validade da argumentação. O post de Pedro Burgos me fez voltar a considerar a questão da pirataria de conteúdo digital, um tema que já perdura por décadas. A constatação para mim pareceu claramente válida – se referindo ao tom geral das publicações – apesar de a considerar parcial no que diz respeito a localizar a questão na mídia nacional. Já li diversos artigos em sites como os norte-americanos Gizmodo e Lifehacker mostrando tutoriais sobre como baixar e catalogar músicas, filmes e séries, ou seja, ao invés de meramente discutir o tema da pirataria em âmbito teórico, mostra como cometer a contravenção (porque sim, independentemente da argumentação filosófica, pirataria é um crime).
+And it went on for an infinity of tweets, discussing the validity of the argument. Pedro Burgos' post made me reconsider the issue of piracy of digital content, a topic that has lasted for decades. The finding seemed to me clearly valid – referring to the general tone of the publications – although I consider it biased in terms of locating the issue in the national media. I've read several articles on sites like the North Americans Gizmodo and Lifehacker showing tutorials on how to download and catalog music, movies and series, that is, instead of merely discussing the topic of piracy in a theoretical scope, it shows how to commit a misdemeanor (because yes, regardless of the philosophical argument, piracy is a crime).
 
+### HOW WE GET (OR I GET) HERE
 
+I have always found “piracy” a curious term when applied to digital content. The same can be said of the expression “to steal”, “to subtract”, “to steal”, etc. Unlike classic pirates, digital piracy is not about expropriating an asset, but about copying it. In this exchange, what the pirate (software company, musician, record company, studio) loses is not the good itself, but the possibility of the fruits of the sale of the good. In the case of a copy for personal use, the producer loses a potential sale to that specific user. Why potential? Because of the premise that digital piracy does not involve costs for the user, the consideration of the validity or not of downloading certain content is much simpler. Get down in advance. If you don't like what you downloaded, just delete the file and move on to the next one. It is the logic that “for free even injection in the forehead”.
 
-### COMO CHEGAMOS (OU EU CHEGUEI) AQUI
+In the 80s, in my childhood, we had restricted options for consuming audio visual content. There were cinema, theater and musical shows. For domestic use, movies, series (McGuiver, Super-Machine, Blue Thunder, Cosmos…) and music came through the air via radio waves, captured by TVs and radios. It was the famous broadcasting: limited information (in this case by the laws of physics) for a potentially unlimited audience. Few sender channels for many receivers.
 
-Sempre achei “pirataria” um termo curioso quando aplicado à conteúdos digitais. O mesmo pode-se dizer da expressão “roubar”, “subtrair”, “surrupiar”, etc.  Ao contrário dos piratas clássicos, a pirataria digital não trata da expropriação de um bem, mas sim de sua cópia. Nesse escambo, o que o pirateado (empresa de software, músico, gravadora, estúdio) perde não é o bem em si, mas a possibilidade dos frutos da venda do bem. No caso de uma cópia para uso pessoal, o produtor perde uma venda em potencial para esse usuário específico. Por que potencial? Porque pela premissa de que a pirataria digital não envolve custos para o usuário, a consideração sobre a validade ou não de baixar determinado conteúdo é muito mais simples. Baixa-se a priore. Caso não se goste do que foi baixado, basta deletar o arquivo e partir para o próximo. É a lógica que “de graça até injeção na testa”.
-
-Nos anos 80, na minha infância, tinhamos opções restritas para consumir conteúdo audio visual. Havia o cinema, teatro e shows musicais. Para uso doméstico, filmes, séries (McGuiver, Super-Máquina, Trovão Azul, Cosmos…) e músicas vinham pelo ar via ondas de rádio, captadas por tvs e rádios. Era o famoso broadcasting: informacões limitadas (no caso pelas leis da física) para um público potencialmente ilimitado. Poucos canais emissores para muitos receptores.
-
-Não se pagava pelo conteúdo, mas sim pelo objeto: TV, rádio, videogame. O modelo de concessão do conteúdo era baseado numa troca simples: você o recebia livremente  e em troca assistia (ou usava o tempo para ir ao banheiro) comerciais pagos por empresas, produtos ou serviços. Como há pouca oferta de canais e uma gigantesca oferta de consumidores atingidos, as organizações donas das concessões públicas podiam cobrar fábulas pela veiculação de comerciais (“podiam” risos).
+You didn't pay for the content, but for the object: TV, radio, video games. The content concession model was based on a simple exchange: you received it freely and in return you watched (or used the time to go to the bathroom) paid commercials for companies, products or services. As there is little supply of channels and a huge supply of affected consumers, the organizations that own public concessions could charge fables for airing commercials (“they could” laughs).
 
 O modelo de pague-pelo-conteúdo era quase exclusivo da música. Era possível ter uma “vitrola” e comprar um pacote de informação de audio convertido para trilhas analógicas (sulcos) em um disco. Comprava-se um desses  numa “loja de discos”, levava-se para casa e à partir dai ouvi-lo potencialmente *ad infinitum*. O modelo da mídia física era basicamente de um monopólio  industrial. Não havia equipamento doméstico capaz de duplicar discos. Se fosse convidado para a festa de um coleguinha de classe e  gostasse particularmente do disco dos Saltimbancos, precisaria convencer meus pais que comprassem um para mim. Ou, meu amigo podia me emprestar o disco. Não havia DRM. Eram tempos mais simples.
 
@@ -44,8 +44,6 @@ Dai entra a internet. Apesar de ser a parte mais importante da história, é uma
 A revolução do compartilhamento na internet tem outras vertentes que a afastam dos modelos anteriores: não é preciso conhecer o sujeito que compartilha o conteúdo. Ao contrário da época da escola onde a pirataria se dava ponto-a-ponto entre um círculo restrito de conhecidos, o círculo passa a ter o tamanho do mundo. A cópia digital praticamente não traz prejuízos sensíveis de qualidade. As compressões de audio e video se tornam cada vez melhores. Os softwares a rigor são cópias 1 para 1.
 
 Lógico que a indústria teve uma reação violenta frente às novas ameaças aos direitos autorais por eles representados. Softwares (como o Napster), sites de download direto (como o Megaupload) e de torrents (como o Isohunt)  são frequentemente derrubados por ordens judiciais.
-
-
 
 ### WHAC-A-MOLE
 
@@ -64,8 +62,6 @@ O que me interessa mais sobre a questão da pirataria não é necessariamente a 
 * Por vezes o material pirata é superior ao original. Sem apresentar as restrições de DRM denunciadas por projetos como o [Defective by Design ](http://www.defectivebydesign.org/)a cópia torna possível reprodução  em uma maior variedade de dispositivos.
 * As complexidades legais do processo de licenciamento em diferentes territórios ou escolhas dos produtores fazem com que muitas vezes conteúdos se tornem indisponíveis, [mesmo quando o usuário esta disposto a pagar por ele](http://theoatmeal.com/comics/game_of_thrones);
 * “Grátis”.
-
-
 
 ### UMA ESTRANHA BARGANHA
 
@@ -86,8 +82,6 @@ O próprio criador,  Vince Gilligan,  identificou a [importancia da pirataria
 A questão que coloco é que nos dias de hoje essa última premissa é inconsistente. Não haveria, de saida, forma das pessoas baixarem legalmente a série, especialmente a última temporada. Não há nenhum canal de distribuição universal de conteúdo que abarque o público compreendido pelos downloads ilegais, mesmo que as pessoas que baixaram ilegalmente a quisessem baixar legalmente.  Breaking Bad em especial foi tremendamente promovida pelo sucesso que fez no Netflix, a mais competente plataforma (legal) de distribuição de conteúdo audio-visual.
 
 O “piratocasting” é um modelo, ainda que indesejado, de promoção cultural digital. É o subproduto de um descompasso sensível entre a industria cultural tradicional e a  nova e poderosa revolução digital.
-
-
 
 ### DESCOMPASSO TEMPORÁRIO?
 
