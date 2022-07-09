@@ -1,8 +1,6 @@
 <script lang="ts">
   export let locale:string;
-  // import menuItems from '../../_data/settings/mainMenu.json'
-
-  // const localizedMenu = menuItems.mainMenu.find(localizedPost => (localizedPost.locale == locale))
+  import menuItems from '../../_data/settings/mainMenu.json'
 </script>
 
 <input class="lg:hidden" title="Toggle Menu" id="menu-toggle" type="checkbox" />
@@ -15,22 +13,39 @@
   <span class="bg-gray-900 dark:bg-white" />
 </label>
 
-<!-- {#if Object.keys(localizedMenu.items).length}
+{#if menuItems[locale].mainMenu.length}
   <nav class="fixed lg:relative top-16 lg:top-0 w-full lg:w-auto left-full lg:left-0 h-screen lg:h-auto transition-all duration-200 bg-gray-200 dark:bg-gray-900 lg:dark:bg-transparent lg:bg-transparent bg-opacity-50 dark:bg-opacity-50 lg:bg-opacity-100 backdrop-blur-xl lg:backdrop-blur-none">
     <ul class="relative top-16 lg:top-0 container m-auto px-6 pt-20 lg:pt-0 space-y-4 lg:space-y-0 lg:space-x-6 flex flex-col lg:flex-row dark:text-white border-gray-900 dark:border-white">
-      {#each Object.entries(localizedMenu.items) as [localizedMenuItem]}
+      {#each Object.keys(menuItems[locale].mainMenu) as [key]}
         <li class="relative block border-t-2 border-solid border-inherit">
-          <a class="dark:before:invert" href={'/' + localizedMenu.items[localizedMenuItem].url}>
-            <div class="text-lg font-semibold">{localizedMenu.items[localizedMenuItem].title}</div>
-            <div class="font-thin">{localizedMenu.items[localizedMenuItem].description}</div>
+          <a class="dark:before:invert" href={'/' + menuItems[locale].mainMenu[key].url}>
+            <div class="text-lg font-semibold">{menuItems[locale].mainMenu[key].title}</div>
+            <div class="font">{menuItems[locale].mainMenu[key].description}</div>
           </a>
         </li>
       {/each}
     </ul>
   </nav>
-{/if} -->
+{/if}
 
 <style lang="scss">
+  a{
+    >div:first-child {
+      padding-right: 35px;
+    }
+    &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-image: url(/assets/arrow-top.svg);
+      background-repeat: no-repeat;
+      background-position: right top;
+      position: absolute;
+      right: 0;
+      top: 5px;
+    }
+  }
+      
   //------------------------------------------------------------------------------------------
   // Mobile Menu Dynamic Switch Styling
   // Require Square Root Function
@@ -350,4 +365,6 @@
       left: 0;
     }
   }
+
+  
 </style>

@@ -260,26 +260,19 @@ collections:
         i18n: true
         description: 'General site Settings'
         fields:
-          - { label: 'Site title', name: 'site_title', widget: 'string', i18n: true }
-          - { label: 'Site description', name: 'site_description', widget: 'text', i18n: true }
-          - { label: 'Google Analitycs', name: 'site_analitycs', widget: 'string', i18n: duplicate }
-
-      # - name: 'translations'
-      #   label: 'Site translations'
-      #   file: '_data/settings/translations.json'
-      #   description: 'General site translations'
-      #   fields:
-      #     - name: translations
-      #       label: Translations
-      #       label_singular: 'Translation'
-      #       widget: list
-      #       fields:
-      #         - { label: 'English', name: 'english', widget: 'string' }
-      #         - { label: 'Portuguese', name: 'portuguese', widget: 'string' }
-      #         - { label: 'Italian', name: 'italian', widget: 'string' }
+          - { label: 'Site title', name: 'title', widget: 'string', i18n: true }
+          - { label: 'Site description', name: 'description', widget: 'text', i18n: true }
+          - label: "Site default image"
+            name: "image"
+            widget: "image"
+            i18n: duplicate
+            allow_multiple: false
+            media_library:
+              config:
+                multiple: false
+          - { label: 'Google Analitycs ID', name: 'analitycs', widget: 'string', i18n: duplicate }
 
       # ---- Menu
-
       - name: 'mainMenu'
         label: 'Main menu'
         i18n: true
@@ -294,28 +287,6 @@ collections:
               - { label: 'Title', name: 'title', widget: 'string', i18n: true}
               - { label: 'Description', name: 'description', widget: 'string', i18n: true}
               - { label: 'URL', name: 'url', widget: 'string', i18n: true}
-
-      # - name: 'mainMenu'
-      #   label: 'Main menu'
-      #   i18n: true
-      #   file: '_data/settings/mainMenu_cms.json'
-      #   fields:
-      #     - name: mainMenu
-      #       label: Main menu items
-      #       label_singular: 'Main menu item'
-      #       widget: list
-      #       i18n: true
-      #       fields:
-      #         - label: "items"
-      #           name: "Items"
-      #           widget: "object"
-      #           i18n: true
-      #           fields:
-      #             - { label: 'Title', name: 'title', widget: 'string', i18n: true}
-      #             - { label: 'Description', name: 'description', widget: 'string', i18n: true}
-      #             - { label: 'URL', name: 'url', widget: 'string', i18n: true}
-                
-                      
 
       # ---- Color Schemes
       - name: 'colorSchemes'
