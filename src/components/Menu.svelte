@@ -1,3 +1,10 @@
+<script lang="ts">
+  export let locale:string;
+  import menuItems from '../../_data/settings/mainMenu.json'
+
+  const localizedMenu = menuItems.mainMenu.find(localizedPost => (localizedPost.locale == locale))
+</script>
+
 <input class="lg:hidden" title="Toggle Menu" id="menu-toggle" type="checkbox" />
 <label class="cursor-pointer lg:hidden z-50" for="menu-toggle" aria-label="Menu">
   <span class="bg-gray-900 dark:bg-white" />
@@ -8,37 +15,20 @@
   <span class="bg-gray-900 dark:bg-white" />
 </label>
 
-<nav class="fixed lg:relative top-16 lg:top-0 w-full lg:w-auto left-full lg:left-0 h-screen lg:h-auto transition-all duration-200 bg-gray-200 dark:bg-gray-900 lg:dark:bg-transparent lg:bg-transparent bg-opacity-50 dark:bg-opacity-50 lg:bg-opacity-100 backdrop-blur-xl lg:backdrop-blur-none">
-  <ul class="relative top-16 lg:top-0 container m-auto px-6 pt-20 lg:pt-0 space-y-4 lg:space-y-0 lg:space-x-6 flex flex-col lg:flex-row dark:text-white border-gray-900 dark:border-white">
-    <li class="relative block border-t-2 border-solid border-inherit">
-      <a class="dark:before:invert" href="#about">
-        <div class="text-lg font-semibold">About</div>
-        <div class="">Life & Experience</div>
-      </a>
-    </li>
-
-    <li class="relative block border-t-2 border-solid border-inherit">
-      <a class="dark:before:invert" href="#works">
-        <div class="text-lg font-semibold">Projects</div>
-        <div class="">What I do</div>
-      </a>
-    </li>
-
-    <li class="relative block border-t-2 border-solid border-inherit">
-      <a class="dark:before:invert" href="#ideas">
-        <div class="text-lg font-semibold">Ideas</div>
-        <div class="">Texts & Thoughts</div>
-      </a>
-    </li>
-
-    <li class="relative block border-t-2 border-solid border-inherit">
-      <a class="dark:before:invert" href="#contact">
-        <div class="text-lg font-semibold">Contact</div>
-        <div class="">Let's Talk</div>
-      </a>
-    </li>
-  </ul>
-</nav>
+{#if Object.keys(localizedMenu.items).length}
+  <nav class="fixed lg:relative top-16 lg:top-0 w-full lg:w-auto left-full lg:left-0 h-screen lg:h-auto transition-all duration-200 bg-gray-200 dark:bg-gray-900 lg:dark:bg-transparent lg:bg-transparent bg-opacity-50 dark:bg-opacity-50 lg:bg-opacity-100 backdrop-blur-xl lg:backdrop-blur-none">
+    <ul class="relative top-16 lg:top-0 container m-auto px-6 pt-20 lg:pt-0 space-y-4 lg:space-y-0 lg:space-x-6 flex flex-col lg:flex-row dark:text-white border-gray-900 dark:border-white">
+      {#each Object.entries(localizedMenu.items) as [localizedMenuItem]}
+        <li class="relative block border-t-2 border-solid border-inherit">
+          <a class="dark:before:invert" href={'/' + localizedMenu.items[localizedMenuItem].url}>
+            <div class="text-lg font-semibold">{localizedMenu.items[localizedMenuItem].title}</div>
+            <div class="font-thin">{localizedMenu.items[localizedMenuItem].description}</div>
+          </a>
+        </li>
+      {/each}
+    </ul>
+  </nav>
+{/if}
 
 <style lang="scss">
   //------------------------------------------------------------------------------------------

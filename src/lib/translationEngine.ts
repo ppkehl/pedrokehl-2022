@@ -9,12 +9,14 @@ export interface Translation {
   posts: object | []
   structure?: "single_file" | "multiple_files" | "multiple_folders"
   returnObj?: "single_posts" | "grouped_posts"
+  returnObjType?: "rendered_obj" | "astro_obj"
 }
 
 export async function translationEngine(options: Translation) {
   const defaults = {
     structure: "single_file",
     returnObj: "single_posts",
+    returnObjType: "rendered_obj"
   };
   const t = {
     ...defaults,
@@ -71,7 +73,11 @@ export async function translationEngine(options: Translation) {
           t.posts[postKey].frontmatter.slug = metaGrouped[metaPostsKey][metaPostKey].slug;
           t.posts[postKey].frontmatter.locale = metaGrouped[metaPostsKey][metaPostKey].locale;
           t.posts[postKey].frontmatter.translations = Object.assign({},siblingTranslatedPosts);
-          postsList.push(t.posts[postKey].frontmatter);
+          if(t.returnObjType === "rendered_obj"){
+            postsList.push(t.posts[postKey].frontmatter);
+          }else{
+            postsList.push(t.posts[postKey])
+          }
           siblingTranslatedPostsGroup.push(t.posts[postKey].frontmatter);
         }
 

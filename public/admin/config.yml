@@ -245,6 +245,9 @@ collections:
   # ----- SETTINGS
   - name: 'settings'
     label: 'Settings'
+    i18n:
+      structure: single_file
+      locales: [en, pt, it]
     delete: false
     editor:
       preview: false
@@ -254,25 +257,53 @@ collections:
       - name: 'general'
         label: 'Site Settings'
         file: '_data/settings/generalSettings.json'
+        i18n: true
         description: 'General site Settings'
         fields:
-          - { label: 'Site title', name: 'site_title', widget: 'string' }
-          - { label: 'Site description', name: 'site_description', widget: 'text' }
-          - { label: 'Google Analitycs', name: 'site_analitycs', widget: 'text' }
+          - { label: 'Site title', name: 'site_title', widget: 'string', i18n: true }
+          - { label: 'Site description', name: 'site_description', widget: 'text', i18n: true }
+          - { label: 'Google Analitycs', name: 'site_analitycs', widget: 'string', i18n: duplicate }
 
-      - name: 'translations'
-        label: 'Site translations'
-        file: '_data/settings/translations.json'
-        description: 'General site translations'
+      # - name: 'translations'
+      #   label: 'Site translations'
+      #   file: '_data/settings/translations.json'
+      #   description: 'General site translations'
+      #   fields:
+      #     - name: translations
+      #       label: Translations
+      #       label_singular: 'Translation'
+      #       widget: list
+      #       fields:
+      #         - { label: 'English', name: 'english', widget: 'string' }
+      #         - { label: 'Portuguese', name: 'portuguese', widget: 'string' }
+      #         - { label: 'Italian', name: 'italian', widget: 'string' }
+
+      # ---- Menu
+      - name: 'mainMenu'
+        label: 'Main menu'
+        i18n: true
+        file: '_data/settings/mainMenu_cms.json'
         fields:
-          - name: translations
-            label: Translations
-            label_singular: 'Translation'
+          - name: mainMenu
+            label: Main menu items
+            label_singular: 'Main menu item'
             widget: list
+            i18n: true
             fields:
-              - { label: 'English', name: 'english', widget: 'string' }
-              - { label: 'Portuguese', name: 'portuguese', widget: 'string' }
-              - { label: 'Italian', name: 'italian', widget: 'string' }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                i18n: true
+                fields:
+                  - label: "Colors"
+                    name: "colors"
+                    widget: "object"
+                    i18n: true
+                    fields:
+                      - { label: 'Title', name: 'title', widget: 'string', i18n: true}
+                      - { label: 'Description', name: 'description', i18n: true}
+                      - { label: 'URL', name: 'url', widget: 'color', i18n: true}
+                      
 
       # ---- Color Schemes
       - name: 'colorSchemes'

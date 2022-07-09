@@ -7,21 +7,23 @@ import ColorSchemes from '../components/ColorSchemes.astro'
 import ThemeToggle from "../components/ThemeToggle.svelte"
 import LanguageToggle from "../components/LanguageToggle.svelte"
 import { getLanguageFromURL } from '../lib/translationEngine'
+import settings from '../../_data/settings/generalSettings.json'
 
-const title = 'Pedro Kehl | Web designer';
-const description = 'Short description of the page.';
+const title = settings.site_title;
+const description = settings.site_description;;
 const analytics = {
   provider: 'google',
-  id: 'XXXXXX',
+  id: settings.site_analitycs,
 };
 
 const siteHome = Astro.site;
 const path = Astro.canonicalURL.href;
 const locale = getLanguageFromURL(path);
+const homeLink = '/' + locale;
 const { translationsURL } = Astro.props;
 ---
 
-<html lang={locale}>
+<html class="scroll-smooth scroll-py-16" lang={locale}>
 
   <head>
 
@@ -41,7 +43,7 @@ const { translationsURL } = Astro.props;
         <div class="container mx-auto px-6 h-16 lg:h-24">
           <div class="h-full flex flex-wrap lg:flex-nowrap justify-between items-center">
       
-            <a href='/'>
+            <a href={homeLink} >
               <h1 id="logo" class="z-50 w-32 lg:w-40 h-16 lg:h-20 dark:invert relative">
       
                   <Logo />
@@ -58,7 +60,7 @@ const { translationsURL } = Astro.props;
       
             </div>
       
-            <Menu />
+            <Menu locale={locale} />
       
           </div>
         </div>
