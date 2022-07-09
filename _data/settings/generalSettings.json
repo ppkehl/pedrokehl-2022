@@ -13,6 +13,8 @@
   },
   "it": {
     "image": "https://res.cloudinary.com/ppkehl/image/upload/v1657386735/logo_rcxpiv.png",
-    "analitycs": "1234567890"
+    "analitycs": "1234567890",
+    "title": "Pedro Kehl | Web designer",
+    "description": "I believe the web should be beautiful, performant and practical."
   }
 }
