@@ -1,0 +1,69 @@
+{
+  "en": {
+    "mainMenu": [
+      {
+        "title": "About",
+        "description": "Life & Experience",
+        "url": "#about"
+      },
+      {
+        "title": "Projects",
+        "description": "What I do",
+        "url": "#projects"
+      },
+      {
+        "title": "Ideas",
+        "description": "Texts & Thoughts",
+        "url": "#ideas"
+      },
+      {
+        "title": "Contact",
+        "description": "Let's Talk",
+        "url": "#contact"
+      }
+    ]
+  },
+  "pt": {
+    "mainMenu": [
+      {
+        "title": "Sobre",
+        "description": "Vida & Experiência",
+        "url": "#about"
+      },
+      {
+        "title": "Projetos",
+        "description": "O que eu faço",
+        "url": "#projects"
+      },
+      {
+        "title": "Ideias",
+        "description": "Textos & Pensamentos",
+        "url": "#ideas"
+      },
+      {
+        "title": "Contato",
+        "description": "Vamos conversar",
+        "url": "#contact"
+      }
+    ]
+  },
+  "it": {
+    "mainMenu": [
+      {
+        "title": "Sobre",
+        "description": "Vida & Experiência",
+        "url": "#about"
+      },
+      {
+        "title": "Projetos",
+        "description": "O que eu faço",
+        "url": "#projects"
+      },
+      {
+        "title": "Ideias",
+        "description": "Textos & Pensamentos",
+        "url": "#ideas"
+      }
+    ]
+  }
+}
