@@ -279,10 +279,11 @@ collections:
       #         - { label: 'Italian', name: 'italian', widget: 'string' }
 
       # ---- Menu
+
       - name: 'mainMenu'
         label: 'Main menu'
         i18n: true
-        file: '_data/settings/mainMenu_cms.json'
+        file: '_data/settings/mainMenu.json'
         fields:
           - name: mainMenu
             label: Main menu items
@@ -290,14 +291,29 @@ collections:
             widget: list
             i18n: true
             fields:
-              - label: "items"
-                name: "Items"
-                widget: "object"
-                i18n: true
-                fields:
-                  - { label: 'Title', name: 'title', widget: 'string', i18n: true}
-                  - { label: 'Description', name: 'description', widget: 'string', i18n: true}
-                  - { label: 'URL', name: 'url', widget: 'string', i18n: true}
+              - { label: 'Title', name: 'title', widget: 'string', i18n: true}
+              - { label: 'Description', name: 'description', widget: 'string', i18n: true}
+              - { label: 'URL', name: 'url', widget: 'string', i18n: true}
+
+      # - name: 'mainMenu'
+      #   label: 'Main menu'
+      #   i18n: true
+      #   file: '_data/settings/mainMenu_cms.json'
+      #   fields:
+      #     - name: mainMenu
+      #       label: Main menu items
+      #       label_singular: 'Main menu item'
+      #       widget: list
+      #       i18n: true
+      #       fields:
+      #         - label: "items"
+      #           name: "Items"
+      #           widget: "object"
+      #           i18n: true
+      #           fields:
+      #             - { label: 'Title', name: 'title', widget: 'string', i18n: true}
+      #             - { label: 'Description', name: 'description', widget: 'string', i18n: true}
+      #             - { label: 'URL', name: 'url', widget: 'string', i18n: true}
                 
                       
 
