@@ -39,6 +39,11 @@
         "title": "Ideias",
         "description": "Textos & Pensamentos",
         "url": "#ideas"
+      },
+      {
+        "title": "Contato",
+        "description": "Vamos conversar",
+        "url": "#contact"
       }
     ]
   },
