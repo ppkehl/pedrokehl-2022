@@ -1,8 +1,8 @@
 <script lang="ts">
   export let locale:string;
-  import menuItems from '../../_data/settings/mainMenu.json'
+  // import menuItems from '../../_data/settings/mainMenu.json'
 
-  const localizedMenu = menuItems.mainMenu.find(localizedPost => (localizedPost.locale == locale))
+  // const localizedMenu = menuItems.mainMenu.find(localizedPost => (localizedPost.locale == locale))
 </script>
 
 <input class="lg:hidden" title="Toggle Menu" id="menu-toggle" type="checkbox" />
@@ -15,7 +15,7 @@
   <span class="bg-gray-900 dark:bg-white" />
 </label>
 
-{#if Object.keys(localizedMenu.items).length}
+<!-- {#if Object.keys(localizedMenu.items).length}
   <nav class="fixed lg:relative top-16 lg:top-0 w-full lg:w-auto left-full lg:left-0 h-screen lg:h-auto transition-all duration-200 bg-gray-200 dark:bg-gray-900 lg:dark:bg-transparent lg:bg-transparent bg-opacity-50 dark:bg-opacity-50 lg:bg-opacity-100 backdrop-blur-xl lg:backdrop-blur-none">
     <ul class="relative top-16 lg:top-0 container m-auto px-6 pt-20 lg:pt-0 space-y-4 lg:space-y-0 lg:space-x-6 flex flex-col lg:flex-row dark:text-white border-gray-900 dark:border-white">
       {#each Object.entries(localizedMenu.items) as [localizedMenuItem]}
@@ -28,7 +28,7 @@
       {/each}
     </ul>
   </nav>
-{/if}
+{/if} -->
 
 <style lang="scss">
   //------------------------------------------------------------------------------------------
