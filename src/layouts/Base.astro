@@ -1,25 +1,28 @@
 ---
-import Head from 'astro-head';
+import Head from "./Head.astro"
 import Menu from "../components/Menu.svelte"
 import Logo from "../components/Logo.svelte"
-import Footer from './Footer.astro'
-import ColorSchemes from '../components/ColorSchemes.astro'
+import Footer from "./Footer.astro"
+import ColorSchemes from "../components/ColorSchemes.astro"
 import ThemeToggle from "../components/ThemeToggle.svelte"
 import LanguageToggle from "../components/LanguageToggle.svelte"
-import { getLanguageFromURL } from '../lib/translationEngine'
-import settings from '../../_data/settings/generalSettings.json'
-
-const title = settings.site_title;
-const description = settings.site_description;;
-const analytics = {
-  provider: 'google',
-  id: settings.site_analitycs,
-};
+import { getLanguageFromURL } from "../lib/translationEngine"
+import settings from "../../_data/settings/generalSettings.json"
 
 const siteHome = Astro.site;
 const path = Astro.canonicalURL.href;
 const locale = getLanguageFromURL(path);
 const homeLink = '/' + locale;
+
+// Header Configs
+const title = settings[locale].title;
+const description = settings[locale].description;
+const coverUrl = settings[locale].image;
+const analytics = {
+  provider: 'google',
+  id: settings[locale].analitycs,
+};
+
 const { translationsURL } = Astro.props;
 ---
 
@@ -27,7 +30,7 @@ const { translationsURL } = Astro.props;
 
   <head>
 
-    <Head {title} {description} {analytics} />
+    <Head {title} {description} {analytics} {coverUrl}/>
 
     <ColorSchemes />
 

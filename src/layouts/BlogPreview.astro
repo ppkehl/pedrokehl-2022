@@ -2,7 +2,7 @@
 const { post } = Astro.props;
 const postURL = '/' + post[0].postType + '/' + post[0].locale + '/' + post[0].translations[post[0].locale]
 ---
-<div class="w-full lg:w-2/12 mb-8 dark:text-white">
+<div class="mb-8 dark:text-white">
 
   <a href={postURL} class="block space-y-5">
     <div class="w-full aspect-square bg-slate-300">

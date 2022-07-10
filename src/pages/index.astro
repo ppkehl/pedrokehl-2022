@@ -1,17 +1,35 @@
 ---
-import Base from '../layouts/Base.astro'
-import Home from '../layouts/Home.astro'
+// import Base from '../layouts/Base.astro'
+// import Home from '../layouts/Home.astro'
 
-// Fetch data
-import {translationEngine} from '../lib/translationEngine';
-const posts = await Astro.glob('../../_data/content/pages/home.md')
-const postsData = await translationEngine({
-  "posts": posts, 
-  "structure": "single_file"
-});
-const post = postsData[0]
+// // Fetch data
+// import {translationEngine} from '../lib/translationEngine';
+// const posts = await Astro.glob('../../_data/content/pages/home.md')
+// const postsData = await translationEngine({
+//   "posts": posts, 
+//   "structure": "single_file"
+// });
+// const post = postsData[0]
+
+
+// import {getTranslations} from '../lib/translations';
+// const posts = await Astro.glob('../../_data/content/pages/home.md')
+// const postsData = await getTranslations({
+//   "posts": posts
+// })
+
+// console.log(postsData)
+
+
+
+
+
+
+
+
+
 ---
 
-<Base translationsURL={post.translations}>
+<!-- <Base translationsURL={post.translations}>
   <Home post={post} />
-</Base>
+</Base> -->

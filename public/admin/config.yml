@@ -24,7 +24,7 @@ i18n:
   structure: multiple_folders
 
   # Required - a list of locales to show in the editor UI
-  locales: [en, pt, it]
+  locales: [en]
 
   # Optional, defaults to the first item in locales.
   # The locale to be used for fields validation and as a baseline for the entry.
@@ -41,7 +41,7 @@ collections:
     label: "Projects"
     i18n:
       structure: multiple_files
-      locales: [en, pt, it]
+      locales: [en]
     folder: '_data/content/posts/projects'
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
@@ -105,7 +105,7 @@ collections:
     label: "Blog"
     i18n:
       structure: multiple_files
-      locales: [en, pt, it]
+      locales: [en]
     folder: '_data/content/posts/blog'
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
@@ -148,7 +148,7 @@ collections:
     label: 'Pages'
     i18n:
       structure: single_file
-      locales: [en, pt, it]
+      locales: [en]
     delete: true
     editor:
       preview: false
@@ -247,7 +247,7 @@ collections:
     label: 'Settings'
     i18n:
       structure: single_file
-      locales: [en, pt, it]
+      locales: [en]
     delete: false
     editor:
       preview: false

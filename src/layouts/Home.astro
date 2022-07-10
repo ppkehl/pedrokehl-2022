@@ -1,6 +1,4 @@
 ---
-import { Debug } from 'astro/components';
-
 import ConditionalLoading from '../components/ConditionalLoading.svelte'
 import Title from '../components/Title.svelte'
 import Button from '../components/Button.svelte'
@@ -13,6 +11,8 @@ import {translationEngine, getLanguageFromURL} from '../lib/translationEngine';
 // Get post from index.astro or [locale.astro]
 const { post } = Astro.props;
 
+console.log(post)
+
 // Get locale from URL
 const locale = getLanguageFromURL(Astro.canonicalURL.href);
 
@@ -24,8 +24,8 @@ const projectsData = await translationEngine({
   returnObj: 'grouped_posts'
 });
 projectsData.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
-const selectedProjects = projectsData.slice(0, 3);
-// Filter posts by locale
+const selectedProjects = projectsData.slice(0, post.projects.postsNum);
+// -- Filter posts by locale
 const localizedProjects = []
 selectedProjects.map((project) => 
   localizedProjects.push(project.filter(localizedProject => (localizedProject.locale == locale)))
@@ -39,8 +39,8 @@ const postsData = await translationEngine({
   returnObj: 'grouped_posts'
 });
 postsData.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
-let selectedPosts = postsData.slice(0, 3);
-// Filter posts by locale
+let selectedPosts = postsData.slice(0, post.blog.postsNum);
+// -- Filter posts by locale
 const localizedPosts = []
 selectedPosts.map((project) => 
   localizedPosts.push(project.filter(localizedPost => (localizedPost.locale == locale)))
@@ -55,7 +55,7 @@ selectedPosts.map((project) =>
         <h3 class="text-2xl lg:text-3xl dark:text-white">
           {post.hero.tagline}
         </h3>
-        <h2 class="text-4xl sm:text-5xl lg:text-7xl font-semibold dark:text-white">
+        <h2 class="text-4xl sm:text-5xl lg:text-7xl font-bold !leading-[1.1] dark:text-white">
           <Markdown content={post.hero.mainTagline}/>
         </h2>
       </div>
@@ -72,7 +72,7 @@ selectedPosts.map((project) =>
 
     <div class="w-full h-full right-0 md:w-8/12 lg:w-6/12 absolute">
 
-      <!-- <Blobs /> -->
+      <Blobs />
 
     </div>
 
@@ -137,9 +137,11 @@ selectedPosts.map((project) =>
 
     </div>
 
-    <div class="container mx-auto px-6 flex gap-8 relative z-10">
+      <div class="px-6 scroll-px-6 mx-auto relative gap-8 flex flex-nowrap overflow-x-auto lg:container lg:grid lg:grid-cols-3 z-10 snap-x" data-scroll> 
         {localizedProjects.map((project) => <ProjectPreview project={project}/>)}
-    </div>
+      </div>
+
+    
 
   </section>
 </ConditionalLoading>
@@ -164,7 +166,7 @@ selectedPosts.map((project) =>
 
     </div>
 
-    <div class="container mx-auto px-6 flex gap-8 relative z-10">
+    <div class="container mx-auto px-6 grid grid-cols-4 gap-8 relative z-10">
       {localizedPosts.map((post) => <BlogPreview post={post}/>)}
     </div>
 
@@ -218,3 +220,16 @@ selectedPosts.map((project) =>
 
   </section>
 </ConditionalLoading>
+
+<style lang="scss">
+  [data-scroll]{
+    &::-webkit-scrollbar{
+      -webkit-appearance: none;
+      height: 6px;
+    }
+    &::-webkit-scrollbar-thumb{
+      border-radius: 4px;
+      background-color: #cccccc;
+    }
+  }
+</style>
