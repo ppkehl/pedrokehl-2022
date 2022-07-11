@@ -321,7 +321,6 @@ collections:
             label: Build tools
             label_singular: 'Build tool'
             widget: list
-            i18n: duplicate
             fields:
               - { label: 'Label', name: 'label', widget: 'string', i18n: true}
               - label: "Logo"
@@ -337,7 +336,6 @@ collections:
             label: Other Infos
             label_singular: 'Other Infos'
             widget: list
-            i18n: true
             fields:
               - { label: 'Label', name: 'label', widget: 'string', i18n: true}
               - label: "Logo"
