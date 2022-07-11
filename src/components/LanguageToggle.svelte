@@ -10,7 +10,11 @@
       {#each Object.entries(locales[locale]) as [languageCode]}
         {#if locale != languageCode}
           <li>
+            {#if translationsURL[locale].split('/').pop().includes("home")}
+              <a href="/{languageCode}">{languageCode}</a>
+            {:else}
             <a href="/{translationsURL[languageCode]}">{languageCode}</a>
+            {/if}
           </li>
         {/if}
       {/each}
