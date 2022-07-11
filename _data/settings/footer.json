@@ -1,0 +1,35 @@
+{
+  "en": {
+    "buildTools": [
+      {
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657571780/astro-bw-logo.svg",
+        "label": "Build with Astro"
+      },
+      {
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657571953/svelte-plain_wxzbvt.svg",
+        "label": "Components by Svelte"
+      },
+      {
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657572070/logo-tailwind_iziq1i.svg",
+        "label": "CSS by Tailwind"
+      },
+      {
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657571491/logomark-light_f3bl1h.svg",
+        "label": "Hosted on Netlify"
+      },
+      {
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/e_blackwhite/v1657572447/Cloudinary_Logo_Vector_fnoj93.svg",
+        "label": "Images hosted on Cloudinary"
+      },
+      {
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657572253/logo-github_o8nj8f.svg",
+        "label": "Source code on GitHub"
+      }
+    ]
+  },
+  "pt": {
+    "buildTools": [
+      {}
+    ]
+  }
+}
