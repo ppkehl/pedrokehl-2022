@@ -324,6 +324,7 @@ collections:
             i18n: true
             fields:
               - { label: 'Label', name: 'label', widget: 'string', i18n: true}
+              - { label: 'URL', name: 'url', widget: 'string', i18n: true}
               - label: "Logo"
                 name: "logo"
                 widget: "image"
@@ -340,6 +341,7 @@ collections:
             i18n: true
             fields:
               - { label: 'Label', name: 'label', widget: 'string', i18n: true}
+              - { label: 'URL', name: 'url', widget: 'string', i18n: true}
               - label: "Logo"
                 name: "logo"
                 widget: "image"
