@@ -97,7 +97,12 @@ export async function getTranslations(options: Translations) {
           var post = groupedPost.filter(obj => {
             return obj.locale === localeKey
           })
-          translationGroups.push({[localeKey]: post[0]['slug']})
+          // File path
+          let locale = post[0]['locale'] ? post[0]['locale'] + '/' : ''
+          let postType = post[0]['postType'] && post[0]['postType']!='page' ? post[0]['postType'] + '/' : ''
+          let slug = post[0]['slug']
+          // translationGroups.push({[localeKey]: locale + postType + slug})
+          translationGroups[localeKey] = locale + postType + slug
         }
         posts['translations'] = translationGroups
       }
