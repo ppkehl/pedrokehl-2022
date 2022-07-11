@@ -1,3 +1,5 @@
+import { turnToSlug, groupBy } from "./utils";
+
 export const locales = {
   en: {
     en: "English",
@@ -9,26 +11,10 @@ export const locales = {
   },
 };
 
-export const turnToSlug = (text: any) => {
-  return text
-    .toString()
-    .split(" ")
-    .slice(0, 12)
-    .join(" ")
-    .normalize("NFKD")
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w\-]+/g, "")
-    .replace(/\-\-+/g, "-");
-};
-
-export const groupBy = (keys) => (array) =>
-  array.reduce((objectsByKeyValue, obj) => {
-    const value = keys.map((key) => obj[key]).join("-");
-    objectsByKeyValue[value] = (objectsByKeyValue[value] || []).concat(obj);
-    return objectsByKeyValue;
-  }, {});
+export function getLanguageFromURL(pathname: string) {
+  const langCodeMatch = pathname.match(/\/([a-z]{2}-?[A-Z]{0,2})\//);
+  return langCodeMatch ? langCodeMatch[1] : "en";
+}
 
 export interface Translations {
   posts: object | []

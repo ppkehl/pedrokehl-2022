@@ -6,7 +6,7 @@ import Blobs from '../components/Blobs.svelte'
 import ProjectPreview from '../layouts/ProjectPreview.astro'
 import BlogPreview from '../layouts/BlogPreview.astro'
 import {Markdown} from 'astro/components';
-import {translationEngine, getLanguageFromURL} from '../lib/translationEngine';
+import {getTranslations, getLanguageFromURL} from '../lib/translations';
 
 // Get post from index.astro or [locale.astro]
 const { post } = Astro.props;
@@ -18,33 +18,21 @@ const locale = getLanguageFromURL(Astro.canonicalURL.href);
 
 // Data Fetching: List all Markdown projects in the repo.
 const projects = await Astro.glob('../../_data/content/posts/projects/*.md')
-const projectsData = await translationEngine({
-  posts: projects, 
-  structure: "multiple_files",
-  returnObj: 'grouped_posts'
-});
-projectsData.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+const projectsData = await getTranslations({
+  "posts": projects,
+  "locale": locale
+})
+//projectsData.sort((a, b) => new Date(b.content.date).valueOf() - new Date(a.content.date).valueOf())
 const selectedProjects = projectsData.slice(0, post.projects.postsNum);
-// -- Filter posts by locale
-const localizedProjects = []
-selectedProjects.map((project) => 
-  localizedProjects.push(project.filter(localizedProject => (localizedProject.locale == locale)))
-)
 
-// Data Fetching: List all Markdown blog posts in the repo.
+// Data Fetching: List all Markdown posts in the repo.
 const posts = await Astro.glob('../../_data/content/posts/blog/*.md')
-const postsData = await translationEngine({
-  posts: posts, 
-  structure: "multiple_files",
-  returnObj: 'grouped_posts'
-});
-postsData.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
-let selectedPosts = postsData.slice(0, post.blog.postsNum);
-// -- Filter posts by locale
-const localizedPosts = []
-selectedPosts.map((project) => 
-  localizedPosts.push(project.filter(localizedPost => (localizedPost.locale == locale)))
-)
+const postsData = await getTranslations({
+  "posts": posts,
+  "locale": locale
+})
+//postsData.sort((a, b) => new Date(b.content.date).valueOf() - new Date(a.content.date).valueOf())
+const selectedPosts = postsData.slice(0, post.blog.postsNum);
 ---
 <ConditionalLoading load={post.hero.active}>
   <section id="hero" class="container mx-auto px-6 py-20 flex items-center min-h-screen relative">
@@ -138,7 +126,7 @@ selectedPosts.map((project) =>
     </div>
 
       <div class="px-6 scroll-px-6 mx-auto relative gap-8 flex flex-nowrap overflow-x-auto lg:container lg:grid lg:grid-cols-3 z-10 snap-x" data-scroll> 
-        {localizedProjects.map((project) => <ProjectPreview project={project}/>)}
+        {selectedProjects.map((project) => <ProjectPreview project={project.content}/>)}
       </div>
 
     
@@ -167,7 +155,7 @@ selectedPosts.map((project) =>
     </div>
 
     <div class="container mx-auto px-6 grid grid-cols-4 gap-8 relative z-10">
-      {localizedPosts.map((post) => <BlogPreview post={post}/>)}
+      {selectedPosts.map((post) => <BlogPreview post={post.content}/>)}
     </div>
 
   </section>

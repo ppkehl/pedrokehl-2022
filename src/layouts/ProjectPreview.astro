@@ -1,6 +1,7 @@
 ---
 const { project } = Astro.props;
-const projectURL = '/' + project[0].postType + '/' + project[0].locale + '/' + project[0].translations[project[0].locale]
+
+const projectURL = '/' + project[0].locale + '/' + project[0].postType + '/' + project[0].slug
 ---
 
 <div class="w-2/3 lg:w-auto flex-none mb-8 dark:text-white snap-start">

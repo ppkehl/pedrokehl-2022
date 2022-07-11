@@ -26,6 +26,7 @@ export async function getStaticPaths() {
   })
 }
 const { post } = Astro.props;
+console.log(post.translations)
 ---
 
 <Base translationsURL={post.translations}>

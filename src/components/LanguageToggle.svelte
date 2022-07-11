@@ -16,10 +16,12 @@
   // Return absPath to post http://localhost:3000/test/
   let absPath = '/' + filteredLocale
 
-  // console.log("filteredPath:", filteredPath)
-  // console.log("filteredTranslation:", filteredTranslation)
-  // console.log("filteredLocale:", filteredLocale)
-  // console.log("absPath:", absPath)
+  console.log("-----------------------")
+  console.log(translationsURL)
+  console.log("filteredPath:", filteredPath)
+  console.log("filteredTranslation:", filteredTranslation)
+  console.log("filteredLocale:", filteredLocale)
+  console.log("absPath:", absPath)
 </script>
 
 {#if Object.keys(locales).length}
@@ -31,7 +33,8 @@
             {#if filteredPath == '' || filteredLocale == ''}
               <a href="{absPath + languageCode}">{languageCode}</a>
             {:else}
-              <a href="{absPath + languageCode + '/' + translationsURL[languageCode]}">{languageCode}</a>
+              <!-- <a href="{absPath + languageCode + '/' + translationsURL[languageCode]}">{languageCode}</a> -->
+              <a href="{'/' + languageCode + absPath}">{languageCode}</a>
             {/if}
           </li>
         {/if}

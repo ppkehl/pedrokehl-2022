@@ -1,6 +1,6 @@
 ---
 const { post } = Astro.props;
-const postURL = '/' + post[0].postType + '/' + post[0].locale + '/' + post[0].translations[post[0].locale]
+const postURL = '/' + post[0].locale + '/' + post[0].postType + '/' + post[0].slug
 ---
 <div class="mb-8 dark:text-white">
 
