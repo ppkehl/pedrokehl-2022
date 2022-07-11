@@ -30,6 +30,11 @@
         "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657572253/logo-github_o8nj8f.svg",
         "label": "Source code on GitHub",
         "url": "https://github.com/ppkehl/pedrokehl-2022"
+      },
+      {
+        "label": "Designed with Figma",
+        "url": "https://www.figma.com/",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657573971/figma-svgrepo-com_oxckid.svg"
       }
     ]
   },
@@ -64,6 +69,11 @@
         "label": "Código fonte no GitHub",
         "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657572253/logo-github_o8nj8f.svg",
         "url": "https://github.com/ppkehl/pedrokehl-2022"
+      },
+      {
+        "label": "Esboçado com Figma",
+        "url": "https://www.figma.com/",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657573971/figma-svgrepo-com_oxckid.svg"
       }
     ]
   }
