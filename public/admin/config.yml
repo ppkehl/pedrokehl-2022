@@ -321,12 +321,13 @@ collections:
             label: Build tools
             label_singular: 'Build tool'
             widget: list
+            i18n: true
             fields:
               - { label: 'Label', name: 'label', widget: 'string', i18n: true}
               - label: "Logo"
                 name: "logo"
                 widget: "image"
-                i18n: duplicate
+                i18n: true
                 allow_multiple: false
                 media_library:
                   config:
@@ -336,12 +337,13 @@ collections:
             label: Other Infos
             label_singular: 'Other Infos'
             widget: list
+            i18n: true
             fields:
               - { label: 'Label', name: 'label', widget: 'string', i18n: true}
               - label: "Logo"
                 name: "logo"
                 widget: "image"
-                i18n: duplicate
+                i18n: true
                 allow_multiple: false
                 media_library:
                   config:
