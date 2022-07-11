@@ -316,13 +316,14 @@ collections:
         i18n: true
         file: '_data/settings/footer.json'
         fields:
-        
+
           - name: buildTools
             label: Build tools
             label_singular: 'Build tool'
             widget: list
-            i18n: true
+            i18n: duplicate
             fields:
+              - { label: 'Label', name: 'label', widget: 'string', i18n: true}
               - label: "Logo"
                 name: "logo"
                 widget: "image"
@@ -331,7 +332,6 @@ collections:
                 media_library:
                   config:
                     multiple: false
-              - { label: 'Label', name: 'label', widget: 'string', i18n: true}
 
           - name: otherInfos
             label: Other Infos
@@ -339,6 +339,7 @@ collections:
             widget: list
             i18n: true
             fields:
+              - { label: 'Label', name: 'label', widget: 'string', i18n: true}
               - label: "Logo"
                 name: "logo"
                 widget: "image"
@@ -347,7 +348,6 @@ collections:
                 media_library:
                   config:
                     multiple: false
-              - { label: 'Label', name: 'label', widget: 'string', i18n: true}    
 
 
       # ----- AUTHORS
