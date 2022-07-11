@@ -1,0 +1,8 @@
+---
+postType: test
+title: Ezra Miller Is Being Dumped As The Flash
+date: 2022-07-05T14:48:18.739Z
+---
+Ever the optimists, Warner Bros. Discovery is hoping for the best when it comes to their The Flash star, Ezra Miller. The actor who has portrayed the Justice League superhero in franchise films over the last several years, has been getting themselves into hot water and has been an even hotter topic of conversations surrounding the upcoming film. While the studio plan to push forward with the now $200 million feature, according to Geekosity, they've also decided to hold Miller accountable for their actions and fire them from any upcoming DC projects and bar them from attending the movie's approaching press circuit. They're also certain that the young star will seek help for their recent violent behavior, but with the way things are going, that part is very much up in the air. 
+
+Just when it seems like Ezra Miller has learned from their behavior and turned inward, another accusation of improper conduct came forward. This latest claim comes from a German woman and longtime friend of the actor who alleges that she was scared for her safety after Miller had an explosive episode of anger. The alleged confrontation happened inside her home in the midst of what was otherwise a relaxing night for the duo. The friend claims that when Miller asked if they could light a cigarette and smoke inside, she said no, adding that the actor could step outside for their smoke break. Not appreciating the answer, the woman alleges that Miller launched into a bout of anger, leaving tobacco leaves strewn about her home.

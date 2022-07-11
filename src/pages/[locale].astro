@@ -3,15 +3,14 @@ import Base from '../layouts/Base.astro'
 import Home from '../layouts/Home.astro'
 
 // Data Fetching API
-import {translationEngine} from '../lib/translationEngine';
+import {getTranslations} from '../lib/translations';
 
 export async function getStaticPaths() {
   const posts = await Astro.glob('../../_data/content/pages/home.md')
-  const postsData = await translationEngine({
-    "posts": posts, 
-    "structure": "single_file"
-  });
-  return postsData.map((post) => {
+  const postsData = await getTranslations({
+    "posts": posts
+  })
+  return postsData[0].content.map((post) => {
     return {
       params: {
         locale: post.locale,

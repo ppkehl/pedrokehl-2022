@@ -3,8 +3,8 @@
   export let translationsURL:object
   export let path:string
   export let siteHome:URL
-  
-  import locales from '../../_data/settings/locales.json'
+
+  import {locales} from '../lib/translations'
 
   // Filter URL removing common url between path (current url: http://localhost:3000/test/en/article-name/) 
   // and siteHome (home url: http://localhost:3000/). Result (test/en/article-name/)
@@ -15,6 +15,11 @@
   let filteredLocale = filteredTranslation.replace(locale + '/', '')
   // Return absPath to post http://localhost:3000/test/
   let absPath = '/' + filteredLocale
+
+  // console.log("filteredPath:", filteredPath)
+  // console.log("filteredTranslation:", filteredTranslation)
+  // console.log("filteredLocale:", filteredLocale)
+  // console.log("absPath:", absPath)
 </script>
 
 {#if Object.keys(locales).length}

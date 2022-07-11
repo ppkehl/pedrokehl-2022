@@ -1,0 +1,8 @@
+---
+postType: test
+title: " Ezra Miller está sendo descartado como o Flash"
+date: 2022-07-05T14:48:18.739Z
+---
+Sempre otimista, a Warner Bros. Discovery está esperando o melhor quando se trata de sua estrela de The Flash, Ezra Miller. O ator que interpretou o super-herói da Liga da Justiça em filmes de franquia nos últimos anos, vem se metendo em apuros e tem sido um tópico ainda mais quente de conversas em torno do próximo filme. Enquanto o estúdio planeja avançar com o filme de US $ 200 milhões, de acordo com a Geekosity, eles também decidiram responsabilizar Miller por suas ações e demiti-los de quaisquer projetos futuros da DC e impedi-los de participar do circuito de imprensa do filme. Eles também estão certos de que a jovem estrela procurará ajuda para seu recente comportamento violento, mas do jeito que as coisas estão indo, essa parte ainda está no ar.
+
+Justamente quando parece que Ezra Miller aprendeu com o comportamento deles e se voltou para dentro, outra acusação de conduta imprópria veio à tona. Esta última afirmação vem de uma mulher alemã e amiga de longa data do ator que alega que estava com medo por sua segurança depois que Miller teve um episódio explosivo de raiva. O suposto confronto aconteceu dentro de sua casa em meio a uma noite relaxante para a dupla. A amiga afirma que quando Miller perguntou se eles poderiam acender um cigarro e fumar lá dentro, ela disse que não, acrescentando que o ator poderia sair para a pausa para fumar. Não apreciando a resposta, a mulher alega que Miller teve um ataque de raiva, deixando folhas de tabaco espalhadas pela casa.
