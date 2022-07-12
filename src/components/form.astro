@@ -3,25 +3,22 @@ import Button from './Button.svelte'
 ---
 
 <script>
-  let netlifyForm = document.querySelector("#netlifyForm");
-  netlifyForm.addEventListener('submit', e => {
-    e.preventDefault();
+  document
+  .querySelector("form")
+  .addEventListener("submit", handleSubmit);
 
-    let formData = new FormData(netlifyForm);
-    fetch(netlifyForm.getAttribute('action'), {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
-        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-      },
-      body: new URLSearchParams(formData).toString()
-    })
-      .then(res => {
-        if (res) {
-          console.log('mensagem enviada')
-        }
-      });
-  });
+const handleSubmit = (e) => {
+  e.preventDefault();
+  let myForm = document.getElementById("netlifyForm");
+  let formData = new FormData(myForm);
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => console.log("Form successfully submitted"))
+    .catch((error) => alert(error));
+};
 </script>
 
 <form id="netlifyForm" class="w-full max-w-lg" method="POST" data-netlify="true">
