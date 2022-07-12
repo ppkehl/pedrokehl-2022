@@ -24,13 +24,11 @@ const localizedFooterBuildTools = footer[locale]['buildTools']
     [data-tip] {
       display: block;
       position: relative;
-
       &::before,
       &::after {
         opacity: 0;
         transition: all 0.3s ease-in-out;
       }
-
       &::before {
         content: attr(data-tip);
         display: block;
@@ -42,7 +40,6 @@ const localizedFooterBuildTools = footer[locale]['buildTools']
         border-radius: 5px;
         left: -10px;
       }
-
       &::after {
         content: "";
         display: block;
@@ -55,7 +52,6 @@ const localizedFooterBuildTools = footer[locale]['buildTools']
         bottom: 37px;
         left: 6px;
       }
-
       &:hover {
         &::before,
         &::after {
@@ -63,6 +59,5 @@ const localizedFooterBuildTools = footer[locale]['buildTools']
         }
       }
     }
-
   }
 </style>
