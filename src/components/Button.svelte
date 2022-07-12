@@ -1,33 +1,36 @@
-<script>
-  export let type;
-  export let link;
+<script lang="ts">
+  export let type: 'submit' | 'a';
+  export let style: 'Primary' | 'Secondary' | 'Tertiary' | 'Alert' | 'Danger';
+  export let link: string;
 </script>
 
-<a
-  href={link}
-  class="block bg-opacity-70 hover:bg-opacity-90 shadow-md py-3 px-6 rounded-md font-semibold cursor-pointer transition-all duration-300 w-fit"
-  data-type={type}
->
-  <slot />
-</a>
+{#if type === 'a'}
+  <a href={link} class="block bg-opacity-70 hover:bg-opacity-90 shadow-md py-3 px-6 rounded-md font-semibold cursor-pointer transition-all duration-300 w-fit" data-style={style}>
+    <slot />
+  </a>
+{:else}
+  <button type="submit" class="block bg-opacity-70 hover:bg-opacity-90 shadow-md py-3 px-6 rounded-md font-semibold cursor-pointer transition-all duration-300 w-fit" data-style={style}>
+    <slot />
+  </button>
+{/if}
 
 <style lang="scss">
-  [data-type="Primary"] {
+  [data-style="Primary"] {
     background-color: rgb(var(--primaryColor));
   }
-  [data-type="Secondary"] {
+  [data-style="Secondary"] {
     background-color: rgb(var(--secondaryColor));
   }
-  [data-type="Tertiary"] {
+  [data-style="Tertiary"] {
     background-color: rgb(var(--tertiaryColor));
   }
-  [data-type="Alert"] {
+  [data-style="Alert"] {
     background-color: rgb(var(--alertColor));
   }
-  [data-type="Danger"] {
+  [data-style="Danger"] {
     background-color: rgb(var(--dangerColor));
   }
-  a {
+  a, button {
     &:after {
       content: "";
       width: 20px;
