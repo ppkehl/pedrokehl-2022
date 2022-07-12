@@ -4,7 +4,7 @@ import Home from '../layouts/Home.astro'
 import {getTranslations} from '../lib/translations';
 
 // Fetch data
-const posts = await Astro.glob('../../_data/content/pages/home.md')
+const posts = await Astro.glob('../../_data/content/unique/home.md')
 const postData = await getTranslations({
   "posts": posts,
   "locale": 'en'

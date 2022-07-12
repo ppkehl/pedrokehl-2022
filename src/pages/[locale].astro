@@ -6,7 +6,7 @@ import Home from '../layouts/Home.astro'
 import {getTranslations} from '../lib/translations';
 
 export async function getStaticPaths() {
-  const posts = await Astro.glob('../../_data/content/pages/home.md')
+  const posts = await Astro.glob('../../_data/content/unique/home.md')
   const postsData = await getTranslations({
     "posts": posts
   })

@@ -144,12 +144,45 @@ collections:
             multiple: false  
 
   # ----- PAGES
-  - name: 'pages'
-    label: 'Pages'
+  # This is a "page" type collection. 
+  - name: "pages"
+    label: "Pages"
+    i18n:
+      structure: multiple_files
+      locales: [en, pt]
+    folder: '_data/content/pages/'
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
+    fields:
+      # Point to Astro layout
+      # - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogSingle.astro"}
+      # Define post type
+      - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "page"}
+      # Title
+      - {label: "Title", name: "title", widget: "string", i18n: true}
+      # Date
+      - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate}
+      # Author
+      - {label: "Author", name: "author", widget: "string", default: "Pedro Kehl", i18n: duplicate}
+      # Body
+      - {label: "Post", name: "body", widget: "markdown", i18n: true}  
+      # Featured Image  
+      - label: "Featured Image"
+        name: "featuredImage"
+        widget: "image"
+        i18n: duplicate
+        allow_multiple: false
+        media_library:
+          config:
+            multiple: false
+
+
+  - name: 'uniquePages'
+    label: 'Unique Pages'
     i18n:
       structure: single_file
       locales: [en, pt]
-    delete: true
+    delete: false
     editor:
       preview: false
     files:
@@ -157,7 +190,7 @@ collections:
       # ---- Home
       - label: "Home"
         name: "home"
-        file: '_data/content/pages/home.md'
+        file: '_data/content/unique/home.md'
         i18n: true
         widget: "object"
         fields:
