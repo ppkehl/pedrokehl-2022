@@ -1,13 +1,12 @@
-<script lang="ts">
-
+<script>
   import { onMount } from 'svelte';
   import Button from './Button.svelte'
 
   onMount(async () => {
-    let netlifyForm = document.getElementById("contact_form") as HTMLFormElement;
+    let netlifyForm = document.querySelector("#contact_form");
     netlifyForm.addEventListener('submit', e => {
       e.preventDefault();
-      const formData = new FormData(netlifyForm) as URLSearchParams;
+      const formData = new FormData(netlifyForm);
       fetch(netlifyForm.getAttribute('action'), {
         method: 'POST',
         headers: {
@@ -23,7 +22,6 @@
       });
     });
   })
-
 </script>
 
 <form id="contact_form" name="contact" method="POST" data-netlify="true" action="/" class="w-full max-w-lg">
@@ -59,7 +57,7 @@
     <div class="w-full px-3 md:mb-0">
       <label class="block uppercase tracking-wide text-gray-900 dark:text-white text-xs font-bold mb-2">
         Message
-      <textarea name="message" class="appearance-none font-normal text-base block w-full bg-white text-gray-700 h-40 border rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-white" required></textarea>
+        <textarea name="message" class="appearance-none font-normal text-base block w-full bg-white text-gray-700 h-40 border rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-white" required></textarea>
       </label>
     </div>
   </div>
