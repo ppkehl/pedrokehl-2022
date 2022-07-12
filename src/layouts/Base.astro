@@ -57,7 +57,7 @@ const { translationsURL } = Astro.props;
       
             <div class="flex">
       
-              <LanguageToggle translationsURL={translationsURL} locale={locale} path={path} siteHome={siteHome}/>
+              <LanguageToggle translationsURL={translationsURL} locale={locale}/>
       
               <ThemeToggle client:load />
       
@@ -71,7 +71,7 @@ const { translationsURL } = Astro.props;
 
       <slot />
 
-      <Footer />
+      <Footer locale={locale} />
 
     </main>
 
