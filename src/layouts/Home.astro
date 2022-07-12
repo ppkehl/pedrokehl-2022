@@ -2,7 +2,7 @@
 import ConditionalLoading from '../components/ConditionalLoading.svelte'
 import Title from '../components/Title.svelte'
 import Button from '../components/Button.svelte'
-import Form from '../components/form.astro'
+import Form from '../components/Form.svelte'
 import Blobs from '../components/Blobs.svelte'
 import ProjectPreview from '../layouts/ProjectPreview.astro'
 import BlogPreview from '../layouts/BlogPreview.astro'
@@ -128,8 +128,6 @@ const selectedPosts = postsData.slice(0, post.blog.postsNum);
         {selectedProjects.map((project) => <ProjectPreview project={project.content}/>)}
       </div>
 
-    
-
   </section>
 </ConditionalLoading>
 
@@ -178,7 +176,7 @@ const selectedPosts = postsData.slice(0, post.blog.postsNum);
 
     <div class="container mx-auto px-6 flex gap-8 relative z-10">
 
-      <Form client:load />
+      <Form client:visible />
 
     </div>
 
