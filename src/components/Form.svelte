@@ -3,22 +3,24 @@
   import Button from './Button.svelte'
 
   onMount(async () => {
-    document
-    .querySelector("form")
-    .addEventListener("submit", handleSubmit);
-
-    var handleSubmit = (e) => {
+    let netlifyForm = document.querySelector("#contact_form");
+    netlifyForm.addEventListener('submit', e => {
       e.preventDefault();
-      let myForm = document.getElementById("contact_form");
-      let formData = new FormData(myForm);
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString(),
+      const formData = new FormData(netlifyForm);
+      fetch(netlifyForm.getAttribute('action'), {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body: new URLSearchParams(formData).toString()
       })
-        .then(() => console.log("Form successfully submitted"))
-        .catch((error) => alert(error));
-    };
+      .then(res => {
+        if (res) {
+          console.log(res, "Form sent")
+        }
+      });
+    });
   })
 </script>
 
