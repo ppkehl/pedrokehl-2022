@@ -2,27 +2,7 @@
 import Button from './Button.svelte'
 ---
 
-<script lang="ts">
-  let netlifyForm = document.querySelector("#netlifyForm");
-  netlifyForm.addEventListener('submit', e => {
-    e.preventDefault();
 
-    let formData = new FormData(netlifyForm);
-    fetch(netlifyForm.getAttribute('action'), {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
-        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-      },
-      body: new URLSearchParams(formData).toString()
-    })
-      .then(res => {
-        if (res) {
-          console.log(res, 'mensagem enviada')
-        }
-      });
-  });
-</script>
 
 <form id="netlifyForm" class="w-full max-w-lg" method="POST" data-netlify="true">
   <div class="flex flex-wrap -mx-3 mb-6">
@@ -74,3 +54,25 @@ import Button from './Button.svelte'
   </div>
   <Button type="submit" style="Primary" link="">Send</Button>
 </form>
+
+<script lang="ts">
+  let netlifyForm = document.querySelector("#netlifyForm");
+  netlifyForm.addEventListener('submit', e => {
+    e.preventDefault();
+
+    let formData = new FormData(netlifyForm);
+    fetch(netlifyForm.getAttribute('action'), {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      body: new URLSearchParams(formData).toString()
+    })
+      .then(res => {
+        if (res) {
+          console.log(res, 'mensagem enviada')
+        }
+      });
+  });
+</script>
