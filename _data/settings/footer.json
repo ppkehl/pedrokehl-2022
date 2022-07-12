@@ -2,7 +2,7 @@
   "en": {
     "buildTools": [
       {
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657571780/astro-bw-logo.svg",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591176/astro-logo-bw_qjkufv.svg",
         "label": "Build with Astro",
         "url": "https://astro.build/"
       },
@@ -17,7 +17,7 @@
         "url": "https://tailwindcss.com/"
       },
       {
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657571491/logomark-light_f3bl1h.svg",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591436/logomark-light_f3bl1h_btnelp_thydfe.svg",
         "label": "Hosted on Netlify",
         "url": "https://www.netlify.com/"
       },
@@ -27,7 +27,7 @@
         "url": "https://cloudinary.com/"
       },
       {
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657572253/logo-github_o8nj8f.svg",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591338/logo-github_o8nj8f_ltj0dc.svg",
         "label": "Source code on GitHub",
         "url": "https://github.com/ppkehl/pedrokehl-2022"
       },
