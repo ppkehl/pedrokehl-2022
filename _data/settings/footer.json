@@ -2,7 +2,7 @@
   "en": {
     "buildTools": [
       {
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591176/astro-logo-bw_qjkufv.svg",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591669/astro-logo-bw_qjkufv_pmbpcg.svg",
         "label": "Build with Astro",
         "url": "https://astro.build/"
       },
@@ -17,7 +17,7 @@
         "url": "https://tailwindcss.com/"
       },
       {
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591436/logomark-light_f3bl1h_btnelp_thydfe.svg",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591766/logomark-light_f3bl1h_btnelp_thydfe_emc9xr.svg",
         "label": "Hosted on Netlify",
         "url": "https://www.netlify.com/"
       },
