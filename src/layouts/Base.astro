@@ -9,7 +9,6 @@ import LanguageToggle from "../components/LanguageToggle.svelte"
 import { getLanguageFromURL } from "../lib/translations"
 import settings from "../../_data/settings/generalSettings.json"
 
-const siteHome = Astro.site;
 const path = Astro.canonicalURL.href;
 const locale = getLanguageFromURL(path);
 const homeLink = '/' + locale;

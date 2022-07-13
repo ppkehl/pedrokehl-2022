@@ -25,11 +25,12 @@ let processedColors = colorSchemes.map((ColorScheme) => {
 const primaryColor = processedColors[0].colors.primary;
 const secondaryColor = processedColors[0].colors.secondary;
 const tertiaryColor = processedColors[0].colors.tertiary;
+const successColor = processedColors[0].colors.success;
 const alertColor = processedColors[0].colors.alert;
 const dangerColor = processedColors[0].colors.danger;
 ---
 
-<style define:vars={{primaryColor,secondaryColor,tertiaryColor,alertColor,dangerColor}} is:global></style>
+<style define:vars={{primaryColor,secondaryColor,tertiaryColor,successColor,alertColor,dangerColor}} is:global></style>
 
 <script define:vars={{processedColors}} is:global>
   const randomScheme = Math.floor(Math.random() * processedColors.length);
@@ -38,6 +39,7 @@ const dangerColor = processedColors[0].colors.danger;
   root.style.setProperty('--primaryColor', schemeColors.primary);
   root.style.setProperty('--secondaryColor', schemeColors.secondary);
   root.style.setProperty('--tertiaryColor', schemeColors.tertiary);
+  root.style.setProperty('--successColor', schemeColors.success);
   root.style.setProperty('--alertColor', schemeColors.alert);
   root.style.setProperty('--dangerColor', schemeColors.danger);
 </script>

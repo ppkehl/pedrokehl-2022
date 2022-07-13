@@ -1,17 +1,12 @@
 {
-  "en": {
-    "en": "English",
-    "pt": "Portuguese",
-    "it": "Italian"
-  },
-  "pt": {
-    "en": "Inglês",
-    "pt": "Português",
-    "it": "Italiano"
-  },
-  "it": {
-    "en": "Inglese",
-    "pt": "Portoguese",
-    "it": "Italiano"
+  "locales": {
+    "en": {
+      "en": "English",
+      "pt": "Portuguese"
+    },
+    "pt": {
+      "en": "Inglês",
+      "pt": "Português"
+    }
   }
 }

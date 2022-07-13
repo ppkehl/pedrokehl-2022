@@ -124,7 +124,7 @@ const selectedPosts = postsData.slice(0, post.blog.postsNum);
 
     </div>
 
-      <div class="px-6 scroll-px-6 mx-auto relative gap-8 flex flex-nowrap overflow-x-auto lg:container lg:grid lg:grid-cols-3 z-10 snap-x" data-scroll> 
+      <div class="px-6 scroll-px-6 mx-auto relative gap-8 flex flex-nowrap overflow-x-auto sm:container sm:grid sm:grid-cols-3 z-10 snap-x" data-scroll> 
         {selectedProjects.map((project) => <ProjectPreview project={project.content}/>)}
       </div>
 
@@ -151,7 +151,7 @@ const selectedPosts = postsData.slice(0, post.blog.postsNum);
 
     </div>
 
-    <div class="px-6 scroll-px-6 mx-auto relative gap-8 flex flex-nowrap overflow-x-auto lg:container lg:grid lg:grid-cols-4 z-10 snap-x" data-scroll> 
+    <div class="px-6 scroll-px-6 mx-auto relative gap-8 flex flex-nowrap overflow-x-auto sm:container sm:grid sm:grid-cols-4 z-10 snap-x" data-scroll> 
       {selectedPosts.map((post) => <BlogPreview post={post.content}/>)}
     </div>
 

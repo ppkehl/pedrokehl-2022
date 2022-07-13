@@ -5,13 +5,15 @@ const { locale } = Astro.props;
 const localizedFooterBuildTools = footer[locale]['buildTools']
 
 ---
+
 <div class="container mx-auto p-6">
   <div class="pb-3 font-light dark:text-white">Proudly created with:</div>
   <div class="flex space-x-3" data-attr="build-tools">
     {localizedFooterBuildTools.map((localizedFooterBuildTool) =>
     <div class="aspect-square w-8" data-tip={localizedFooterBuildTool.label}>
       <a href={localizedFooterBuildTool.url}>
-        <img class="w-full h-full object-contain object-center dark:invert" src={localizedFooterBuildTool.logo}alt={localizedFooterBuildTool.label} />
+        <img class="w-full h-full object-contain object-center dark:invert"
+          src={localizedFooterBuildTool.logo}alt={localizedFooterBuildTool.label} />
       </a>
     </div>
     )}
@@ -20,41 +22,49 @@ const localizedFooterBuildTools = footer[locale]['buildTools']
 
 <style lang="scss">
   [data-attr=build-tools] {
-    [data-tip] {
-      display: block;
-      position: relative;
-      &::before,
-      &::after {
-        opacity: 0;
-        transition: all 0.3s ease-in-out;
-      }
-      &::before {
-        content: attr(data-tip);
+
+    @media (min-width: 640px) {
+      [data-tip] {
         display: block;
-        position: absolute;
-        padding: 5px 10px 7px;
-        background-color: #fff;
-        bottom: 47px;
-        white-space: nowrap;
-        border-radius: 5px;
-        left: -10px;
-      }
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 0;
-        height: 0;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 10px solid #fff;
-        bottom: 37px;
-        left: 6px;
-      }
-      &:hover {
+        position: relative;
+
         &::before,
         &::after {
-          opacity: 1;
+          opacity: 0;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &::before {
+          content: attr(data-tip);
+          display: block;
+          position: absolute;
+          padding: 5px 10px 7px;
+          background-color: #fff;
+          bottom: 47px;
+          white-space: nowrap;
+          border-radius: 5px;
+          left: -10px;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-top: 10px solid #fff;
+          bottom: 37px;
+          left: 6px;
+        }
+
+        &:hover {
+
+          &::before,
+          &::after {
+            opacity: 1;
+          }
         }
       }
     }

@@ -3,7 +3,7 @@ const { project } = Astro.props;
 const projectURL = '/' + project[0].translations[project[0].locale]
 ---
 
-<div class="w-2/3 lg:w-auto flex-none mb-8 dark:text-white snap-start">
+<div class="w-2/3 sm:w-auto flex-none mb-8 dark:text-white snap-start">
   <a href={projectURL} class="block space-y-5">
     <div class="w-full aspect-square md:aspect-video bg-slate-300">
       <img class="object-cover w-full h-full" src={project[0]?.featuredImage} alt="">

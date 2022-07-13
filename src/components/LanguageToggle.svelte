@@ -2,6 +2,7 @@
   export let locale:string
   export let translationsURL:object
   import {locales} from '../lib/translations'
+  //import {locales} from "../../_data/settings/locales.json"
 </script>
 
 {#if Object.keys(locales).length}

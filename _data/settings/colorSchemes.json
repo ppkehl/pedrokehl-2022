@@ -6,6 +6,7 @@
         "primary": "#2dc0a6",
         "secondary": "#97e373",
         "tertiary": "#79f73f",
+        "success": "#00ab2c",
         "alert": "#ff9e49",
         "danger": "#ff4949"
       }
@@ -16,6 +17,7 @@
         "primary": "#1ca5e0",
         "secondary": "#03d9c0",
         "tertiary": "#49d7ff",
+        "success": "#00ab2c",
         "alert": "#ff9e49",
         "danger": "#ff4949"
       }
@@ -26,6 +28,7 @@
         "primary": "#b046d6",
         "secondary": "#8544d1",
         "tertiary": "#ac6be8",
+        "success": "#00ab2c",
         "alert": "#ff9440",
         "danger": "#ff3232"
       }
@@ -36,6 +39,7 @@
         "primary": "#4d40d3",
         "secondary": "#4ab986",
         "tertiary": "#ae257e",
+        "success": "#00ab2c",
         "alert": "#f7a24e",
         "danger": "#f65454"
       }
@@ -46,6 +50,7 @@
         "primary": "#b81600",
         "secondary": "#1038e2",
         "tertiary": "#960cd5",
+        "success": "#00ab2c",
         "alert": "#ff7346",
         "danger": "#f23535"
       }
@@ -56,6 +61,7 @@
         "primary": "#ffd100",
         "secondary": "#0031ff",
         "tertiary": "#00b134",
+        "success": "#00ab2c",
         "alert": "#e17900",
         "danger": "#ff3535"
       }

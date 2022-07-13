@@ -6,6 +6,8 @@ backend:
 
 local_backend: true
 
+# logo_url: https://your-site.com/images/logo.svg
+
 publish_mode: editorial_workflow
 
 media_library:
@@ -340,6 +342,7 @@ collections:
                   - { label: 'Primary', name: 'primary', widget: 'color', allowInput: true }
                   - { label: 'Secondary', name: 'secondary', widget: 'color', allowInput: true }
                   - { label: 'Tertiary', name: 'tertiary', widget: 'color', allowInput: true }
+                  - { label: 'Success', name: 'success', widget: 'color', allowInput: true }
                   - { label: 'Alert', name: 'alert', widget: 'color', allowInput: true }
                   - { label: 'Danger', name: 'danger', widget: 'color', allowInput: true }
 
@@ -398,3 +401,19 @@ collections:
             fields:
               - { label: 'Name', name: 'name', widget: 'string'}
               - { label: 'Description', name: 'description', widget: 'markdown' }
+
+      # ----- LOCALES
+      - name: 'locales'
+        label: 'Locales'
+        file: '_data/settings/locales.json'
+        i18n: true
+        comment: 'Attention: the locales where are setted to the FRONTEND CONSUMPTION ONLY \n You can add languages to the Netlify YAML file (config.yml) to add other languages to this admin \n The first locale set will be considered the default.'
+        fields:
+          - name: locale
+            label: Locales
+            label_singular: 'Locale'
+            i18n: true
+            widget: list
+            fields:
+              - { label: 'Locale name', name: 'locale', widget: 'string', i18n: true}
+              - { label: 'Locale code', name: 'code', widget: 'string', i18n: true}        
