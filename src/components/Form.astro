@@ -60,7 +60,9 @@ import Button from './Button.svelte'
     })
     .then(res => {
       if (res) {
-        console.log(res, "Form sent")
+        console.log("Form sent", res)
+        console.log("Status", res.status)
+        console.log("Ok", res.ok)
       }
     });
   });
