@@ -1,12 +1,26 @@
 {
-  "locales": {
-    "en": {
-      "en": "English",
-      "pt": "Portuguese"
-    },
-    "pt": {
-      "en": "Inglês",
-      "pt": "Português"
-    }
+  "en": {
+    "locale": [
+      {
+        "locale": "English",
+        "code": "en"
+      },
+      {
+        "locale": "Portuguese",
+        "code": "pt"
+      }
+    ]
+  },
+  "pt": {
+    "locale": [
+      {
+        "locale": "Inglês",
+        "code": "en"
+      },
+      {
+        "locale": "Português",
+        "code": "pt"
+      }
+    ]
   }
 }
