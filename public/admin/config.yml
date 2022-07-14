@@ -420,7 +420,7 @@ collections:
           - name: locales
             label: Locales
             label_singular: 'Locale'
-            i18n: duplicate
+            i18n: true
             widget: list
             fields:
               - { label: 'Locale name', name: 'locale', widget: 'string', i18n: duplicate}
