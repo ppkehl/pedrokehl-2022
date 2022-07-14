@@ -1,15 +1,5 @@
 import { turnToSlug, groupBy } from "./utils";
-
-export const locales = {
-  en: {
-    en: "English",
-    pt: "Portuguese"
-  },
-  pt: {
-    en: "Inglês",
-    pt: "Português"
-  },
-};
+import locales from "../../_data/settings/locales.json"
 
 export function getLanguageFromURL(pathname: string) {
   const langCodeMatch = pathname.match(/\/([a-z]{2}-?[A-Z]{0,2})\//);

@@ -1,20 +1,20 @@
 {
   "en": {
-    "locale": [
+    "locales": [
       {
         "locale": "English",
         "code": "en"
       },
       {
-        "locale": "Portuguese",
+        "locale": "Português",
         "code": "pt"
       }
     ]
   },
   "pt": {
-    "locale": [
+    "locales": [
       {
-        "locale": "Inglês",
+        "locale": "English",
         "code": "en"
       },
       {

@@ -401,6 +401,14 @@ collections:
             fields:
               - { label: 'Name', name: 'name', widget: 'string'}
               - { label: 'Description', name: 'description', widget: 'markdown' }
+              - label: "image"
+                name: "image"
+                widget: "image"
+                i18n: true
+                allow_multiple: false
+                media_library:
+                  config:
+                    multiple: false
 
       # ----- LOCALES
       - name: 'locales'
@@ -409,11 +417,11 @@ collections:
         i18n: true
         comment: 'Attention: the locales where are setted to the FRONTEND CONSUMPTION ONLY \n You can add languages to the Netlify YAML file (config.yml) to add other languages to this admin \n The first locale set will be considered the default.'
         fields:
-          - name: locale
+          - name: locales
             label: Locales
             label_singular: 'Locale'
-            i18n: true
+            i18n: duplicate
             widget: list
             fields:
-              - { label: 'Locale name', name: 'locale', widget: 'string', i18n: true}
+              - { label: 'Locale name', name: 'locale', widget: 'string', i18n: duplicate}
               - { label: 'Locale code', name: 'code', widget: 'string', i18n: duplicate}
