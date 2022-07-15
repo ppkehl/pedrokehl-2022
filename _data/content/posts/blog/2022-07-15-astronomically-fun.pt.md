@@ -15,7 +15,7 @@ Por padrão, o Astro entrega 0kb de JavaScript. Isso pode parecer um contrassens
 
 Vindo do WordPress como eu vim, onde tentava sempre criar módulos simples em meus templates, é muito interessante notar a sintaxe do Astro.
 
-No código abaixo, que corresponde ao `index.astro` do meu portfolio, vemos 2 imports de layouts (ou partes de). O Astro usa nomes em maiúsculas para pontuar layouts ou componentes (a distinção é um tanto vaga, semântica, mas pode-se imaginar que um componente é uma parte da página - um hero, um anúncio, um carroussel - enquanto o layout descreve um conjunto de componentes). O terceiro import é de módulos JS (no caso Typescript, que pode ser usado nativamente) que usei para criar um sistema simples de suporte a traduções. Em seguida, uso o `Astro.glob` para buscar o arquivo Markdown que carrega o conteúdo da home, busco as opções de tradução de acordo com meu script, e por fim apresento a constante `post` para ser consumida pelo front.
+No código abaixo, que corresponde ao `index.astro` do meu portfolio, vemos 2 imports de layouts (ou partes de). O Astro usa nomes em maiúsculas para pontuar layouts ou componentes (a distinção é um tanto vaga, semântica, mas pode-se imaginar que um componente é uma parte da página - um hero, um anúncio, um carroussel - enquanto o layout descreve um conjunto de componentes). O terceiro import é de módulos JS (no caso Typescript, que pode ser usado nativamente) que usei para criar um sistema simples de suporte a traduções. Em seguida, uso o `Astro.glob` para buscar o arquivo Markdown que carrega o conteúdo da home, busco as opções de tradução de acordo com meu script, e por fim apresento a constante `page` para ser consumida pelo front.
 
 ```javascript
 ---
@@ -26,12 +26,12 @@ import Home from '../layouts/Home.astro'
 import {getTranslations, getDefaultLocale} from '../lib/translations';
 
 // Buscar dados
-const posts = await Astro.glob('../../_data/content/unique/home.md')
-const postData = await getTranslations({
+const pages = await Astro.glob('../../_data/content/pages/home.md')
+const pageData = await getTranslations({
   "posts": posts,
   "locale": getDefaultLocale()
 })
-const post = postData[0].content[0]
+const page = postData[0].content[0]
 ---
 
 <Base translationsURL={post.translations}>
@@ -39,6 +39,6 @@ const post = postData[0].content[0]
 </Base>
 ```
 
-Não entrarei em grandes detalhes nesse post, pois vou criar uma série exclusivamente falando da minha experiência com o Astro para criar meu portfolio. A parte importante é que o código de um arquivo `.astro` é dividido entre 2 setores bem distintos: a parte superior ou *frontmatter* (fazendo referência aos arquivos markdown que a inspiram) e separada por 3 hífens em cima e embaixo do bloco de código `---` é tudo aquilo que será usado para compor a página, porém nada desse código será incluído na produção. A parte abaixo do *frontmatter* é aquela que será usada na composição da página final que chegará ao usuário. No meu caso, `Base` é a estrutura praticamente completa da página em HTML. 
+Não entrarei em grandes detalhes nesse post, pois vou criar uma série exclusivamente falando da minha experiência com o Astro para criar meu portfolio. A parte importante é que o código de um arquivo `.astro` é dividido entre 2 setores bem distintos: a parte superior ou *frontmatter* (fazendo referência aos arquivos markdown que a inspiram) e separada por 3 hífens em cima e embaixo do bloco de código `---` é tudo aquilo que será usado para compor a página, porém nada desse código será incluído na produção. A parte abaixo do *frontmatter* é aquela que será usada na composição da página final que chegará ao usuário. No meu caso, `Base` é a estrutura praticamente completa da página em HTML, que esta sendo importada no frontmatter. De especial, meu Base tem uma marcação especial, o `<slot />` que é onde o restante do conteúdo do meu index será renderizado.
 
-O Astro usa o Vite JS como module bundler, que além de extremamente
+O Astro usa o [Vite JS](https://vitejs.dev/) como module bundler, que além de extremamente rápido, permite o uso de uma variedade de ferramentas sem instalações adicionais. Como citei, Typescript pode ser usado, identificando-o apenas com `lang="ts"`. Pode-se usar também Scss nativamente , identificando-o como `lang="scss"`.
