@@ -333,12 +333,14 @@ collections:
           - name: colorSchemes
             label: Color Schemes
             label_singular: 'Color Scheme'
+            i18n: false
             widget: list
             fields:
               - { label: 'Scheme Name', name: 'schemeName', widget: 'string'}
               - label: "Colors"
                 name: "colors"
                 widget: "object"
+                i18n: false
                 fields:
                   - { label: 'Primary', name: 'primary', widget: 'color', allowInput: true }
                   - { label: 'Secondary', name: 'secondary', widget: 'color', allowInput: true }
