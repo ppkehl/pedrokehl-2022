@@ -395,15 +395,17 @@ collections:
       - name: 'authors'
         label: 'Authors'
         file: '_data/settings/authors.json'
+        i18n: true
         description: 'Author descriptions'
         fields:
           - name: authors
             label: Authors
             label_singular: 'Author'
+            i18n: true
             widget: list
             fields:
-              - { label: 'Name', name: 'name', widget: 'string'}
-              - { label: 'Description', name: 'description', widget: 'markdown' }
+              - { label: 'Name', name: 'name', widget: 'string',i18n: true}
+              - { label: 'Description', name: 'description', widget: 'markdown',i18n: true }
               - label: "image"
                 name: "image"
                 widget: "image"
