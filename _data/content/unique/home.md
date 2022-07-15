@@ -135,90 +135,16 @@ pt:
   projects:
     postsNum: 3
     active: true
-    title: Projects
+    title: Projetos
     description: Alguns exemplos de projetos executados em diferentes plataformas
       com diferentes equipes
   blog:
     postsNum: 4
     active: true
-    title: Ideas
+    title: Ideias
     description: Pensamentos sobre design, internet e outros interesses
   contact:
     active: true
     title: Contato
     description: Vamos conversar
-it:
-  postType: page
-  hero:
-    active: true
-    buttons:
-      - label: Parla con me
-        link: "#contact"
-        type: Primary
-      - label: Guarda il mio lavoro
-        link: "#projects"
-        type: Secondary
-    tagline: " Credo che il web dovrebbe essere:"
-    mainTagline: |-
-      Bella,
-
-      Veloce e
-
-      Pratica
-    description: La mia missione è creare esperienze web fluide, offrendo il meglio
-      che la tecnologia può offrire e scegliendo il miglior stack tecnologico
-      per ogni singolo progetto.
-  about:
-    active: true
-    image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.png
-    title: "Su di me"
-    description: Mi piace risolvere i problemi e pensare al futuro
-    text: >-
-      Mi sono laureato in design digitale, lavorando per oltre 20 anni come
-      freelance in design, sviluppo e identità del marchio.\
-
-      \
-
-      Mi piace avere un approccio sistemico alla risoluzione dei problemi e studio sempre le novità nel campo della tecnologia.\
-
-      \
-
-      **Competenze principali:**\
-
-      \
-
-      Progettazione di interfacce utilizzando le migliori pratiche di UI/UX e applicando il concetto di design token per lo sviluppo scalabile in diverse piattaforme/prodotti.\
-
-      \
-
-      Creazione di siti web personalizzati utilizzando WordPress come backend per risultati veloci ed efficienti.
-
-
-      **Attualmente studio:**\
-
-      \
-
-      Vedo tre pilastri per il futuro del web design:
-
-
-      1. Progettare i token come espressione di una fonte di verità, anche all'interno di piccoli team (Dizionario di stile).
-
-      2. Disaccoppiamento front-end e back-end, utilizzando CMS senza testa (Strapi e altri CMS senza testa)
-
-      3. Frontend velocissimi e minimali. (Svelte, Astro)
-  projects:
-    postsNum: 3
-    active: true
-    title: Progetti
-    description: "Alcuni esempi di progetti eseguiti su diverse piattaforme con
-      diversi team"
-  blog:
-    postsNum: 4
-    active: true
-    title: Idee
-    description: "Pensieri su design, web e altri interessi"
-  contact:
-    active: true
-    title: Contatto
-    description: Parla con me
 ---
