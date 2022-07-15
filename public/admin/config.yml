@@ -342,12 +342,12 @@ collections:
                 widget: "object"
                 i18n: false
                 fields:
-                  - { label: 'Primary', name: 'primary', widget: 'color', allowInput: true }
-                  - { label: 'Secondary', name: 'secondary', widget: 'color', allowInput: true }
-                  - { label: 'Tertiary', name: 'tertiary', widget: 'color', allowInput: true }
-                  - { label: 'Success', name: 'success', widget: 'color', allowInput: true }
-                  - { label: 'Alert', name: 'alert', widget: 'color', allowInput: true }
-                  - { label: 'Danger', name: 'danger', widget: 'color', allowInput: true }
+                  - { label: 'Primary', name: 'primary', widget: 'color', allowInput: true, i18n: false }
+                  - { label: 'Secondary', name: 'secondary', widget: 'color', allowInput: true, i18n: false }
+                  - { label: 'Tertiary', name: 'tertiary', widget: 'color', allowInput: true, i18n: false }
+                  - { label: 'Success', name: 'success', widget: 'color', allowInput: true, i18n: false }
+                  - { label: 'Alert', name: 'alert', widget: 'color', allowInput: true, i18n: false }
+                  - { label: 'Danger', name: 'danger', widget: 'color', allowInput: true, i18n: false }
 
       # ---- Footer
       - name: 'footer'
