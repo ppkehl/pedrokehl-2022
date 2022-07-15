@@ -12,3 +12,27 @@ Na minha busca por novos frameworks para experimentar o conceito de [JAMstack](h
 Pensei em testar o [Gatsby](https://www.gatsbyjs.com/), o [Hugo ](https://gohugo.io/)e o [Next](https://nextjs.org/), mas o Astro tinha um conjunto de características que me fez escolhê-lo, mesmo estando ainda em beta. Primeiro, a facilidade da sintaxe: tudo nos templates do Astro é praticamente HTML, CSS e JS puros. Segundo, que ao contrário dos outros frameworks que citei, o Astro te propícia a usar componentes de outros frameworks JS como [React](https://pt-br.reactjs.org/), [Svelte](https://svelte.dev/), [Vue](https://vuejs.org/) e [Solid](https://www.solidjs.com/). Eu já queria há algum tempo testar o Svelte (num próximo post explico o porquê do Svelte) mas não me sentia confortável em colocar todas as minhas fichas nele usando o [SvelteKit](https://kit.svelte.dev/) por exemplo. Por último e não menos importante, o Astro tem uma concepção que considero especialmente interessante: a ideia de "hidratação parcial". 
 
 Por padrão, o Astro entrega 0kb de JavaScript. Isso pode parecer um contrassenso, especialmente numa ferramenta que é totalmente baseada em JS, mas a ideia é que todo código em JavaScript possa ser pré-compilado gerando páginas estáticas. Para aquilo em que o JS é realmente necessário, como por exemplo interações no front, queries em uma API externa, etc, o Astro apenas “hidrata”, ou seja entrega o código sob demanda naquilo que é necessário, como o programador quiser definir. O Astro pode carregar os scripts de cada “[ilha](https://jasonformat.com/islands-architecture/)” (bloco de conteúdo) assim que o site carregar, quando o browser estiver sem tarefas, ou quando o elemento dinâmico entrar no viewport do usuário, da mesma forma que um lazyload para imagens.
+
+Vindo do WordPress como eu vim, onde tentava sempre criar módulos simples em meus templates, é muito interessante notar a sintaxe do Astro.
+
+No código abaixo, que corresponde ao `index.astro` do meu portfolio, vemos 2 imports de layouts (ou partes de). O Astro usa nomes em maiúsculas para pontuar 
+
+```javascript
+---
+import Base from '../layouts/Base.astro'
+import Home from '../layouts/Home.astro'
+import {getTranslations, getDefaultLocale} from '../lib/translations';
+
+// Fetch data
+const posts = await Astro.glob('../../_data/content/unique/home.md')
+const postData = await getTranslations({
+  "posts": posts,
+  "locale": getDefaultLocale()
+})
+const post = postData[0].content[0]
+---
+
+<Base translationsURL={post.translations}>
+  <Home post={post} />
+</Base>
+```
