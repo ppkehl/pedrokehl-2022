@@ -404,12 +404,12 @@ collections:
             i18n: true
             widget: list
             fields:
-              - { label: 'Name', name: 'name', widget: 'string',i18n: true}
+              - { label: 'Name', name: 'name', widget: 'string',i18n: duplicate}
               - { label: 'Description', name: 'description', widget: 'markdown',i18n: true }
               - label: "image"
                 name: "image"
                 widget: "image"
-                i18n: true
+                i18n: duplicate
                 allow_multiple: false
                 media_library:
                   config:

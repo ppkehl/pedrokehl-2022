@@ -1,13 +1,13 @@
 ---
 import Base from '../layouts/Base.astro'
 import Home from '../layouts/Home.astro'
-import {getTranslations} from '../lib/translations';
+import {getTranslations, getDefaultLocale} from '../lib/translations';
 
 // Fetch data
 const posts = await Astro.glob('../../_data/content/unique/home.md')
 const postData = await getTranslations({
   "posts": posts,
-  "locale": 'en'
+  "locale": getDefaultLocale()
 })
 const post = postData[0].content[0]
 ---

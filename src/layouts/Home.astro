@@ -7,13 +7,13 @@ import Blobs from '../components/Blobs.svelte'
 import ProjectPreview from '../layouts/ProjectPreview.astro'
 import BlogPreview from '../layouts/BlogPreview.astro'
 import {Markdown} from 'astro/components';
-import {getTranslations, getLanguageFromURL} from '../lib/translations';
+import {getTranslations, getLocaleFromURL} from '../lib/translations';
 
 // Get post from index.astro or [locale.astro]
 const { post } = Astro.props;
 
 // Get locale from URL
-const locale = getLanguageFromURL(Astro.canonicalURL.href);
+const locale = getLocaleFromURL(Astro.canonicalURL.href);
 
 // Data Fetching: List all Markdown projects in the repo.
 const projects = await Astro.glob('../../_data/content/posts/projects/*.md')

@@ -1,14 +1,20 @@
 import { turnToSlug, groupBy } from "./utils";
 import locales from "../../_data/settings/locales.json"
 
-export function getLanguageFromURL(pathname: string) {
+
+export function getDefaultLocale() {
+  return Object.keys(locales)[0]
+}
+
+export function getLocaleFromURL(pathname: string) {
   const langCodeMatch = pathname.match(/\/([a-z]{2}-?[A-Z]{0,2})\//);
-  return langCodeMatch ? langCodeMatch[1] : "en";
+  return langCodeMatch ? langCodeMatch[1] : getDefaultLocale();
 }
 
 export interface Translations {
   posts: object | []
   locale?: string
+  locales_except?: string
 }
 
 export async function getTranslations(options: Translations) {
@@ -26,6 +32,7 @@ export async function getTranslations(options: Translations) {
 
     // For each file...
     for (let key of Object.keys(t.posts)) {
+
       // Get file path
       const file = t.posts[key].file;
       // Split file path
@@ -37,9 +44,15 @@ export async function getTranslations(options: Translations) {
       // Pop the file format
       const fileNameFormat = fileNameParts.pop() || fileNameParts.pop();
 
+      // const searchPath = "_data/content/"
+      // const commonPathIndex = file.indexOf(searchPath)
+      // const filePath = file.substring(commonPathIndex + searchPath.length, file.length)
+      // const pathMinusFilename = filePath.replace(fileName, '')
+      // const pathMinusFilenameArray = pathMinusFilename.split("/");
+
       // For each locale...
       for (let [localeKey, value] of Object.entries(locales)) {
-
+        
         // If fileParts includes a locale "key" (a multi directory localization) 
         // | or | 
         // If fileNameParts includes a locale "key" (a multi file localization)
@@ -91,13 +104,14 @@ export async function getTranslations(options: Translations) {
           let locale = post[0]['locale'] ? post[0]['locale'] + '/' : ''
           let postType = post[0]['postType'] && post[0]['postType']!='page' ? post[0]['postType'] + '/' : ''
           let slug = post[0]['slug']
-          // translationGroups.push({[localeKey]: locale + postType + slug})
           translationGroups[localeKey] = locale + postType + slug
         }
         posts['translations'] = translationGroups
       }
       if(t.locale){
         returnPosts.push({"content": groupedPost.filter(obj => {return obj.locale === t.locale})})
+      }else if(t.locales_except){
+        returnPosts.push({"content": groupedPost.filter(obj => {return obj.locale !== t.locales_except})})
       }else{
         returnPosts.push({"content": groupedPost})
       }

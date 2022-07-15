@@ -6,12 +6,12 @@ import Footer from "./Footer.astro"
 import ColorSchemes from "../components/ColorSchemes.astro"
 import ThemeToggle from "../components/ThemeToggle.svelte"
 import LanguageToggle from "../components/LanguageToggle.svelte"
-import { getLanguageFromURL } from "../lib/translations"
+import { getLocaleFromURL, getDefaultLocale } from "../lib/translations"
 import settings from "../../_data/settings/generalSettings.json"
 
 const path = Astro.canonicalURL.href;
-const locale = getLanguageFromURL(path);
-const homeLink = '/' + locale;
+const locale = getLocaleFromURL(path);
+const homeLink = locale === getDefaultLocale() ? '/' :'/' + locale;
 
 // Header Configs
 const title = settings[locale].title;
