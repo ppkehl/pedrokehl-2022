@@ -3,6 +3,18 @@
     {
       "term-en": "Proudly created with:",
       "term-pt": "Orgulhosamente criado com:"
+    },
+    {
+      "term-en": "Thanks for your message!",
+      "term-pt": "Obrigado pela sua mensagem!"
+    },
+    {
+      "term-en": "Uh-oh... We had problems trying to deliver your message",
+      "term-pt": "Ops... Nós tivemos problemas enviando a sua mensagem"
+    },
+    {
+      "term-en": "Uh-oh... Something went wrong!",
+      "term-pt": "Ops... Alguma coisa deu errado!"
     }
   ]
 }
