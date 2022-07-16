@@ -396,7 +396,7 @@ collections:
       - name: 'translations'
         label: 'String Translations'
         file: '_data/settings/stringTranslations.json'
-        i18n: duplicate
+        i18n: true
         fields:
           - name: strings
             label: Strings
