@@ -375,6 +375,33 @@ collections:
                 multiple: false
           - { label: 'Google Analitycs ID', name: 'analitycs', widget: 'string', i18n: duplicate }
           - { label: 'Web3 Forms ID', name: 'web3Forms', widget: 'string', i18n: duplicate }
+
+      # ----- LOCALES
+      - name: 'locales'
+        label: 'Locales Settings'
+        file: '_data/settings/localesSettings.json'
+        
+        fields:
+          - name: locales
+            label: Locales
+            label_singular: 'Locale'
+            widget: list
+            fields:
+              - { label: 'Locale name', name: 'locale', widget: 'string'}
+              - { label: 'Locale code', name: 'code', widget: 'string'}
+
+      # ----- TRANSLATIONS
+      - name: 'translations'
+        label: 'String Translations'
+        file: '_data/settings/stringTranslations.json'
+        
+        fields:
+          - name: strings
+            label: Strings
+            label_singular: 'String'
+            widget: list
+            fields:
+              - { label: 'String', name: 'string', widget: 'string'}    
               
   # ----- THEME
   - name: 'theme'
@@ -408,39 +435,3 @@ collections:
                   - { label: 'Success', name: 'success', widget: 'color', allowInput: true }
                   - { label: 'Alert', name: 'alert', widget: 'color', allowInput: true }
                   - { label: 'Danger', name: 'danger', widget: 'color', allowInput: true }
-
-  # ----- LOCALES
-  - name: 'locales'
-    label: 'Locales'
-    comment: 'Attention: the locales where are setted to the FRONTEND CONSUMPTION ONLY \n You can add languages to the Netlify YAML file (config.yml) to add other languages to this admin \n The first locale set will be considered the default.'
-    delete: false
-    editor:
-      preview: false
-    files:
-
-      # ----- LOCALES
-      - name: 'locales'
-        label: 'Locales Settings'
-        file: '_data/settings/localesSettings.json'
-        
-        fields:
-          - name: locales
-            label: Locales
-            label_singular: 'Locale'
-            widget: list
-            fields:
-              - { label: 'Locale name', name: 'locale', widget: 'string'}
-              - { label: 'Locale code', name: 'code', widget: 'string'} 
-
-      # ----- TRANSLATIONS
-      - name: 'translations'
-        label: 'String Translations'
-        file: '_data/settings/stringTranslations.json'
-        
-        fields:
-          - name: strings
-            label: Strings
-            label_singular: 'String'
-            widget: list
-            fields:
-              - { label: 'String', name: 'string', widget: 'string'}                     
