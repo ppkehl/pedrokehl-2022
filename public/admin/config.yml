@@ -401,7 +401,7 @@ collections:
             label_singular: 'String'
             widget: list
             fields:
-              - { label: 'String', name: 'string', widget: 'string'}    
+              - { label: 'Term', name: 'term', widget: 'string'}    
               
   # ----- THEME
   - name: 'theme'
