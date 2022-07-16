@@ -368,7 +368,7 @@ collections:
           - label: "Site default image"
             name: "image"
             widget: "image"
-            i18n: duplicate
+            i18n: true
             allow_multiple: false
             media_library:
               config:
@@ -387,7 +387,7 @@ collections:
             label: Locales
             label_singular: 'Locale'
             widget: list
-            i18n: duplicate
+            i18n: true
             fields:
               - { label: 'Locale name', name: 'locale', widget: 'string', i18n: true}
               - { label: 'Locale code', name: 'code', widget: 'string', i18n: true}
