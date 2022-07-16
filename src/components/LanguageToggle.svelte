@@ -18,7 +18,7 @@
                 <a href="/{localeGroup['code']}">{localeGroup['code']}</a>
               {/if}
             {:else}
-              <a href="/{translationsURL[localeGroup['code']]}">{localeGroup['locale']}</a>
+              <a href="/{translationsURL[localeGroup['code']]}">{localeGroup['code']}</a>
             {/if}
           </li>
         {/if}

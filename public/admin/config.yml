@@ -279,7 +279,7 @@ collections:
 
   # ----- SETTINGS
   - name: 'settings'
-    label: 'Settings'
+    label: 'General settings'
     i18n:
       structure: single_file
       locales: [en, pt]
@@ -306,6 +306,7 @@ collections:
               config:
                 multiple: false
           - { label: 'Google Analitycs ID', name: 'analitycs', widget: 'string', i18n: duplicate }
+          - { label: 'Web3 Forms ID', name: 'web3Forms', widget: 'string', i18n: duplicate }
 
       # ---- Menu
       - name: 'mainMenu'
@@ -322,32 +323,6 @@ collections:
               - { label: 'Title', name: 'title', widget: 'string', i18n: true}
               - { label: 'Description', name: 'description', widget: 'string', i18n: true}
               - { label: 'URL', name: 'url', widget: 'string', i18n: true}
-
-      # ---- Color Schemes
-      - name: 'colorSchemes'
-        label: 'Color Schemes'
-        i18n: false
-        file: '_data/settings/colorSchemes.json'
-        description: 'Color Schemes'
-        fields:
-          - name: colorSchemes
-            label: Color Schemes
-            label_singular: 'Color Scheme'
-            i18n: false
-            widget: list
-            fields:
-              - { label: 'Scheme Name', name: 'schemeName', widget: 'string'}
-              - label: "Colors"
-                name: "colors"
-                widget: "object"
-                i18n: false
-                fields:
-                  - { label: 'Primary', name: 'primary', widget: 'color', allowInput: true, i18n: false }
-                  - { label: 'Secondary', name: 'secondary', widget: 'color', allowInput: true, i18n: false }
-                  - { label: 'Tertiary', name: 'tertiary', widget: 'color', allowInput: true, i18n: false }
-                  - { label: 'Success', name: 'success', widget: 'color', allowInput: true, i18n: false }
-                  - { label: 'Alert', name: 'alert', widget: 'color', allowInput: true, i18n: false }
-                  - { label: 'Danger', name: 'danger', widget: 'color', allowInput: true, i18n: false }
 
       # ---- Footer
       - name: 'footer'
@@ -390,31 +365,6 @@ collections:
                   config:
                     multiple: false
 
-
-      # ----- AUTHORS
-      - name: 'authors'
-        label: 'Authors'
-        file: '_data/settings/authors.json'
-        i18n: true
-        description: 'Author descriptions'
-        fields:
-          - name: authors
-            label: Authors
-            label_singular: 'Author'
-            i18n: true
-            widget: list
-            fields:
-              - { label: 'Name', name: 'name', widget: 'string',i18n: duplicate}
-              - { label: 'Description', name: 'description', widget: 'markdown',i18n: true }
-              - label: "image"
-                name: "image"
-                widget: "image"
-                i18n: duplicate
-                allow_multiple: false
-                media_library:
-                  config:
-                    multiple: false
-
       # ----- LOCALES
       - name: 'locales'
         label: 'Locales'
@@ -428,3 +378,36 @@ collections:
             fields:
               - { label: 'Locale name', name: 'locale', widget: 'string'}
               - { label: 'Locale code', name: 'code', widget: 'string'}
+              
+  # ----- THEME
+  - name: 'theme'
+    label: 'Theme Settings'
+    delete: false
+    editor:
+      preview: false
+    files:
+
+      # ---- Color Schemes
+      - name: 'colorSchemes'
+        label: 'Color Schemes'
+        i18n: false
+        file: '_data/settings/colorSchemes.json'
+        description: 'Color Schemes'
+        fields:
+          - name: colorSchemes
+            label: Color Schemes
+            label_singular: 'Color Scheme'
+            i18n: false
+            widget: list
+            fields:
+              - { label: 'Scheme Name', name: 'schemeName', widget: 'string'}
+              - label: "Colors"
+                name: "colors"
+                widget: "object"
+                fields:
+                  - { label: 'Primary', name: 'primary', widget: 'color', allowInput: true }
+                  - { label: 'Secondary', name: 'secondary', widget: 'color', allowInput: true }
+                  - { label: 'Tertiary', name: 'tertiary', widget: 'color', allowInput: true }
+                  - { label: 'Success', name: 'success', widget: 'color', allowInput: true }
+                  - { label: 'Alert', name: 'alert', widget: 'color', allowInput: true }
+                  - { label: 'Danger', name: 'danger', widget: 'color', allowInput: true }

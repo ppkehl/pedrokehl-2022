@@ -30,7 +30,7 @@ const { post } = Astro.props;
 
 <Base translationsURL={post.translations}>
 
-  <div class="container mx-auto lg:py-40 px-6 space-y-6 dark:text-white">
+  <div class="container mx-auto py-24 lg:py-40 px-6 space-y-6 dark:text-white">
     <Fragment set:html={post.body} />
   </div>
 

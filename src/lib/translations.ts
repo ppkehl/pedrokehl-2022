@@ -54,7 +54,7 @@ export async function getTranslations(options: Translations) {
       for (let [localeKey, value] of Object.entries(locales)) {
         
         // If fileParts includes a locale "key" (a multi directory localization) 
-        // | or | 
+        // or
         // If fileNameParts includes a locale "key" (a multi file localization)
         if (fileParts.includes(localeKey) || fileNameParts.includes(localeKey)) {
           // Get the file name without the localeKey, to create a consistent filename to search
