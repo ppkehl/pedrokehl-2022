@@ -379,6 +379,7 @@ collections:
       # ----- LOCALES
       - name: 'locales'
         label: 'Locales Settings'
+        i18n: true
         file: '_data/settings/localesSettings.json'
         
         fields:
@@ -386,22 +387,24 @@ collections:
             label: Locales
             label_singular: 'Locale'
             widget: list
+            i18n: true
             fields:
-              - { label: 'Locale name', name: 'locale', widget: 'string'}
-              - { label: 'Locale code', name: 'code', widget: 'string'}
+              - { label: 'Locale name', name: 'locale', widget: 'string', i18n: true}
+              - { label: 'Locale code', name: 'code', widget: 'string', i18n: true}
 
       # ----- TRANSLATIONS
       - name: 'translations'
         label: 'String Translations'
         file: '_data/settings/stringTranslations.json'
-        
+        i18n: true
         fields:
           - name: strings
             label: Strings
             label_singular: 'String'
             widget: list
+            i18n: true
             fields:
-              - { label: 'Term', name: 'term', widget: 'string'}    
+              - { label: 'Term', name: 'term', widget: 'string', i18n: true}    
               
   # ----- THEME
   - name: 'theme'
