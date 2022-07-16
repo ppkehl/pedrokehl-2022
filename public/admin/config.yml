@@ -277,6 +277,33 @@ collections:
               - {label: "Title", name: "title", widget: "string", i18n: true}
               - {label: "Description", name: "description", i18n: true, widget: "string"} 
 
+  # ----- MENUS
+  - name: 'menus'
+    label: 'Menus'
+    i18n:
+      structure: single_file
+      locales: [en, pt]
+    delete: false
+    editor:
+      preview: false
+    files:
+
+      # ---- Main Menu
+      - name: 'mainMenu'
+        label: 'Main menu'
+        i18n: true
+        file: '_data/settings/mainMenu.json'
+        fields:
+          - name: mainMenu
+            label: Main menu items
+            label_singular: 'Main menu item'
+            widget: list
+            i18n: true
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string', i18n: true}
+              - { label: 'Description', name: 'description', widget: 'string', i18n: true}
+              - { label: 'URL', name: 'url', widget: 'string', i18n: true}
+
   # ----- SETTINGS
   - name: 'settings'
     label: 'General settings'
