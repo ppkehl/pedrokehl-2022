@@ -85,8 +85,10 @@ pt:
       Rápida &
 
       Prática
-    description: "Minha missão é criar experiências agradáveis, usando o melhor que
-      a tecnologia pode oferecer "
+    description: |-
+      Minha missão é criar experiências agradáveis, 
+      usando o melhor que a tecnologia pode oferecer 
+      e escolhendo as melhores opções para cada projeto.
     buttons:
       - label: Fale comigo
         link: "#contact"
