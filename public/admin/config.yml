@@ -417,14 +417,12 @@ collections:
       # ---- Color Schemes
       - name: 'colorSchemes'
         label: 'Color Schemes'
-        i18n: false
         file: '_data/settings/colorSchemes.json'
         description: 'Color Schemes'
         fields:
           - name: colorSchemes
             label: Color Schemes
             label_singular: 'Color Scheme'
-            i18n: false
             widget: list
             fields:
               - { label: 'Scheme Name', name: 'schemeName', widget: 'string'}
