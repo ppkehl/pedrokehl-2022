@@ -304,58 +304,11 @@ collections:
               - { label: 'Description', name: 'description', widget: 'string', i18n: true}
               - { label: 'URL', name: 'url', widget: 'string', i18n: true}
 
-  # ----- SETTINGS
-  - name: 'settings'
-    label: 'General settings'
-    i18n:
-      structure: single_file
-      locales: [en, pt]
-    delete: false
-    editor:
-      preview: false
-    files:
-
-      # ---- General settings
-      - name: 'general'
-        label: 'Site Settings'
-        file: '_data/settings/generalSettings.json'
-        i18n: true
-        description: 'General site Settings'
-        fields:
-          - { label: 'Site title', name: 'title', widget: 'string', i18n: true }
-          - { label: 'Site description', name: 'description', widget: 'text', i18n: true }
-          - label: "Site default image"
-            name: "image"
-            widget: "image"
-            i18n: duplicate
-            allow_multiple: false
-            media_library:
-              config:
-                multiple: false
-          - { label: 'Google Analitycs ID', name: 'analitycs', widget: 'string', i18n: duplicate }
-          - { label: 'Web3 Forms ID', name: 'web3Forms', widget: 'string', i18n: duplicate }
-
-      # ---- Menu
-      - name: 'mainMenu'
-        label: 'Main menu'
-        i18n: true
-        file: '_data/settings/mainMenu.json'
-        fields:
-          - name: mainMenu
-            label: Main menu items
-            label_singular: 'Main menu item'
-            widget: list
-            i18n: true
-            fields:
-              - { label: 'Title', name: 'title', widget: 'string', i18n: true}
-              - { label: 'Description', name: 'description', widget: 'string', i18n: true}
-              - { label: 'URL', name: 'url', widget: 'string', i18n: true}
-
       # ---- Footer
-      - name: 'footer'
-        label: 'Footer'
+      - name: 'footerMenu'
+        label: 'Footer Menu'
         i18n: true
-        file: '_data/settings/footer.json'
+        file: '_data/settings/footerMenu.json'
         fields:
 
           - name: buildTools
@@ -390,12 +343,44 @@ collections:
                 allow_multiple: false
                 media_library:
                   config:
-                    multiple: false
+                    multiple: false        
+
+  # ----- SETTINGS
+  - name: 'settings'
+    label: 'General settings'
+    i18n:
+      structure: single_file
+      locales: [en, pt]
+    delete: false
+    editor:
+      preview: false
+    files:
+
+      # ---- General settings
+      - name: 'general'
+        label: 'Site Settings'
+        file: '_data/settings/generalSettings.json'
+        i18n: true
+        description: 'General site Settings'
+        fields:
+          - { label: 'Site title', name: 'title', widget: 'string', i18n: true }
+          - { label: 'Site description', name: 'description', widget: 'text', i18n: true }
+          - label: "Site default image"
+            name: "image"
+            widget: "image"
+            i18n: duplicate
+            allow_multiple: false
+            media_library:
+              config:
+                multiple: false
+          - { label: 'Google Analitycs ID', name: 'analitycs', widget: 'string', i18n: duplicate }
+          - { label: 'Web3 Forms ID', name: 'web3Forms', widget: 'string', i18n: duplicate }
 
       # ----- LOCALES
       - name: 'locales'
         label: 'Locales'
         file: '_data/settings/locales.json'
+        i18n: false
         comment: 'Attention: the locales where are setted to the FRONTEND CONSUMPTION ONLY \n You can add languages to the Netlify YAML file (config.yml) to add other languages to this admin \n The first locale set will be considered the default.'
         fields:
           - name: locales
