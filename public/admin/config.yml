@@ -292,7 +292,7 @@ collections:
       - name: 'mainMenu'
         label: 'Main menu'
         i18n: true
-        file: '_data/settings/mainMenu.json'
+        file: '_data/settings/menuMain.json'
         fields:
           - name: mainMenu
             label: Main menu items
@@ -308,7 +308,7 @@ collections:
       - name: 'footerMenu'
         label: 'Footer Menu'
         i18n: true
-        file: '_data/settings/footerMenu.json'
+        file: '_data/settings/menuFooter.json'
         fields:
 
           - name: buildTools
@@ -380,7 +380,6 @@ collections:
       - name: 'locales'
         label: 'Locales'
         file: '_data/settings/locales.json'
-        i18n: false
         comment: 'Attention: the locales where are setted to the FRONTEND CONSUMPTION ONLY \n You can add languages to the Netlify YAML file (config.yml) to add other languages to this admin \n The first locale set will be considered the default.'
         fields:
           - name: locales

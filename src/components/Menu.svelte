@@ -1,6 +1,6 @@
 <script lang="ts">
   export let locale:string;
-  import menuItems from '../../_data/settings/mainMenu.json'
+  import menuItems from '../../_data/settings/menuMain.json'
 </script>
 
 <input class="lg:hidden" title="Toggle Menu" id="menu-toggle" type="checkbox" />
