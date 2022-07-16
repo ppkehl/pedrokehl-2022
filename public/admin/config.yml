@@ -387,7 +387,7 @@ collections:
             label: Locales
             label_singular: 'Locale'
             widget: list
-            i18n: true
+            i18n: duplicate
             fields:
               - { label: 'Locale name', name: 'locale', widget: 'string', i18n: true}
               - { label: 'Locale code', name: 'code', widget: 'string', i18n: true}
