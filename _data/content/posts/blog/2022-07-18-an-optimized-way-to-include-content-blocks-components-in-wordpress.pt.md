@@ -19,13 +19,13 @@ A solução usando get_template_part é mais interessante, pois permite ao desen
 
 O get_template_part resolve isso de maneira inteligente e automática. Se você chamar alguma parcial usando essa função, ele primeiro checará se o tema filho a possui. Não encontrando, ele ira subir para o tema pai e tentar encontrar lá.
 
-Se preciso incluir uma parcial chamada **loop.php** por exemplo, posso usar **get_template_part(loop.php)**. Se **loop.php** existir no tema filho, o WordPress sempre irá inseri-lo (pois essa é a premissa de ter temas pai e filhos), mas caso não encontre o **loop.php** será procurado no tema pai.
+Se preciso incluir uma parcial chamada **`loop.php`** por exemplo, posso usar **`get_template_part(loop.php)`**. Se **`loop.php`** existir no tema filho, o WordPress sempre irá inseri-lo (pois essa é a premissa de ter temas pai e filhos), mas caso não encontre o **`loop.php`** será procurado no tema pai.
 
 ## Mas o get_template_part não resolve tudo
 
 Mas digamos que a sua necessidade não seja apenas inserir uma parcial, mas parametrizá-la para poder mudar variáveis na inserção. Nesse caso, encontraríamos um problema. A única forma de passar parâmetros para o template herdado do pai seria usando variáveis globais.
 
-Seu **loop.php** original poderia ser o seguinte:
+Seu **`loop.php`** original poderia ser o seguinte:
 
 ```php
 <?php
@@ -47,7 +47,7 @@ wp_reset_postdata();
 
 Nesse exemplo o loop tem uma query onde procuro pelos 10 últimos posts  do tipo “posts”.
 
-Mas digamos que no tema filho eu tenha um tipo de post customizado, chamado **livros.** Gostaria de usar o mesmo **loop.php** – pois a estrutura seria a mesma –  mas gostaria de substituir o post_type da minha query pelo post_type livros.
+Mas digamos que no tema filho eu tenha um tipo de post customizado, chamado **`livros`.** Gostaria de usar o mesmo **`loop.php`** – pois a estrutura seria a mesma –  mas gostaria de substituir o post_type da minha query pelo post_type livros.
 
 Poderia tentar algo assim:
 
@@ -58,7 +58,7 @@ get_template_part( 'loop.php' );
 ?>
 ```
 
-E dentro do meu loop, chamaria a variável $post_type. Infelizmente essa solução não funcionaria. $post_type apareceria como não definida.
+E dentro do meu loop, chamaria a variável `$post_type`. Infelizmente essa solução não funcionaria. `$post_type` apareceria como não definida.
 
 ```php
 <?php
@@ -78,7 +78,7 @@ wp_reset_postdata();
 ?>
 ```
 
-Uma forma de resolver o problema é usar o include com outra função nativa do WordPress, a locate_template junto com o include nativo do PHP.
+Uma forma de resolver o problema é usar o include com outra função nativa do WordPress, a `locate_template` junto com o include nativo do PHP.
 
 ```php
 <?php
@@ -87,7 +87,7 @@ include( locate_template( 'loop.php', false, false ) );
 ?>
 ```
 
-Nesse caso, a variável $post_type dentro do loop.php ficaria definida. Meu código funcionaria e teria um loop reutilizável.
+Nesse caso, a variável `$post_type` dentro do `loop.php` ficaria definida. Meu código funcionaria e teria um loop reutilizável.
 
 ## Uma solução ainda melhor
 
@@ -139,7 +139,7 @@ get_template_obj('loop.php', array(
 ?>
 ```
 
-Dentro do loop.php, teríamos a seguinte situação:
+Dentro do `loop.php`, teríamos a seguinte situação:
 
 ```phtml
 <?php
@@ -159,4 +159,4 @@ wp_reset_postdata();
 ?>
 ```
 
-Como no exemplo do uso da função nativa get_template_part, temos todas as vantagens do uso entre temas pai e filhos, inserção automática e ainda a opção de inserir parâmetros localizados!
+Como no exemplo do uso da função nativa `get_template_part`, temos todas as vantagens do uso entre temas pai e filhos, inserção automática e ainda a opção de inserir parâmetros localizados!
