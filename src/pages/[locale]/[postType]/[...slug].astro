@@ -2,13 +2,14 @@
 import Base from '../../../layouts/Base.astro'
 import BlogImage from '../../../components/BlogImage.svelte'
 import BlogDescription from '../../../components/BlogDescription.svelte'
-import {formatDate} from '../../../lib/utils'
+import { formatDate } from '../../../lib/utils'
 
 // Data Fetching API
 import { getTranslations } from '../../../lib/translations';
 
 export async function getStaticPaths() {
-  const posts = await Astro.glob('../../../../_data/content/posts/**/*.md')
+  //const posts = await Astro.glob('../../../../_data/content/posts/**/*.md')
+  const posts = await Astro.glob('../../../../_data/content/posts/blog/*.md')
   const postsData = await getTranslations({
     "posts": posts
   })
@@ -34,21 +35,21 @@ const postDate = formatDate(post.date)
 
 <Base translationsURL={post.translations}>
 
-<div class="content container mx-auto dark:text-white py-24 lg:pt-40 lg:pb-20 px-6 flex">
-  <div class="w-3/12 px-6">
-    <BlogImage featuredImage={post.featuredImage} />
-  </div>
-  <div class="w-6/12 space-y-6 px-6">
-    <h1 class="text-4xl font-bold">
-      <Fragment set:html={post.title} />
-    </h1>
-    <div class="">{postDate}</div>
-    <BlogDescription description={post.description} />
+  <div class="content container mx-auto dark:text-white py-24 lg:pt-40 lg:pb-20 px-6 flex">
+    <div class="hidden lg:block lg:w-2/12 xl:w-3/12 pr-9">
+      <BlogImage featuredImage={post.featuredImage} />
+    </div>
+    <div class="w-full lg:w-10/12 xl:w-6/12 space-y-6">
+      <h1 class="text-4xl font-bold">
+        <Fragment set:html={post.title} />
+      </h1>
+      <div class="">{postDate}</div>
+      <BlogDescription description={post.description} />
 
-    <Fragment set:html={post.body} />
-    <div class="clear-both w-full"></div>
+      <Fragment set:html={post.body} />
+      <div class="clear-both w-full"></div>
+    </div>
   </div>
-</div>
 
 </Base>
 
@@ -56,13 +57,29 @@ const postDate = formatDate(post.date)
   .content {
     pre.astro-code {
       padding: 1.5em;
+      code{
+        background: transparent;
+      }
     }
-    ul{
+
+    blockquote {
+      border-left: 5px solid;
+      padding-left: 1rem;
+      font-size: 1.1rem;
+      font-style: italic;
+
+      p {
+        margin: 1rem 0;
+      }
+    }
+
+    ul {
       list-style-type: disc;
       padding-left: 1.2rem;
     }
-    ol{
-      list-style-type:decimal;
+
+    ol {
+      list-style-type: decimal;
       padding-left: 1.2rem;
     }
 
@@ -71,6 +88,7 @@ const postDate = formatDate(post.date)
       line-height: 2.25rem;
       font-weight: bold;
     }
+
     h3 {
       font-size: 1.5rem;
       line-height: 2rem;
@@ -83,10 +101,8 @@ const postDate = formatDate(post.date)
         border-bottom: 1px solid;
       }
 
-
-
       code {
-        background: rgb(45, 45, 45);
+        background: #5e5e5e;
         color: white;
         padding: 0.2em;
         border-radius: 0.3em;
@@ -98,6 +114,9 @@ const postDate = formatDate(post.date)
 
   .dark {
     .content {
+      code{
+        background: #2d2d2d;
+      }
       a {
         color: rgb(169, 145, 255);
         border-bottom: 1px solid;
