@@ -8,23 +8,23 @@ tags:
 description: In this post I show a very flexible solution to get_template_part in Wordpress.
 featuredImage: https://res.cloudinary.com/ppkehl/image/upload/v1658153129/template_parts_h77ngc.png
 ---
-O WordPress é bastante flexível quanto a forma de incluir parciais.
+WordPress is very flexible about how to include partials.
 
-Pode-se usar funções nativas do PHP como [include()](http://php.net/manual/pt_BR/function.include.php) ou [include_once()](http://php.net/manual/pt_BR/function.include-once.php) ou mesmo [require()](http://php.net/manual/pt_BR/function.require.php) e [require_once()](http://php.net/manual/pt_BR/function.require-once.php), ou funções exclusivas do próprio WordPress como [get_template_part().](https://developer.wordpress.org/reference/functions/get_template_part/)
+You can use native PHP functions like [include()](https://www.php.net/manual/en/function.include.php) or [include_once()](https://www.php.net/manual/en/function.include-once.php) or even [require()](https://www.php.net/manual/en/function.require.php) and [require_once()](https://www.php.net/manual/en/function.require-once.php), or functions unique to WordPress itself such as [get_template_part().](https://developer.wordpress.org/reference/functions/get_template_part/)
 
-## Inclusão com get_template_part
+## Inclusion with get_template_part
 
-A solução usando get_template_part é mais interessante, pois permite ao desenvolvedor mais flexibilidade para lidar com temas pai e temas filho. Se você por exemplo criar um tema filho e tentar chamar um bloco PHP pertencente ao tema pai, você precisaria inserir o caminho relativo completo do tema filho (onde por exemplo um pedaço do layout está sendo chamado) para o tema pai.
+The solution using `get_template_part` is more interesting as it allows the developer more flexibility in dealing with parent themes and child themes. If you for example create a child theme and try to call a PHP block belonging to the parent theme, you would need to insert the full relative path of the child theme (where for example a piece of the layout is being called) to the parent theme.
 
-O get_template_part resolve isso de maneira inteligente e automática. Se você chamar alguma parcial usando essa função, ele primeiro checará se o tema filho a possui. Não encontrando, ele ira subir para o tema pai e tentar encontrar lá.
+`get_template_part` intelligently and automatically solves this. If you call any partial using this function, it will first check if the child theme has it. Not finding it, it will go up to the parent theme and try to find it there.
 
-Se preciso incluir uma parcial chamada **loop.php** por exemplo, posso usar **get_template_part(loop.php)**. Se **loop.php** existir no tema filho, o WordPress sempre irá inseri-lo (pois essa é a premissa de ter temas pai e filhos), mas caso não encontre o **loop.php** será procurado no tema pai.
+If I need to include a partial called **`loop.php`** for example, I can use **`get_template_part(loop.php)`**. If **`loop.php`** exists in the child theme, WordPress will always insert it (as this is the premise of having parent and child themes), but if it doesn't find the **`loop.php`** it will be searched for in the theme dad.
 
-## Mas o get_template_part não resolve tudo
+## But get_template_part doesn't solve everything
 
-Mas digamos que a sua necessidade não seja apenas inserir uma parcial, mas parametrizá-la para poder mudar variáveis na inserção. Nesse caso, encontraríamos um problema. A única forma de passar parâmetros para o template herdado do pai seria usando variáveis globais.
+But let's say that your need is not just to insert a partial, but to parameterize it to be able to change variables in the insertion. In that case, we would encounter a problem. The only way to pass parameters to the template inherited from the parent would be using global variables.
 
-Seu **loop.php** original poderia ser o seguinte:
+Your **`loop.php`** original could look like this:
 
 ```php
 <?php
@@ -44,20 +44,20 @@ wp_reset_postdata();
 ?>
 ```
 
-Nesse exemplo o loop tem uma query onde procuro pelos 10 últimos posts  do tipo “posts”.
+In this example, the loop has a query where I look for the last 10 posts of the “posts” type.
 
-Mas digamos que no tema filho eu tenha um tipo de post customizado, chamado **livros.** Gostaria de usar o mesmo **loop.php** – pois a estrutura seria a mesma –  mas gostaria de substituir o post_type da minha query pelo post_type livros.
+But let's say that in the child theme I have a custom post type, called books**.** I would like to use the same **`loop.php`** – because the structure would be the same – but I would like to replace the `post_type` of my query by `post_type` books.
 
-Poderia tentar algo assim:
+I could try something like this:
 
 ```php
 <?php
-$post_type = 'livros'; 
+$post_type = 'books'; 
 get_template_part( 'loop.php' );
 ?>
 ```
 
-E dentro do meu loop, chamaria a variável $post_type. Infelizmente essa solução não funcionaria. $post_type apareceria como não definida.
+And inside my loop, I would call the `$post_type` variable. Unfortunately this solution would not work. `$post_type` would appear as undefined.
 
 ```php
 <?php
@@ -77,24 +77,24 @@ wp_reset_postdata();
 ?>
 ```
 
-Uma forma de resolver o problema é usar o include com outra função nativa do WordPress, a locate_template junto com o include nativo do PHP.
+One way to solve the problem is to use the include with another native WordPress function, the `locate_template` together with the native PHP include.
 
 ```php
 <?php
-$post_type = 'livros'; 
+$post_type = 'books'; 
 include( locate_template( 'loop.php', false, false ) ); 
 ?>
 ```
 
-Nesse caso, a variável $post_type dentro do loop.php ficaria definida. Meu código funcionaria e teria um loop reutilizável.
+In that case, the `$post_type` variable inside the `loop.php` would be set. My code would work and have a reusable loop.
 
-## Uma solução ainda melhor
+## An even better solution
 
-Mas é possível tornar o código ainda mais limpo, tornando todas as variáveis locais dentro da parcial, evitando variáveis “soltas” dentro do código.
+But it is possible to make the code even cleaner, making all the variables local inside the partial, avoiding “loose” variables inside the code.
 
-Encontrei essa solução há algum tempo atrás, e ele ainda existe no gitHub em: <https://github.com/Smartik89/SMK-Theme-View/blob/master/functions.php>
+I found this solution some time ago, and it still exists on gitHub at: <https://github.com/Smartik89/SMK-Theme-View/blob/master/functions.php>
 
-A função seguinte usa o locate_template mas localiza as variáveis dentro do escopo da parcial. Eu preservei o nome da classe original, mas mudei o nome da função, por considerar mais simples:
+The following function uses the `locate_template` but locates variables within the scope of the partial. I preserved the name of the original class, but I changed the name of the function, considering it simpler:
 
 ```php
 <?php
@@ -128,17 +128,17 @@ if (!function_exists('get_template_obj')) {
 ?>
 ```
 
-O uso é muito simples. Para usar as variáveis com a parcial, faria o seguinte:
+Usage is very simple. To use the variables with the partial, you would do the following:
 
 ```php
 <?php
 get_template_obj('loop.php', array(
-    'post_type'  => 'livros'
+    'post_type'  => 'books'
 ));
 ?>
 ```
 
-Dentro do loop.php, teríamos a seguinte situação:
+Inside the `loop.php`, we would have the following situation:
 
 ```phtml
 <?php
@@ -158,4 +158,4 @@ wp_reset_postdata();
 ?>
 ```
 
-Como no exemplo do uso da função nativa get_template_part, temos todas as vantagens do uso entre temas pai e filhos, inserção automática e ainda a opção de inserir parâmetros localizados!
+As in the example of using the `get_template_part` native function, we have all the advantages of using parent and child themes, automatic insertion and even the option to insert localized parameters!
