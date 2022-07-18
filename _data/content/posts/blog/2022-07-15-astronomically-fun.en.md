@@ -1,7 +1,7 @@
 ---
 postType: blog
 title: Astronomically Fun
-date: 2022-07-15T20:49:00.816Z
+date: 2022-07-18T17:51:11.979Z
 author: Pedro Kehl
 tags:
   - Dev
