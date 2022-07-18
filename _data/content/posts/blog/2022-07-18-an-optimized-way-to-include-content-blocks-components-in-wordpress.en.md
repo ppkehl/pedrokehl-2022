@@ -92,7 +92,7 @@ In that case, the `$post_type` variable inside the `loop.php` would be set. My c
 
 But it is possible to make the code even cleaner, making all the variables local inside the partial, avoiding “loose” variables inside the code.
 
-I found this solution some time ago, and it still exists on gitHub at: <https://github.com/Smartik89/SMK-Theme-View/blob/master/functions.php>
+I found this solution some time ago, and it still exists on gitHub at: [https://github.com/Smartik89/SMK-Theme-View/blob/master/functions.php](https://github.com/Smartik89/SMK-Theme-View/blob/master/functions.php)
 
 The following function uses the `locate_template` but locates variables within the scope of the partial. I preserved the name of the original class, but I changed the name of the function, considering it simpler:
 
