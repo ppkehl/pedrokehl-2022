@@ -9,7 +9,7 @@ description: Mais do que uma discussão apenas sobre direitos autorais, a
   pirataria digital tem que ser pensada sob uma perspectiva ampliada de
   liberdades individuais, modelos de distribuição, acesso universal a informação
   e produção artística e a própria estrutura da internet.
-featuredImage: https://res.cloudinary.com/ppkehl/image/upload/v1656776422/pirate_pvkgrv.jpg
+featuredImage: https://res.cloudinary.com/ppkehl/image/upload/c_crop,h_500,w_500/v1656776422/pirate_pvkgrv.jpg
 ---
 Tempos atrás acompanhei via Twitter uma discussão sobre pirataria digital. Ela começou assim:
 

@@ -9,7 +9,7 @@ description: More than just a discussion about copyright, digital piracy has to
   be thought from an expanded perspective of individual freedoms, distribution
   models, universal access to information and artistic production and the very
   structure of the internet.
-featuredImage: https://res.cloudinary.com/ppkehl/image/upload/v1656776422/pirate_pvkgrv.jpg
+featuredImage: https://res.cloudinary.com/ppkehl/image/upload/c_crop,h_500,w_500/v1656776422/pirate_pvkgrv.jpg
 ---
 Some time ago I followed a discussion on digital piracy via Twitter. It started like this:
 
