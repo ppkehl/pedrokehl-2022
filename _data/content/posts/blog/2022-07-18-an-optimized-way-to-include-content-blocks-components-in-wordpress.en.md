@@ -36,7 +36,7 @@ $the_query = new WP_Query(array(
 if ($the_query->have_posts()):
     while ($the_query->have_posts()):
         
-        // Faça algo aqui
+        // Do something here
 
     endwhile;
 endif;
@@ -62,14 +62,14 @@ And inside my loop, I would call the `$post_type` variable. Unfortunately this s
 ```php
 <?php
 $the_query = new WP_Query(array(
-        'post_type' => $post_type, // Variável não definida
+        'post_type' => $post_type, // Undefined variable
         'posts_per_page' => 10
     )
 );
 if ($the_query->have_posts()):
     while ($the_query->have_posts()):
         
-        // Faça algo aqui
+        // Do something here
 
     endwhile;
 endif;
@@ -92,7 +92,7 @@ In that case, the `$post_type` variable inside the `loop.php` would be set. My c
 
 But it is possible to make the code even cleaner, making all the variables local inside the partial, avoiding “loose” variables inside the code.
 
-I found this solution some time ago, and it still exists on gitHub at: [https://github.com/Smartik89/SMK-Theme-View/blob/master/functions.php](https://github.com/Smartik89/SMK-Theme-View/blob/master/functions.php)
+I found this solution some time ago, and it still exists on gitHub at: <https://github.com/Smartik89/SMK-Theme-View/blob/master/functions.php>
 
 The following function uses the `locate_template` but locates variables within the scope of the partial. I preserved the name of the original class, but I changed the name of the function, considering it simpler:
 
@@ -114,7 +114,7 @@ if (!class_exists('Smk_ThemeView')) {
         }
         public function render() {
             if (locate_template($this->file)) {
-                include( locate_template($this->file) ); //Theme Check free. Child themes support.
+                include( locate_template($this->file) );
             }
         }
     }
@@ -143,14 +143,14 @@ Inside the `loop.php`, we would have the following situation:
 ```php
 <?php
 $the_query = new WP_Query(array(
-        'post_type' => $this->post_type, // Use o $this para acessar a variável
+        'post_type' => $this->post_type, // Use $this to access the variable
         'posts_per_page' => 10
     )
 );
 if ($the_query->have_posts()):
     while ($the_query->have_posts()):
         
-        // Faça algo aqui
+        // Do something here
 
     endwhile;
 endif;
