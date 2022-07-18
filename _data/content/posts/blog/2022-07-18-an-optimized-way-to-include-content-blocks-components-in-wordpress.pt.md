@@ -1,6 +1,6 @@
 ---
 postType: blog
-title: Uma forma otimizada de incluir blocos de conteúdo (componentes) no WordPress
+title: Uma forma otimizada de incluir blocos de conteúdo no WordPress
 date: 2019-03-04T13:52:17.621Z
 author: Pedro Kehl
 tags:
@@ -93,7 +93,7 @@ Nesse caso, a variável `$post_type` dentro do `loop.php` ficaria definida. Meu 
 
 Mas é possível tornar o código ainda mais limpo, tornando todas as variáveis locais dentro da parcial, evitando variáveis “soltas” dentro do código.
 
-Encontrei essa solução há algum tempo atrás, e ele ainda existe no gitHub em: <https://github.com/Smartik89/SMK-Theme-View/blob/master/functions.php>
+Encontrei essa solução há algum tempo atrás, e ele ainda existe no gitHub em: [https://github.com/Smartik89/SMK-Theme-View/blob/master/functions.php](https://github.com/Smartik89/SMK-Theme-View/blob/master/functions.php)
 
 A função seguinte usa o locate_template mas localiza as variáveis dentro do escopo da parcial. Eu preservei o nome da classe original, mas mudei o nome da função, por considerar mais simples:
 
@@ -141,7 +141,7 @@ get_template_obj('loop.php', array(
 
 Dentro do `loop.php`, teríamos a seguinte situação:
 
-```phtml
+```php
 <?php
 $the_query = new WP_Query(array(
         'post_type' => $this->post_type, // Use o $this para acessar a variável

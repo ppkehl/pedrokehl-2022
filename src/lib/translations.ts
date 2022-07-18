@@ -1,9 +1,9 @@
 import { turnToSlug, groupBy } from "./utils";
-import locales from "../../_data/settings/locales.json"
+import locales from "../../_data/settings/localesSettings.json"
 
 
 export function getDefaultLocale() {
-  return Object.keys(locales)[0]
+  return locales.locales[0].code
 }
 
 export function getLocaleFromURL(pathname: string) {
@@ -51,15 +51,14 @@ export async function getTranslations(options: Translations) {
       // const pathMinusFilenameArray = pathMinusFilename.split("/");
 
       // For each locale...
-      for (let [localeKey, value] of Object.entries(locales)) {
-        
+      for (let [localeKey, localeValue] of Object.entries(locales.locales)) {
         // If fileParts includes a locale "key" (a multi directory localization) 
         // or
         // If fileNameParts includes a locale "key" (a multi file localization)
-        if (fileParts.includes(localeKey) || fileNameParts.includes(localeKey)) {
+        if (fileParts.includes(localeValue.code) || fileNameParts.includes(localeValue.code)) {
           // Get the file name without the localeKey, to create a consistent filename to search
           // for other translation files
-          let filteredFileName = fileNameParts.filter(function(f) { return f !== localeKey }).join('.')
+          let filteredFileName = fileNameParts.filter(function(f) { return f !== localeValue.code }).join('.')
           // Get the body of the markdown file
           t.posts[key].frontmatter.body = await t.posts[key].compiledContent();
           // Set the "group slug" to filter items later
@@ -67,21 +66,21 @@ export async function getTranslations(options: Translations) {
           // Set the individual translated slug based on the title field
           t.posts[key].frontmatter.slug = turnToSlug(t.posts[key].frontmatter.title)
           // Set the locale
-          t.posts[key].frontmatter.locale = localeKey
+          t.posts[key].frontmatter.locale = localeValue.code
           // Push post to postsList array
           postsList.push(t.posts[key].frontmatter)
 
         // If the file doesn't have a localization based on path or file, it's
         // probably a single file translation   
-        } else if(t.posts[key].frontmatter.hasOwnProperty(localeKey)){
+        } else if(t.posts[key].frontmatter.hasOwnProperty(localeValue.code)){
           // Set the "group slug" to filter items later
-          t.posts[key].frontmatter[localeKey].groupSlug = fileNameParts.join('.')
+          t.posts[key].frontmatter[localeValue.code].groupSlug = fileNameParts.join('.')
           // Set the individual translated slug based on the filename
-          t.posts[key].frontmatter[localeKey].slug = t.posts[key].frontmatter.title ? turnToSlug(t.posts[key].frontmatter.title) : fileNameParts.join('.')
+          t.posts[key].frontmatter[localeValue.code].slug = t.posts[key].frontmatter.title ? turnToSlug(t.posts[key].frontmatter.title) : fileNameParts.join('.')
           // Set the locale
-          t.posts[key].frontmatter[localeKey].locale = localeKey
+          t.posts[key].frontmatter[localeValue.code].locale = localeValue.code
           // Push post to postsList array
-          postsList.push(t.posts[key].frontmatter[localeKey]);
+          postsList.push(t.posts[key].frontmatter[localeValue.code]);
         }
 
       }
@@ -96,15 +95,15 @@ export async function getTranslations(options: Translations) {
       // Loop posts group
       for (let [postsKey, posts] of Object.entries(groupedPost)) {
         let translationGroups = []
-        for (let [localeKey, value] of Object.entries(locales)) {
+        for (let [localeKey, localeValue] of Object.entries(locales.locales)) {
           var post = groupedPost.filter(obj => {
-            return obj.locale === localeKey
+            return obj.locale === localeValue.code
           })
           // File path
           let locale = post[0]['locale'] ? post[0]['locale'] + '/' : ''
           let postType = post[0]['postType'] && post[0]['postType']!='page' ? post[0]['postType'] + '/' : ''
           let slug = post[0]['slug']
-          translationGroups[localeKey] = locale + postType + slug
+          translationGroups[localeValue.code] = locale + postType + slug
         }
         posts['translations'] = translationGroups
       }

@@ -28,41 +28,22 @@
       {
         "title": "Sobre",
         "description": "Vida & Experiência",
-        "url": "#about"
+        "url": "pt/#about"
       },
       {
         "title": "Projetos",
         "description": "O que eu faço",
-        "url": "#projects"
+        "url": "pt/#projects"
       },
       {
         "title": "Ideias",
         "description": "Textos & Pensamentos",
-        "url": "#ideas"
+        "url": "pt/#ideas"
       },
       {
         "title": "Contato",
         "description": "Vamos conversar",
-        "url": "#contact"
-      }
-    ]
-  },
-  "it": {
-    "mainMenu": [
-      {
-        "title": "Sobre",
-        "description": "Vida & Experiência",
-        "url": "#about"
-      },
-      {
-        "title": "Projetos",
-        "description": "O que eu faço",
-        "url": "#projects"
-      },
-      {
-        "title": "Ideias",
-        "description": "Textos & Pensamentos",
-        "url": "#ideas"
+        "url": "pt/#contact"
       }
     ]
   }

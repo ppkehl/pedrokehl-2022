@@ -1,6 +1,6 @@
 ---
 postType: blog
-title: An optimized way to include content blocks (components) in WordPress
+title: An optimized way to include content blocks in WordPress
 date: 2019-03-04T13:52:17.621Z
 author: Pedro Kehl
 tags:
@@ -92,7 +92,7 @@ In that case, the `$post_type` variable inside the `loop.php` would be set. My c
 
 But it is possible to make the code even cleaner, making all the variables local inside the partial, avoiding “loose” variables inside the code.
 
-I found this solution some time ago, and it still exists on gitHub at: <https://github.com/Smartik89/SMK-Theme-View/blob/master/functions.php>
+I found this solution some time ago, and it still exists on gitHub at: [https://github.com/Smartik89/SMK-Theme-View/blob/master/functions.php](https://github.com/Smartik89/SMK-Theme-View/blob/master/functions.php)
 
 The following function uses the `locate_template` but locates variables within the scope of the partial. I preserved the name of the original class, but I changed the name of the function, considering it simpler:
 
@@ -140,7 +140,7 @@ get_template_obj('loop.php', array(
 
 Inside the `loop.php`, we would have the following situation:
 
-```phtml
+```php
 <?php
 $the_query = new WP_Query(array(
         'post_type' => $this->post_type, // Use o $this para acessar a variável
