@@ -10,7 +10,7 @@ description: "WordPress is a monster: it powers more than 40% of the world's
   however, some of his qualities became sources of trouble. Here I discuss some
   of the pros and cons of the platform, which in my opinion has lost its
   universal appeal for developers."
-featuredImage: https://res.cloudinary.com/ppkehl/image/upload/c_fit,e_brightness:93,w_500,z_1.8/v1658149831/WordPress-logotype-wmark_fhqj1c.webp
+featuredImage: https://res.cloudinary.com/ppkehl/image/upload/b_rgb:ffffff/v1658149831/WordPress-logotype-wmark_fhqj1c.png
 ---
 I spent a lot of time neglecting this blog, but I intend to revive it with news in web development and also with random thoughts when I feel like it.
 
