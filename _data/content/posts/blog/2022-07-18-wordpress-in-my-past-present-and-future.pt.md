@@ -1,7 +1,7 @@
 ---
 postType: blog
 title: "WordPress no meu passado, presente e futuro "
-date: 2022-07-18T13:03:47.037Z
+date: 2022-07-15T13:03:47.037Z
 author: Pedro Kehl
 tags:
   - Dev
