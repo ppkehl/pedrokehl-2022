@@ -179,8 +179,8 @@ collections:
             multiple: false
 
 
-  - name: 'uniquePages'
-    label: 'Unique Pages'
+  - name: 'singlePages'
+    label: 'Single Pages'
     i18n:
       structure: single_file
       locales: [en, pt]
@@ -192,7 +192,7 @@ collections:
       # ---- Home
       - label: "Home"
         name: "home"
-        file: '_data/content/unique/home.md'
+        file: '_data/content/single/home.md'
         i18n: true
         widget: "object"
         fields:

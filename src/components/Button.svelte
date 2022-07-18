@@ -16,19 +16,34 @@
 
 <style lang="scss">
   [data-style="Primary"] {
-    background-color: rgb(var(--primaryColor));
+    background-color: rgba(var(--primaryColor),0.8);
+    &:hover{
+      background-color: rgba(var(--primaryColor),1);
+    }
   }
   [data-style="Secondary"] {
-    background-color: rgb(var(--secondaryColor));
+    background-color: rgba(var(--secondaryColor),0.8);
+    &:hover{
+      background-color: rgba(var(--secondaryColor),1);
+    }
   }
   [data-style="Tertiary"] {
-    background-color: rgb(var(--tertiaryColor));
+    background-color: rgba(var(--tertiaryColor),0.8);
+    &:hover{
+      background-color: rgba(var(--tertiaryColor),1);
+    }
   }
   [data-style="Alert"] {
-    background-color: rgb(var(--alertColor));
+    background-color: rgba(var(--alertColor),0.8);
+    &:hover{
+      background-color: rgba(var(--alertColor),1);
+    }
   }
   [data-style="Danger"] {
-    background-color: rgb(var(--dangerColor));
+    background-color: rgba(var(--dangerColor),1);
+    &:hover{
+      background-color: rgba(var(--dangerColor),1);
+    }
   }
   a, button {
     &:after {

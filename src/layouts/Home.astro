@@ -5,8 +5,8 @@ import Button from '../components/Button.svelte'
 // import Form from '../components/Form.astro'
 import Form from '../components/Form.svelte'
 import Blobs from '../components/Blobs.svelte'
-import ProjectPreview from '../layouts/ProjectPreview.astro'
-import BlogPreview from '../layouts/BlogPreview.astro'
+import ProjectPreview from '../components/ProjectPreview.astro'
+import BlogPreview from '../components/BlogPreview.astro'
 import {Markdown} from 'astro/components';
 import {getTranslations, getLocaleFromURL} from '../lib/translations';
 
@@ -125,8 +125,8 @@ const selectedPosts = postsData.slice(0, post.blog.postsNum);
 
     </div>
 
-      <div class="xl:container px-6 scroll-px-6 mx-auto relative gap-8 flex flex-nowrap overflow-x-auto lg:grid lg:grid-cols-3 z-10 snap-x" data-scroll> 
-        {selectedProjects.map((project) => <ProjectPreview project={project.content}/>)}
+      <div class="xl:container px-6 scroll-px-6 mx-auto relative gap-8 flex flex-nowrap overflow-x-auto lg:overflow-visible lg:grid lg:grid-cols-3 z-10 snap-x" data-scroll> 
+        {selectedProjects.map((project) => <ProjectPreview project={project.content} client:load/>)}
       </div>
 
   </section>
@@ -152,7 +152,7 @@ const selectedPosts = postsData.slice(0, post.blog.postsNum);
 
     </div>
 
-    <div class="xl:container px-6 scroll-px-6 mx-auto relative gap-8 flex flex-nowrap overflow-x-auto lg:grid lg:grid-cols-4 z-10 snap-x" data-scroll> 
+    <div class="xl:container px-6 scroll-px-6 mx-auto relative gap-8 flex flex-nowrap overflow-x-auto lg:overflow-visible lg:grid lg:grid-cols-4 z-10 snap-x" data-scroll> 
       {selectedPosts.map((post) => <BlogPreview post={post.content}/>)}
     </div>
 

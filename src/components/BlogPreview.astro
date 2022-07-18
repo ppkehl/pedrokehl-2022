@@ -4,8 +4,8 @@ const postURL = '/' + post[0].translations[post[0].locale]
 ---
 <div class="w-4/5 sm:w-3/5 md:w-2/5 lg:w-auto flex-none mb-8 dark:text-white snap-start">
   <a href={postURL} class="block space-y-5">
-    <div class="w-full aspect-square bg-slate-300 rounded overflow-hidden">
-      <img class="object-cover w-full h-full" src={post[0].featuredImage} alt="">
+    <div class="w-full aspect-square rounded">
+      <img class="object-cover w-full h-full" src={post[0].featuredImage} alt={post[0].title}  data-tilt data-tilt-max="4" data-tilt-speed="500" data-tilt-perspective="500" data-tilt-glare="true">
     </div>
     <h4 class="text-xl lg:text-2xl font-semibold">
       {post[0].title}

@@ -6,8 +6,8 @@ const projectURL = project[0].url
 
 <div class="w-4/5 sm:3/5 lg:w-auto flex-none mb-8 dark:text-white snap-start">
   <a href={projectURL} class="block space-y-5">
-    <div class="w-full aspect-square md:aspect-video bg-slate-300 rounded overflow-hidden">
-      <img class="object-cover w-full h-full" src={project[0]?.featuredImage} alt="">
+    <div class="w-full aspect-square md:aspect-video rounded" >
+      <img class="object-cover w-full h-full" src={project[0]?.featuredImage} alt={project[0].title} data-tilt data-tilt-max="4" data-tilt-speed="500" data-tilt-perspective="500">
     </div>
     <h4 class="text-xl lg:text-2xl font-semibold">
       {project[0]?.title}
