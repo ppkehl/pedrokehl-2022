@@ -10,7 +10,7 @@ description: "O WordPress é um monstro: movimenta mais de 40% da internet
   no entanto, algumas de suas qualidades se tornaram fontes de problemas.
   Discuto aqui alguns dos prós e contras da plataforma, que na minha opinião
   deixou de ter apelo universal para desenvolvedores."
-featuredImage: https://res.cloudinary.com/ppkehl/image/upload/c_fit,e_brightness:93,w_500,z_1.8/v1658149831/WordPress-logotype-wmark_fhqj1c.webp
+featuredImage: https://res.cloudinary.com/ppkehl/image/upload/b_rgb:ffffff/v1658149831/WordPress-logotype-wmark_fhqj1c.png
 ---
 Passei um bom tempo negligenciando esse blog, mas pretendo reativá-lo com novidades em desenvolvimento web e também com pensamentos aleatórios quando der vontade.
 
