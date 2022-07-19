@@ -19,7 +19,6 @@
     "svelte": "^3.46.4"
   },
   "dependencies": {
-    "astro-head": "^1.0.1",
-    "vanilla-tilt": "^1.7.2"
+    "astro-head": "^1.0.1"
   }
 }

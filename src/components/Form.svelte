@@ -141,6 +141,8 @@
         background-color: rgba(var(--alertColor),1);
         padding: 5px 10px;
         width: fit-content;
+        margin-right: 10px;
+        border-radius: 0 0 5px 5px;
       }
     }
 

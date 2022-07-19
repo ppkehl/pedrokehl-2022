@@ -8,6 +8,7 @@ import ThemeToggle from "../components/ThemeToggle.svelte"
 import LanguageToggle from "../components/LanguageToggle.svelte"
 import { getLocaleFromURL, getDefaultLocale } from "../lib/translations"
 import settings from "../../_data/settings/generalSettings.json"
+import '../styles/global.scss';
 
 const path = Astro.canonicalURL.href;
 const locale = getLocaleFromURL(path);
@@ -41,7 +42,7 @@ const { translationsURL } = Astro.props;
 
     <main class="overflow-hidden">
 
-      <header class="z-50 fixed w-full top-0 before:content[''] before:w-full before:h-16 before:lg:h-24 before:absolute before:bg-gray-200 before:dark:bg-gray-900 before:backdrop-blur-xl before:dark:backdrop-blur-xl before:bg-opacity-50 before:dark:bg-opacity-50">
+      <header class="z-50 fixed w-full top-0 before:content[''] before:w-full before:h-16 before:lg:h-24 before:absolute before:bg-gray-200 before:dark:bg-gray-900 before:backdrop-blur-xl before:dark:backdrop-blur-xl before:bg-opacity-90 before:dark:bg-opacity-50">
         <div class="xl:container mx-auto px-6 h-16 lg:h-24">
           <div class="h-full flex flex-wrap lg:flex-nowrap justify-between items-center">
       
@@ -74,7 +75,7 @@ const { translationsURL } = Astro.props;
 
     </main>
 
-    <script async src="assets/vanilla-tilt.min.js"/>
+    <script src="/assets/vanilla-tilt.min.js" is:inline/>
     
     <script>
       if (window.netlifyIdentity) {

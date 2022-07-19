@@ -67,13 +67,13 @@
         transform: translate(15%, -30%) scale(0.9);
     }
     50% {
-        transform: translate(-20%, 43%) scale(1.3);
+        transform: translate(-20%, 43%) scale(1.4);
     }
     75% {
         transform: translate(5%, 20%) scale(1.2);
     }
     100% {
-        transform: tranlate(0, 0) scale(1);
+        transform: tranlate(0, 0) scale(1.4);
     }
   }
 </style>
