@@ -88,7 +88,7 @@
         Name
         <input type="text" name="name" class="appearance-none font-normal text-base block w-full bg-white bg-opacity-70 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-opacity-100 relative z-10" required>
         <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0"><span>Please provide your name</span></div>
-    </label>
+      </label>
     </div>
   </div>
 
@@ -105,7 +105,7 @@
     <div class="w-full px-3 md:mb-0">
       <label class="block uppercase tracking-wide text-gray-900 dark:text-white text-xs font-bold mb-2 relative">
         Email
-        <input type="email" name="email" class="appearance-none font-normal text-base block w-full bg-white bg-opacity-70 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-opacity-100 relative z-10">
+        <input type="email" name="email" class="appearance-none font-normal text-base block w-full bg-white bg-opacity-70 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-opacity-100 relative z-10" required>
         <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0"><span>Please provide your email</span></div>
       </label>
     </div>
@@ -133,40 +133,27 @@
   #form-validate{
     .invalid-feedback,
     .empty-feedback {
-      transform: translate(0, -30px);
-      opacity: 0;
-      color: #fff;
+      @apply -translate-y-8 opacity-0 text-white;
       span{
-        display: inline-block;
-        background-color: rgba(var(--alertColor),1);
-        padding: 5px 10px;
-        width: fit-content;
-        margin-right: 10px;
-        border-radius: 0 0 5px 5px;
+        @apply inline-block bg-red-800 px-2 py-1 w-fit mr-2 rounded-b;
       }
     }
-
-    &.was-validated:placeholder-shown:invalid ~ .empty-feedback {
-      transform: translate(0, 0);
-      opacity: 1;
+    &.was-validated:placeholder-shown:invalid ~ .empty-feedback{
+      @apply translate-y-0 opacity-100;
     }
-
-    &.was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback {
-      transform: translate(0, 0);
-      opacity: 1;
+    &.was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback{
+      @apply translate-y-0 opacity-100;
     }
 
     &.is-invalid,
     &.was-validated :invalid {
-      background: linear-gradient(90deg, rgba(var(--alertColor),1) 0%, rgba(var(--alertColor),1) 4px, rgba(255, 255, 255, 1) 4px);
+      @apply  border-l-4 border-red-700;
     }
     
     #form-result{
-      border-color: rgb(204, 204, 204);
-      background-color: rgba(204, 204, 204, 0.8);
+      @apply bg-slate-300 border-l-4 border-slate-600;
       &.success{
-        border-color: rgb(var(--successColor));
-        background-color: rgba(var(--successColor), 0.8);
+        @apply bg-lime-800 border-lime-800;
       }
     }
   }

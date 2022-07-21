@@ -26,7 +26,7 @@ const analytics = {
 const { translationsURL } = Astro.props;
 ---
 
-<html class="scroll-smooth scroll-py-16" lang={locale}>
+<html class="scroll-smooth scroll-py-16 font-montserrat" lang={locale}>
 
   <head>
 
@@ -55,7 +55,7 @@ const { translationsURL } = Astro.props;
               </h1>
             </a>
       
-            <div class="flex">
+            <div class="flex mr-12 lg:mr-0">
       
               <LanguageToggle translationsURL={translationsURL} locale={locale}/>
       
@@ -63,7 +63,7 @@ const { translationsURL } = Astro.props;
       
             </div>
       
-            <Menu locale={locale} />
+            <Menu locale={locale} client:idle />
       
           </div>
         </div>

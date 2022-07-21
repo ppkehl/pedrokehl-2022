@@ -6,11 +6,11 @@
 </script>
 
 {#if Object.keys(locales.locales).length}
-  <div class="relative z-10 dark:text-white mr-4"> 
+  <div class="relative z-10 dark:text-white mr-4 flex"> 
     <ul class="flex space-x-2 list-none">
       {#each Object.values(locales.locales) as localeGroup}
         {#if locale != localeGroup.code}
-          <li class="uppercase font-semibold">
+          <li class="uppercase font-semibold text-sm flex items-center">
             {#if translationsURL[locale].split('/').pop().includes("home")}
               {#if locale !== getDefaultLocale()}
                 <a href="/">{localeGroup.code}</a>

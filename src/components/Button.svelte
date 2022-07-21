@@ -16,46 +16,21 @@
 
 <style lang="scss">
   [data-style="Primary"] {
-    background-color: rgba(var(--primaryColor),0.8);
-    &:hover{
-      background-color: rgba(var(--primaryColor),1);
-    }
+    @apply bg-[rgba(var(--primaryColor),0.8)] hover:bg-[rgba(var(--primaryColor),1)];
   }
   [data-style="Secondary"] {
-    background-color: rgba(var(--secondaryColor),0.8);
-    &:hover{
-      background-color: rgba(var(--secondaryColor),1);
-    }
+    @apply bg-[rgba(var(--secondaryColor),0.8)] hover:bg-[rgba(var(--secondaryColor),1)];
   }
   [data-style="Tertiary"] {
-    background-color: rgba(var(--tertiaryColor),0.8);
-    &:hover{
-      background-color: rgba(var(--tertiaryColor),1);
-    }
+    @apply bg-[rgba(var(--tertiaryColor),0.8)] hover:bg-[rgba(var(--tertiaryColor),1)];
   }
   [data-style="Alert"] {
-    background-color: rgba(var(--alertColor),0.8);
-    &:hover{
-      background-color: rgba(var(--alertColor),1);
-    }
+    @apply bg-[rgba(var(--alertColor),0.8)] hover:bg-[rgba(var(--alertColor),1)];
   }
   [data-style="Danger"] {
-    background-color: rgba(var(--dangerColor),1);
-    &:hover{
-      background-color: rgba(var(--dangerColor),1);
-    }
+    @apply bg-[rgba(var(--dangerColor),0.8)] hover:bg-[rgba(var(--dangerColor),1)];
   }
   a, button {
-    &:after {
-      content: "";
-      width: 20px;
-      height: 20px;
-      display: inline-block;
-      position: relative;
-      top: 4px;
-      background-image: url(../assets/arrow-top.svg);
-      background-repeat: no-repeat;
-      background-position: right top;
-    }
+      @apply after:content-[''] after:w-5 after:h-5 after:inline-block after:relative after:top-1 after:bg-no-repeat after:bg-right-top after:bg-[url('../assets/arrow-top.svg')];
   }
 </style>

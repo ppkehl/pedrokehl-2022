@@ -28,22 +28,22 @@
       {
         "title": "Sobre",
         "description": "Vida & Experiência",
-        "url": "pt/#about"
+        "url": "pt#about"
       },
       {
         "title": "Projetos",
         "description": "O que eu faço",
-        "url": "pt/#projects"
+        "url": "pt#projects"
       },
       {
         "title": "Ideias",
         "description": "Textos & Pensamentos",
-        "url": "pt/#ideas"
+        "url": "pt#ideas"
       },
       {
         "title": "Contato",
         "description": "Vamos conversar",
-        "url": "pt/#contact"
+        "url": "pt#contact"
       }
     ]
   }

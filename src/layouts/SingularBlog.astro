@@ -1,5 +1,4 @@
 ---
-import Base from '../layouts/Base.astro'
 import BlogImage from '../components/BlogImage.svelte'
 import BlogDescription from '../components/BlogDescription.svelte'
 import { formatDate } from '../lib/utils'
@@ -26,46 +25,34 @@ const postDate = formatDate(post.date)
 <style lang="scss" is:global>
   .content {
     pre.astro-code {
-      padding: 1.5em;
+      @apply p-6;
       code{
-        background: transparent;
+        @apply bg-transparent;
       }
     }
-
     blockquote {
-      border-left: 5px solid;
-      padding-left: 1rem;
-      font-size: 1.1rem;
-      font-style: italic;
-
+      @apply border-l-4 border-l-black pl-4 text-lg italic;
       p {
-        margin: 1rem 0;
+        @apply my-4;
       }
     }
 
     ul {
-      list-style-type: disc;
-      padding-left: 1.2rem;
+      @apply list-disc pl-5;
     }
 
     ol {
-      list-style-type: decimal;
-      padding-left: 1.2rem;
+      @apply list-decimal pl-5;
     }
 
     p {
       a {
-        color: rgb(44, 0, 204);
-        border-bottom: 1px solid;
+        @apply text-teal-900 border-b-2 border-b-teal-900; 
       }
 
       code {
-        background: #5e5e5e;
-        color: white;
-        padding: 0.2em;
-        border-radius: 0.3em;
-        white-space: normal;
-        font-size: 0.85rem;
+        @apply bg-slate-700 text-white p-1 rounded-sm whitespace-normal text-sm;
+
       }
     }
   }
@@ -73,11 +60,10 @@ const postDate = formatDate(post.date)
   .dark {
     .content {
       code{
-        background: #2d2d2d;
+        @apply bg-slate-600;
       }
       a {
-        color: rgb(169, 145, 255);
-        border-bottom: 1px solid;
+        @apply text-teal-300 border-b-2 border-b-teal-300; 
       }
     }
   }
