@@ -82,7 +82,7 @@ pt:
     mainTagline: |-
       Bonita,
 
-      Rápida &
+      Eficiente &
 
       Prática
     description: |-
