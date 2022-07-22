@@ -2,7 +2,6 @@
 import ConditionalLoading from '../partials/ConditionalLoading.svelte'
 import Title from '../components/Title.svelte'
 import Button from '../components/Button.svelte'
-// import Form from '../components/Form.astro'
 import Form from '../components/Form.svelte'
 import Blobs from '../components/Blobs.svelte'
 import ProjectPreview from '../components/ProjectPreview.astro'
@@ -33,6 +32,9 @@ const postsData = await getTranslations({
 })
 postsData.sort((a, b) => new Date(b.content[0].date).valueOf() - new Date(a.content[0].date).valueOf())
 const selectedPosts = postsData.slice(0, post.blog.postsNum);
+
+// Failsafe hero image (if JS disabled).
+const heroImage = post.hero.images[0];
 ---
 <ConditionalLoading load={post.hero.active}>
   <section id="hero" class="anchor xl:container mx-auto px-6 py-16 flex items-center h-screen lg:min-h-[1000px] max-h-[1400px] relative">
@@ -61,7 +63,7 @@ const selectedPosts = postsData.slice(0, post.blog.postsNum);
     <div class="w-full h-full right-0 md:w-8/12 lg:w-6/12 absolute">
 
       <div id="hero-image" class="absolute w-full h-full flex justify-end items-center z-10">
-        <img loading="lazy" class="mr-6 w-10/12 h-2/3 object-contain object-center opacity-20 lg:opacity-100 dark:invert dark:opacity-20 lg:dark:opacity-70" src="assets/brain-sketch.png" alt="An old style anatomycal illustration of a brain, a heart or a hand">
+        <img loading="lazy" class="mr-6 w-10/12 h-2/3 object-contain object-center opacity-20 lg:opacity-100 dark:invert dark:opacity-20 lg:dark:opacity-70" src={heroImage} alt="An old style anatomycal illustration of a brain, a heart or a hand">
       </div>
       
       <Blobs />
@@ -181,7 +183,7 @@ const selectedPosts = postsData.slice(0, post.blog.postsNum);
 
     <div class="xl:container mx-auto px-6 flex gap-8 relative z-10">
 
-      <Form locale:{locale} client:visible />
+      <Form locale:{locale} client:visible/>
 
     </div>
 

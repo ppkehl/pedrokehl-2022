@@ -22,9 +22,10 @@ en:
         link: "#projects"
         type: Secondary
     images:
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/brain-sketch_ve9pfy.png
       - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/hand_a2htyd.png
       - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/heart-sketch_siulbd.png
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/brain-sketch_ve9pfy.png
+      
   about:
     active: true
     title: About me
