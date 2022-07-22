@@ -69,7 +69,7 @@
       {#each Object.keys(menuItems[locale].mainMenu) as [key]}
         <li class="relative block">
           <a
-            class="before:content-[''] before:w-0 before:h-[2px] before:left-0 before:-top-2 before:absolute before:border-t-2 before:border-t-black before:dark:border-t-white before:bg-opacity-100 before:transition-all"
+            class="before:content-[''] before:opacity-0 before:w-0 before:h-[2px] before:-left-2 lg:before:left-0 before:pl-3 lg:before:pl-0 lg:before:-top-2 before:absolute before:border-l-2 lg:before:border-t-2 lg:before:border-l-0 before:border-l-black lg:before:border-t-black before:dark:border-t-white before:bg-opacity-100 before:transition-all"
             href={"/" + menuItems[locale].mainMenu[key].url}
           >
             <div class="relative z-10">
@@ -90,7 +90,7 @@
 <style lang="scss" global>
   nav {
     a.selected{
-      @apply before:z-0 before:w-full;
+      @apply before:z-0 before:w-full before:h-full before:opacity-100;
     }
   }
   #menu-toggle {

@@ -7,69 +7,15 @@ const localizedFooterBuildTools = footer[locale]['buildTools']
 ---
 
 <div class="xl:container mx-auto p-6">
-  <div class="pb-3 font-light dark:text-white text-center lg:text-left">Proudly created with:</div>
-  <div class="flex space-x-3 justify-center lg:justify-start" data-attr="build-tools">
+  <div class="pb-3 font-light dark:text-white text-center lg:text-left">{locale === 'pt' ? "Orgulhosamente criado com:" : "Proudly created with:"}</div>
+  <div class="flex space-x-3 justify-center lg:justify-start">
     {localizedFooterBuildTools.map((localizedFooterBuildTool) =>
-    <div class="aspect-square w-8" data-tip={localizedFooterBuildTool.label}>
+    <div class="aspect-square w-8 block relative before:content-[attr(data-tip)] before:opacity-0 before:transition-all before:block before:absolute before:py-2 before:px-2 before:bg-white before:bottom-12 before:whitespace-nowrap before:rounded before:-left-3 before:uppercase before:text-xs before:font-semibold after:content[''] after:opacity-0 after:block after:absolute after:w-0 after:h-0 after:border-l-8 after:border-l-transparent after:border-r-8 after:border-r-transparent after:border-t-8 after:border-t-white after:bottom-10 after:left-1 hover:before:opacity-100 hover:after:opacity-100" data-tip={localizedFooterBuildTool.label}>
       <a href={localizedFooterBuildTool.url}>
-        <img class="w-full h-full object-contain object-center dark:invert"
+        <img loading="lazy" class="w-full h-full object-contain object-center dark:invert"
           src={localizedFooterBuildTool.logo}alt={localizedFooterBuildTool.label} />
       </a>
     </div>
     )}
   </div>
 </div>
-
-<style lang="scss">
-  [data-attr=build-tools] {
-
-    @media (min-width: 640px) {
-      [data-tip] {
-        display: block;
-        position: relative;
-
-        &::before,
-        &::after {
-          opacity: 0;
-          transition: all 0.3s ease-in-out;
-        }
-
-        &::before {
-          content: attr(data-tip);
-          display: block;
-          position: absolute;
-          padding: 5px 10px;
-          background-color: #fff;
-          bottom: 47px;
-          white-space: nowrap;
-          border-radius: 5px;
-          left: -10px;
-          text-transform: uppercase;
-          font-size: 0.75rem;
-          font-weight: 600;
-        }
-
-        &::after {
-          content: "";
-          display: block;
-          position: absolute;
-          width: 0;
-          height: 0;
-          border-left: 10px solid transparent;
-          border-right: 10px solid transparent;
-          border-top: 10px solid #fff;
-          bottom: 37px;
-          left: 6px;
-        }
-
-        &:hover {
-
-          &::before,
-          &::after {
-            opacity: 1;
-          }
-        }
-      }
-    }
-  }
-</style>

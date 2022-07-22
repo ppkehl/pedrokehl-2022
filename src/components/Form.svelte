@@ -2,6 +2,8 @@
   import Button from "./Button.svelte";
   import { onMount } from "svelte";
 
+  export let locale;
+
   onMount(async () => {
     (function () {
       "use strict";
@@ -26,7 +28,7 @@
               });
               const json = JSON.stringify(object);
               result.style.opacity = 1;
-              result.innerHTML = "Please wait...";
+              result.innerHTML = locale === 'pt' ? "Por favor aguarde..." : "Please wait...";
 
               fetch("https://api.web3forms.com/submit", {
                 method: "POST",
@@ -85,9 +87,9 @@
   <div class="flex flex-wrap -mx-3">
     <div class="w-full px-3 md:mb-0">
       <label class="block uppercase tracking-wide text-gray-900 dark:text-white text-xs font-bold mb-2 relative">
-        Name
+        {locale === 'pt' ? "Nome" : "Name"}
         <input type="text" name="name" class="appearance-none font-normal text-base block w-full bg-white bg-opacity-70 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-opacity-100 relative z-10" required>
-        <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0"><span>Please provide your name</span></div>
+        <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0"><span>{locale === 'pt' ? "Por favor insira seu nome" : "Please provide your name"}</span></div>
       </label>
     </div>
   </div>
@@ -95,7 +97,7 @@
   <div class="flex flex-wrap -mx-3">
     <div class="w-full px-3 md:mb-0">
       <label class="block uppercase tracking-wide text-gray-900 dark:text-white text-xs font-bold mb-2 relative">
-        Subject
+        {locale === 'pt' ? "Assunto" : "Subject"}
         <input type="text" name="subject" class="appearance-none font-normal text-base block w-full bg-white bg-opacity-70 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-opacity-100 relative z-10">
       </label>
     </div>
@@ -104,9 +106,9 @@
   <div class="flex flex-wrap -mx-3">
     <div class="w-full px-3 md:mb-0">
       <label class="block uppercase tracking-wide text-gray-900 dark:text-white text-xs font-bold mb-2 relative">
-        Email
+        {locale === 'pt' ? "Email" : "Email"}
         <input type="email" name="email" class="appearance-none font-normal text-base block w-full bg-white bg-opacity-70 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-opacity-100 relative z-10" required>
-        <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0"><span>Please provide your email</span></div>
+        <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0"><span>{locale === 'pt' ? "Por favor insira seu email" : "Please provide your email"}</span></div>
       </label>
     </div>
   </div>  
@@ -114,9 +116,9 @@
   <div class="flex flex-wrap -mx-3">
     <div class="w-full px-3 md:mb-0">
       <label class="block uppercase tracking-wide text-gray-900 dark:text-white text-xs font-bold mb-2 relative">
-        Message
+        {locale === 'pt' ? "Mensagem" : "Message"}
         <textarea name="message" class="appearance-none font-normal text-base block w-full bg-white bg-opacity-70 text-gray-700 h-40 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-opacity-100 relative z-10" required></textarea>
-        <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0"><span>Please write your request</span></div>
+        <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0"><span>{locale === 'pt' ? "Por favor insira uma mensagem" : "Please provide a message"}</span></div>
       </label>
     </div>
   </div>

@@ -5,11 +5,11 @@
 </script>
 
 {#if type === 'a'}
-  <a href={link} class="block bg-opacity-70 hover:bg-opacity-90 shadow-md py-3 px-6 rounded-md font-semibold cursor-pointer transition-all duration-300 w-fit" data-style={style}>
+  <a href={link} class="block bg-opacity-70 hover:bg-opacity-90 shadow-md py-3 px-6 rounded-md font-semibold cursor-pointer transition-all duration-300 w-fit focus:outline-none focus:ring focus:ring-current" data-style={style}>
     <slot />
   </a>
 {:else}
-  <button type="submit" class="block bg-opacity-70 hover:bg-opacity-90 shadow-md py-3 px-6 rounded-md font-semibold cursor-pointer transition-all duration-300 w-fit" data-style={style}>
+  <button type="submit" class="block bg-opacity-70 hover:bg-opacity-90 shadow-md py-3 px-6 rounded-md font-semibold cursor-pointer transition-all duration-300 w-fit focus:outline-none focus:ring focus:ring-current" data-style={style}>
     <slot />
   </button>
 {/if}
@@ -23,12 +23,6 @@
   }
   [data-style="Tertiary"] {
     @apply bg-[rgba(var(--tertiaryColor),0.8)] hover:bg-[rgba(var(--tertiaryColor),1)];
-  }
-  [data-style="Alert"] {
-    @apply bg-[rgba(var(--alertColor),0.8)] hover:bg-[rgba(var(--alertColor),1)];
-  }
-  [data-style="Danger"] {
-    @apply bg-[rgba(var(--dangerColor),0.8)] hover:bg-[rgba(var(--dangerColor),1)];
   }
   a, button {
       @apply after:content-[''] after:w-5 after:h-5 after:inline-block after:relative after:top-1 after:bg-no-repeat after:bg-right-top after:bg-[url('../assets/arrow-top.svg')];

@@ -3,5 +3,5 @@
 </script>
 
 {#if featuredImage}
-  <img class="rounded overflow-hidden" src={featuredImage} alt="Illustration">
+  <img loading="lazy" class="rounded overflow-hidden" src={featuredImage} alt="Illustration">
 {/if}

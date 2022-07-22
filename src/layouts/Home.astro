@@ -60,10 +60,8 @@ const selectedPosts = postsData.slice(0, post.blog.postsNum);
 
     <div class="w-full h-full right-0 md:w-8/12 lg:w-6/12 absolute">
 
-      <div class="absolute w-full h-full flex justify-end items-center z-10">
-        <!-- <img class="mr-6 w-10/12 h-2/3 object-contain object-center opacity-20 lg:opacity-100 dark:invert dark:opacity-20 lg:dark:opacity-70" src="assets/heart-sketch.png"> -->
-        <!-- <img class="mr-6 w-10/12 h-2/3 object-contain object-center opacity-20 lg:opacity-100 dark:invert dark:opacity-20 lg:dark:opacity-70" src="assets/hand.png"> -->
-        <img class=" mr-6 w-10/12 h-2/3 object-contain object-center opacity-20 lg:opacity-100 dark:invert dark:opacity-20 lg:dark:opacity-70" src="assets/brain-sketch.png">
+      <div id="hero-image" class="absolute w-full h-full flex justify-end items-center z-10">
+        <img loading="lazy" class="mr-6 w-10/12 h-2/3 object-contain object-center opacity-20 lg:opacity-100 dark:invert dark:opacity-20 lg:dark:opacity-70" src="assets/brain-sketch.png" alt="An old style anatomycal illustration of a brain, a heart or a hand">
       </div>
       
       <Blobs />
@@ -89,7 +87,7 @@ const selectedPosts = postsData.slice(0, post.blog.postsNum);
 
           <div class="w-8/12 lg:w-4/12 space-y-8 z-10 relative mb-8">
 
-            <img class="relative object-cover w-full aspect-square overflow-hidden rounded-full z-10 dark:brightness-100" src={post.about.image} alt="My picture">
+            <img loading="lazy" class="relative object-cover w-full aspect-square overflow-hidden rounded-full z-10 dark:brightness-100" src={post.about.image} alt="My picture">
 
             <Blobs />
 
@@ -183,13 +181,19 @@ const selectedPosts = postsData.slice(0, post.blog.postsNum);
 
     <div class="xl:container mx-auto px-6 flex gap-8 relative z-10">
 
-      <Form client:visible />
+      <Form locale:{locale} client:visible />
 
     </div>
 
   </section>
 </ConditionalLoading>
 
+<script define:vars={{post}}>
+  const randomImage = Math.floor(Math.random() * post.hero.images.length);
+  const selectedImage = post.hero.images[randomImage];
+  let heroImage = document.getElementById("hero-image");
+  heroImage.innerHTML = '<img loading="lazy" class="mr-6 w-10/12 h-2/3 object-contain object-center opacity-20 lg:opacity-100 dark:invert dark:opacity-20 lg:dark:opacity-70" src="' + selectedImage + '" alt="An old style anatomycal illustration of a brain, a heart or a hand">';
+</script>
 
 <style lang="scss">
   [data-scroll]{
