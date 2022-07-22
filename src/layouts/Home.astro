@@ -1,5 +1,5 @@
 ---
-import ConditionalLoading from '../components/ConditionalLoading.svelte'
+import ConditionalLoading from '../partials/ConditionalLoading.svelte'
 import Title from '../components/Title.svelte'
 import Button from '../components/Button.svelte'
 // import Form from '../components/Form.astro'
@@ -35,7 +35,7 @@ postsData.sort((a, b) => new Date(b.content[0].date).valueOf() - new Date(a.cont
 const selectedPosts = postsData.slice(0, post.blog.postsNum);
 ---
 <ConditionalLoading load={post.hero.active}>
-  <section id="hero" class="anchor xl:container mx-auto px-6 py-16 flex items-center min-h-screen relative">
+  <section id="hero" class="anchor xl:container mx-auto px-6 py-16 flex items-center h-screen lg:min-h-[1000px] max-h-[1400px] relative">
 
     <div class="w-full md:w-8/12 lg:w-6/12 space-y-8 z-10">
 

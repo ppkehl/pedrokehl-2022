@@ -1,12 +1,11 @@
 ---
-import Base from '../../../layouts/Base.astro'
-import SingularBlog from '../../../layouts/SingularBlog.astro'
+import Base from '../../../partials/Base.astro'
+import Blog from '../../../layouts/Blog.astro'
 
 // Data Fetching API
 import { getTranslations } from '../../../lib/translations';
 
 export async function getStaticPaths() {
-  //const posts = await Astro.glob('../../../../_data/content/posts/**/*.md')
   const posts = await Astro.glob('../../../../_data/content/posts/blog/*.md')
   const postsData = await getTranslations({
     "posts": posts
@@ -32,6 +31,6 @@ const { post } = Astro.props;
 
 <Base translationsURL={post.translations}>
 
-  <SingularBlog post={post} />
+  <Blog post={post} />
 
 </Base>

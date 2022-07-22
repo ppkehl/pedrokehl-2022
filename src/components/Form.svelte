@@ -1,6 +1,7 @@
 <script>
   import Button from "./Button.svelte";
   import { onMount } from "svelte";
+  import settings from "../../_data/settings/generalSettings.json"
 
   export let locale;
 
@@ -75,9 +76,9 @@
   });
 </script>
 
-<form id="form-validate" class="w-full max-w-lg space-y-6" action="https://api.web3forms.com/submit" method="POST" novalidate>
+<form id="form-validate" class="w-full lg:w-6/12 space-y-6" action="https://api.web3forms.com/submit" method="POST" novalidate>
 
-  <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+  <input type="hidden" name="access_key" value={settings[locale].web3Forms} />
   <input type="hidden" name="subject" value="New e-mail from pedrokehl.net"/>
   <label class="hidden">
     Hello
@@ -88,8 +89,10 @@
     <div class="w-full px-3 md:mb-0">
       <label class="block uppercase tracking-wide text-gray-900 dark:text-white text-xs font-bold mb-2 relative">
         {locale === 'pt' ? "Nome" : "Name"}
-        <input type="text" name="name" class="appearance-none font-normal text-base block w-full bg-white bg-opacity-70 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-opacity-100 relative z-10" required>
-        <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0"><span>{locale === 'pt' ? "Por favor insira seu nome" : "Please provide your name"}</span></div>
+        <input type="text" name="name" class="appearance-none font-normal text-base block w-full bg-slate-300 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-slate-100 relative z-10" required>
+        <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0">
+          <span class="inline-block bg-red-700 px-2 pt-3 pb-1 w-fit rounded-b">{locale === 'pt' ? "Por favor insira seu nome" : "Please provide your name"}</span>
+        </div>
       </label>
     </div>
   </div>
@@ -98,7 +101,10 @@
     <div class="w-full px-3 md:mb-0">
       <label class="block uppercase tracking-wide text-gray-900 dark:text-white text-xs font-bold mb-2 relative">
         {locale === 'pt' ? "Assunto" : "Subject"}
-        <input type="text" name="subject" class="appearance-none font-normal text-base block w-full bg-white bg-opacity-70 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-opacity-100 relative z-10">
+        <input type="text" name="subject" class="appearance-none font-normal text-base block w-full bg-slate-300 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-slate-100 relative z-10" required>
+        <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0">
+          <span class="inline-block bg-red-700 px-2 pt-3 pb-1 w-fit rounded-b">{locale === 'pt' ? "Por favor insira um assunto" : "Please provide a subject"}</span>
+        </div>
       </label>
     </div>
   </div>
@@ -107,8 +113,10 @@
     <div class="w-full px-3 md:mb-0">
       <label class="block uppercase tracking-wide text-gray-900 dark:text-white text-xs font-bold mb-2 relative">
         {locale === 'pt' ? "Email" : "Email"}
-        <input type="email" name="email" class="appearance-none font-normal text-base block w-full bg-white bg-opacity-70 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-opacity-100 relative z-10" required>
-        <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0"><span>{locale === 'pt' ? "Por favor insira seu email" : "Please provide your email"}</span></div>
+        <input type="email" name="email" class="appearance-none font-normal text-base block w-full bg-slate-300 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-slate-100 relative z-10" required>
+        <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0">
+          <span class="inline-block bg-red-700 px-2 pt-3 pb-1 w-fit rounded-b">{locale === 'pt' ? "Por favor insira seu email" : "Please provide your email"}</span>
+        </div>
       </label>
     </div>
   </div>  
@@ -117,8 +125,10 @@
     <div class="w-full px-3 md:mb-0">
       <label class="block uppercase tracking-wide text-gray-900 dark:text-white text-xs font-bold mb-2 relative">
         {locale === 'pt' ? "Mensagem" : "Message"}
-        <textarea name="message" class="appearance-none font-normal text-base block w-full bg-white bg-opacity-70 text-gray-700 h-40 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-opacity-100 relative z-10" required></textarea>
-        <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0"><span>{locale === 'pt' ? "Por favor insira uma mensagem" : "Please provide a message"}</span></div>
+        <textarea name="message" class="appearance-none font-normal text-base block w-full bg-slate-300 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-slate-100 relative z-10 h-40" required></textarea>
+        <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0">
+          <span class="inline-block bg-red-700 px-2 pt-3 pb-1 w-fit rounded-b">{locale === 'pt' ? "Por favor insira uma mensagem" : "Please provide a message"}</span>
+        </div>
       </label>
     </div>
   </div>
@@ -136,20 +146,17 @@
     .invalid-feedback,
     .empty-feedback {
       @apply -translate-y-8 opacity-0 text-white;
-      span{
-        @apply inline-block bg-red-800 px-2 py-1 w-fit mr-2 rounded-b;
-      }
     }
     &.was-validated:placeholder-shown:invalid ~ .empty-feedback{
       @apply translate-y-0 opacity-100;
     }
     &.was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback{
-      @apply translate-y-0 opacity-100;
+      @apply -translate-y-2 opacity-100;
     }
 
     &.is-invalid,
     &.was-validated :invalid {
-      @apply  border-l-4 border-red-700;
+      @apply border-l-4 border-red-700;
     }
     
     #form-result{

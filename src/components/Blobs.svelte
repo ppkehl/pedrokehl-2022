@@ -1,4 +1,4 @@
-<div class="blobs absolute left-0 top-0 w-full h-full overflow-visible">
+<div class="blobs absolute left-0 top-0 w-full h-full max-w-[1024px] max-h-[1024px] overflow-visible">
   <div class="absolute w-10/12 aspect-square filter blur-xl opacity-100 animate-blob-hero dark:opacity-70 animation-spice-1"></div>
   <div class="absolute w-9/12 aspect-square filter blur-xl opacity-100 animate-blob-hero-2 dark:opacity-70 "></div>
   <div class="absolute w-8/12 aspect-square filter blur-xl opacity-100 animate-blob-hero dark:opacity-70 animation-spice-2"></div>
