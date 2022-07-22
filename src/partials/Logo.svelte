@@ -1,6 +1,4 @@
 <script>
-import { C } from "../../dist/chunks/index.da3cc282";
-
   export let homeLink;
 </script>
 
