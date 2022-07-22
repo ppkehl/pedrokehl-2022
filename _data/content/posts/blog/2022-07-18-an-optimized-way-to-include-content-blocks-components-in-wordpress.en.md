@@ -5,7 +5,8 @@ date: 2019-03-04T13:52:17.621Z
 author: Pedro Kehl
 tags:
   - Dev
-description: In this post I show a very flexible solution to get_template_part in Wordpress.
+description: In this post I will show a very flexible solution to replace the
+  "get_template_part" in Wordpress.
 featuredImage: https://res.cloudinary.com/ppkehl/image/upload/v1658153129/template_parts_h77ngc.png
 ---
 WordPress is very flexible about how to include partials.
