@@ -208,6 +208,14 @@ collections:
             - {label: "Tagline", name: "tagline", widget: "string", i18n: true}
             - {label: "Main Tagline", name: "mainTagline", widget: "text", i18n: true}
             - {label: "Description", name: "description", widget: "text", i18n: true}
+            - label: "Images"
+              name: "images"
+              widget: "image"
+              i18n: duplicate
+              allow_multiple: true
+              media_library:
+                config:
+                  multiple: true
             - name: buttons
               label: Buttons
               label_singular: 'Button'
