@@ -22,10 +22,9 @@ en:
         link: "#projects"
         type: Secondary
     images:
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/brain-sketch_ve9pfy.png
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/hand_a2htyd.png
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/heart-sketch_siulbd.png
-      
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/brain-sketch_ve9pfy.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/hand_a2htyd.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/brain-sketch_ve9pfy.webp
   about:
     active: true
     title: About me
@@ -63,7 +62,7 @@ en:
       2. Decoupling front and backend, using headless CMS’s (Strapi and other headless CMS’s)
 
       3. Blazing fast frontends and minimal. (Svelte, Astro)
-    image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.png
+    image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.webp
   projects:
     active: true
     title: Projects
@@ -102,12 +101,12 @@ pt:
         link: "#projects"
         type: Secondary
     images:
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/hand_a2htyd.png
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/heart-sketch_siulbd.png
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/brain-sketch_ve9pfy.png
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/brain-sketch_ve9pfy.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/hand_a2htyd.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/brain-sketch_ve9pfy.webp
   about:
     active: true
-    image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.png
+    image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.webp
     title: Sobre mim
     description: Eu gosto de resolver problemas e pensar sobre o futuro
     text: >-
