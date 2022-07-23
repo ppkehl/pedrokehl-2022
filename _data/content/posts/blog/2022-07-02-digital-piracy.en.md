@@ -13,9 +13,9 @@ featuredImage: https://res.cloudinary.com/ppkehl/image/upload/c_crop,h_500,w_500
 ---
 Some time ago I followed a discussion on digital piracy via Twitter. It started like this:
 
-> Doing a research here, it seems that the big TABOO THEME of the Brazilian technology press is to question the “piracy is ok and inevitable”
->
-> — Pedro Burgos (@Burgos) [October 30, 2013](https://twitter.com/Burgos/statuses/395622915578011648)
+*Doing a research here, it seems that the big TABOO THEME of the Brazilian technology press is to question the “piracy is ok and inevitable”*
+
+— Pedro Burgos (@Burgos) [October 30, 2013](https://twitter.com/Burgos/statuses/395622915578011648)
 
 And it went on for an infinity of tweets, discussing the validity of the argument. Pedro Burgos' post made me reconsider the issue of piracy of digital content, a topic that has lasted for decades. The argument seemed to me clearly valid – referring to the general tone of the publications – although I consider it biased in terms of locating the issue in the national media. I've read several articles on sites like Gizmodo and Lifehacker showing tutorials on how to download and catalog music, movies and series, that is, instead of merely discussing the topic of piracy in a theoretical scope, it shows how to commit a misdemeanor (regardless of the philosophical argument, piracy is a felony).
 

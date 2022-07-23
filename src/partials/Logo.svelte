@@ -2,7 +2,7 @@
   export let homeLink;
 </script>
 
-<a href={homeLink} class="h-full block py-3 lg:py-6">
+<a href={homeLink} class="h-full block py-4 lg:py-7">
   <h1 id="logo" class="z-50 h-full dark:invert relative flex">
     <div class="aspect-square">
       <svg class="object-contain object-center" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 54 48.4" xml:space="preserve">

@@ -13,9 +13,9 @@ featuredImage: https://res.cloudinary.com/ppkehl/image/upload/c_crop,h_500,w_500
 ---
 Tempos atrás acompanhei via Twitter uma discussão sobre pirataria digital. Ela começou assim:
 
-> Fazendo uma pesquisa aqui, parece que o grande TEMA TABU da imprensa de tecnologia do Brasil é questionar o “pirataria é ok e inevitável”
->
-> — Pedro Burgos (@Burgos) [October 30, 2013](https://twitter.com/Burgos/statuses/395622915578011648)
+*Fazendo uma pesquisa aqui, parece que o grande TEMA TABU da imprensa de tecnologia do Brasil é questionar o “pirataria é ok e inevitável”*
+
+— Pedro Burgos (@Burgos) [October 30, 2013](https://twitter.com/Burgos/statuses/395622915578011648)
 
 E se estendeu por uma infinidade de tuites, discutindo a validade da argumentação. O post de Pedro Burgos me fez voltar a considerar a questão da pirataria de conteúdo digital, um tema que já perdura por décadas. A constatação para mim pareceu claramente válida – se referindo ao tom geral das publicações – apesar de a considerar parcial no que diz respeito a localizar a questão na mídia nacional. Já li diversos artigos em sites como os norte-americanos Gizmodo e Lifehacker mostrando tutoriais sobre como baixar e catalogar músicas, filmes e séries, ou seja, ao invés de meramente discutir o tema da pirataria em âmbito teórico, mostra como cometer a contravenção (porque sim, independentemente da argumentação filosófica, pirataria é um crime).
 

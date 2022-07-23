@@ -26,7 +26,7 @@ const analytics = {
 const { translationsURL } = Astro.props;
 ---
 
-<html class="scroll-smooth scroll-py-16 font-montserrat" lang={locale}>
+<html class="no-js scroll-smooth scroll-py-16 font-montserrat" lang={locale}>
 
   <head>
 
@@ -67,6 +67,10 @@ const { translationsURL } = Astro.props;
       <Footer locale={locale} />
 
     </main>
+
+    <script is:inline>
+      document.documentElement.classList.remove('no-js');
+    </script>
 
     <script src="/assets/vanilla-tilt.min.js" is:inline/>
     

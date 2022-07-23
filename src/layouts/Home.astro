@@ -37,15 +37,15 @@ const selectedPosts = postsData.slice(0, post.blog.postsNum);
 const heroImage = post.hero.images[0];
 ---
 <ConditionalLoading load={post.hero.active}>
-  <section id="hero" class="anchor xl:container mx-auto px-6 py-16 flex items-center h-screen lg:min-h-[1000px] max-h-[1400px] relative">
+  <section id="hero" class="anchor xl:container mx-auto px-6 py-32 flex items-center h-screen lg:min-h-[750px] max-h-[1400px] relative">
 
     <div class="w-full md:w-8/12 lg:w-6/12 space-y-8 z-20">
 
       <div>
-        <h3 class="text-2xl lg:text-3xl dark:text-white">
+        <h3 class="text-2xl xl:text-3xl dark:text-white">
           {post.hero.tagline}
         </h3>
-        <h2 class="text-4xl sm:text-5xl lg:text-7xl font-bold !leading-[1.1] dark:text-white">
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold !leading-1 dark:text-white">
           <Markdown content={post.hero.mainTagline}/>
         </h2>
       </div>
@@ -197,7 +197,7 @@ const heroImage = post.hero.images[0];
   heroImage.innerHTML = '<img loading="lazy" class="mr-6 w-10/12 h-2/3 object-contain object-center opacity-20 lg:opacity-100 dark:invert dark:opacity-20 lg:dark:opacity-70" src="' + selectedImage + '" alt="An old style anatomycal illustration of a brain, a heart or a hand">';
 </script>
 
-<style lang="scss">
+<!-- <style lang="scss">
   [data-scroll]{
     &::-webkit-scrollbar{
       -webkit-appearance: none;
@@ -208,4 +208,4 @@ const heroImage = post.hero.images[0];
       background-color: #cccccc;
     }
   }
-</style>
+</style> -->

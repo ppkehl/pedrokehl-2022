@@ -7,15 +7,15 @@ const { post } = Astro.props;
 const postDate = formatDate(post.date)
 ---
 
-<div class="content container mx-auto dark:text-white py-24 lg:pt-40 lg:pb-20 px-6 flex">
-  <div class="hidden lg:block lg:w-2/12 xl:w-3/12 pr-9">
+<div class="post container mx-auto dark:text-white py-24 lg:pt-40 lg:pb-20 px-6 flex">
+  <div class="hidden lg:block lg:w-2/12 xl:w-3/12 pr-9 sticky top-0 ">
     <BlogImage featuredImage={post.featuredImage} />
   </div>
-  <div class="w-full lg:w-10/12 xl:w-6/12 space-y-6">
+  <div class="w-full lg:w-8/12 xl:w-6/12 leading-normal">
     <h1 class="text-4xl font-bold">
       <Fragment set:html={post.title} />
     </h1>
-    <div class="">{postDate}</div>
+    <div>{postDate}</div>
     <BlogDescription description={post.description} />
     <Fragment set:html={post.body} />
     <div class="clear-both w-full"></div>
@@ -23,18 +23,30 @@ const postDate = formatDate(post.date)
 </div>
 
 <style lang="scss" is:global>
-  .content {
+  .post {
     pre.astro-code {
-      @apply p-6;
+      @apply p-6 lg:-ml-[25%] lg:w-[150%] rounded bg-slate-800 #{!important};
       code{
         @apply bg-transparent;
       }
     }
     blockquote {
-      @apply border-l-4 border-l-black pl-4 text-lg italic;
-      p {
-        @apply my-4;
+      @apply my-3;
+      &:nth-of-type(odd){
+        @apply xl:-ml-[25%] xl:w-[50%] float-left mr-6 border-l-4 border-l-black dark:border-l-white pl-4 text-lg italic;
       }
+      &:nth-of-type(even){
+        @apply xl:-mr-[25%] xl:w-[50%] float-right ml-6 border-r-4 border-r-black dark:border-r-white pr-4 text-lg italic;
+      }
+      p{
+        @apply mb-0;
+      }
+    }
+    h1, h2, h3, h4, h5, h6, ul, ol, p, .astro-code, blockquote, div, span{
+      @apply mb-6;
+    } 
+    h2{
+      @apply pr-4 text-2xl font-semibold;
     }
 
     ul {
@@ -46,19 +58,20 @@ const postDate = formatDate(post.date)
     }
 
     p {
+      @apply mb-6;
       a {
         @apply text-teal-900 border-b-2 border-b-teal-900; 
       }
 
       code {
-        @apply bg-slate-700 text-white p-1 rounded-sm whitespace-normal text-sm;
+        @apply bg-slate-700 text-white p-[2px] rounded-sm whitespace-normal text-sm;
 
       }
     }
   }
 
   .dark {
-    .content {
+    .post {
       code{
         @apply bg-slate-600;
       }
