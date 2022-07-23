@@ -1,7 +1,7 @@
-<script lang="ts">
+<script>
   import { onMount } from "svelte";
   import menuItems from "../../_data/settings/menuMain.json";
-  export let locale: string;
+  export let locale;
 
   onMount(async () => {
     // Add "selected" class to menu on scroll
@@ -31,6 +31,17 @@
     sections.forEach((section) => {
       observer.observe(section);
     });
+
+    // Close mobile menu on click
+    document.addEventListener('click', function (event) {
+      var bodyEl = document.getElementsByTagName("BODY")[0];
+      var hamburguerEl = document.getElementById("menu-toggle");
+      var isClickHamburguer = hamburguerEl.contains(event.target);
+      if (!isClickHamburguer) {
+          hamburguerEl.checked = false;
+      }
+    });
+
   });
 </script>
 
