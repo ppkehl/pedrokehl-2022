@@ -162,7 +162,7 @@
     #form-result{
       @apply bg-slate-300 border-l-4 border-slate-600;
       &.success{
-        @apply bg-lime-800 border-lime-800;
+        @apply bg-lime-800 border-lime-800 bg-opacity-75 text-white;
       }
     }
   }
