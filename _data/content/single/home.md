@@ -24,7 +24,7 @@ en:
     images:
       - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/brain-sketch_ve9pfy.webp
       - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/hand_a2htyd.webp
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/brain-sketch_ve9pfy.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/heart-sketch_siulbd.webp
   about:
     active: true
     title: About me
@@ -103,7 +103,7 @@ pt:
     images:
       - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/brain-sketch_ve9pfy.webp
       - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/hand_a2htyd.webp
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/brain-sketch_ve9pfy.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658496680/heart-sketch_siulbd.webp
   about:
     active: true
     image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.webp
