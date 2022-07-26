@@ -46,13 +46,13 @@
 </script>
 
 <input
-  class="lg:hidden opacity-0 absolute w-6 h-6 z-0"
+  class="cursor-pointer lg:hidden z-50 h-6 w-6 block absolute rounded opacity-0 right-6"
   title="Toggle Menu"
   id="menu-toggle"
   type="checkbox"
 />
 <label
-  class="cursor-pointer lg:hidden z-50 h-6 w-6 block absolute rounded opacity-100 right-6"
+  class="cursor-pointer lg:hidden z-10 h-6 w-6 block absolute rounded opacity-100 right-6"
   for="menu-toggle"
   aria-label="Menu"
 >
