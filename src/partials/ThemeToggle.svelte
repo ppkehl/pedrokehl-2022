@@ -1,37 +1,20 @@
 <script>
-  import { onMount } from 'svelte';
-
-  let dark;
-  onMount(async () => {
-		if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark')
-      dark = true;
-    } else {
-      document.documentElement.classList.remove('dark')
-      dark = false;
-    }
-	});
-  
   function toggleTheme() {
     if (localStorage.getItem("theme")) {
       if (localStorage.getItem("theme") === "light") {
         document.documentElement.classList.add("dark");
         localStorage.setItem("theme", "dark");
-        dark = true;
       } else {
         document.documentElement.classList.remove("dark");
         localStorage.setItem("theme", "light");
-        dark = false;
       }
     } else {
       if (document.documentElement.classList.contains("dark")) {
         document.documentElement.classList.remove("dark");
         localStorage.setItem("theme", "light");
-        dark = false;
       } else {
         document.documentElement.classList.add("dark");
         localStorage.setItem("theme", "dark");
-        dark = true;
       }
     }
   }
