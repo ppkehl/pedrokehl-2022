@@ -100,7 +100,7 @@
 
 <style lang="scss" global>
   nav {
-    a.selected{
+    a.selected, a:hover{
       @apply before:z-0 before:w-full before:h-full before:opacity-100;
     }
   }

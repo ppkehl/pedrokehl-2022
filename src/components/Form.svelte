@@ -44,21 +44,20 @@
                   
                   if (response.status == 200) {
                     console.log(response);
-                    result.innerHTML = "Thanks for your message!";
+                    result.innerHTML = locale === 'pt' ? "Obrigado por sua mensagem!" : "Thanks for your message!";
                     result.classList.remove("text-gray-500");
                     result.classList.remove('failure')
                     result.classList.add('success')
                   } else {
                     console.log(response);
-                    result.innerHTML = "Uh-oh... We had problems trying to deliver your message";
+                    result.innerHTML = locale === 'pt' ? "Ops... Tivemos problemas em enviar a sua mensagem :(" : "Uh-oh... We had problems trying to deliver your message :(";
                     result.classList.remove("text-gray-500");
                     result.classList.remove('success')
                     result.classList.add('failure')
                   }
                 })
                 .catch((error) => {
-                  console.log(error);
-                  result.innerHTML = "Uh-oh... Something went wrong!";
+                  result.innerHTML = locale === 'pt' ? "Ops... Tivemos problemas em enviar a sua mensagem :(" : "Uh-oh... We had problems trying to deliver your message :(";
                 })
                 .then(function () {
                   form.reset();
@@ -89,7 +88,7 @@
     <div class="w-full px-3 md:mb-0">
       <label class="block uppercase tracking-wide text-gray-900 dark:text-white text-xs font-bold mb-2 relative">
         {locale === 'pt' ? "Nome" : "Name"}
-        <input type="text" name="name" class="appearance-none font-normal text-base block w-full bg-slate-300 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-slate-100 relative z-10" required>
+        <input type="text" name="name" class="appearance-none font-normal text-base block w-full bg-gray-100 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-gray-50 relative z-10" required>
         <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0">
           <span class="inline-block bg-red-700 px-2 pt-3 pb-1 w-fit rounded-b">{locale === 'pt' ? "Por favor insira seu nome" : "Please provide your name"}</span>
         </div>
@@ -101,7 +100,7 @@
     <div class="w-full px-3 md:mb-0">
       <label class="block uppercase tracking-wide text-gray-900 dark:text-white text-xs font-bold mb-2 relative">
         {locale === 'pt' ? "Assunto" : "Subject"}
-        <input type="text" name="subject" class="appearance-none font-normal text-base block w-full bg-slate-300 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-slate-100 relative z-10" required>
+        <input type="text" name="subject" class="appearance-none font-normal text-base block w-full bg-gray-100 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-gray-50 relative z-10" required>
         <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0">
           <span class="inline-block bg-red-700 px-2 pt-3 pb-1 w-fit rounded-b">{locale === 'pt' ? "Por favor insira um assunto" : "Please provide a subject"}</span>
         </div>
@@ -113,7 +112,7 @@
     <div class="w-full px-3 md:mb-0">
       <label class="block uppercase tracking-wide text-gray-900 dark:text-white text-xs font-bold mb-2 relative">
         {locale === 'pt' ? "Email" : "Email"}
-        <input type="email" name="email" class="appearance-none font-normal text-base block w-full bg-slate-300 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-slate-100 relative z-10" required>
+        <input type="email" name="email" class="appearance-none font-normal text-base block w-full bg-gray-100 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-gray-50 relative z-10" required>
         <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0">
           <span class="inline-block bg-red-700 px-2 pt-3 pb-1 w-fit rounded-b">{locale === 'pt' ? "Por favor insira seu email" : "Please provide your email"}</span>
         </div>
@@ -125,7 +124,7 @@
     <div class="w-full px-3 md:mb-0">
       <label class="block uppercase tracking-wide text-gray-900 dark:text-white text-xs font-bold mb-2 relative">
         {locale === 'pt' ? "Mensagem" : "Message"}
-        <textarea name="message" class="appearance-none font-normal text-base block w-full bg-slate-300 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-slate-100 relative z-10 h-40" required></textarea>
+        <textarea name="message" class="appearance-none font-normal text-base block w-full bg-gray-100 text-gray-900 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-gray-50 relative z-10 h-40" required></textarea>
         <div class="empty-feedback invalid-feedback absolute transition-all w-full text-right z-0">
           <span class="inline-block bg-red-700 px-2 pt-3 pb-1 w-fit rounded-b">{locale === 'pt' ? "Por favor insira uma mensagem" : "Please provide a message"}</span>
         </div>
@@ -160,7 +159,7 @@
     }
     
     #form-result{
-      @apply bg-slate-300 border-l-4 border-slate-600;
+      @apply bg-gray-100 border-l-4 border-slate-600;
       &.success{
         @apply bg-lime-800 border-lime-800 bg-opacity-75 text-white;
       }
