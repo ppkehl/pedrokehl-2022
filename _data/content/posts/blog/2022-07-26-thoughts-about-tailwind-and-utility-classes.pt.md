@@ -1,0 +1,37 @@
+---
+postType: blog
+title: Pensamentos sobre o Tailwind e classes de utilidades
+date: 2022-07-26T14:14:19.792Z
+author: Pedro Kehl
+tags:
+  - Dev
+description: Tailwind
+featuredImage: https://res.cloudinary.com/ppkehl/image/upload/v1658845856/tailwind_uvkxhj.png
+---
+Tailwind é um framework CSS de utilidades. É também um dos temas mais polarizadores nas discussões sobre frontend. Vejo artigos apaixonados defendendo e esculachando o conceito com a mesma intensidade. Vou tentar aqui fazer uma análise sobre a minha experiência com ele e comentar se pretendo ou não usá-lo no futuro (spoiler: sim).
+
+Eu lembro da primeira vez que testei um framework de utilidade (talvez em 2017?), à época também chamados de “monolíticos” ou "imutáveis". Escolhi o Tachyons, que no comecinho não tinha nem mesmo possibilidades básicas de configuração. As classes eram pré-determinadas, não havia qualquer pós processamento como um “purge” para livrar o frontend de classes inutilizadas. O arquivo total de CSS pesava por volta de 70k. 
+
+Meu interesse pelo Tachyons começou quando cruzei por acaso com um [longo artigo](https://hackernoon.com/full-re-write-with-tachyons-and-functional-css-a-case-study-part-1-635ccb5fb00b) que contava a experiência de reescrever um site com ele. O artigo aparentemente ganhou alguma tração, gerando inclusive alguns debates na rede. Ele me levou a alguns outros textos, [entre eles do próprio mentor do toolkit](http://mrmrs.github.io/writing/scalable-css/), Adam Morse, críticos de peso radicalmente [contrários à abordagem](https://www.zeldman.com/2017/01/03/kiss-my-classname/) e também a algumas [argumentações com mais nuances](https://johnpolacek.medium.com/kiss-my-classname-a-counterpoint-3ca41f0aed1a).
+
+Foi verdadeiramente uma aventura desenvolver meu primeiro site com o Tachyons. Estava viajando quando caiu no meu colo um site que precisava ser finalizado em, no máximo, duas semanas. Em retrospecto, percebo a loucura que foi apostar no framework naquelas circunstâncias, mas eu era mais jovem e destemido.
+
+Apesar da curva de aprendizagem inicial - como recordar o nome das classes - consegui dominá-lo rapidamente, entreguei o site antes do prazo e fiquei feliz de descobrir uma nova ferramenta. Ainda assim, não me pareceu que o Tachyons fosse suficientemente maduro, e deixei ele de lado depois da experiência. A ideia de utilizar classes de utilidades, entretanto, permaneceu comigo.
+
+Eu sempre procurei escrever meu CSS de maneira organizada e aproveitar as heranças da cascata a meu favor. Adotei o [BEM](http://getbem.com/introduction/) (Block Element Modifier), e sempre fiquei atento a novas formas de pensar em CSS. Li bastante sobre a ideia de "[CSS atômico](https://atomicdesign.bradfrost.com/)" criado por Brad Frost. Uma das mais interessantes que encontrei nos últimos tempos é a [CUBE CSS](https://cube.fyi/), sigla para Composition, Utility, Block e Exception (Composição, Utilidade, Bloco e Exceção). Em breve quero escrever sobre ela, que considero um “meio do caminho” interessante entre classes semânticas e de utilidades.
+
+O problema do CSS, é que ele é DIFÍCIL. Muito mais do que a maioria de nós admite. Ao mesmo tempo, ele é simples o bastante para permitir que seja usado de forma “errada”. Coloco errada entre aspas, pois não há uma estrutura rígida de como CSS deve ser escrito. Há boas práticas, há metodologias, mas não há um “padrão ouro”. O BEM é excelente, ele organiza o código de maneira clara, mas não resolve tudo. Ao pegar projetos de terceiros para fazer manutenção, não é imediatamente claro qual foi o raciocínio, como foram pensadas as heranças,etc. Pré processadores de CSS como Sass e Less vieram ajudar muito, mas criaram novas dificuldades, como por exemplo o uso de Mixins no projeto: eles podem facilitar imensamente, mas quando vêm de terceiros, precisam ser entendidos. Veja, nenhuma dessas questões são problemas insolúveis. São contratempos. Tomam horas de desenvolvimento, atenção e neurônios. Parte de como se decide organizar o CSS também depende de decisões subjetivas. De certa forma, cada um escreve seus estilos de modo pessoal.
+
+Há uma crítica constante aos frameworks de utilidades: a de que eles subvertem uma lógica importante da web, a *“separação de conceitos”* ou *“separação de preocupações”*. Segundo essa lógica, cada camada de apresentação de um site está dividida em 3 partes: **1.** o conteúdo (HTML);  **2.** a camada de apresentação, que dá estilo ao HTML (o CSS) e o **3.** JS para transformações e mudanças de comportamento das camadas anteriormente citadas.
+
+Fora as decisões de projeto e metodologias, há uma outra questão: clientes mudam de ideia. Uma série de "cards" podem se tornar slides. Ou itens em uma lista. Ou conteúdos cuja semântica das classes que definimos no nosso esquema *BEM* deixarão de fazer sentido. O artigo de Morse ficou na minha cabeça. Mais do que o próprio framework que ele criou. 
+
+Em trabalhos desenvolvidos em times, muitas vezes a lógica geradora do CSS se perde ou acaba sendo filtrada por visões conflitantes de como o código deve ser escrito. Num mundo ideal, as equipes são organizadas, as regras são claras e todos falam o mesmo idioma. Na realidade, o CSS tende a crescer de forma desordenada, tornar-se mais e mais prolixo, acumulando classes e amontoando exceções.
+
+É justamente aí que, na minha visão, as classes de utilidades passam a ajudar muito. Um HTML com classes do Tailwind é, sem dúvida, feio (me parece que essa é uma questão inequívoca). Mas ele traduz, em geral e de modo simples, toda a lógica daquele bloco ou componente. Mais do que isso, ele se torna portátil e pode ser injetado em outros projetos facilmente. Não há problemas com herança, não há mixins ocultos. O Tailwind é a expressão “*[WYSIWYG](https://pt.wikipedia.org/wiki/WYSIWYG)*” do CSS. Usado com IDE’s modernos como VS Code, é possível usar code hints para todas as classes, além de poder visualizar o código de cada uma delas com um simples hover. 
+
+Mais do que isso: o desenvolvimento web tem se afastado cada vez mais da noção de separação de conceitos do passado. Um dos fatores mais importantes dessa mudança são os frameworks de JavaScript, como React, Vue, Solid etc. Em geral, a componentização dividiu os blocos de CSS em unidades portáteis, mas sem necessariamente diminuir a verbosidade do código. Propriedades iguais em diferentes componentes, continuam gerando propriedades duplicadas no CSS entregue ao browser.
+
+Páginas HTML não funcionam mais como o antigo e inspirador [CSS Zen Garden](http://www.csszengarden.com/). O conteúdo da internet moderna está muito mais em dados estruturados entregues via API's - sejam [REST](https://developer.mozilla.org/pt-BR/docs/Glossary/REST), [GraphQL](https://graphql.org/) ou [tRPC](https://trpc.io/) - do que num HTML com marcadores semânticos.
+
+Dentro dessa lógica, o Tailwind e similares me parecem uma expressão mais clara da realidade. Ao invés do esforço de tentar padronizar uma metodologia capaz de dar consistência a projetos cada vez mais complexos, frameworks de utilidades são mais pragmáticos. Eles acolhem a dificuldade de escrever CSS entregando micro classes únicas e inequívocas. Eles também são [facilmente adaptáveis](https://www.michaelmang.dev/blog/integrating-design-tokens-with-tailwind) para acolher [design tokens](https://brasil.uxdesign.cc/o-que-s%C3%A3o-design-tokens-cd408431727d), criando consistência e escalabilidade.
