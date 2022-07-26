@@ -1,6 +1,6 @@
 ---
 postType: blog
-title: Thoughts about Tailwind and utility classes
+title: Thoughts on Tailwind and utility classes
 date: 2022-07-26T14:14:19.792Z
 author: Pedro Kehl
 tags:
