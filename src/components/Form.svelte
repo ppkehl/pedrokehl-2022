@@ -75,7 +75,7 @@
   });
 </script>
 
-<form id="form-validate" class="w-full lg:w-6/12 space-y-6" action="https://api.web3forms.com/submit" method="POST" novalidate>
+<form id="form-validate" class="w-full space-y-6" action="https://api.web3forms.com/submit" method="POST" novalidate>
 
   <input type="hidden" name="access_key" value={settings[locale].web3Forms} />
   <input type="hidden" name="subject" value="New e-mail from pedrokehl.net"/>

@@ -11,7 +11,7 @@ description: Astro is a new static website builder with a mission to minimize
   React, Svelte, Vue and Solid under one roof.
 featuredImage: https://res.cloudinary.com/ppkehl/image/upload/v1657918513/2864e840-2df2-11ec-b5e8-73b095e03049-astro_upwfwm.jpg
 ---
-In my search for new frameworks to experiment with the concept of [JAMstack](https://jamstack.org/), I started to come across several quotes to [Astro](https://astro.build/). Astro is a static site generator at its core, but it also has SSR (*Server Side Rendering*).
+In my search for new frameworks to experiment with the concept of [JAMstack](https://jamstack.org/), I started to come across several mentions to [Astro](https://astro.build/). Astro is a static site generator at its core, but it also has SSR (*Server Side Rendering*).
 
 I spent a good amount of time considering testing [Gatsby](https://www.gatsbyjs.com/), [Hugo](https://gohugo.io/) and [Next](https://nextjs.org/), but Astro has a set of features that made me choose it, even though it's still in beta. Firstly, the ease of syntax: everything in Astro's templates is pretty much pure HTML, CSS, and JS. Second, that unlike the other frameworks* I mentioned, Astro allows you to use components from other JS frameworks such as [React](https://pt-br.reactjs.org/), [Svelte](https://svelte.dev/), [Vue](https://vuejs.org/) and [Solid](https://www.solidjs.com/). I've wanted to test Svelte for some time (in a next post I'll explain why Svelte) but I didn't feel comfortable putting all my chips in it using [SvelteKit](https://kit.svelte.dev/). Last but not least, Astro has a concept that I find especially interesting: the idea of ​​"partial hydration".
 
