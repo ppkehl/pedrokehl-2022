@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/7e77a045ab.js" crossorigin="anonymous"></script>
   <title>Pedro Kehl - Content Manager</title>
   <style>
     aside a span {
@@ -18,17 +18,52 @@
     }
 
     aside a span::before {
-      font-family: "Font Awesome 5 Free";
+      font-family: "Font Awesome 6 Pro";
+      font-weight: 900;
       font-size: 1rem;
+    }
+
+    aside a[href="#/collections/projects"] span::before {
+      content: "\f542";
+    }
+
+    aside a[href="#/collections/blog"] span::before {
+      content: "\f31c";
+    }
+
+    aside a[href="#/collections/pages"] span::before {
+      content: "\e494";
+    }
+
+    aside a[href="#/collections/singlePages"] span::before {
+      content: "\f15b";
+    }
+
+    aside a[href="#/collections/singlePages"] span::before {
+      content: "\f15b";
     }
 
     aside a[href="#/collections/menus"] span::before {
       content: "\f0e8";
     }
+
+    aside a[href="#/collections/settings"] span::before {
+      content: "\f085";
+    }
+
+    aside a[href="#/collections/locales"] span::before {
+      content: "\f1ab";
+    }
+
+    aside a[href="#/collections/theme"] span::before {
+      content: "\e214";
+    }
+    
   </style>
 </head>
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+
 </body>
 </html>
