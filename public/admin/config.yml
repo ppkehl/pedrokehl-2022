@@ -455,6 +455,7 @@ collections:
             widget: list
             fields:
               - { label: 'Scheme Name', name: 'schemeName', widget: 'string'}
+              - { label: 'Scheme Active?', name: 'schemeActive', widget: 'boolean'}
               - label: "Colors"
                 name: "colors"
                 widget: "object"
