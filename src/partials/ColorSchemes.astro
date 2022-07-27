@@ -1,6 +1,6 @@
 ---
 const colorSchemesJson = await Astro.glob("../../_data/settings/colorSchemes.json");
-const colorSchemes = colorSchemesJson[0].colorSchemes
+const colorSchemes = colorSchemesJson[0].colorSchemes.filter(colorScheme => colorScheme.schemeActive === true);
 
 // Convert HEX colors to RGB
 function hexToRgb(hex) {

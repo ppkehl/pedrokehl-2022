@@ -2,6 +2,7 @@
   "colorSchemes": [
     {
       "schemeName": "Green",
+      "schemeActive": true,
       "colors": {
         "primary": "#2dc0a6",
         "secondary": "#97e373",
@@ -9,11 +10,11 @@
         "success": "#00ab2c",
         "alert": "#ff9e49",
         "danger": "#ff4949"
-      },
-      "schemeActive": true
+      }
     },
     {
       "schemeName": "Blue",
+      "schemeActive": true,
       "colors": {
         "primary": "#1ca5e0",
         "secondary": "#03d9c0",
@@ -21,11 +22,11 @@
         "success": "#00ab2c",
         "alert": "#ff9e49",
         "danger": "#ff4949"
-      },
-      "schemeActive": true
+      }
     },
     {
       "schemeName": "Purple",
+      "schemeActive": true,
       "colors": {
         "primary": "#b046d6",
         "secondary": "#8544d1",
@@ -33,11 +34,11 @@
         "success": "#00ab2c",
         "alert": "#ff9440",
         "danger": "#ff3232"
-      },
-      "schemeActive": true
+      }
     },
     {
       "schemeName": "Juliana",
+      "schemeActive": false,
       "colors": {
         "primary": "#4d40d3",
         "secondary": "#4ab986",
@@ -45,11 +46,11 @@
         "success": "#00ab2c",
         "alert": "#f7a24e",
         "danger": "#f65454"
-      },
-      "schemeActive": true
+      }
     },
     {
       "schemeName": "Dora",
+      "schemeActive": false,
       "colors": {
         "primary": "#b81600",
         "secondary": "#1038e2",
@@ -57,11 +58,11 @@
         "success": "#00ab2c",
         "alert": "#ff7346",
         "danger": "#f23535"
-      },
-      "schemeActive": true
+      }
     },
     {
       "schemeName": "Helena",
+      "schemeActive": false,
       "colors": {
         "primary": "#ffd100",
         "secondary": "#0031ff",
@@ -69,8 +70,7 @@
         "success": "#00ab2c",
         "alert": "#e17900",
         "danger": "#ff3535"
-      },
-      "schemeActive": true
+      }
     }
   ]
 }

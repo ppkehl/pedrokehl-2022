@@ -25,6 +25,6 @@
     @apply bg-[rgba(var(--tertiaryColor),0.8)] hover:bg-[rgba(var(--tertiaryColor),1)];
   }
   a, button {
-      @apply after:content-[''] after:w-5 after:h-5 after:inline-block after:relative after:top-1 after:bg-no-repeat after:bg-right-top after:bg-[url('../assets/icon-arrow-top.svg')];
+      @apply  after:content-[''] after:w-5 after:h-5 after:inline-block after:relative after:top-1 after:bg-no-repeat after:bg-right-top after:bg-[url('../assets/icon-arrow-top.svg')];
   }
 </style>
