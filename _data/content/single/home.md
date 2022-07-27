@@ -77,19 +77,19 @@ en:
     contactMethods:
       - label: info@pedrokehl.net
         url: mailto:info@pedrokehl.net
-        logo: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-mail_tyul5l.svg
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-mail_tyul5l.svg
       - label: twitter.com/ppkehl
         url: https://twitter.com/ppkehl
-        logo: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-twitter_tkrgzz.svg
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-twitter_tkrgzz.svg
       - label: linkedin.com/in/pedro-kehl
         url: https://www.linkedin.com/in/pedro-kehl/
-        logo: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-linkedin_ojsf6k.svg
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-linkedin_ojsf6k.svg
       - label: instagram.com/ppkehl
         url: https://instagram.com/ppkehl
-        logo: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-instagram_ljjd3k.svg
-      - logo: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-github_m4uvuh.svg
-        label: github.com/ppkehl
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-instagram_ljjd3k.svg
+      - label: github.com/ppkehl
         url: https://github.com/ppkehl
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-github_m4uvuh.svg
 pt:
   postType: page
   hero:
@@ -141,7 +141,7 @@ pt:
       **Estudando atualmente:**
 
 
-      1. Design tokens para criar uma comunicação visual coerente entre times e produtos ([Style Dictionar](https://amzn.github.io/style-dictionary)y, [Figma Tokens](https://www.figmatokens.com/))
+      1. Design tokens para criar uma comunicação visual coerente entre times e produtos ([Style Dictionary](https://amzn.github.io/style-dictionary), [Figma Tokens](https://www.figmatokens.com/))
 
       2. Desacoplamento front-end e back-end, usando CMSs headless ([Strapi](https://strapi.io/), [Payload CMS](https://payloadcms.com/), [Netlify CMS](https://www.netlifycms.org/)  e outros CMSs headless)
 
@@ -164,17 +164,17 @@ pt:
     contactMethods:
       - label: info@pedrokehl.net
         url: mailto:info@pedrokehl.net
-        logo: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-mail_tyul5l.svg
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-mail_tyul5l.svg
       - label: twitter.com/ppkehl
         url: https://twitter.com/ppkehl
-        logo: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-twitter_tkrgzz.svg
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-twitter_tkrgzz.svg
       - label: linkedin.com/in/pedro-kehl
         url: https://www.linkedin.com/in/pedro-kehl/
-        logo: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-linkedin_ojsf6k.svg
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-linkedin_ojsf6k.svg
       - label: instagram.com/ppkehl
         url: https://instagram.com/ppkehl
-        logo: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-instagram_ljjd3k.svg
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-instagram_ljjd3k.svg
       - label: github.com/ppkehl
         url: https://github.com/ppkehl
-        logo: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-github_m4uvuh.svg
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-github_m4uvuh.svg
 ---

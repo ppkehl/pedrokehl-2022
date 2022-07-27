@@ -292,8 +292,8 @@ collections:
                 fields:
                   - { label: 'Label', name: 'label', widget: 'string', i18n: true}
                   - { label: 'URL', name: 'url', widget: 'string', i18n: true}
-                  - label: "Logo"
-                    name: "logo"
+                  - label: "Icon"
+                    name: "icon"
                     widget: "image"
                     i18n: true
                     allow_multiple: false

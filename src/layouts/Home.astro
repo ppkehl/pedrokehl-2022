@@ -208,26 +208,12 @@ const heroImage = post.hero.images[0];
       </div>
 
       <div class="w-full lg:w-6/12 space-y-4 lg:pt-12 lg:pl-8 dark:text-white">
-        <a class="block" href="mailto:info@pedrokehl.net">
-          <img loading="lazy" class="w-5 h-5 inline-block mr-1 dark:invert" src="./assets/icon-mail.svg"/>
-          <div class="inline-block">info@pedrokehl.net</div>
-        </a>
-        <a class="block" href="https://twitter.com/pedrokehl">
-          <img loading="lazy" class="w-5 h-5 inline-block mr-1 dark:invert" src="./assets/icon-twitter.svg"/>
-          <div class="inline-block">https://twitter.com/pedrokehl</div>
-        </a>
-        <a class="block" href="https://www.linkedin.com/in/pedro-kehl/">
-          <img loading="lazy" class="w-5 h-5 inline-block mr-1 dark:invert" src="./assets/icon-linkedin.svg"/>
-          <div class="inline-block">https://www.linkedin.com/in/pedro-kehl/</div>
-        </a>
-        <a class="block" href="https://instagram.com/ppkehl">
-          <img loading="lazy" class="w-5 h-5 inline-block mr-1 dark:invert" src="./assets/icon-instagram.svg"/>
-          <div class="inline-block">https://instagram.com/ppkehl</div>
-        </a>
-        <a class="block" href="https://github.com/ppkehl">
-          <img loading="lazy" class="w-5 h-5 inline-block mr-1 dark:invert" src="./assets/icon-github.svg"/>
-          <div class="inline-block">https://github.com/ppkehl</div>
-        </a>
+        {post.contact.contactMethods.map((contactMethod) =>
+          <a class="block" href={contactMethod.url}>
+            <img loading="lazy" class="w-5 h-5 inline-block mr-1 dark:invert" src={contactMethod.icon}/>
+            <div class="inline-block">{contactMethod.label}</div>
+          </a>
+        )}
       </div>
 
     </div>
@@ -241,14 +227,3 @@ const heroImage = post.hero.images[0];
   let heroImage = document.getElementById("hero-image");
   heroImage.src = selectedImage;
 </script>
-
-<style lang="scss">
-  [data-scroll] {
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-</style>

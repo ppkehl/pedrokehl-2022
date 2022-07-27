@@ -84,7 +84,7 @@
             href={"/" + menuItems[locale].mainMenu[key].url}
           >
             <div class="relative z-10">
-              <div class="text-base relative font-semibold pr-6 after:content-[''] after:w-5 after:h-5 after:bg-[url(/assets/arrow-top.svg)] after:bg-no-repeat after:bg-right-top after:right-0 after:top-0 after:absolute after:dark:invert">
+              <div class="text-base relative font-semibold pr-6 after:content-[''] after:w-5 after:h-5 after:bg-[url(/assets/icon-arrow-top.svg)] after:bg-no-repeat after:bg-right-top after:right-0 after:top-0 after:absolute after:dark:invert">
                 {menuItems[locale].mainMenu[key].title}
               </div>
               <div class="font text-sm">
