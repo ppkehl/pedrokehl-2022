@@ -56,4 +56,4 @@ Still, there is another challenge. Gutemberg creates customization capabilities 
 
 As I said, I still use and will probably continue to use WordPress for some time to come. Despite this, I start to study situations where I no longer see myself using the platform in the future.
 
-In the next post I will try to specify the use cases where I see that WP still makes sense, and where it would be more convenient to use other solutions, be it a more robust CMS or other paradigms like JAMstack.
+In the next post I will try to specify the use cases where I see that WP still makes sense, and where it would be more convenient to use other solutions, be it a more robust CMS or other paradigms like [JAMstack](https://jamstack.org/).
