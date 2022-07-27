@@ -4,7 +4,28 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <title>Pedro Kehl - Content Manager</title>
+  <style>
+    aside a span {
+      display: inline-flex !important;
+      justify-content: center;
+      align-items: center
+    }
+
+    aside a span svg {
+      display: none !important;
+    }
+
+    aside a span::before {
+      font-family: "Font Awesome 5 Free";
+      font-size: 1rem;
+    }
+
+    aside a[href="#/collections/menus"] span::before {
+      content: "\f0e8";
+    }
+  </style>
 </head>
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
