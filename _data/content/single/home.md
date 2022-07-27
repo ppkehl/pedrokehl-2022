@@ -50,18 +50,14 @@ en:
       Creation of custom websites using WordPress as a backend for fast and efficient results.
 
 
-      **Currently studying:**\
-
-      \
-
-      I see three pillars for the future of web design:
+      **Currently studying:**
 
 
-      1. Design tokens as an expression of one source of truth, even within small teams (Style Dictionary).
+      1. Design tokens to create coherent visual communication between teams and products ([Style Dictionar](https://amzn.github.io/style-dictionary)y, [Figma Tokens](https://www.figmatokens.com/))
 
-      2. Decoupling front and backend, using headless CMS’s (Strapi and other headless CMS’s)
+      2. Decoupling front and backend, using headless CMS’s ([Strapi](https://strapi.io/), [Payload CMS](https://payloadcms.com/), [Netlify CMS](https://www.netlifycms.org/)  and other headless CMS’s)
 
-      3. Blazing fast frontends and minimal. (Svelte, Astro)
+      3. Blazing fast frontends ([Svelte](https://svelte.dev/), [Astro](https://astro.build/))
     image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.webp
   projects:
     active: true
@@ -111,37 +107,29 @@ pt:
     description: Eu gosto de resolver problemas e pensar sobre o futuro
     text: >-
       Sou formado em design digital, trabalhando há mais de 20 anos como
-      freelancer em design, desenvolvimento e identidade de marca.\
-
-      \
-
-      Gosto de ter uma abordagem sistêmica na resolução de problemas, e estou sempre estudando o que há de novo na área de tecnologia.\
-
-      \
-
-      **Principais conhecimentos:**\
-
-      \
-
-      Design de interfaces utilizando as melhores práticas de UI/UX e aplicando o conceito de design tokens para desenvolvimento escalável em diferentes plataformas/produtos.\
-
-      \
-
-      Criação de sites personalizados usando WordPress como backend para resultados rápidos e eficientes.
+      freelancer em design, desenvolvimento e identidade de marca.
 
 
-      **Estudando atualmente:**\
-
-      \
-
-      Vejo três pilares para o futuro do web design:
+      Gosto de ter uma abordagem sistêmica na resolução de problemas, e estou sempre estudando o que há de novo na área de tecnologia.
 
 
-      1. Projete tokens como uma expressão de uma fonte de verdade, mesmo dentro de equipes pequenas (Style Dictionary).
+      **Principais conhecimentos:**
 
-      2. Desacoplamento front-end e back-end, usando CMSs headless (Strapi e outros CMSs headless)
 
-      3. Frontends extremamente rápidos e mínimos. (Svelte, Astro)
+      Design de interfaces utilizando as melhores práticas de UI/UX e aplicando o conceito de design tokens para desenvolvimento escalável em diferentes plataformas/produtos.
+
+
+      Criação de sites personalizados usando [WordPress](https://br.wordpress.org/) como backend para resultados rápidos e eficientes.
+
+
+      **Estudando atualmente:**
+
+
+      1. Design tokens para criar uma comunicação visual coerente entre times e produtos ([Style Dictionar](https://amzn.github.io/style-dictionary)y, [Figma Tokens](https://www.figmatokens.com/))
+
+      2. Desacoplamento front-end e back-end, usando CMSs headless ([Strapi](https://strapi.io/), [Payload CMS](https://payloadcms.com/), [Netlify CMS](https://www.netlifycms.org/)  e outros CMSs headless)
+
+      3. Frontends extremamente rápidos ([Svelte](https://svelte.dev/), [Astro](https://astro.build/))
   projects:
     postsNum: 3
     active: true
