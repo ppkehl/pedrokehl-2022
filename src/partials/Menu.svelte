@@ -34,7 +34,6 @@
 
     // Close mobile menu on click
     document.addEventListener('click', function (event) {
-      var bodyEl = document.getElementsByTagName("BODY")[0];
       var hamburguerEl = document.getElementById("menu-toggle");
       var isClickHamburguer = hamburguerEl.contains(event.target);
       if (!isClickHamburguer) {
