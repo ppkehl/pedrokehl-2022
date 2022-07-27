@@ -6,7 +6,7 @@ backend:
 
 local_backend: true
 
-logo_url: https://res.cloudinary.com/ppkehl/image/upload/v1657386735/logo_rcxpiv.png
+logo_url: https://res.cloudinary.com/ppkehl/image/upload/v1658943994/pk_logo.png
 
 publish_mode: editorial_workflow
 
