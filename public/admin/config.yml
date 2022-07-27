@@ -283,7 +283,23 @@ collections:
             fields: 
               - {label: "Active", name: "active", widget: "boolean", i18n: true, default: true}
               - {label: "Title", name: "title", widget: "string", i18n: true}
-              - {label: "Description", name: "description", i18n: true, widget: "string"} 
+              - {label: "Description", name: "description", i18n: true, widget: "string"}
+              - name: contactMethods
+                label: Contact methods
+                label_singular: 'Contact method'
+                widget: list
+                i18n: true
+                fields:
+                  - { label: 'Label', name: 'label', widget: 'string', i18n: true}
+                  - { label: 'URL', name: 'url', widget: 'string', i18n: true}
+                  - label: "Logo"
+                    name: "logo"
+                    widget: "image"
+                    i18n: true
+                    allow_multiple: false
+                    media_library:
+                      config:
+                        multiple: false
 
   # ----- MENUS
   - name: 'menus'

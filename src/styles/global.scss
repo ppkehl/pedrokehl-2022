@@ -53,27 +53,66 @@
 	font-display: swap;
 }
 
-main {
-  ul {
-    @apply list-disc pl-5;
-  }
-
-  ol {
-    @apply list-decimal pl-5;
-  }
+[data-format-text] {
+	ul {
+		@apply list-disc pl-5 space-y-3;
+	}
+	ol {
+		@apply list-decimal pl-5 space-y-3;
+	}
+	p {
+		@apply mb-6;
+	}
+	a {
+		@apply text-teal-900 border-b-2 border-b-teal-900 after:content-[''] after:w-3 after:h-3 after:ml-1 after:inline-block after:bg-contain after:bg-no-repeat after:bg-[url('/assets/icon-link.svg')];
+	}
+	p>code {
+		@apply bg-slate-700 text-white p-[2px] rounded-sm whitespace-normal text-sm;
+	}
+	blockquote {
+		@apply my-3;
+		&:nth-of-type(odd){
+			@apply xl:-ml-[25%] xl:w-[50%] float-left mr-6 border-l-4 border-l-black dark:border-l-white pl-4 text-lg italic;
+		}
+		&:nth-of-type(even){
+			@apply xl:-mr-[25%] xl:w-[50%] float-right ml-6 border-r-4 border-r-black dark:border-r-white pr-4 text-lg italic;
+		}
+		p{
+			@apply mb-0;
+		}
+	}
+	h1, h2, h3, h4, h5, h6, ul, ol, p, .astro-code, blockquote, div, span{
+		@apply mb-6;
+	} 
+	h2{
+		@apply pr-4 text-2xl font-semibold;
+	}
+	.astro-code {
+		@apply p-6 lg:-ml-[25%] lg:w-[150%] rounded bg-slate-800 #{!important};
+	}
 }
 
+.dark {
+	[data-format-text] {
+		a {
+			@apply text-teal-300 border-b-2 border-b-teal-300 after:bg-[url('/assets/icon-link-dark.svg')]; 
+		}
+		p>code{
+			@apply bg-slate-600;
+		}
+	}
+}
+
+// Fix for Mozilla 
 @-moz-document url-prefix() {
-
-  header::before,
-  header nav {
-    @apply bg-gray-200 bg-opacity-95;
-  }
-
-  .dark {
-    header::before,
-    header nav {
-      @apply bg-gray-900 bg-opacity-100;
-    }
-  }
+	header::before,
+	header nav {
+		@apply bg-gray-200 bg-opacity-95;
+	}
+	.dark {
+		header::before,
+		header nav {
+			@apply bg-gray-900 bg-opacity-100;
+		}
+	}
 }

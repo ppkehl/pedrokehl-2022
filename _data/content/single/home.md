@@ -53,7 +53,7 @@ en:
       **Currently studying:**
 
 
-      1. Design tokens to create coherent visual communication between teams and products ([Style Dictionar](https://amzn.github.io/style-dictionary)y, [Figma Tokens](https://www.figmatokens.com/))
+      1. Design tokens to create coherent visual communication between teams and products ([Style Dictionary](https://amzn.github.io/style-dictionary), [Figma Tokens](https://www.figmatokens.com/))
 
       2. Decoupling front and backend, using headless CMS’s ([Strapi](https://strapi.io/), [Payload CMS](https://payloadcms.com/), [Netlify CMS](https://www.netlifycms.org/)  and other headless CMS’s)
 
