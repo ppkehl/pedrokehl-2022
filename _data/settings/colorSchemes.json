@@ -9,7 +9,8 @@
         "success": "#00ab2c",
         "alert": "#ff9e49",
         "danger": "#ff4949"
-      }
+      },
+      "schemeActive": true
     },
     {
       "schemeName": "Blue",
@@ -20,7 +21,8 @@
         "success": "#00ab2c",
         "alert": "#ff9e49",
         "danger": "#ff4949"
-      }
+      },
+      "schemeActive": true
     },
     {
       "schemeName": "Purple",
@@ -31,7 +33,8 @@
         "success": "#00ab2c",
         "alert": "#ff9440",
         "danger": "#ff3232"
-      }
+      },
+      "schemeActive": true
     },
     {
       "schemeName": "Juliana",
@@ -42,7 +45,8 @@
         "success": "#00ab2c",
         "alert": "#f7a24e",
         "danger": "#f65454"
-      }
+      },
+      "schemeActive": true
     },
     {
       "schemeName": "Dora",
@@ -53,7 +57,8 @@
         "success": "#00ab2c",
         "alert": "#ff7346",
         "danger": "#f23535"
-      }
+      },
+      "schemeActive": true
     },
     {
       "schemeName": "Helena",
@@ -64,7 +69,8 @@
         "success": "#00ab2c",
         "alert": "#e17900",
         "danger": "#ff3535"
-      }
+      },
+      "schemeActive": true
     }
   ]
 }
