@@ -1,7 +1,7 @@
 ---
 postType: projects
 title: Fazenda do Ipê
-date: 2022-07-02T14:57:26.314Z
+date: 2024-07-02T14:57:26.314Z
 tags:
   - Design
   - UX

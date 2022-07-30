@@ -1,6 +1,5 @@
 ---
 en:
-  postType: page
   hero:
     active: true
     tagline: "I believe the web should be:"
@@ -91,7 +90,6 @@ en:
         url: https://github.com/ppkehl
         icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-github_m4uvuh.svg
 pt:
-  postType: page
   hero:
     active: true
     tagline: "Eu acredito que a web deva ser:"

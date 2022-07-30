@@ -6,26 +6,18 @@ import {getTranslations, getDefaultLocale} from '../lib/translations';
 // Fetch data
 const posts = await Astro.glob('../../_data/content/single/home.md')
 const postData = await getTranslations({
-  "posts": posts,
-  "locale": getDefaultLocale()
-})
-const post = postData.single.home
-
-const tests = await Astro.glob('../../_data/content/test/**/*.md')
-const testData = await getTranslations({
   "posts": posts
 })
+const post = postData.single.home[getDefaultLocale()]
 
-const test = postData.single.home.content
-Object.values(test).map((post) => {
-    console.log(post)
-})
-
-
-
+// const tests = await Astro.glob('../../_data/content/test/**/**/*.md')
+// const testData = await getTranslations({
+//   "posts": tests
+// })
+// console.log(testData.test.home.en)
 
 ---
 
 <Base translationsURL={post.translations}>
-  <Home post={post.content.en} />
+  <Home post={post} />
 </Base>

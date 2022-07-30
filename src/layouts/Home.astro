@@ -17,14 +17,19 @@ const { post } = Astro.props;
 // Get locale from URL
 const locale = getLocaleFromURL(Astro.canonicalURL.href);
 
-// // Data Fetching: List all Markdown projects in the repo.
-// const projects = await Astro.glob('../../_data/content/projects/*.md')
-// const projectsData = await getTranslations({
-//   "posts": projects,
-//   "locale": locale
-// })
-// projectsData.sort((a, b) => new Date(b.content[0].date).valueOf() - new Date(a.content[0].date).valueOf())
-// const selectedProjects = projectsData.slice(0, post.projects.postsNum);
+// Data Fetching: List all Markdown projects in the repo.
+const projects = await Astro.glob('../../_data/content/projects/*.md')
+const projectsData = await getTranslations({
+  "posts": projects
+})
+
+//console.log(projectsData.projects['2022-07-01-sbac']['en'].date)
+
+Object.values(projectsData.projects).sort((a, b) => new Date(b.en.date).valueOf() - new Date(a.en.date).valueOf())
+console.log(projectsData.projects)
+
+//const selectedProjects = Object.values(projectsData.projects).slice(0, post.projects.postsNum);
+// console.log(selectedProjects)
 
 // // Data Fetching: List all Markdown posts in the repo.
 // const posts = await Astro.glob('../../_data/content/blog/*.md')

@@ -18,7 +18,12 @@ export interface Translations {
 
 export async function getTranslations(options: Translations) {
 
-  const postsList = []
+  // Create postsList array
+  const postsList = Array()
+  // Create translations array
+  const translationsArray = Array()
+  // Get site locales
+  const siteLocales = locales.locales
 
   const t = {
     ...options,
@@ -61,18 +66,8 @@ export async function getTranslations(options: Translations) {
       // Post type (the first item on the filePathArray)
       const postType = filePathArray[0]
 
-      // Filter locales, if requested
-      let selLocales = []
-      if(t.locale){
-        selLocales = locales.locales.filter(obj => {return obj.code === t.locale})
-      }else if(t.locales_except){
-        selLocales = locales.locales.filter(obj => {return obj.code !== t.locales_except})
-      }else{
-        selLocales = locales.locales
-      }
-
       // For each locale...
-      for (let localeValue of Object.values(selLocales)) {
+      for (let localeValue of Object.values(siteLocales)) {
 
         let slug:string = t.posts[key].frontmatter.title ? turnToSlug(t.posts[key].frontmatter.title) : fileNameParts.join('.')
         let id:string
@@ -111,6 +106,14 @@ export async function getTranslations(options: Translations) {
         
         // Push post to postsList array
         if(id !== undefined){
+
+          // Create meta array
+          const meta = Array()
+          meta['fileName'] = fileName
+          meta['fileNameFormat'] = fileNameFormat
+          meta['postType'] = postType
+          meta['path'] = filteredPath
+
           // If postType is undefined
           if(!postsList.hasOwnProperty(postType)){
             // Create postType array
@@ -119,30 +122,32 @@ export async function getTranslations(options: Translations) {
           if(!postsList[postType].hasOwnProperty(id)){
             // Create post id array
             postsList[postType][id] = Array()
-            // Create meta array
-            const meta = Array()
-            meta['fileName'] = fileName
-            meta['fileNameFormat'] = fileNameFormat
-            meta['postType'] = postType
-            meta['path'] = filteredPath
-            postsList[postType][id]['meta'] = meta
-            // Create translations array
-            const translations = Array()
-            translations[localeValue.code] = localeValue.code + '/' + postType + '/' + slug
-            postsList[postType][id]['translations'] = translations
-            // Create content array
-            const content = Array()
-            content[localeValue.code] = mdContent
-            postsList[postType][id]['content'] = content
+            // Add locale content
+            postsList[postType][id][localeValue.code] = mdContent
+            // Add meta content
+            postsList[postType][id][localeValue.code]['meta'] = meta
+            // Add to translations array
+            translationsArray[localeValue.code] = localeValue.code + '/' + postType + '/' + slug
           }else{
             // if post id exists in array, add to it
-            postsList[postType][id]['translations'][localeValue.code] = localeValue.code + '/' + postType + '/' + slug
-            postsList[postType][id]['content'][localeValue.code] = mdContent
+            postsList[postType][id][localeValue.code] = mdContent
+            // Add to translations array
+            translationsArray[localeValue.code] = localeValue.code + '/' + postType + '/' + slug
+            // Add meta content
+            postsList[postType][id][localeValue.code]['meta'] = meta
           }
+
+          Object.values(postsList[postType][id]).map((post)=> {
+            post['translations'] = Array()
+            post['translations'] = translationsArray
+          })
+
+          
         }
       }
     }
   }
 
+  
   return postsList
 }
