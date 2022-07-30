@@ -46,7 +46,7 @@
         "alert": "#f7a24e",
         "danger": "#f65454"
       },
-      "schemeActive": true
+      "schemeActive": false
     },
     {
       "schemeName": "Dora",
@@ -58,7 +58,7 @@
         "alert": "#ff7346",
         "danger": "#f23535"
       },
-      "schemeActive": true
+      "schemeActive": false
     },
     {
       "schemeName": "Helena",
@@ -70,7 +70,7 @@
         "alert": "#e17900",
         "danger": "#ff3535"
       },
-      "schemeActive": true
+      "schemeActive": false
     }
   ]
 }
