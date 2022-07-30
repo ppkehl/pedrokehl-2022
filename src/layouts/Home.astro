@@ -1,13 +1,13 @@
 ---
-// import ConditionalLoading from '../partials/ConditionalLoading.svelte'
-// import Title from '../components/Title.svelte'
-// import Button from '../components/Button.svelte'
-// import Form from '../components/Form.svelte'
-// import Blobs from '../components/Blobs.svelte'
-// import ProjectPreview from '../components/ProjectPreview.astro'
-// import BlogPreview from '../components/BlogPreview.astro'
-// import { Markdown } from 'astro/components';
-// import { getTranslations, getLocaleFromURL } from '../lib/translations';
+import ConditionalLoading from '../partials/ConditionalLoading.svelte'
+import Title from '../components/Title.svelte'
+import Button from '../components/Button.svelte'
+import Form from '../components/Form.svelte'
+import Blobs from '../components/Blobs.svelte'
+import ProjectPreview from '../components/ProjectPreview.astro'
+import BlogPreview from '../components/BlogPreview.astro'
+import { Markdown } from 'astro/components';
+import { getTranslations, getLocaleFromURL } from '../lib/translations';
 
 // Get post from index.astro or [locale.astro]
 const { post } = Astro.props;
@@ -15,7 +15,7 @@ const { post } = Astro.props;
 //console.log(post)
 
 // Get locale from URL
-// const locale = getLocaleFromURL(Astro.canonicalURL.href);
+const locale = getLocaleFromURL(Astro.canonicalURL.href);
 
 // // Data Fetching: List all Markdown projects in the repo.
 // const projects = await Astro.glob('../../_data/content/projects/*.md')
@@ -36,10 +36,10 @@ const { post } = Astro.props;
 // const selectedPosts = postsData.slice(0, post.blog.postsNum);
 
 // Failsafe hero image (if JS disabled).
-//const heroImage = post.hero.images[0];
+const heroImage = post.hero.images[0];
 ---
 
-<!-- <ConditionalLoading load={post.hero.active}>
+<ConditionalLoading load={post.hero.active}>
   <section id="hero"
     class="anchor xl:container mx-auto px-6 py-32 flex items-center h-screen lg:min-h-[750px] max-h-[1400px] relative">
 
@@ -148,8 +148,8 @@ const { post } = Astro.props;
     <div
       class="xl:container px-6 scroll-px-6 mx-auto relative gap-8 flex flex-nowrap overflow-x-auto lg:overflow-visible lg:grid lg:grid-cols-3 z-10 snap-x"
       data-scroll>
-      {selectedProjects.map((project) =>
-      <ProjectPreview project={project.content} />)}
+      <!-- {selectedProjects.map((project) =>
+      <ProjectPreview project={project.content} />)} -->
     </div>
 
   </section>
@@ -178,8 +178,8 @@ const { post } = Astro.props;
     <div
       class="xl:container px-6 scroll-px-6 mx-auto relative gap-8 flex flex-nowrap overflow-x-auto lg:overflow-visible lg:grid lg:grid-cols-4 z-10 snap-x"
       data-scroll>
-      {selectedPosts.map((post) =>
-      <BlogPreview post={post.content} />)}
+      <!-- {selectedPosts.map((post) =>
+      <BlogPreview post={post.content} />)} -->
     </div>
 
   </section>
@@ -228,4 +228,4 @@ const { post } = Astro.props;
   const selectedImage = post.hero.images[randomImage];
   let heroImage = document.getElementById("hero-image");
   heroImage.src = selectedImage;
-</script> -->
+</script>

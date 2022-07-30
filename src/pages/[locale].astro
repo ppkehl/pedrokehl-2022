@@ -11,7 +11,7 @@ export async function getStaticPaths() {
     "posts": posts,
     "locales_except": getDefaultLocale()
   })
-  return postsData[0].content.map((post) => {
+  return Object.values(postsData.single.home.content).map((post) => {
       return {
         params: {
           locale: post.locale,
@@ -23,8 +23,9 @@ export async function getStaticPaths() {
   });
 }
 const { post } = Astro.props;
+
 ---
 
-<!-- <Base translationsURL={post.translations}>
+<Base translationsURL={post.translations}>
   <Home post={post} />
-</Base> -->
+</Base>

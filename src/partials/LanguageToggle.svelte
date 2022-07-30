@@ -5,7 +5,7 @@
   import locales from "../../_data/settings/localesSettings.json"
 </script>
 
-{#if Object.keys(locales.locales).length}
+<!-- {#if Object.keys(locales.locales).length}
   <div class="relative z-10 dark:text-white mr-4 flex"> 
     <ul class="flex space-x-2 list-none">
       {#each Object.values(locales.locales) as localeGroup}
@@ -25,4 +25,4 @@
       {/each}
     </ul>
   </div>
-{/if}
+{/if} -->
