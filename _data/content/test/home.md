@@ -21,6 +21,10 @@ en:
       - label: See my work
         link: "#projects"
         type: Secondary
+    images:
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658777399/vintage-eye_ww0y4t.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658779708/vintage-brain_posxok.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658781083/vintage-heart_rd5edv.webp
   about:
     active: true
     title: About me
@@ -46,19 +50,15 @@ en:
       Creation of custom websites using WordPress as a backend for fast and efficient results.
 
 
-      **Currently studying:**\
-
-      \
-
-      I see three pillars for the future of web design:
+      **Currently studying:**
 
 
-      1. Design tokens as an expression of one source of truth, even within small teams (Style Dictionary).
+      1. Design tokens to create coherent visual communication between teams and products ([Style Dictionary](https://amzn.github.io/style-dictionary), [Figma Tokens](https://www.figmatokens.com/))
 
-      2. Decoupling front and backend, using headless CMS’s (Strapi and other headless CMS’s)
+      2. Decoupling front and backend, using headless CMS’s ([Strapi](https://strapi.io/), [Payload CMS](https://payloadcms.com/), [Netlify CMS](https://www.netlifycms.org/)  and other headless CMS’s)
 
-      3. Blazing fast frontends and minimal. (Svelte, Astro)
-    image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.png
+      3. Blazing fast frontends ([Svelte](https://svelte.dev/), [Astro](https://astro.build/))
+    image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.webp
   projects:
     active: true
     title: Projects
@@ -74,6 +74,22 @@ en:
     active: true
     title: Contact
     description: Drop me a line
+    contactMethods:
+      - label: info@pedrokehl.net
+        url: mailto:info@pedrokehl.net
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-mail_tyul5l.svg
+      - label: twitter.com/ppkehl
+        url: https://twitter.com/ppkehl
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-twitter_tkrgzz.svg
+      - label: linkedin.com/in/pedro-kehl
+        url: https://www.linkedin.com/in/pedro-kehl/
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-linkedin_ojsf6k.svg
+      - label: instagram.com/ppkehl
+        url: https://instagram.com/ppkehl
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-instagram_ljjd3k.svg
+      - label: github.com/ppkehl
+        url: https://github.com/ppkehl
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-github_m4uvuh.svg
 pt:
   postType: page
   hero:
@@ -82,11 +98,13 @@ pt:
     mainTagline: |-
       Bonita,
 
-      Rápida &
+      Eficiente &
 
       Prática
-    description: "Minha missão é criar experiências agradáveis, usando o melhor que
-      a tecnologia pode oferecer "
+    description: |-
+      Minha missão é criar experiências agradáveis, 
+      usando o melhor que a tecnologia pode oferecer 
+      e escolhendo as melhores opções para cada projeto.
     buttons:
       - label: Fale comigo
         link: "#contact"
@@ -94,131 +112,69 @@ pt:
       - label: Veja meu trabalho
         link: "#projects"
         type: Secondary
+    images:
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658777399/vintage-eye_ww0y4t.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658779708/vintage-brain_posxok.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658781083/vintage-heart_rd5edv.webp
   about:
     active: true
-    image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.png
+    image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.webp
     title: Sobre mim
     description: Eu gosto de resolver problemas e pensar sobre o futuro
     text: >-
       Sou formado em design digital, trabalhando há mais de 20 anos como
-      freelancer em design, desenvolvimento e identidade de marca.\
-
-      \
-
-      Gosto de ter uma abordagem sistêmica na resolução de problemas, e estou sempre estudando o que há de novo na área de tecnologia.\
-
-      \
-
-      **Principais conhecimentos:**\
-
-      \
-
-      Design de interfaces utilizando as melhores práticas de UI/UX e aplicando o conceito de design tokens para desenvolvimento escalável em diferentes plataformas/produtos.\
-
-      \
-
-      Criação de sites personalizados usando WordPress como backend para resultados rápidos e eficientes.
+      freelancer em design, desenvolvimento e identidade de marca.
 
 
-      **Estudando atualmente:**\
-
-      \
-
-      Vejo três pilares para o futuro do web design:
+      Gosto de ter uma abordagem sistêmica na resolução de problemas, e estou sempre estudando o que há de novo na área de tecnologia.
 
 
-      1. Projete tokens como uma expressão de uma fonte de verdade, mesmo dentro de equipes pequenas (Style Dictionary).
+      **Principais conhecimentos:**
 
-      2. Desacoplamento front-end e back-end, usando CMSs headless (Strapi e outros CMSs headless)
 
-      3. Frontends extremamente rápidos e mínimos. (Svelte, Astro)
+      Design de interfaces utilizando as melhores práticas de UI/UX e aplicando o conceito de design tokens para desenvolvimento escalável em diferentes plataformas/produtos.
+
+
+      Criação de sites personalizados usando [WordPress](https://br.wordpress.org/) como backend para resultados rápidos e eficientes.
+
+
+      **Estudando atualmente:**
+
+
+      1. Design tokens para criar uma comunicação visual coerente entre times e produtos ([Style Dictionary](https://amzn.github.io/style-dictionary), [Figma Tokens](https://www.figmatokens.com/))
+
+      2. Desacoplamento front-end e back-end, usando CMSs headless ([Strapi](https://strapi.io/), [Payload CMS](https://payloadcms.com/), [Netlify CMS](https://www.netlifycms.org/)  e outros CMSs headless)
+
+      3. Frontends extremamente rápidos ([Svelte](https://svelte.dev/), [Astro](https://astro.build/))
   projects:
     postsNum: 3
     active: true
-    title: Projects
+    title: Projetos
     description: Alguns exemplos de projetos executados em diferentes plataformas
       com diferentes equipes
   blog:
     postsNum: 4
     active: true
-    title: Ideas
+    title: Ideias
     description: Pensamentos sobre design, internet e outros interesses
   contact:
     active: true
     title: Contato
     description: Vamos conversar
-it:
-  postType: page
-  hero:
-    active: true
-    buttons:
-      - label: Parla con me
-        link: "#contact"
-        type: Primary
-      - label: Guarda il mio lavoro
-        link: "#projects"
-        type: Secondary
-    tagline: " Credo che il web dovrebbe essere:"
-    mainTagline: |-
-      Bella,
-
-      Veloce e
-
-      Pratica
-    description: La mia missione è creare esperienze web fluide, offrendo il meglio
-      che la tecnologia può offrire e scegliendo il miglior stack tecnologico
-      per ogni singolo progetto.
-  about:
-    active: true
-    image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.png
-    title: "Su di me"
-    description: Mi piace risolvere i problemi e pensare al futuro
-    text: >-
-      Mi sono laureato in design digitale, lavorando per oltre 20 anni come
-      freelance in design, sviluppo e identità del marchio.\
-
-      \
-
-      Mi piace avere un approccio sistemico alla risoluzione dei problemi e studio sempre le novità nel campo della tecnologia.\
-
-      \
-
-      **Competenze principali:**\
-
-      \
-
-      Progettazione di interfacce utilizzando le migliori pratiche di UI/UX e applicando il concetto di design token per lo sviluppo scalabile in diverse piattaforme/prodotti.\
-
-      \
-
-      Creazione di siti web personalizzati utilizzando WordPress come backend per risultati veloci ed efficienti.
-
-
-      **Attualmente studio:**\
-
-      \
-
-      Vedo tre pilastri per il futuro del web design:
-
-
-      1. Progettare i token come espressione di una fonte di verità, anche all'interno di piccoli team (Dizionario di stile).
-
-      2. Disaccoppiamento front-end e back-end, utilizzando CMS senza testa (Strapi e altri CMS senza testa)
-
-      3. Frontend velocissimi e minimali. (Svelte, Astro)
-  projects:
-    postsNum: 3
-    active: true
-    title: Progetti
-    description: "Alcuni esempi di progetti eseguiti su diverse piattaforme con
-      diversi team"
-  blog:
-    postsNum: 4
-    active: true
-    title: Idee
-    description: "Pensieri su design, web e altri interessi"
-  contact:
-    active: true
-    title: Contatto
-    description: Parla con me
+    contactMethods:
+      - label: info@pedrokehl.net
+        url: mailto:info@pedrokehl.net
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-mail_tyul5l.svg
+      - label: twitter.com/ppkehl
+        url: https://twitter.com/ppkehl
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-twitter_tkrgzz.svg
+      - label: linkedin.com/in/pedro-kehl
+        url: https://www.linkedin.com/in/pedro-kehl/
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-linkedin_ojsf6k.svg
+      - label: instagram.com/ppkehl
+        url: https://instagram.com/ppkehl
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-instagram_ljjd3k.svg
+      - label: github.com/ppkehl
+        url: https://github.com/ppkehl
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-github_m4uvuh.svg
 ---

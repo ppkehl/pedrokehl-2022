@@ -1,43 +1,45 @@
 ---
-import ConditionalLoading from '../partials/ConditionalLoading.svelte'
-import Title from '../components/Title.svelte'
-import Button from '../components/Button.svelte'
-import Form from '../components/Form.svelte'
-import Blobs from '../components/Blobs.svelte'
-import ProjectPreview from '../components/ProjectPreview.astro'
-import BlogPreview from '../components/BlogPreview.astro'
-import { Markdown } from 'astro/components';
-import { getTranslations, getLocaleFromURL } from '../lib/translations';
+// import ConditionalLoading from '../partials/ConditionalLoading.svelte'
+// import Title from '../components/Title.svelte'
+// import Button from '../components/Button.svelte'
+// import Form from '../components/Form.svelte'
+// import Blobs from '../components/Blobs.svelte'
+// import ProjectPreview from '../components/ProjectPreview.astro'
+// import BlogPreview from '../components/BlogPreview.astro'
+// import { Markdown } from 'astro/components';
+// import { getTranslations, getLocaleFromURL } from '../lib/translations';
 
 // Get post from index.astro or [locale.astro]
 const { post } = Astro.props;
 
+//console.log(post)
+
 // Get locale from URL
-const locale = getLocaleFromURL(Astro.canonicalURL.href);
+// const locale = getLocaleFromURL(Astro.canonicalURL.href);
 
-// Data Fetching: List all Markdown projects in the repo.
-const projects = await Astro.glob('../../_data/content/posts/projects/*.md')
-const projectsData = await getTranslations({
-  "posts": projects,
-  "locale": locale
-})
-projectsData.sort((a, b) => new Date(b.content[0].date).valueOf() - new Date(a.content[0].date).valueOf())
-const selectedProjects = projectsData.slice(0, post.projects.postsNum);
+// // Data Fetching: List all Markdown projects in the repo.
+// const projects = await Astro.glob('../../_data/content/projects/*.md')
+// const projectsData = await getTranslations({
+//   "posts": projects,
+//   "locale": locale
+// })
+// projectsData.sort((a, b) => new Date(b.content[0].date).valueOf() - new Date(a.content[0].date).valueOf())
+// const selectedProjects = projectsData.slice(0, post.projects.postsNum);
 
-// Data Fetching: List all Markdown posts in the repo.
-const posts = await Astro.glob('../../_data/content/posts/blog/*.md')
-const postsData = await getTranslations({
-  "posts": posts,
-  "locale": locale
-})
-postsData.sort((a, b) => new Date(b.content[0].date).valueOf() - new Date(a.content[0].date).valueOf())
-const selectedPosts = postsData.slice(0, post.blog.postsNum);
+// // Data Fetching: List all Markdown posts in the repo.
+// const posts = await Astro.glob('../../_data/content/blog/*.md')
+// const postsData = await getTranslations({
+//   "posts": posts,
+//   "locale": locale
+// })
+// postsData.sort((a, b) => new Date(b.content[0].date).valueOf() - new Date(a.content[0].date).valueOf())
+// const selectedPosts = postsData.slice(0, post.blog.postsNum);
 
 // Failsafe hero image (if JS disabled).
-const heroImage = post.hero.images[0];
+//const heroImage = post.hero.images[0];
 ---
 
-<ConditionalLoading load={post.hero.active}>
+<!-- <ConditionalLoading load={post.hero.active}>
   <section id="hero"
     class="anchor xl:container mx-auto px-6 py-32 flex items-center h-screen lg:min-h-[750px] max-h-[1400px] relative">
 
@@ -226,4 +228,4 @@ const heroImage = post.hero.images[0];
   const selectedImage = post.hero.images[randomImage];
   let heroImage = document.getElementById("hero-image");
   heroImage.src = selectedImage;
-</script>
+</script> -->

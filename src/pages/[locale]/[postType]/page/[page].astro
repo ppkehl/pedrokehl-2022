@@ -1,0 +1,41 @@
+---
+// import Base from '../../../partials/Base.astro'
+// import Blog from '../../../layouts/Blog.astro'
+
+// Data Fetching API
+import { getTranslations } from '../../../../lib/translations';
+
+
+export async function getStaticPaths({paginate}) {
+
+    // Get markdown posts
+    const posts = await Astro.glob('../../../../../_data/content/posts/blog/*.md')
+    // Use getTranslations to sort posts translations
+    const postsData = await getTranslations({
+      "posts": posts
+    })
+    // Group posts by postType
+
+
+
+}
+// WORKING
+// export async function getStaticPaths({paginate}) {
+//   const posts = await Astro.glob('../../../../../_data/content/posts/blog/*.md')
+//   const postsData = await getTranslations({
+//     "posts": posts
+//   })
+//   const filteredPosts = postsData.map((postGroup) => {return postGroup.content.filter((post) => post.locale === 'en')})
+//   return paginate(filteredPosts.flat(), {
+//     params: { 
+//       postType: 'blog',
+//       locale: 'en'
+//     },
+//     pageSize: 2
+//   });
+// }
+// const { page } = Astro.props;
+
+---
+
+{page.data.map(({ title }) => <li>{title}</li>)}

@@ -3,15 +3,21 @@ import Base from '../partials/Base.astro'
 import Home from '../layouts/Home.astro'
 import {getTranslations, getDefaultLocale} from '../lib/translations';
 
-// Fetch data
-const posts = await Astro.glob('../../_data/content/single/home.md')
+// // Fetch data
+// const posts = await Astro.glob('../../_data/content/single/home.md')
+// const postData = await getTranslations({
+//   "posts": posts
+// })
+// const post = postData.single.home
+
+
+const posts = await Astro.glob('../../_data/content/**/**/*.md')
 const postData = await getTranslations({
-  "posts": posts,
-  "locale": getDefaultLocale()
+  "posts": posts
 })
-const post = postData[0].content[0]
+console.log(postData)
 ---
 
-<Base translationsURL={post.translations}>
-  <Home post={post} />
-</Base>
+<!-- <Base translationsURL={post.translations}>
+  <Home post={post.content.en} />
+</Base> -->
