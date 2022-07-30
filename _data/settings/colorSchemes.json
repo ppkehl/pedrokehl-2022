@@ -46,7 +46,12 @@
         "success": "#00ab2c",
         "alert": "#f7a24e",
         "danger": "#f65454"
+<<<<<<< HEAD
       }
+=======
+      },
+      "schemeActive": false
+>>>>>>> f2078e4bc6e4e322ecee34895562ad5f0d2533ab
     },
     {
       "schemeName": "Dora",
@@ -58,7 +63,12 @@
         "success": "#00ab2c",
         "alert": "#ff7346",
         "danger": "#f23535"
+<<<<<<< HEAD
       }
+=======
+      },
+      "schemeActive": false
+>>>>>>> f2078e4bc6e4e322ecee34895562ad5f0d2533ab
     },
     {
       "schemeName": "Helena",
@@ -70,7 +80,12 @@
         "success": "#00ab2c",
         "alert": "#e17900",
         "danger": "#ff3535"
+<<<<<<< HEAD
       }
+=======
+      },
+      "schemeActive": false
+>>>>>>> f2078e4bc6e4e322ecee34895562ad5f0d2533ab
     }
   ]
 }
