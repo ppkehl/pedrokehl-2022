@@ -1,0 +1,35 @@
+---
+import Base from '../../../../partials/Base.astro'
+
+import locales from "../../../../../_data/settings/localesSettings.json"
+
+// Data Fetching API
+import { getTranslations } from '../../../../lib/translations';
+export async function getStaticPaths({paginate}) {
+  const posts = await Astro.glob('../../../../../_data/content/blog/*.md')
+  const postsData = await getTranslations({
+    "posts": posts
+  })
+  return Object.values(locales.locales).map((locale) => {
+    const filteredPosts = Object.values(postsData).map((postGroup) => {return Object.values(postGroup).filter((post) => post.locale === locale.code)})
+    return paginate(filteredPosts.flat(), {
+      params: { 
+        locale: locale.code
+      },
+      pageSize: 10
+    });
+  })
+}
+const { page } = Astro.props;
+// Send the user back to page one on language change... 
+const translations = {en: 'en/blog/page/1', pt: 'pt/blog/page/1'}
+---
+
+<Base translationsURL={translations}>
+  <div class="pt-32">
+    {page.data.map(({ title }) => <li><Fragment set:html={title} /></li>)}
+  </div>
+
+  {page.url.prev ? <a href={page.url.prev}>Previous</a> : null}
+  {page.url.next ? <a href={page.url.next}>Next</a> : null}
+</Base>

@@ -6,39 +6,30 @@ import Form from '../components/Form.svelte'
 import Blobs from '../components/Blobs.svelte'
 import ProjectPreview from '../components/ProjectPreview.astro'
 import BlogPreview from '../components/BlogPreview.astro'
-import { Markdown } from 'astro/components';
+import Markdown from '@astrojs/markdown-component';
 import { getTranslations, getLocaleFromURL } from '../lib/translations';
 
 // Get post from index.astro or [locale.astro]
 const { post } = Astro.props;
 
-//console.log(post)
-
 // Get locale from URL
-const locale = getLocaleFromURL(Astro.canonicalURL.href);
+const locale = getLocaleFromURL(Astro.url);
 
 // Data Fetching: List all Markdown projects in the repo.
 const projects = await Astro.glob('../../_data/content/projects/*.md')
 const projectsData = await getTranslations({
   "posts": projects
 })
+//Object.keys(projectsData.projects).sort()
+const selectedProjects = Object.values(projectsData).slice(0, post.projects.postsNum);
 
-//console.log(projectsData.projects['2022-07-01-sbac']['en'].date)
-
-Object.values(projectsData.projects).sort((a, b) => new Date(b.en.date).valueOf() - new Date(a.en.date).valueOf())
-console.log(projectsData.projects)
-
-//const selectedProjects = Object.values(projectsData.projects).slice(0, post.projects.postsNum);
-// console.log(selectedProjects)
-
-// // Data Fetching: List all Markdown posts in the repo.
-// const posts = await Astro.glob('../../_data/content/blog/*.md')
-// const postsData = await getTranslations({
-//   "posts": posts,
-//   "locale": locale
-// })
-// postsData.sort((a, b) => new Date(b.content[0].date).valueOf() - new Date(a.content[0].date).valueOf())
-// const selectedPosts = postsData.slice(0, post.blog.postsNum);
+// Data Fetching: List all Markdown posts in the repo.
+const posts = await Astro.glob('../../_data/content/blog/*.md')
+const postsData = await getTranslations({
+  "posts": posts
+})
+//postsData.sort((a, b) => new Date(b.content[0].date).valueOf() - new Date(a.content[0].date).valueOf())
+const selectedPosts = Object.values(postsData).slice(0, post.blog.postsNum);
 
 // Failsafe hero image (if JS disabled).
 const heroImage = post.hero.images[0];
@@ -153,8 +144,7 @@ const heroImage = post.hero.images[0];
     <div
       class="xl:container px-6 scroll-px-6 mx-auto relative gap-8 flex flex-nowrap overflow-x-auto lg:overflow-visible lg:grid lg:grid-cols-3 z-10 snap-x"
       data-scroll>
-      <!-- {selectedProjects.map((project) =>
-      <ProjectPreview project={project.content} />)} -->
+      {selectedProjects.map((project) =><ProjectPreview project={project[locale]} />)}
     </div>
 
   </section>
@@ -183,8 +173,8 @@ const heroImage = post.hero.images[0];
     <div
       class="xl:container px-6 scroll-px-6 mx-auto relative gap-8 flex flex-nowrap overflow-x-auto lg:overflow-visible lg:grid lg:grid-cols-4 z-10 snap-x"
       data-scroll>
-      <!-- {selectedPosts.map((post) =>
-      <BlogPreview post={post.content} />)} -->
+      {selectedPosts.map((post) =><BlogPreview post={post[locale]} />)}
+      
     </div>
 
   </section>

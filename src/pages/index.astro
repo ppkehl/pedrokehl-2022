@@ -8,14 +8,7 @@ const posts = await Astro.glob('../../_data/content/single/home.md')
 const postData = await getTranslations({
   "posts": posts
 })
-const post = postData.single.home[getDefaultLocale()]
-
-// const tests = await Astro.glob('../../_data/content/test/**/**/*.md')
-// const testData = await getTranslations({
-//   "posts": tests
-// })
-// console.log(testData.test.home.en)
-
+const post = postData.home[getDefaultLocale()]
 ---
 
 <Base translationsURL={post.translations}>

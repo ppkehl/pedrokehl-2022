@@ -4,18 +4,15 @@ import Blog from '../../../layouts/Blog.astro'
 
 // Data Fetching API
 import { getTranslations } from '../../../lib/translations';
-
 export async function getStaticPaths() {
-  const posts = await Astro.glob('../../../../_data/content/posts/blog/*.md')
+  const posts = await Astro.glob('../../../../_data/content/blog/*.md')
   const postsData = await getTranslations({
     "posts": posts
   })
-
-  return postsData.map((postGroup) => {
-    return postGroup.content.map((post) => {
+  return Object.values(postsData).map((postGroup) => {
+    return Object.values(postGroup).map((post) => {
       return {
         params: {
-          postType: post.postType,
           locale: post.locale,
           slug: post.slug
         },

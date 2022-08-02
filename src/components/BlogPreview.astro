@@ -1,14 +1,14 @@
 ---
 const { post } = Astro.props;
-const postURL = '/' + post[0].translations[post[0].locale]
+const postURL = '/' + post.translations[post.locale]
 ---
 <div class="w-4/5 sm:w-3/5 md:w-2/5 lg:w-auto flex-none mb-8 dark:text-white snap-start">
   <a href={postURL} class="block space-y-5">
     <div class="w-full aspect-square rounded">
-      <img loading="lazy" class="object-cover w-full h-full" src={post[0].featuredImage} alt={post[0].title}  data-tilt data-tilt-max="4" data-tilt-speed="500" data-tilt-perspective="500" data-tilt-glare="true" data-tilt-reverse="true" data-tilt-gyroscope="false">
+      <img loading="lazy" class="object-cover w-full h-full" src={post.featuredImage} alt={post.title}  data-tilt data-tilt-max="4" data-tilt-speed="500" data-tilt-perspective="500" data-tilt-glare="true" data-tilt-reverse="true" data-tilt-gyroscope="false">
     </div>
     <h1 class="text-xl font-semibold">
-      {post[0].title}
+      {post.title}
     </h1>
   </a>
 </div>

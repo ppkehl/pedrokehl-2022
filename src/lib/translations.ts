@@ -1,13 +1,47 @@
-import { turnToSlug, groupBy } from "./utils";
+import { turnToSlug } from "./utils";
 import locales from "../../_data/settings/localesSettings.json"
 
 export function getDefaultLocale() {
   return locales.locales[0].code
 }
 
-export function getLocaleFromURL(pathname: string) {
-  const langCodeMatch = pathname.match(/\/([a-z]{2}-?[A-Z]{0,2})\//);
+export function getLocaleFromURL(pathname: URL) {
+  const path = pathname.toString() + '/'
+  const langCodeMatch = path.match(/\/([a-z]{2}-?[A-Z]{0,2})\//);
+  //console.log(langCodeMatch)
   return langCodeMatch ? langCodeMatch[1] : getDefaultLocale();
+}
+
+export function getFilteredTranslations(translationsURL, baseurl:URL, currenturl:URL) {
+  // This is much more complicated than it should be. I will review this code at some point
+  const filteredArray = []
+  const locale = getLocaleFromURL(currenturl)
+  const defaultLocale = getDefaultLocale()
+  const baseurlArray = baseurl.toString().split('/')
+  const baseurlArrayBase = baseurlArray.pop() || baseurlArray.pop()
+  const currenturlArray = currenturl.toString().split('/')
+  Object.values(locales.locales).map((locale) => {
+    let localeIndex = currenturlArray.indexOf(locale.code)
+    if(localeIndex !== -1){
+      currenturlArray.splice(localeIndex,1)
+    }
+  })
+  const currenturlArrayBase = currenturlArray.pop() || currenturlArray.pop()
+  Object.keys(translationsURL).map((key) =>{
+    // If its homepage
+    if(key !== locale){
+      if(baseurlArrayBase === currenturlArrayBase){
+        if(key === defaultLocale){
+          filteredArray[key] = baseurl
+        }else{
+          filteredArray[key] = baseurl + '/' + key
+        }
+      }else{
+        filteredArray[key] = baseurl + '/' + translationsURL[key]
+      }
+    }
+  })
+  return filteredArray
 }
 
 export interface Translations {
@@ -21,7 +55,7 @@ export async function getTranslations(options: Translations) {
   // Create postsList array
   const postsList = Array()
   // Create translations array
-  const translationsArray = Array()
+  let translationsArray = Array()
   // Get site locales
   const siteLocales = locales.locales
 
@@ -87,6 +121,9 @@ export async function getTranslations(options: Translations) {
           // Set the locale of the markdown file
           t.posts[key].frontmatter.locale = localeValue.code
 
+          // Set the slug of the markdown file
+          t.posts[key].frontmatter.slug = slug
+
           // Set the content of the file (everything is on the frontmatter now)
           mdContent = t.posts[key].frontmatter
 
@@ -98,6 +135,9 @@ export async function getTranslations(options: Translations) {
 
           // Set the locale of the markdown file
           t.posts[key].frontmatter[localeValue.code].locale = localeValue.code
+
+          // Set the slug of the markdown file
+          t.posts[key].frontmatter[localeValue.code].slug = slug
 
           // Set the content of the file (everything is on the frontmatter now)
           mdContent = t.posts[key].frontmatter[localeValue.code]
@@ -114,40 +154,35 @@ export async function getTranslations(options: Translations) {
           meta['postType'] = postType
           meta['path'] = filteredPath
 
-          // If postType is undefined
-          if(!postsList.hasOwnProperty(postType)){
-            // Create postType array
-            postsList[postType] = Array()
-          }
-          if(!postsList[postType].hasOwnProperty(id)){
+          if(!postsList.hasOwnProperty(id)){
+
+            // Clear translationsArray
+            translationsArray = []
             // Create post id array
-            postsList[postType][id] = Array()
+            postsList[id] = Array()
             // Add locale content
-            postsList[postType][id][localeValue.code] = mdContent
+            postsList[id][localeValue.code] = mdContent
             // Add meta content
-            postsList[postType][id][localeValue.code]['meta'] = meta
+            postsList[id][localeValue.code]['meta'] = meta
             // Add to translations array
             translationsArray[localeValue.code] = localeValue.code + '/' + postType + '/' + slug
           }else{
             // if post id exists in array, add to it
-            postsList[postType][id][localeValue.code] = mdContent
+            postsList[id][localeValue.code] = mdContent
             // Add to translations array
             translationsArray[localeValue.code] = localeValue.code + '/' + postType + '/' + slug
             // Add meta content
-            postsList[postType][id][localeValue.code]['meta'] = meta
+            postsList[id][localeValue.code]['meta'] = meta
           }
 
-          Object.values(postsList[postType][id]).map((post)=> {
+          Object.values(postsList[id]).map((post)=> {
             post['translations'] = Array()
             post['translations'] = translationsArray
           })
 
-          
         }
       }
     }
   }
-
-  
   return postsList
 }

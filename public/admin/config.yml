@@ -46,7 +46,7 @@ collections:
       locales: [en, pt]
     folder: '_data/content/projects'
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
+    slug: "{{year}}-{{month}}-{{day}}T{{hour}}-{{minute}}-{{second}}--{{slug}}{{locale}}"
     fields:
       # Point to Astro layout
       # - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/ProjectSingle.astro"}
@@ -108,7 +108,7 @@ collections:
       locales: [en, pt]
     folder: '_data/content/blog'
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
+    slug: "{{year}}-{{month}}-{{day}}T{{hour}}-{{minute}}-{{second}}--{{slug}}{{locale}}"
     fields:
       # Point to Astro layout
       # - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogSingle.astro"}

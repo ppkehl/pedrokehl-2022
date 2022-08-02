@@ -1,27 +1,15 @@
 <script lang="ts">
   export let locale:string
   export let translationsURL:object
-  import { getDefaultLocale } from "../lib/translations"
-  import locales from "../../_data/settings/localesSettings.json"
 </script>
 
-{#if Object.keys(locales.locales).length}
+{#if Object.keys(translationsURL).length}
   <div class="relative z-10 dark:text-white mr-4 flex"> 
     <ul class="flex space-x-2 list-none">
-      {#each Object.values(locales.locales) as localeGroup}
-        {#if locale != localeGroup.code}
-          <li class="uppercase font-semibold text-sm flex items-center">
-            {#if translationsURL[locale].split('/').pop().includes("home")}
-              {#if locale !== getDefaultLocale()}
-                <a href="/">{localeGroup.code}</a>
-              {:else}
-                <a href="/{localeGroup.code}">{localeGroup.code}</a>
-              {/if}
-            {:else}
-              <a href="/{translationsURL[localeGroup.code]}">{localeGroup.code}</a>
-            {/if}
-          </li>
-        {/if}
+      {#each Object.keys(translationsURL) as key}
+        <li class="uppercase font-semibold text-sm flex items-center">
+          <a href={translationsURL[key]}>{key}</a>
+        </li>
       {/each}
     </ul>
   </div>

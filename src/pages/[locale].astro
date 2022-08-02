@@ -10,7 +10,7 @@ export async function getStaticPaths() {
   const postsData = await getTranslations({
     "posts": posts
   })
-  return Object.values(postsData.single.home).map((post) => {
+  return Object.values(postsData.home).map((post) => {
       return {
         params: {
           locale: post.locale
