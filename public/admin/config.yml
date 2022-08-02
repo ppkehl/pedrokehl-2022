@@ -1,11 +1,8 @@
-# public/admin/config.yml
 backend:
   name: git-gateway
   # branch: master
   branch: main
   auth_endpoint: api/auth/
-
-local_backend: true
 
 logo_url: https://res.cloudinary.com/ppkehl/image/upload/v1658943994/pk_logo.png
 
