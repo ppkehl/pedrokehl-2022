@@ -3,6 +3,7 @@ backend:
   name: git-gateway
   # branch: master
   branch: main
+  auth_endpoint: api/auth/
 
 local_backend: true
 
