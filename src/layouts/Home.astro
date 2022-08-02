@@ -20,16 +20,16 @@ const projects = await Astro.glob('../../_data/content/projects/*.md')
 const projectsData = await getTranslations({
   "posts": projects
 })
-//Object.keys(projectsData.projects).sort()
-const selectedProjects = Object.values(projectsData).slice(0, post.projects.postsNum);
+const sortedProjects = Object.values(projectsData).sort((a, b) => new Date(b[locale].date).valueOf() - new Date(a[locale].date).valueOf())
+const selectedProjects = Object.values(sortedProjects).slice(0, post.projects.postsNum);
 
 // Data Fetching: List all Markdown posts in the repo.
 const posts = await Astro.glob('../../_data/content/blog/*.md')
 const postsData = await getTranslations({
   "posts": posts
 })
-//postsData.sort((a, b) => new Date(b.content[0].date).valueOf() - new Date(a.content[0].date).valueOf())
-const selectedPosts = Object.values(postsData).slice(0, post.blog.postsNum);
+const sortedPosts = Object.values(postsData).sort((a, b) => new Date(b[locale].date).valueOf() - new Date(a[locale].date).valueOf())
+const selectedPosts = Object.values(sortedPosts).slice(0, post.blog.postsNum);
 
 // Failsafe hero image (if JS disabled).
 const heroImage = post.hero.images[0];
@@ -66,7 +66,7 @@ const heroImage = post.hero.images[0];
       <div class="absolute w-full h-full flex justify-end items-center z-10">
         <img id="hero-image"
           class="mr-6 w-10/12 h-4/5 object-contain object-center opacity-20 lg:opacity-100 dark:invert dark:opacity-20 lg:dark:opacity-70"
-          src="" alt="An old style anatomycal illustration of a brain, a heart or a hand">
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" alt="An old style anatomycal illustration of a brain, a heart or a hand">
         <noscript>
           <img
             class="mr-6 w-10/12 h-4/5 object-contain object-center opacity-20 lg:opacity-100 dark:invert dark:opacity-20 lg:dark:opacity-70"

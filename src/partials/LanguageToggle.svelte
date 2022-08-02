@@ -1,5 +1,4 @@
 <script lang="ts">
-  export let locale:string
   export let translationsURL:object
 </script>
 
