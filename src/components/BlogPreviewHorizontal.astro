@@ -5,10 +5,10 @@ const postURL = '/' + post.translations[post.locale]
 ---
 <div class="w-full mb-8 dark:text-white">
   <a href={postURL} class="flex flex-wrap">
-    <div class="w-2/6">
+    <div class="sm:w-6/12 md:w-2/6 mb-6 lg:mb-0">
       <img loading="lazy" class="object-cover aspect-square rounded" src={post.featuredImage} alt={post.title}  data-tilt data-tilt-max="4" data-tilt-speed="500" data-tilt-perspective="500" data-tilt-glare="true" data-tilt-reverse="true" data-tilt-gyroscope="false">
     </div>
-    <div class="w-4/6 pl-8 space-y-6">
+    <div class="w-full md:w-4/6 md:pl-8 space-y-6">
       <h1 class="text-xl font-semibold">
         {post.title}
         <span class="text-sm block mt-2 font-light">

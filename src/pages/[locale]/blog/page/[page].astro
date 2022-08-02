@@ -30,7 +30,7 @@ const translations = {en: 'en/blog/page/1', pt: 'pt/blog/page/1'}
 
   <section id="ideas" class="anchor py-32 relative">
 
-    <div class="lg:container mx-auto grid grid-cols-2 gap-8 px-6">
+    <div class="lg:container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 px-6">
       {Object.values(page.data).map((post) => <BlogPreviewHorizontal post={post} /> )}
     </div>
 
