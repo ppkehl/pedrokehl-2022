@@ -2,7 +2,7 @@ backend:
   name: github
   repo: ppkehl/pedrokehl-2022
   base_url: https://pedrokehl.vercel.app/
-  auth_endpoint: api/auth/
+  auth_endpoint: admin/api/auth/
 
 logo_url: https://res.cloudinary.com/ppkehl/image/upload/v1658943994/pk_logo.png
 
