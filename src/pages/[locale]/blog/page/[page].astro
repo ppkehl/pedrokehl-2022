@@ -1,0 +1,45 @@
+---
+import Base from '../../../../partials/Base.astro'
+import BlogPreviewHorizontal from '../../../../components/BlogPreviewHorizontal.astro'
+import locales from "../../../../../_data/settings/localesSettings.json"
+
+// Data Fetching API
+import { getTranslations } from '../../../../lib/translations';
+export async function getStaticPaths({paginate}) {
+  const posts = await Astro.glob('../../../../../_data/content/blog/*.md')
+  const postsData = await getTranslations({
+    "posts": posts
+  })
+  return Object.values(locales.locales).map((locale) => {
+    const filteredPosts = Object.values(postsData).map((postGroup) => {return Object.values(postGroup).filter((post) => post.locale === locale.code)})
+    const sortedProjects = Object.values(filteredPosts.flat()).sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
+    return paginate(sortedProjects, {
+      params: { 
+        locale: locale.code
+      },
+      pageSize: 10
+    });
+  })
+}
+const { page } = Astro.props;
+// Send the user back to page one on language change... 
+const translations = {en: 'en/blog/page/1', pt: 'pt/blog/page/1'}
+---
+
+<Base translationsURL={translations}>
+
+  <section id="ideas" class="anchor py-32 relative">
+
+    <div class="lg:container mx-auto grid grid-cols-2 gap-8 px-6">
+      {Object.values(page.data).map((post) => <BlogPreviewHorizontal post={post} /> )}
+    </div>
+
+    <div class="lg:container mx-auto px-6 flex justify-center mt-8 font-semibold">
+      {page.url.prev ? <a class="mx-8" href={page.url.prev}>Previous</a> : null}
+      {page.url.next ? <a class="mx-8" href={page.url.next}>Next</a> : null}
+    </div>
+
+  </section>
+
+  
+</Base>

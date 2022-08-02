@@ -1,8 +1,0 @@
----
-postType: test
-title: Ezra Miller viene scaricato come Flash
-date: 2022-07-05T14:48:18.739Z
----
-Sempre ottimisti, Warner Bros. Discovery spera per il meglio quando si tratta della loro star di The Flash, Ezra Miller. L'attore che ha interpretato il supereroe della Justice League nei film in franchising negli ultimi anni, si è messo in acqua calda ed è stato un argomento ancora più caldo delle conversazioni sul film in uscita. Mentre lo studio prevede di portare avanti il ​​lungometraggio da 200 milioni di dollari, secondo Geekosity, hanno anche deciso di ritenere Miller responsabile delle loro azioni e licenziarlo da qualsiasi progetto DC in arrivo e impedirgli di partecipare al circuito stampa imminente del film. Sono anche certi che la giovane star cercherà aiuto per il loro recente comportamento violento, ma con il modo in cui stanno andando le cose, quella parte è molto nell'aria.
-
-Proprio quando sembra che Ezra Miller abbia imparato dal loro comportamento e si sia rivolto all'interno, è emersa un'altra accusa di condotta scorretta. Quest'ultima affermazione proviene da una donna tedesca e amica di lunga data dell'attore che afferma di aver avuto paura per la sua sicurezza dopo che Miller ha avuto un episodio esplosivo di rabbia. Il presunto confronto è avvenuto all'interno della sua casa nel bel mezzo di quella che altrimenti sarebbe stata una notte rilassante per i due. L'amica afferma che quando Miller ha chiesto se potevano accendersi una sigaretta e fumare all'interno, ha detto di no, aggiungendo che l'attore poteva uscire per la pausa fumo. Non apprezzando la risposta, la donna sostiene che Miller si sia scatenata in un attacco di rabbia, lasciando foglie di tabacco sparse per la sua casa.

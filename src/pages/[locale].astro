@@ -8,13 +8,12 @@ import { getTranslations,getDefaultLocale } from '../lib/translations';
 export async function getStaticPaths() {
   const posts = await Astro.glob('../../_data/content/single/home.md')
   const postsData = await getTranslations({
-    "posts": posts,
-    "locales_except": getDefaultLocale()
+    "posts": posts
   })
-  return postsData[0].content.map((post) => {
+  return Object.values(postsData.home).map((post) => {
       return {
         params: {
-          locale: post.locale,
+          locale: post.locale
         },
         props: {
           post
@@ -23,6 +22,7 @@ export async function getStaticPaths() {
   });
 }
 const { post } = Astro.props;
+
 ---
 
 <Base translationsURL={post.translations}>

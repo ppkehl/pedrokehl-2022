@@ -6,24 +6,22 @@ import Footer from "./Footer.astro"
 import ColorSchemes from "./ColorSchemes.astro"
 import ThemeToggle from "./ThemeToggle.svelte"
 import LanguageToggle from "./LanguageToggle.svelte"
-import { getLocaleFromURL, getDefaultLocale } from "../lib/translations"
+import { getLocaleFromURL, getDefaultLocale, getFilteredTranslations } from "../lib/translations"
 import settings from "../../_data/settings/generalSettings.json"
 import '../styles/global.scss';
 
-const path = Astro.canonicalURL.href;
+const path = Astro.url.href;
 const locale = getLocaleFromURL(path);
 const homeLink = locale === getDefaultLocale() ? '/' :'/' + locale;
 
 // Header Configs
-const title = settings[locale].title;
-const description = settings[locale].description;
-const coverUrl = settings[locale].image;
-const analytics = {
-  provider: 'google',
-  id: settings[locale].analitycs,
-};
+const title = settings[locale].title
+const description = settings[locale].description
+const coverUrl = settings[locale].image
+const analytics = settings[locale].analitycs
 
 const { translationsURL } = Astro.props;
+const filteredTranslations = getFilteredTranslations(translationsURL, Astro.url.origin, Astro.url.href)
 ---
 
 <html class="no-js scroll-smooth scroll-py-16 font-montserrat" lang={locale}>
@@ -42,6 +40,10 @@ const { translationsURL } = Astro.props;
 
     <ColorSchemes />
 
+    {Object.keys(filteredTranslations).map((key) =>
+      <link rel="alternate" hreflang={key} href={filteredTranslations[key]} />
+    )}
+    
     <script defer type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     
   </head>
@@ -58,7 +60,7 @@ const { translationsURL } = Astro.props;
       
             <div class="flex mr-12 lg:mr-0">
       
-              <LanguageToggle translationsURL={translationsURL} locale={locale}/>
+              <LanguageToggle translationsURL={filteredTranslations}/>
       
               <ThemeToggle client:load />
       

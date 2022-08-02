@@ -44,14 +44,12 @@ collections:
     i18n:
       structure: multiple_files
       locales: [en, pt]
-    folder: '_data/content/posts/projects'
+    folder: '_data/content/projects'
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
+    slug: "{{year}}-{{month}}-{{day}}T{{hour}}-{{minute}}-{{second}}--{{slug}}{{locale}}"
     fields:
       # Point to Astro layout
       # - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/ProjectSingle.astro"}
-      # Define post type
-      - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "projects"}
       # Title
       - {label: "Title", name: "title", widget: "string", i18n: true}
       # Date
@@ -108,14 +106,12 @@ collections:
     i18n:
       structure: multiple_files
       locales: [en, pt]
-    folder: '_data/content/posts/blog'
+    folder: '_data/content/blog'
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}{{locale}}"
+    slug: "{{year}}-{{month}}-{{day}}T{{hour}}-{{minute}}-{{second}}--{{slug}}{{locale}}"
     fields:
       # Point to Astro layout
       # - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogSingle.astro"}
-      # Define post type
-      - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "blog"}
       # Title
       - {label: "Title", name: "title", widget: "string", i18n: true}
       # Date
@@ -158,8 +154,6 @@ collections:
     fields:
       # Point to Astro layout
       # - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogSingle.astro"}
-      # Define post type
-      - {label: "Post type", name: "postType", widget: "hidden", i18n: duplicate, default: "page"}
       # Title
       - {label: "Title", name: "title", widget: "string", i18n: true}
       # Date

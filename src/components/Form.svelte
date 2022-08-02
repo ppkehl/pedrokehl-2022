@@ -43,13 +43,13 @@
                   let json = await response.json();
                   
                   if (response.status == 200) {
-                    console.log(response);
+                    //console.log(response);
                     result.innerHTML = locale === 'pt' ? "Obrigado por sua mensagem!" : "Thanks for your message!";
                     result.classList.remove("text-gray-500");
                     result.classList.remove('failure')
                     result.classList.add('success')
                   } else {
-                    console.log(response);
+                    //console.log(response);
                     result.innerHTML = locale === 'pt' ? "Ops... Tivemos problemas em enviar a sua mensagem :(" : "Uh-oh... We had problems trying to deliver your message :(";
                     result.classList.remove("text-gray-500");
                     result.classList.remove('success')

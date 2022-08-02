@@ -6,10 +6,9 @@ import {getTranslations, getDefaultLocale} from '../lib/translations';
 // Fetch data
 const posts = await Astro.glob('../../_data/content/single/home.md')
 const postData = await getTranslations({
-  "posts": posts,
-  "locale": getDefaultLocale()
+  "posts": posts
 })
-const post = postData[0].content[0]
+const post = postData.home[getDefaultLocale()]
 ---
 
 <Base translationsURL={post.translations}>

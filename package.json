@@ -19,6 +19,6 @@
     "svelte": "^3.46.4"
   },
   "dependencies": {
-    "astro-head": "^1.0.1"
+    "@astrojs/markdown-component": "^0.2.1"
   }
 }
