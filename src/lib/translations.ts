@@ -33,7 +33,7 @@ export function getFilteredTranslations(translationsURL, baseurl:URL, currenturl
         if(key === defaultLocale){
           filteredArray[key] = '/'
         }else{
-          filteredArray[key] = '/' + key
+          filteredArray[key] = '/' + key + '/'
         }
       }else{
         filteredArray[key] = '/' + translationsURL[key]
