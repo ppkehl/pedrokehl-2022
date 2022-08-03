@@ -8,7 +8,6 @@ export function getDefaultLocale() {
 export function getLocaleFromURL(pathname: URL) {
   const path = pathname.toString() + '/'
   const langCodeMatch = path.match(/\/([a-z]{2}-?[A-Z]{0,2})\//);
-  //console.log(langCodeMatch)
   return langCodeMatch ? langCodeMatch[1] : getDefaultLocale();
 }
 
@@ -32,12 +31,12 @@ export function getFilteredTranslations(translationsURL, baseurl:URL, currenturl
     if(key !== locale){
       if(baseurlArrayBase === currenturlArrayBase){
         if(key === defaultLocale){
-          filteredArray[key] = baseurl
+          filteredArray[key] = ''
         }else{
-          filteredArray[key] = baseurl + '/' + key
+          filteredArray[key] = key
         }
       }else{
-        filteredArray[key] = baseurl + '/' + translationsURL[key]
+        filteredArray[key] = translationsURL[key]
       }
     }
   })
