@@ -5,13 +5,13 @@ export function getDefaultLocale() {
   return locales.locales[0].code
 }
 
-export function getLocaleFromURL(pathname: URL) {
+export function getLocaleFromURL(pathname: URL | string) {
   const path = pathname.toString() + '/'
   const langCodeMatch = path.match(/\/([a-z]{2}-?[A-Z]{0,2})\//);
   return langCodeMatch ? langCodeMatch[1] : getDefaultLocale();
 }
 
-export function getFilteredTranslations(translationsURL, baseurl:URL, currenturl:URL) {
+export function getFilteredTranslations(translationsURL, baseurl:URL | string, currenturl:URL | string) {
   // This is much more complicated than it should be. I will review this code at some point
   const filteredArray = []
   const locale = getLocaleFromURL(currenturl)

@@ -12,7 +12,7 @@ import '../styles/global.scss';
 
 const path = Astro.url.href;
 const locale = getLocaleFromURL(path);
-const homeLink = locale === getDefaultLocale() ? '/' :'/' + locale;
+const homeLink = locale === getDefaultLocale() ? '/' :'/' + locale + '/';
 
 // Header Configs
 const title = settings[locale].title
