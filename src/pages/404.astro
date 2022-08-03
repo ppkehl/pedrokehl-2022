@@ -5,15 +5,23 @@ import '../styles/global.scss';
 ---
 
 <Base>
-<section id="four-o-four" class="xl:container mx-auto px-6 py-32 flex items-center justify-center relative">
+  <section class="mx-auto px-6 py-32 flex items-center justify-center absolute h-full w-full">
 
-  <div class="relative z-10 text-[15em] dark:text-white text-black opacity-80">
-    404
-  </div>
+    <div class="relative z-10 dark:text-white text-black opacity-80 text-center md:text-left">
+      <span class="text-8xl md:text-[15em] md:leading-[100%]">404</span>
+      <div class="space-y-2">
+        <div class="relative font-medium w-fit pr-5 after:content-[''] after:w-5 after:h-5 after:bg-[url(/assets/icon-arrow-top.svg)] after:bg-no-repeat after:bg-right-top after:right-0 after:top-0 after:absolute after:dark:invert">
+          <a href="/pt/">Ops... esse endereço não existe. <br>Voltar para a home?</a>
+        </div>
+        <div class="relative font-medium w-fit pr-5 after:content-[''] after:w-5 after:h-5 after:bg-[url(/assets/icon-arrow-top.svg)] after:bg-no-repeat after:bg-right-top after:right-0 after:top-0 after:absolute after:dark:invert">
+          <a href="/">Uh-oh... this url doesn't exist. <br>Return home?</a>
+        </div>
+      </div>
+    </div>
+    
+  </section>
 
-  <div class="w-10/12 absolute">
+  <div class="w-full absolute top-0 h-full overflow-hidden">
     <Blobs />
   </div>
-  
-</section>
 </Base>

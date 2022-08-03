@@ -49,9 +49,9 @@ const filteredTranslations = getFilteredTranslations(translationsURL, Astro.url.
     
   </head>
 
-  <body class="bg-gray-200 dark:bg-gray-900 mx-auto h-full flex flex-col">
+  <body class="bg-gray-200 dark:bg-gray-900 mx-auto h-full flex flex-col overflow-x-hidden">
 
-    <main class="overflow-hidden flex-auto">
+    <main class="flex-auto">
 
       <header class="z-50 fixed w-full top-0 left-0 before:content[''] before:w-full before:h-16 before:lg:h-24 before:absolute before:bg-gray-200 before:dark:bg-gray-900 before:backdrop-blur-xl before:dark:backdrop-blur-xl before:bg-opacity-70 before:dark:bg-opacity-50">
         <div class="xl:container mx-auto px-6 h-16 lg:h-24">
@@ -75,9 +75,9 @@ const filteredTranslations = getFilteredTranslations(translationsURL, Astro.url.
 
       <slot />
 
-      <Footer locale={locale} />
-
     </main>
+
+    <Footer locale={locale} />
 
     <script is:inline>
       document.documentElement.classList.remove('no-js');
