@@ -2,39 +2,39 @@
   "en": {
     "buildTools": [
       {
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591669/astro-logo-bw_qjkufv_pmbpcg.svg",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591669/icons/astro-logo-bw_qjkufv_pmbpcg.svg",
         "label": "Build with Astro",
         "url": "https://astro.build/"
       },
       {
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657571953/svelte-plain_wxzbvt.svg",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657571953/icons/svelte-plain_wxzbvt.svg",
         "label": "Components by Svelte",
         "url": "https://svelte.dev/"
       },
       {
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657572070/logo-tailwind_iziq1i.svg",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657572070/icons/logo-tailwind_iziq1i.svg",
         "label": "CSS by Tailwind CSS",
         "url": "https://tailwindcss.com/"
       },
       {
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591766/logomark-light_f3bl1h_btnelp_thydfe_emc9xr.svg",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591766/icons/logomark-light_f3bl1h_btnelp_thydfe_emc9xr.svg",
         "label": "Hosted on Netlify",
         "url": "https://www.netlify.com/"
       },
       {
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657589386/Cloudinary_Logo_Vector_as1eoc.svg",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657589386/icons/Cloudinary_Logo_Vector_as1eoc.svg",
         "label": "Images hosted on Cloudinary",
         "url": "https://cloudinary.com/"
       },
       {
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591338/logo-github_o8nj8f_ltj0dc.svg",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591338/icons/logo-github_o8nj8f_ltj0dc.svg",
         "label": "Source code on GitHub",
         "url": "https://github.com/ppkehl/pedrokehl-2022"
       },
       {
         "label": "Designed with Figma",
         "url": "https://www.figma.com/",
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657573971/figma-svgrepo-com_oxckid.svg"
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657573971/icons/figma-svgrepo-com_oxckid.svg"
       }
     ]
   },
@@ -42,38 +42,38 @@
     "buildTools": [
       {
         "label": "Feito com Astro",
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591669/astro-logo-bw_qjkufv_pmbpcg.svg",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591669/icons/astro-logo-bw_qjkufv_pmbpcg.svg",
         "url": "https://astro.build/"
       },
       {
         "label": "Componentes com Svelte",
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657571953/svelte-plain_wxzbvt.svg",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657571953/icons/svelte-plain_wxzbvt.svg",
         "url": "https://svelte.dev/"
       },
       {
         "label": "CSS com Tailwind CSS",
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657572070/logo-tailwind_iziq1i.svg",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657572070/icons/logo-tailwind_iziq1i.svg",
         "url": "https://tailwindcss.com/"
       },
       {
         "label": "Hospedado na Netlify",
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591766/logomark-light_f3bl1h_btnelp_thydfe_emc9xr.svg",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591766/icons/logomark-light_f3bl1h_btnelp_thydfe_emc9xr.svg",
         "url": "https://www.netlify.com/"
       },
       {
         "label": "Imagens hospedadas na Cloudinary",
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657589386/Cloudinary_Logo_Vector_as1eoc.svg",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657589386/icons/Cloudinary_Logo_Vector_as1eoc.svg",
         "url": "https://cloudinary.com/"
       },
       {
         "label": "Código fonte no GitHub",
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591338/logo-github_o8nj8f_ltj0dc.svg",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657591338/icons/logo-github_o8nj8f_ltj0dc.svg",
         "url": "https://github.com/ppkehl/pedrokehl-2022"
       },
       {
         "label": "Esboçado com Figma",
         "url": "https://www.figma.com/",
-        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657573971/figma-svgrepo-com_oxckid.svg"
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657573971/icons/figma-svgrepo-com_oxckid.svg"
       }
     ]
   }
