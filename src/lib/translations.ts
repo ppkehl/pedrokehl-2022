@@ -11,8 +11,10 @@ export function getLocaleFromURL(pathname: URL | string) {
   return langCodeMatch ? langCodeMatch[1] : getDefaultLocale();
 }
 
-export function getFilteredTranslations(translationsURL, baseurl:URL | string, currenturl:URL | string) {
+export function getFilteredTranslations(translationsURL: object, baseurl:URL | string, currenturl:URL | string) {
   // This is much more complicated than it should be. I will review this code at some point
+  if(!translationsURL) return false  
+
   const filteredArray = []
   const locale = getLocaleFromURL(currenturl)
   const defaultLocale = getDefaultLocale()

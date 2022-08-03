@@ -10,7 +10,7 @@ import { getLocaleFromURL, getDefaultLocale, getFilteredTranslations } from "../
 import settings from "../../_data/settings/generalSettings.json"
 import '../styles/global.scss';
 
-const path = Astro.url.href;
+const path = Astro.url.href.toString().replace(/\/+$/, '')
 const locale = getLocaleFromURL(path);
 const homeLink = locale === getDefaultLocale() ? '/' :'/' + locale + '/';
 
@@ -24,7 +24,7 @@ const { translationsURL } = Astro.props;
 const filteredTranslations = getFilteredTranslations(translationsURL, Astro.url.origin, Astro.url.href)
 ---
 
-<html class="no-js scroll-smooth scroll-py-16 font-montserrat" lang={locale}>
+<html class="no-js scroll-smooth scroll-py-16 font-montserrat h-full" lang={locale}>
 
   <head>
 
@@ -40,6 +40,7 @@ const filteredTranslations = getFilteredTranslations(translationsURL, Astro.url.
 
     <ColorSchemes />
 
+    <!-- Alternate lang paths -->
     {Object.keys(filteredTranslations).map((key) =>
       <link rel="alternate" hreflang={key} href={path + filteredTranslations[key]} />
     )}
@@ -48,9 +49,9 @@ const filteredTranslations = getFilteredTranslations(translationsURL, Astro.url.
     
   </head>
 
-  <body class="bg-gray-200 dark:bg-gray-900 mx-auto">
+  <body class="bg-gray-200 dark:bg-gray-900 mx-auto h-full flex flex-col">
 
-    <main class="overflow-hidden">
+    <main class="overflow-hidden flex-auto">
 
       <header class="z-50 fixed w-full top-0 left-0 before:content[''] before:w-full before:h-16 before:lg:h-24 before:absolute before:bg-gray-200 before:dark:bg-gray-900 before:backdrop-blur-xl before:dark:backdrop-blur-xl before:bg-opacity-70 before:dark:bg-opacity-50">
         <div class="xl:container mx-auto px-6 h-16 lg:h-24">

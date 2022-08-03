@@ -7,7 +7,7 @@ backend:
   # base_url: https://pedrokehl.vercel.app/
   # auth_endpoint: admin/api/auth/
 
-logo_url: https://res.cloudinary.com/ppkehl/image/upload/v1658943994/pk_logo.png
+logo_url: https://res.cloudinary.com/ppkehl/image/upload/v1658943994/cms/pk_logo.png
 
 publish_mode: editorial_workflow
 

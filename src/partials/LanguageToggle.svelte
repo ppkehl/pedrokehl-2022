@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let translationsURL:object
+  export let translationsURL:object | false
 </script>
 
 {#if Object.keys(translationsURL).length}
