@@ -8,7 +8,6 @@ const posts = await Astro.glob('../../_data/content/single/home.md')
 const postData = await getTranslations({
   "posts": posts
 })
-console.log(postData)
 const post = postData['home'][getDefaultLocale()]
 ---
 

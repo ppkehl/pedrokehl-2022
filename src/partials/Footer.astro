@@ -6,7 +6,7 @@ const localizedFooterBuildTools = footer[locale]['buildTools']
 
 ---
 
-<footer class="xl:container mx-auto p-6 flex-shrink-0">
+<footer class="xl:container mx-auto p-6 flex-shrink-0 overflow-hidden">
   <div class="pb-3 font-light dark:text-white text-center lg:text-left">{locale === 'pt' ? "Orgulhosamente criado com:" : "Proudly created with:"}</div>
   <div class="flex space-x-3 justify-center lg:justify-start">
     {localizedFooterBuildTools.map((localizedFooterBuildTool) =>
