@@ -31,12 +31,12 @@ export function getFilteredTranslations(translationsURL, baseurl:URL, currenturl
     if(key !== locale){
       if(baseurlArrayBase === currenturlArrayBase){
         if(key === defaultLocale){
-          filteredArray[key] = ''
+          filteredArray[key] = '/'
         }else{
-          filteredArray[key] = key
+          filteredArray[key] = '/' + key
         }
       }else{
-        filteredArray[key] = translationsURL[key]
+        filteredArray[key] = '/' + translationsURL[key]
       }
     }
   })
