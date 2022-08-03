@@ -10,7 +10,7 @@ description: "Tailwind is a utility CSS framework. It is also one of the most
   and attacking the concept with equal intensity. I will try here to analyze my
   experience with it and comment on whether or not I intend to use it in the
   future (spoiler: yes)."
-featuredImage: https://res.cloudinary.com/ppkehl/image/upload/v1658845856/tailwind_uvkxhj.png
+featuredImage: https://res.cloudinary.com/ppkehl/image/upload/v1658845856/blog/tailwind_uvkxhj.png
 ---
 I remember the first time I tested a utility framework (maybe in 2017?), at the time also called *“monolithic”* or *“immutable”*. I chose Tachyons, which in the beginning didn't even have basic configuration possibilities. Classes were predetermined, there was no post-processing like a “purge” to rid the frontend of unused classes. The total CSS file weighed around 70k.
 
