@@ -9,7 +9,7 @@ description: Astro é um novo criador de sites estáticos com a missão de
   minimizar o código entregue ao usuário final. Conta com as ideias de "ilhas",
   "hidratação parcial" e possibilita usar outros frameworks tais como React,
   Svelte, Vue e Solid sob um mesmo teto.
-featuredImage: https://res.cloudinary.com/ppkehl/image/upload/v1657918513/2864e840-2df2-11ec-b5e8-73b095e03049-astro_upwfwm.jpg
+featuredImage: https://res.cloudinary.com/ppkehl/image/upload/v1657918513/blog/2864e840-2df2-11ec-b5e8-73b095e03049-astro_upwfwm.jpg
 ---
 Na minha busca por novos frameworks para experimentar o conceito de [JAMstack](https://jamstack.org/), comecei a me deparar com várias citações ao [Astro](https://astro.build/). O Astro é um gerador de sites estáticos em sua essência, mas conta também com SSR (*Server Side Rendering*, ou Renderização no servidor).
 
