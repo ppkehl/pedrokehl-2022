@@ -37,7 +37,7 @@ const heroImage = post.hero.images[0];
 
 <ConditionalLoading load={post.hero.active}>
   <section id="hero"
-    class="anchor xl:container mx-auto px-6 py-32 flex items-center h-screen lg:min-h-[750px] max-h-[1400px] relative">
+    class="anchor xl:container mx-auto px-6 py-32 flex items-center h-screen lg:min-h-[750px] max-h-[1400px] relative overflow-hidden xl:overflow-visible">
     <div class="w-full md:w-8/12 lg:w-6/12 space-y-8 z-20">
       <div>
         <div class="text-2xl xl:text-3xl dark:text-white">
@@ -58,7 +58,7 @@ const heroImage = post.hero.images[0];
     <div class="w-full h-full right-0 md:w-8/12 lg:w-6/12 absolute">
       <div class="absolute w-full h-full flex justify-end items-center z-10">
         <img id="hero-image"
-          class="mr-6 w-10/12 h-4/5 object-contain object-center opacity-20 lg:opacity-100 dark:invert dark:opacity-20 lg:dark:opacity-70"
+          class="mr-6 w-10/12 h-4/5 object-contain object-center opacity-20 lg:opacity-100 dark:invert dark:opacity-20 lg:dark:opacity-70 max-w-[750px]"
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" alt="An old style anatomycal illustration of a brain, a heart or a hand">
         <noscript>
           <img
@@ -72,7 +72,7 @@ const heroImage = post.hero.images[0];
 </ConditionalLoading>
 
 <ConditionalLoading load={post.about.active}>
-  <section id="about" class="anchor py-16">
+  <section id="about" class="anchor py-16 relative overflow-hidden xl:overflow-visible">
     <div class="xl:container mx-auto px-6">
       <div class="w-full space-y-8 z-10">
         <Title>
@@ -97,8 +97,8 @@ const heroImage = post.hero.images[0];
 </ConditionalLoading>
 
 <ConditionalLoading load={post.projects.active}>
-  <section id="projects" class="anchor py-16 relative">
-    <div class="absolute w-5/12 h-1/3 right-0 bottom-1/3">
+  <section id="projects" class="anchor py-16 overflow-hidden xl:overflow-visible relative">
+    <div class="absolute w-5/12 h-1/3 right-0 bottom-1/3 hidden lg:block">
       <Blobs />
     </div>
     <div class="xl:container mx-auto px-6 relative z-10">
@@ -119,7 +119,7 @@ const heroImage = post.hero.images[0];
 
 <ConditionalLoading load={post.blog.active}>
   <section id="ideas" class="anchor py-16 relative">
-    <div class="blobs absolute w-6/12 h-1/3 left-0 bottom-1/3">
+    <div class="blobs absolute w-6/12 h-1/3 left-0 bottom-1/3 hidden lg:block">
       <Blobs />
     </div>
     <div class="xl:container mx-auto px-6 relative z-10">

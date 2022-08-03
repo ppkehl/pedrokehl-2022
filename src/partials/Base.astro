@@ -24,7 +24,7 @@ const { translationsURL } = Astro.props;
 const filteredTranslations = getFilteredTranslations(translationsURL, Astro.url.origin, Astro.url.href)
 ---
 
-<html class="no-js scroll-smooth scroll-py-16 font-montserrat h-full w-full" lang={locale}>
+<html class="no-js scroll-smooth scroll-py-16 font-montserrat h-full min-w-full" lang={locale}>
 
   <head>
 
@@ -49,7 +49,7 @@ const filteredTranslations = getFilteredTranslations(translationsURL, Astro.url.
     
   </head>
 
-  <body class="bg-gray-200 dark:bg-gray-900 mx-auto h-full flex flex-col overflow-x-hidden">
+  <body class="bg-gray-200 dark:bg-gray-900 mx-auto h-full w-full flex flex-col overflow-x-hidden">
 
     <main class="flex-auto w-full">
 
@@ -79,7 +79,7 @@ const filteredTranslations = getFilteredTranslations(translationsURL, Astro.url.
 
     </main>
 
-    <Footer locale={locale} />
+    <!-- <Footer locale={locale} /> -->
 
     <script is:inline>
       document.documentElement.classList.remove('no-js');
