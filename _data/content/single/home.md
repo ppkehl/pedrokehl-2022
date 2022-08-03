@@ -21,9 +21,9 @@ en:
         link: "#projects"
         type: Secondary
     images:
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658777399/vintage-eye_ww0y4t.webp
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658779708/vintage-brain_posxok.webp
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658781083/vintage-heart_rd5edv.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658777399/home/hero/vintage-eye_ww0y4t.png
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658781083/home/hero/vintage-heart_rd5edv.png
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658779708/home/hero/vintage-brain_posxok.png
   about:
     active: true
     title: About me
@@ -57,7 +57,7 @@ en:
       2. Decoupling front and backend, using headless CMS’s ([Strapi](https://strapi.io/), [Payload CMS](https://payloadcms.com/), [Netlify CMS](https://www.netlifycms.org/)  and other headless CMS’s)
 
       3. Blazing fast frontends ([Svelte](https://svelte.dev/), [Astro](https://astro.build/))
-    image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.webp
+    image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/home/about/pedro-kehl-400_xd6bmu.png
   projects:
     active: true
     title: Projects
@@ -76,19 +76,19 @@ en:
     contactMethods:
       - label: info@pedrokehl.net
         url: mailto:info@pedrokehl.net
-        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-mail_tyul5l.svg
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icons/icon-mail_tyul5l.svg
       - label: twitter.com/ppkehl
         url: https://twitter.com/ppkehl
-        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-twitter_tkrgzz.svg
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icons/icon-twitter_tkrgzz.svg
       - label: linkedin.com/in/pedro-kehl
         url: https://www.linkedin.com/in/pedro-kehl/
-        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-linkedin_ojsf6k.svg
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icons/icon-linkedin_ojsf6k.svg
       - label: instagram.com/ppkehl
         url: https://instagram.com/ppkehl
-        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-instagram_ljjd3k.svg
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icons/icon-instagram_ljjd3k.svg
       - label: github.com/ppkehl
         url: https://github.com/ppkehl
-        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-github_m4uvuh.svg
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1657591338/icons/logo-github_o8nj8f_ltj0dc.svg
 pt:
   hero:
     active: true
@@ -111,12 +111,12 @@ pt:
         link: "#projects"
         type: Secondary
     images:
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658777399/vintage-eye_ww0y4t.webp
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658779708/vintage-brain_posxok.webp
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658781083/vintage-heart_rd5edv.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658777399/home/hero/vintage-eye_ww0y4t.png
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658781083/home/hero/vintage-heart_rd5edv.png
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658779708/home/hero/vintage-brain_posxok.png
   about:
     active: true
-    image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/pedro-kehl-400_xd6bmu.webp
+    image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/home/about/pedro-kehl-400_xd6bmu.png
     title: Sobre mim
     description: Eu gosto de resolver problemas e pensar sobre o futuro
     text: >-
@@ -162,17 +162,17 @@ pt:
     contactMethods:
       - label: info@pedrokehl.net
         url: mailto:info@pedrokehl.net
-        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-mail_tyul5l.svg
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icons/icon-mail_tyul5l.svg
       - label: twitter.com/ppkehl
         url: https://twitter.com/ppkehl
-        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-twitter_tkrgzz.svg
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icons/icon-twitter_tkrgzz.svg
       - label: linkedin.com/in/pedro-kehl
         url: https://www.linkedin.com/in/pedro-kehl/
-        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-linkedin_ojsf6k.svg
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icons/icon-linkedin_ojsf6k.svg
       - label: instagram.com/ppkehl
         url: https://instagram.com/ppkehl
-        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-instagram_ljjd3k.svg
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icons/icon-instagram_ljjd3k.svg
       - label: github.com/ppkehl
         url: https://github.com/ppkehl
-        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icon-github_m4uvuh.svg
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1657591338/icons/logo-github_o8nj8f_ltj0dc.svg
 ---
