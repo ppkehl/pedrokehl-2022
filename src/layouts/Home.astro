@@ -157,7 +157,7 @@ const heroImage = post.hero.images[0]
       </div>
       <div class="w-full lg:w-6/12 space-y-4 lg:pt-12 lg:pl-8 dark:text-white">
         {post.contact.contactMethods.map((contactMethod) =>
-          <a class="block" href={contactMethod.url}>
+          <a class="block w-fit" href={contactMethod.url}>
             <img loading="lazy" class="w-5 h-5 inline-block mr-1 dark:invert" src={contactMethod.icon} alt={'Icon for ' + contactMethod.label}/>
             <div class="inline-block">{contactMethod.label}</div>
           </a>
