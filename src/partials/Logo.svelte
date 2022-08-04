@@ -3,16 +3,81 @@
 </script>
 
 <a href={homeLink} class="h-full block py-4 lg:py-7">
-  <h1 id="logo" class="z-50 h-full dark:invert relative flex">
-    <div class="aspect-square">
-      <svg class="object-contain object-center" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 54 48.4" xml:space="preserve">
-        <path d="M54,21.5V7.6l-7.4-7.3c-0.3-0.3-0.3-0.2-0.7-0.2h-6.1c-1.1,0-0.9-0.1-1.8,0.5l-8.9,6.9l-8.2,11.5L8.6,0H0l15.9,26.1L0,48.4
-          h9l13.3-18.6h24.1l7.1-7C54.1,22.2,54,22.3,54,21.5z M46.4,22.3H27.6L38.2,7.5h8.1V22.3z"/>
-      </svg>
+  <h1 id="logo" class="z-50 h-full relative flex">
+    <div class="aspect-square invert dark:invert-0 flex">
+      <svg viewBox="0 0 678 621" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_d_463_99)">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M278.912 374.11L341.979 284.4H564.93V374.11H278.912Z" fill="#F9F9F9"/>
+        </g>
+        <g filter="url(#filter1_d_463_99)">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M202.57 329.79L14 14.76H115.56L262.88 243.67L202.57 329.79Z" fill="#F9F9F9"/>
+        </g>
+        <g filter="url(#filter2_d_463_99)">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M655.15 105.49L564.93 105.39V374.11L648.53 290.51C656.13 282.91 654.64 285.02 654.67 274.13L655.15 105.49Z" fill="#F9F9F9"/>
+        </g>
+        <g filter="url(#filter3_d_463_99)">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M467.91 105.27L360.04 105.14L14 598.39H121.24L467.91 105.27Z" fill="#F9F9F9"/>
+        </g>
+        <g filter="url(#filter4_d_463_99)">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M655.15 105.49L360.04 105.14L466.37 22.35C476.63 14.35 473.93 15.44 486.96 15.41L559.77 15.28C564.77 15.5 564.45 14.9 567.6 17.95L655.15 105.49Z" fill="#F9F9F9"/>
+        </g>
+        <defs>
+        <filter id="filter0_d_463_99" x="264.912" y="270.4" width="322.018" height="125.71" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset dx="4" dy="4"/>
+        <feGaussianBlur stdDeviation="9"/>
+        <feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_463_99"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_463_99" result="shape"/>
+        </filter>
+        <filter id="filter1_d_463_99" x="0" y="0.76001" width="284.88" height="351.03" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset dx="4" dy="4"/>
+        <feGaussianBlur stdDeviation="9"/>
+        <feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_463_99"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_463_99" result="shape"/>
+        </filter>
+        <filter id="filter2_d_463_99" x="550.93" y="91.39" width="126.22" height="304.72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset dx="4" dy="4"/>
+        <feGaussianBlur stdDeviation="9"/>
+        <feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_463_99"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_463_99" result="shape"/>
+        </filter>
+        <filter id="filter3_d_463_99" x="0" y="91.14" width="489.91" height="529.25" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset dx="4" dy="4"/>
+        <feGaussianBlur stdDeviation="9"/>
+        <feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_463_99"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_463_99" result="shape"/>
+        </filter>
+        <filter id="filter4_d_463_99" x="346.04" y="1.28" width="331.11" height="126.21" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset dx="4" dy="4"/>
+        <feGaussianBlur stdDeviation="9"/>
+        <feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_463_99"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_463_99" result="shape"/>
+        </filter>
+        </defs>
+        </svg>
     </div>
-    <div class="hidden lg:block h-full ml-2.5 pl-2.5 ">
-      <div class="relative -top-1 text-lg font-medium">Pedro Kehl</div>
-      <div class="relative -top-1">webdesigner</div>
+    <div class="hidden lg:block h-full ml-2.5 pl-2.5 text-black dark:text-white">
+      <div class="relative -top-1.5 text-[1.18rem] font-medium">Pedro Kehl</div>
+      <div class="relative -top-2 font-normal">webdesigner</div>
     </div>
     <span class="sr-only">Pedro Kehl - Webdesigner</span>  
   </h1>
