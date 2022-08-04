@@ -18,9 +18,10 @@ const path = url.pathname;
 <link rel="canonical" href={canonicalUrl} />
 
 <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<link rel="mask-icon" href="/favicon.svg" color="#de904d" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="manifest" href="/assets/site.webmanifest">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
@@ -38,7 +39,7 @@ const path = url.pathname;
 
 <!-- Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1067M8P85L"></script>
-<script>
+<script is:inline>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
