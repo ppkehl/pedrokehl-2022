@@ -29,10 +29,13 @@ const postsData = await getTranslations({
   "posts": posts
 })
 const sortedPosts = Object.values(postsData).sort((a, b) => new Date(b[locale].date).valueOf() - new Date(a[locale].date).valueOf())
-const selectedPosts = Object.values(sortedPosts).slice(0, post.blog.postsNum);
+const selectedPosts = Object.values(sortedPosts).slice(0, post.blog.postsNum)
+
+// Hero images array
+const heroImages = post.hero.images
 
 // Failsafe hero image (if JS disabled).
-const heroImage = post.hero.images[0];
+const heroImage = post.hero.images[0]
 ---
 
 <ConditionalLoading load={post.hero.active}>
@@ -164,9 +167,9 @@ const heroImage = post.hero.images[0];
   </section>
 </ConditionalLoading>
 
-<script define:vars={{post}}>
-  const randomImage = Math.floor(Math.random() * post.hero.images.length);
-  const selectedImage = post.hero.images[randomImage];
+<script define:vars={{heroImages}}>
+  const randomImage = Math.floor(Math.random() * heroImages.length);
+  const selectedImage = heroImages[randomImage];
   let heroImage = document.getElementById("hero-image");
   heroImage.src = selectedImage;
 </script>
