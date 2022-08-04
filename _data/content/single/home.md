@@ -21,9 +21,9 @@ en:
         link: "#projects"
         type: Secondary
     images:
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658777399/home/hero/vintage-eye_ww0y4t.png
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658781083/home/hero/vintage-heart_rd5edv.png
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658779708/home/hero/vintage-brain_posxok.png
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658781083/home/hero/vintage-heart_rd5edv.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658779708/home/hero/vintage-brain_posxok.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658777399/home/hero/vintage-eye_ww0y4t.webp
   about:
     active: true
     title: About me
@@ -57,7 +57,7 @@ en:
       2. Decoupling front and backend, using headless CMS’s ([Strapi](https://strapi.io/), [Payload CMS](https://payloadcms.com/), [Netlify CMS](https://www.netlifycms.org/)  and other headless CMS’s)
 
       3. Blazing fast frontends ([Svelte](https://svelte.dev/), [Astro](https://astro.build/))
-    image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/home/about/pedro-kehl-400_xd6bmu.png
+    image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/home/about/pedro-kehl-400_xd6bmu.webp
   projects:
     active: true
     title: Projects
@@ -111,12 +111,12 @@ pt:
         link: "#projects"
         type: Secondary
     images:
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658777399/home/hero/vintage-eye_ww0y4t.png
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658781083/home/hero/vintage-heart_rd5edv.png
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658779708/home/hero/vintage-brain_posxok.png
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658781083/home/hero/vintage-heart_rd5edv.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658779708/home/hero/vintage-brain_posxok.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/v1658777399/home/hero/vintage-eye_ww0y4t.webp
   about:
     active: true
-    image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/home/about/pedro-kehl-400_xd6bmu.png
+    image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/home/about/pedro-kehl-400_xd6bmu.webp
     title: Sobre mim
     description: Eu gosto de resolver problemas e pensar sobre o futuro
     text: >-
