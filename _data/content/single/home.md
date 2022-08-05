@@ -124,7 +124,7 @@ pt:
       freelancer em design, desenvolvimento e identidade de marca.
 
 
-      Gosto de ter uma abordagem sistêmica na resolução de problemas, e estou sempre estudando o que há de novo na área de tecnologia.
+      Priorizo abordagens sistêmicas na resolução de problemas e estou sempre estudando o que há de novo na área de tecnologia.
 
 
       **Principais conhecimentos:**
