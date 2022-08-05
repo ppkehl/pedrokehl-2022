@@ -23,7 +23,51 @@ A proposta do CMS é muito interessante. Ao invés de usar um banco de dados aco
 
 Usando um arquivo yml de configuração, pode-se especificar diferentes "coleções" como posts, páginas e arquivos de configuração. Para tipos "textuais" como posts e páginas, a saída padrão é em arquivos markdown, que são facilmente consumidos por fronts Jamstack. Para arquivos de configuração (digamos, a estrutura de um menu ou a paleta de cores do site), é possível exportar os arquivos como JSON, yml, entre outros.
 
-Cada tipo de campo é considerado um widget, cada um aceitando diferentes parâmetros. O processo de configuração é extremamente simples. Como mais um (grande!) ponto a favor, o CMS vem pronto para internacionalização: basta configurar as linguagens globais e depois especificar campo a campo como será o processo.
+Cada tipo de campo é considerado um [widget](https://www.netlifycms.org/docs/widgets/), cada um aceitando diferentes parâmetros. O processo de configuração é extremamente simples. Como mais um (grande!) ponto a favor, o CMS vem pronto para [internacionalização](https://www.netlifycms.org/docs/configuration-options/#locale): basta configurar as linguagens globais e depois especificar campo a campo como será o processo.
+
+Abaixo você pode ver um exemplo do arquivo de configuração do Netlify CMS. No arquivo yml, configuro cada campo, exatamente como como aparecerá no admin. Você pode encontrar mais informações sobre as opções [aqui](https://www.netlifycms.org/docs/configuration-options/).
+
+```yaml
+- name: "blog"
+    label: "Blog"
+    i18n:
+      structure: multiple_files
+      locales: [en, pt]
+    folder: '_data/content/blog'
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}T{{hour}}-{{minute}}-{{second}}--{{slug}}{{locale}}"
+    fields:
+      # Point to Astro layout
+      # - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogSingle.astro"}
+      # Title
+      - {label: "Title", name: "title", widget: "string", i18n: true}
+      # Date
+      - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate}
+      # Author
+      - {label: "Author", name: "author", widget: "string", default: "Pedro Kehl", i18n: duplicate}
+      # Tags
+      - label: "Tags"
+        name: "tags"
+        widget: "select"
+        i18n: duplicate
+        multiple: true
+        min: 1
+        max: 12
+        options: ["Design", "Visual Arts", "Random Thoughts", "Dev"]
+      # Description  
+      - {label: "Description", name: "description", widget: "text", i18n: true}
+      # Body
+      - {label: "Post", name: "body", widget: "markdown", i18n: true}  
+      # Featured Image  
+      - label: "Featured Image"
+        name: "featuredImage"
+        widget: "image"
+        i18n: duplicate
+        allow_multiple: false
+        media_library:
+          config:
+            multiple: false  
+```
 
 Quando você salva um post no Netlify CMS, o sistema cria um pull request no seu provedor Git. Se o projeto está numa plataforma como [Netlify ](https://www.netlify.com/)ou [Vercel](https://vercel.com/), elas detectam o pull e desencadeiam um novo build do projeto com o novo conteúdo. É magicamente automático.
 

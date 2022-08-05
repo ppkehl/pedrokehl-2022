@@ -16,6 +16,60 @@ As the purpose was to learn new things, I avoided the temptation to use it. Then
 
 It was then that I came across, by chance, with the solution I ended up adopting: [Netlify CMS](https://www.netlifycms.org/). Netlify was created by the company of the same name that helped shape the concept of [Jamstack](https://jamstack.org/). I already intended to host my new portfolio there, so I decided to explore it, and ended up opting for it.
 
+## The Chosen One: Netlify CMS
+
+The CMS proposal is very interesting. Rather than using a database coupling to a service and organizing data, Netlify works by directly editing files hosted on a GIT platform, such as [GitHub](https://github.com/), [Bitbucket](https://bitbucket.org/), [Gitlab](https://about.gitlab.com/), etc.
+
+Using a config yml file you can specify different "collections" like posts, pages and config files. For "textual" types like posts and pages, the standard output is in markdown files, which are easily consumed by Jamstack fronts. For configuration files (say, a menu structure or a website's color palette), you can export the files as JSON, yml, and so on.
+
+Each field type is considered a different [widget](https://www.netlifycms.org/docs/widgets/), each accepting parameters. The setup process is extremely simple. As another (big) point in its favor, the CMS comes ready for the [internationalization](https://www.netlifycms.org/docs/configuration-options/#locale): just define the global definitions and then define field by field how the process will be.
+
+Bellow you can see an example of how the configuration file for Netlify CMS works: In the yml file I can configure each field exactly as it will appear in the admin. You can find more info [here](https://www.netlifycms.org/docs/configuration-options/).
+
+```yaml
+- name: "blog"
+    label: "Blog"
+    i18n:
+      structure: multiple_files
+      locales: [en, pt]
+    folder: '_data/content/blog'
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}T{{hour}}-{{minute}}-{{second}}--{{slug}}{{locale}}"
+    fields:
+      # Point to Astro layout
+      # - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogSingle.astro"}
+      # Title
+      - {label: "Title", name: "title", widget: "string", i18n: true}
+      # Date
+      - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate}
+      # Author
+      - {label: "Author", name: "author", widget: "string", default: "Pedro Kehl", i18n: duplicate}
+      # Tags
+      - label: "Tags"
+        name: "tags"
+        widget: "select"
+        i18n: duplicate
+        multiple: true
+        min: 1
+        max: 12
+        options: ["Design", "Visual Arts", "Random Thoughts", "Dev"]
+      # Description  
+      - {label: "Description", name: "description", widget: "text", i18n: true}
+      # Body
+      - {label: "Post", name: "body", widget: "markdown", i18n: true}  
+      # Featured Image  
+      - label: "Featured Image"
+        name: "featuredImage"
+        widget: "image"
+        i18n: duplicate
+        allow_multiple: false
+        media_library:
+          config:
+            multiple: false  
+```
+
+When you save a post to Netlify CMS, the system creates a pull request in your Git provider. If the project is on a platform like [Netlify ](https://www.netlify.com/)or [Vercel](https://vercel.com/), they detect the pull and trigger a new build of the project with the new content. It's magically automatic.
+
 ## Frontend: Astro and Svelte
 
 Here, too, there is no shortage of choices. Most frameworks or "meta frameworks" are based on [React](https://reactjs.org/). I understand the importance of React, but I wanted to explore other options. In terms of philosophy, I find the approach of [Svelte](https://svelte.dev/) very interesting. There are a few points that I find particularly attractive, and the first is the familiarity of the syntax. Svelte uses 3 blocks in its components: a script part, an HTML part and a CSS part. Even reactive structures, loops and conditionals are very simple to understand. Another point: Svelte is a compiler. The code going into production is precompiled to native JS to run in the browser. There are few "leftovers" from the part that, for example, would be the React framework code, and which in many cases would be unused.
