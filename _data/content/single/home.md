@@ -102,12 +102,12 @@ pt:
     description: |-
       Minha missão é criar experiências agradáveis, 
       usando o melhor que a tecnologia pode oferecer 
-      e escolhendo as melhores opções para cada projeto.
+      e selecionando as melhores opções para cada projeto.
     buttons:
       - label: Fale comigo
         link: "#contact"
         type: Primary
-      - label: Veja meu trabalho
+      - label: Conheça meu trabalho
         link: "#projects"
         type: Secondary
     images:
@@ -124,7 +124,7 @@ pt:
       freelancer em design, desenvolvimento e identidade de marca.
 
 
-      Gosto de ter uma abordagem sistêmica na resolução de problemas, e estou sempre estudando o que há de novo na área de tecnologia.
+      Priorizo abordagens sistêmicas na resolução de problemas e estou sempre estudando o que há de novo na área de tecnologia.
 
 
       **Principais conhecimentos:**
