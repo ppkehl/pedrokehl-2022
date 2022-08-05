@@ -1,5 +1,5 @@
 ---
-title: " Building a website with Astro: Frameworks and Services"
+title: "Building a website with Astro: Frameworks and Services"
 date: 2022-08-04T22:39:18.959Z
 author: Pedro Kehl
 tags:
