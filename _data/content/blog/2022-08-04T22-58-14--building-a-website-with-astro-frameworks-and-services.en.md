@@ -6,7 +6,7 @@ tags:
   - Dev
 description: In this first post about creating my portfolio using Astro, I'll
   start by commenting on my process of choosing the parts that make it up.
-featuredImage: https://res.cloudinary.com/ppkehl/image/upload/v1659661486/blog/Frame_36_rygkma.png
+featuredImage: https://res.cloudinary.com/ppkehl/image/upload/v1659706799/blog/Frame_37_cuo0de.webp
 ---
 ## Backend
 
