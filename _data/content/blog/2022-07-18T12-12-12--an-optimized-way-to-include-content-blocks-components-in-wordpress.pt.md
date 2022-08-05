@@ -7,7 +7,7 @@ tags:
   - Dev
 description: Nesse post mostro uma solução bastante flexível ao
   get_template_part do Wordpress.
-featuredImage: https://res.cloudinary.com/ppkehl/image/upload/v1658153129/blog/template_parts_h77ngc.png
+featuredImage: https://res.cloudinary.com/ppkehl/image/upload/v1658153129/blog/template_parts_h77ngc.webp
 ---
 O WordPress é bastante flexível quanto a forma de incluir parciais.
 
