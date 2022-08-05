@@ -102,12 +102,12 @@ pt:
     description: |-
       Minha missão é criar experiências agradáveis, 
       usando o melhor que a tecnologia pode oferecer 
-      e escolhendo as melhores opções para cada projeto.
+      e selecionando as melhores opções para cada projeto.
     buttons:
       - label: Fale comigo
         link: "#contact"
         type: Primary
-      - label: Veja meu trabalho
+      - label: Conheça meu trabalho
         link: "#projects"
         type: Secondary
     images:
