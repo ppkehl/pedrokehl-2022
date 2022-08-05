@@ -82,9 +82,9 @@ To complete the package, I chose to use [Tailwind](https://tailwindcss.com/) for
 
 ## "Serverless" Hosting: Netlify
 
-I stayed between Netlify and Vercel to host the site. Netlify had the CMS authentication gateway facility, which works without any additional configuration. Vercel has an analytics part that it wanted to explore. I ended up opting for Netfly for the convenience. It also offers a very simple way to create contact forms in a Jamstack environment (although I eventually opted for a more agnostic solution using [Web3Forms](https://web3forms.com/)).
+I stayed between Netlify and Vercel to host the site. Netlify had the CMS authentication gateway facility, which works without any additional configuration. Vercel has an analytics part that I wanted to explore. I ended up opting for Netfly for the convenience. It also offers a very simple way to create contact forms in a Jamstack environment (although I eventually opted for a more agnostic solution using [Web3Forms](https://web3forms.com/)).
 
-For the images, I chose [Cloudinary](https://cloudinary.com/), a service that manages, formats and delivers objects via CDN, and integrates masterfully with Netlify CMS.
+For the images, I chose [Cloudinary](https://cloudinary.com/), a service that manages, transforms and delivers objects via CDN, and integrates masterfully with Netlify CMS.
 
 The project repository is on GitHub.
 
