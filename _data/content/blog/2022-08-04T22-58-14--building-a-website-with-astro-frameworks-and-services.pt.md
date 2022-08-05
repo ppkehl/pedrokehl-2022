@@ -37,8 +37,6 @@ Abaixo você pode ver um exemplo do arquivo de configuração do Netlify CMS. No
     create: true
     slug: "{{year}}-{{month}}-{{day}}T{{hour}}-{{minute}}-{{second}}--{{slug}}{{locale}}"
     fields:
-      # Point to Astro layout
-      # - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogSingle.astro"}
       # Title
       - {label: "Title", name: "title", widget: "string", i18n: true}
       # Date
