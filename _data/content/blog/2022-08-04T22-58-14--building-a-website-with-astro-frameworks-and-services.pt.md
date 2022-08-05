@@ -41,8 +41,6 @@ Para completar o pacote, escolhi usar o [Tailwind](https://tailwindcss.com/) par
 
 ## Hospedagem "Serverless": Netlify
 
-![Fred Jones do Scooby Doo no clássico momento de revelar o culpado do episódio. Sobre a cabeça de um personagem amarrado e com um capuz de fantasma pode-se ler "Serverless". No quadrinho seguinte, Fred remove o capuz, mostrando o culpado. Sobre sua cabeça há a palavra "Servers"](https://res.cloudinary.com/ppkehl/image/upload/v1659653498/blog/Captura_de_tela_2022-08-04_195116_qk8zsg.jpg "Scooby Doo - Serverless")
-
 Fiquei entre a Netlify e a Vercel para hospedar o site. A Netlify tinha a facilidade do gateway de autenticação do CMS, que funciona sem nenhuma configuração adicional. A Vercel tem uma parte de analytics que queria explorar. Acabei optando pela Netfly pela comodidade. Ela também oferece uma forma bastante simples de criar formulários de contato num ambiente JAMstack (apesar de ter optado no final por uma solução mais agnóstica usando o [Web3Forms](https://web3forms.com/)). 
 
 Para as imagens, escolhi a [Cloudinary](https://cloudinary.com/), um serviço que gerencia, formata e entrega os objetos via CDN, e se integra magistralmente com o Netlify CMS.
