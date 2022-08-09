@@ -256,6 +256,7 @@ collections:
               - {label: "Title", name: "title", widget: "string", i18n: true}
               - {label: "Description", name: "description", i18n: true, widget: "string"}
               - {label: "Number of projects on the homepage", name: "postsNum", widget: "number", i18n: duplicate, default: 3, min: 0, max: 12}
+              - {label: "See more label", name: "seeMore", i18n: true, widget: "string"}
 
           # --- Blog
           - label: "Blog"
@@ -268,6 +269,7 @@ collections:
               - {label: "Title", name: "title", widget: "string", i18n: true}
               - {label: "Description", name: "description", i18n: true, widget: "string"}
               - {label: "Number of projects on the homepage", name: "postsNum", widget: "number", i18n: duplicate, default: 3, min: 0, max: 12}
+              - {label: "See more label", name: "seeMore", i18n: true, widget: "string"}
 
           # --- Contact
           - label: "Contact"
