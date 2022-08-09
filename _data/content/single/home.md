@@ -64,11 +64,13 @@ en:
     description: Some examples of projects executed on different platforms with
       different teams
     postsNum: 3
+    seeMore: See more projects
   blog:
     active: true
     title: Ideas
     description: Thoughts on design, web, and other interests
     postsNum: 4
+    seeMore: See more posts
   contact:
     active: true
     title: Contact
@@ -150,11 +152,13 @@ pt:
     title: Projetos
     description: Alguns exemplos de projetos executados em diferentes plataformas
       com diferentes equipes
+    seeMore: Veja mais projetos
   blog:
     postsNum: 4
     active: true
     title: Ideias
     description: Pensamentos sobre design, internet e outros interesses
+    seeMore: Veja mais posts
   contact:
     active: true
     title: Contato
