@@ -22,6 +22,7 @@ const projectsData = await getTranslations({
 })
 const sortedProjects = Object.values(projectsData).sort((a, b) => new Date(b[locale].date).valueOf() - new Date(a[locale].date).valueOf())
 const selectedProjects = Object.values(sortedProjects).slice(0, post.projects.postsNum);
+const moreProjectsLink = locale + '/blog/page/1'
 
 // Data Fetching: List all Markdown posts in the repo.
 const posts = await Astro.glob('../../_data/content/blog/*.md')
@@ -138,6 +139,11 @@ const heroImage = post.hero.images[0]
       data-scroll>
       {selectedPosts.map((post) =><BlogPreview post={post[locale]} />)}
     </div>
+
+    <div class="xl:container mx-auto px-6 relative z-10 text-right font-medium text-lg">
+      <a class="after:content-[''] after:w-5 after:h-5 after:bg-[url(/assets/icon-arrow-top.svg)] after:bg-no-repeat after:bg-right-top after:inline-block after:dark:invert after:relative after:top-1" href={moreProjectsLink}>{post.blog.seeMore}</a>
+    </div>
+
   </section>
 </ConditionalLoading>
 
