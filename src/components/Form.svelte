@@ -1,8 +1,7 @@
 <script>
-  import Button from "./Button.svelte";
   import { onMount } from "svelte";
+  import Button from "@components/Button.svelte";
   import settings from "../../_data/settings/generalSettings.json"
-
   export let locale;
 
   onMount(async () => {
@@ -152,12 +151,10 @@
     &.was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback{
       @apply -translate-y-2 opacity-100;
     }
-
     &.is-invalid,
     &.was-validated :invalid {
       @apply border-l-4 border-red-700;
     }
-    
     #form-result{
       @apply bg-gray-100 border-l-4 border-slate-600;
       &.success{

@@ -1,7 +1,7 @@
 ---
-import BlogImage from '../components/BlogImage.svelte'
-import BlogDescription from '../components/BlogDescription.svelte'
-import { formatDate } from '../lib/utils'
+import BlogImage from '@components/BlogImage.svelte'
+import BlogDescription from '@components/BlogDescription.svelte'
+import { formatDate } from '@lib/utils'
 
 const { post } = Astro.props;
 const postDate = formatDate(post.date)
