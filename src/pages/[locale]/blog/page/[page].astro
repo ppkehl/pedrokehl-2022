@@ -1,10 +1,10 @@
 ---
-import Base from '../../../../partials/Base.astro'
-import BlogPreviewHorizontal from '../../../../components/BlogPreviewHorizontal.astro'
-import locales from "../../../../../_data/settings/localesSettings.json"
+import Base from '@partials/Base.astro'
+import BlogPreviewHorizontal from '@components/BlogPreviewHorizontal.astro'
+import locales from "@settings/localesSettings.json"
+import { getTranslations } from '@lib/translations';
 
 // Data Fetching API
-import { getTranslations } from '../../../../lib/translations';
 export async function getStaticPaths({paginate}) {
   const posts = await Astro.glob('../../../../../_data/content/blog/*.md')
   const postsData = await getTranslations({

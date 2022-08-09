@@ -1,7 +1,7 @@
 ---
-import Base from '../partials/Base.astro'
-import Home from '../layouts/Home.astro'
-import {getTranslations, getDefaultLocale} from '../lib/translations';
+import Base from '@partials/Base.astro'
+import Home from '@layouts/Home.astro'
+import {getTranslations, getDefaultLocale} from '@lib/translations';
 
 // Fetch data
 const posts = await Astro.glob('../../_data/content/single/home.md')

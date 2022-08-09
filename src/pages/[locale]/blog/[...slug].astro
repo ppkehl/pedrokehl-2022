@@ -1,9 +1,9 @@
 ---
-import Base from '../../../partials/Base.astro'
-import Blog from '../../../layouts/Blog.astro'
+import Base from '@partials/Base.astro'
+import Blog from '@layouts/Blog.astro'
 
 // Data Fetching API
-import { getTranslations } from '../../../lib/translations';
+import { getTranslations } from '@lib/translations';
 export async function getStaticPaths() {
   const posts = await Astro.glob('../../../../_data/content/blog/*.md')
   const postsData = await getTranslations({
