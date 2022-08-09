@@ -22,7 +22,7 @@ const projectsData = await getTranslations({
 })
 const sortedProjects = Object.values(projectsData).sort((a, b) => new Date(b[locale].date).valueOf() - new Date(a[locale].date).valueOf())
 const selectedProjects = Object.values(sortedProjects).slice(0, post.projects.postsNum);
-const moreProjectsLink = locale + '/blog/page/1'
+const moreProjectsLink = '/' + locale + '/blog/page/1'
 
 // Data Fetching: List all Markdown posts in the repo.
 const posts = await Astro.glob('../../_data/content/blog/*.md')
