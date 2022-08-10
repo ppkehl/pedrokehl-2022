@@ -18,7 +18,7 @@ const homeLink = locale === getDefaultLocale() ? '/' :'/' + locale + '/';
 const title = settings[locale].title
 const description = settings[locale].description
 const coverUrl = settings[locale].image
-const analytics = settings[locale].analitycs
+const analytics = settings[locale].analytics
 
 const { translationsURL } = Astro.props;
 const filteredTranslations = getFilteredTranslations(translationsURL, Astro.url.origin, Astro.url.href)
@@ -75,8 +75,6 @@ const filteredTranslations = getFilteredTranslations(translationsURL, Astro.url.
 
       <slot />
 
-      
-
     </main>
 
     <Footer locale={locale} />
@@ -87,7 +85,7 @@ const filteredTranslations = getFilteredTranslations(translationsURL, Astro.url.
 
     <script src="/assets/vanilla-tilt.min.js" is:inline/>
     
-    <script>
+    <script is:inline>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
           if (!user) {
