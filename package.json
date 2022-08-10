@@ -1,6 +1,6 @@
 {
-  "name": "@example/portfolio",
-  "version": "0.0.1",
+  "name": "@pedrokehl/portfolio",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -9,17 +9,18 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/preact": "^0.2.0",
-    "@astrojs/sitemap": "^0.2.2",
-    "@astrojs/svelte": "^0.2.0",
-    "@astrojs/tailwind": "^0.2.1",
-    "astro": "^1.0.0-beta.57",
-    "preact": "^10.8.2",
-    "sass": "^1.52.2",
-    "svelte": "^3.46.4"
+    "@astrojs/image": "^0.3.2",
+    "@astrojs/partytown": "^1.0.0",
+    "@astrojs/preact": "^1.0.0",
+    "@astrojs/sitemap": "^1.0.0",
+    "@astrojs/svelte": "^1.0.0",
+    "@astrojs/tailwind": "^1.0.0",
+    "astro": "^1.0.0",
+    "sass": "^1.54.3",
+    "svelte": "^3.49.0"
   },
   "dependencies": {
-    "@astrojs/markdown-component": "^0.2.1",
+    "@astrojs/markdown-component": "^1.0.0",
     "@openlab/vercel-netlify-cms-github": "^1.1.1",
     "netlify-cms-app": "^2.15.72"
   }

@@ -1,5 +1,6 @@
 ---
 import { formatDate } from '@lib/utils'
+//import { Picture } from '@astrojs/image/components';
 const { post } = Astro.props;
 const postURL = '/' + post.translations[post.locale]
 ---
@@ -7,6 +8,7 @@ const postURL = '/' + post.translations[post.locale]
   <a href={postURL} class="block space-y-5">
     <div class="w-full aspect-square rounded">
       <img loading="lazy" class="object-cover w-full h-full" src={post.featuredImage} alt={post.title}  data-tilt data-tilt-max="4" data-tilt-speed="500" data-tilt-perspective="500" data-tilt-glare="true" data-tilt-reverse="true" data-tilt-gyroscope="false">
+      <!-- <Picture src={post.featuredImage} aspectRatio={'1:1'} widths={[300, 500]} sizes="(max-width: 500px) 100vw, 500px" alt="My hero image" /> -->
     </div>
     <h1 class="text-xl font-semibold">
       <span class="text-sm block mt-2 font-light">
