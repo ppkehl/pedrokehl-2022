@@ -1,10 +1,7 @@
 ---
 const { title, description = '', analytics, coverUrl } = Astro.props;
-
-const site = Astro.url.origin;
 const canonicalUrl = Astro.url.href;
-const url = new URL(Astro.request.url);
-const path = url.pathname;
+const gaUrl = `https://www.googletagmanager.com/gtag/js?id=${analytics}`;
 ---
 
 <!-- Global Metadata -->
@@ -38,10 +35,10 @@ const path = url.pathname;
 <meta property="twitter:image" content={coverUrl} />
 
 <!-- Analytics -->
-<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-1067M8P85L"></script>
-<script defer is:inline>
+<script type="text/partytown" src={gaUrl}></script>
+<script type="text/partytown" define:vars={{ analyticsId: analytics }}>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-1067M8P85L');
+  gtag('config', analyticsId);
 </script>

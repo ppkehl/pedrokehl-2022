@@ -394,7 +394,7 @@ collections:
             media_library:
               config:
                 multiple: false
-          - { label: 'Google Analitycs ID', name: 'analitycs', widget: 'string', i18n: duplicate }
+          - { label: 'Google Analitycs ID', name: 'analytics', widget: 'string', i18n: duplicate }
           - { label: 'Web3 Forms ID', name: 'web3Forms', widget: 'string', i18n: duplicate }
 
     # ----- SETTINGS
