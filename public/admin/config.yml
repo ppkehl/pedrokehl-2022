@@ -68,7 +68,7 @@ collections:
       # Client  
       - {label: "Client", name: "client", widget: "string", i18n: duplicate}
       # URL
-      - {label: "URL", name: "url", widget: "string", i18n: duplicate}
+      - {label: "URL", name: "projectURL", widget: "string", i18n: duplicate}
       # Tech Stack
       - label: "Tech stack"
         name: "techStack"
