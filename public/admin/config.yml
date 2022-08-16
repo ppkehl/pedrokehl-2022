@@ -127,7 +127,7 @@ collections:
         multiple: true
         min: 1
         max: 12
-        options: ["Design", "Visual Arts", "Random Thoughts", "Dev"]
+        options: ["Design", "Misc", "Dev"]
       # Description  
       - {label: "Description", name: "description", widget: "text", i18n: true}
       # Body

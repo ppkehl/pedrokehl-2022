@@ -5,13 +5,18 @@ const { post } = Astro.props;
 const postURL = '/' + post.translations[post.locale]
 ---
 <div class="w-4/5 sm:w-3/5 md:w-2/5 lg:w-auto flex-none mb-8 dark:text-white snap-start">
-  <a href={postURL} class="block space-y-5">
+  <a href={postURL} class="block mb-5">
     <div class="w-full aspect-square rounded">
       <img loading="lazy" class="object-cover w-full h-full" src={post.featuredImage} alt={post.title}  data-tilt data-tilt-max="4" data-tilt-speed="500" data-tilt-perspective="500" data-tilt-glare="true" data-tilt-reverse="true" data-tilt-gyroscope="false">
       <!-- <Picture src={post.featuredImage} aspectRatio={'1:1'} widths={[300, 500]} sizes="(max-width: 500px) 100vw, 500px" alt="My hero image" /> -->
     </div>
+  </a>
+    <div class="space-x-2">
+      {post.tags.map((tag) => <a href={'/' + post.locale + '/blog/tag/' + tag.toLowerCase()} class="inline-block text-sm px-1 py-[1px] bg-slate-300 rounded-sm text-black font-medium relative z-20">{tag}</a> )}
+    </div>
+  <a href={postURL} class="block mt-5">  
     <h1 class="text-xl font-semibold">
-      <span class="text-sm block mt-2 font-light">
+      <span class="text-sm block mt-2 mb-1 font-light">
         {formatDate(post.date)}
       </span>
       {post.title}

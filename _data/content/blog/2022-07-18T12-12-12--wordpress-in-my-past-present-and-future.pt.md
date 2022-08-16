@@ -5,6 +5,7 @@ date: 2022-07-15T13:03:47.037Z
 author: Pedro Kehl
 tags:
   - Dev
+  - Misc
 description: "O WordPress é um monstro: movimenta mais de 40% da internet
   mundial, é versátil, fácil de utilizar e possui grande suporte. Com o tempo,
   no entanto, algumas de suas qualidades se tornaram fontes de problemas.

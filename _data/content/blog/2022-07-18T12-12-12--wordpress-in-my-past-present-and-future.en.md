@@ -5,6 +5,7 @@ date: 2022-07-15T13:03:47.037Z
 author: Pedro Kehl
 tags:
   - Dev
+  - Misc
 description: "WordPress is a monster: it powers more than 40% of the world's
   internet, it's versatile, easy to use and has great support. Over time,
   however, some of his qualities became sources of trouble. Here I discuss some
