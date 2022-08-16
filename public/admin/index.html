@@ -5,34 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script src="https://kit.fontawesome.com/7e77a045ab.js" crossorigin="anonymous"></script>
-  <script>
-    // This global flag enables manual initialization.
-    window.CMS_MANUAL_INIT = true
-    // Usage with import from npm package
-    import CMS, { init } from 'netlify-cms'
-    // Usage with script tag
-    const { CMS, initCMS: init } = window
-
-    init({
-      config: {
-        backend: {
-          name: 'git-gateway',
-          branch: 'dev'
-        },
-        load_config_file: false,
-        media_folder: "static/images/uploads",
-        public_folder: "/images/uploads",
-        collections: [
-          { label: "Blog", name: "blog", folder: "_posts/blog", create: true, fields: [
-            { label: "Title", name: "title", widget: "string" },
-            { label: "Publish Date", name: "date", widget: "datetime" },
-            { label: "Featured Image", name: "thumbnail", widget: "image" },
-            { label: "Body", name: "body", widget: "markdown" },
-          ]},
-        ],
-      },
-    })
-  </script>
   <title>Pedro Kehl - Content Manager</title>
   <style>
     aside a span {
