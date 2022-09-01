@@ -1,0 +1,91 @@
+---
+import Base from '@partials/Base.astro'
+import BlogPreviewHorizontal from '@components/BlogPreviewHorizontal.astro'
+import locales from "@settings/localesSettings.json"
+import { getTranslations } from '@lib/translations';
+import { turnToSlug } from "@lib/utils";
+
+
+// Data Fetching API
+export const posts = await Astro.glob('../../../../../_data/content/blog/*md')
+export const postsData = await getTranslations({
+  "posts": posts
+})
+
+export function getTags(postData){
+  const tags = Array()
+  Object.values(postData).map((post) => 
+    Object.values(post).map((content) => {
+        Object.values(content.tags).map((tag) => {
+          if(tags.indexOf(tag) === -1) {
+            tags.push(tag)
+          }
+        })
+      }
+    )
+  )
+  return tags
+}
+
+export async function getStaticPaths() {
+
+}
+
+
+// // Get All Tags
+// export function getTags(postData, locale){
+//   const tags = Array()
+//   Object.values(postData).map((post) => 
+//     Object.values(post[locale].tags).map((tag) => {
+//         if(tags.indexOf(tag) === -1) {
+//           tags.push(tag)
+//         }
+//       }
+//     )
+//   )
+//   return tags
+// }
+
+// export const postsByTags = Array()
+// Object.values(locales.locales).map((locale) => {
+//   const tagsByLocale = getTags(postsData, locale.code)
+//   const filteredPosts = Object.values(postsData).map((postGroup) => {return Object.values(postGroup).filter((post) => post.locale === locale.code)})
+//     tagsByLocale.map((tag) => {
+//     Object.values(filteredPosts.flat()).map((post)=>{
+//       const tagToSlug = turnToSlug(tag)
+//       if(post.tags.indexOf(tag) !== -1){
+//         if(!postsByTags.hasOwnProperty(locale.code)){
+//           postsByTags[locale.code] = Array()
+//         }
+//         if(!postsByTags[locale.code].hasOwnProperty(tagToSlug)){
+//           postsByTags[locale.code][tagToSlug] = Array()
+//         }
+//         postsByTags[locale.code][tagToSlug].push(post)
+//       }
+//     })
+//   })
+// })
+
+
+// // Get Static Paths
+// export async function getStaticPaths() {
+//   return Object.entries(postsByTags).map(([lang, tags]) => {
+//     return Object.entries(tags).map(([tag, posts]) => {
+//       return Object.values(posts).map((post) => {
+//         console.log(lang, tag)
+//         return {
+//           params: {
+//             locale: lang,
+//             tag: tag
+//           },
+//           props: {
+//             post
+//           }
+//         }
+//       })
+//     })
+//   })
+// }
+const { post } = Astro.props;
+
+---
