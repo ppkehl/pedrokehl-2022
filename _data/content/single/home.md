@@ -21,9 +21,9 @@ en:
         link: "#projects"
         type: Secondary
     images:
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658781083/home/hero/vintage-heart_rd5edv.webp
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658779708/home/hero/vintage-brain_posxok.webp
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658777399/home/hero/vintage-eye_ww0y4t.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/c_scale,w_750/v1658781083/home/hero/vintage-heart_rd5edv.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/c_scale,w_750/v1658779708/home/hero/vintage-brain_posxok.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/c_scale,w_750/v1658777399/home/hero/vintage-eye_ww0y4t.webp
   about:
     active: true
     title: About me
@@ -113,9 +113,9 @@ pt:
         link: "#projects"
         type: Secondary
     images:
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658781083/home/hero/vintage-heart_rd5edv.webp
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658779708/home/hero/vintage-brain_posxok.webp
-      - https://res.cloudinary.com/ppkehl/image/upload/v1658777399/home/hero/vintage-eye_ww0y4t.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/c_scale,w_750/v1658781083/home/hero/vintage-heart_rd5edv.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/c_scale,w_750/v1658779708/home/hero/vintage-brain_posxok.webp
+      - https://res.cloudinary.com/ppkehl/image/upload/c_scale,w_750/v1658777399/home/hero/vintage-eye_ww0y4t.webp
   about:
     active: true
     image: https://res.cloudinary.com/ppkehl/image/upload/v1656728600/home/about/pedro-kehl-400_xd6bmu.webp
