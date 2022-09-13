@@ -12,6 +12,20 @@ export const turnToSlug = (text: any) => {
     .replace(/\-\-+/g, "-");
 };
 
+export function generateTagData(localizedTags) {
+  let tagData = [];
+  Object.entries(localizedTags).map(([locale, tags]) => {
+    const tagsArray = Array.from(tags)
+    tagsArray.map((tag) => {
+      if(!tagData.hasOwnProperty(locale)){
+        tagData[locale] = new Array();
+      }
+      tagData[locale].push({'name':tag, 'slug': turnToSlug(tag)})
+    })
+  })
+  return tagData
+}
+
 export const groupBy = (keys) => (array) =>
   array.reduce((objectsByKeyValue, obj) => {
     const value = keys.map((key) => obj[key]).join("-");

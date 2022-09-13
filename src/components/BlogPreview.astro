@@ -1,5 +1,5 @@
 ---
-import { formatDate } from '@lib/utils'
+import { formatDate, turnToSlug } from '@lib/utils'
 //import { Picture } from '@astrojs/image/components';
 const { post } = Astro.props;
 const postURL = '/' + post.translations[post.locale]
@@ -12,7 +12,7 @@ const postURL = '/' + post.translations[post.locale]
     </div>
   </a>
     <div class="space-x-2">
-      {post.tags.map((tag) => <a href={'/' + post.locale + '/blog/tag/' + tag.toLowerCase()} class="inline-block text-sm px-1 py-[1px] bg-slate-300 rounded-sm text-black font-medium relative z-20">{tag}</a> )}
+      {post.tags.map((tag) => <a href={'/' + post.locale + '/blog/tag/' + turnToSlug(tag)} class="inline-block text-sm px-1 py-[1px] bg-teal-300 rounded-sm text-black font-medium relative z-20">{tag}</a> )}
     </div>
   <a href={postURL} class="block mt-5">  
     <h1 class="text-xl font-semibold">

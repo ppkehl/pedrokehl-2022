@@ -1,7 +1,8 @@
 ---
 import Base from '@partials/Base.astro'
 import Home from '@layouts/Home.astro'
-import {getTranslations, getDefaultLocale} from '@lib/translations';
+import { getTranslations, getDefaultLocale } from '@lib/translations';
+import { generateTagData } from "@lib/utils";
 
 // Fetch data
 const posts = await Astro.glob('../../_data/content/single/home.md')
@@ -9,7 +10,6 @@ const postData = await getTranslations({
   "posts": posts
 })
 const post = postData['home'][getDefaultLocale()]
-
 ---
 
 <Base translationsURL={post.translations}>
