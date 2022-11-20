@@ -35,6 +35,11 @@
         "label": "Designed with Figma",
         "url": "https://www.figma.com/",
         "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657573971/icons/figma-svgrepo-com_oxckid.svg"
+      },
+      {
+        "label": "Follow me @Mastodon",
+        "url": "https://techhub.social/@ppkehl",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1668933459/icons/mastodon_fhq4bo.svg"
       }
     ]
   },
@@ -74,6 +79,11 @@
         "label": "Esboçado com Figma",
         "url": "https://www.figma.com/",
         "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1657573971/icons/figma-svgrepo-com_oxckid.svg"
+      },
+      {
+        "label": "Siga-me no @Mastodon",
+        "url": "https://techhub.social/@ppkehl",
+        "logo": "https://res.cloudinary.com/ppkehl/image/upload/v1668933459/icons/mastodon_fhq4bo.svg"
       }
     ]
   }
