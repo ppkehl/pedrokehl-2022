@@ -79,6 +79,9 @@ en:
       - label: info@pedrokehl.net
         url: mailto:info@pedrokehl.net
         icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icons/icon-mail_tyul5l.svg
+      - label: techhub.social/@ppkehl
+        url: https://techhub.social/@ppkehl
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1668933459/icons/mastodon_fhq4bo.svg
       - label: twitter.com/ppkehl
         url: https://twitter.com/ppkehl
         icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icons/icon-twitter_tkrgzz.svg
@@ -167,6 +170,9 @@ pt:
       - label: info@pedrokehl.net
         url: mailto:info@pedrokehl.net
         icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icons/icon-mail_tyul5l.svg
+      - label: techhub.social/@ppkehl
+        url: https://techhub.social/@ppkehl
+        icon: https://res.cloudinary.com/ppkehl/image/upload/v1668933459/icons/mastodon_fhq4bo.svg
       - label: twitter.com/ppkehl
         url: https://twitter.com/ppkehl
         icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icons/icon-twitter_tkrgzz.svg
