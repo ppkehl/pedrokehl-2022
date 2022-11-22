@@ -3,7 +3,6 @@ title: Uma Ode ao 99% Invisible
 date: 2022-08-24T20:24:36.585Z
 author: Pedro Kehl
 tags:
-  - Random Thoughts
   - Design
 description: Sou fascinado pela complexidade nas coisas mais simples. No
   engenho, dedicação e cuidado que podem ser encontrados no objeto ou gesto mais
