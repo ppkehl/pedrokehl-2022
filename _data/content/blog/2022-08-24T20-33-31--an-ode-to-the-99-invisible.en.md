@@ -3,7 +3,6 @@ title: An Ode to the 99% Invisible
 date: 2022-08-24T20:24:36.585Z
 author: Pedro Kehl
 tags:
-  - Random Thoughts
   - Design
 description: I am fascinated by the complexity in the simplest of things. In the
   ingenuity, dedication and care that can be found in the most trivial object or
