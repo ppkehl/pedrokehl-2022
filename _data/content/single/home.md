@@ -82,12 +82,6 @@ en:
       - label: techhub.social/@ppkehl
         url: https://techhub.social/@ppkehl
         icon: https://res.cloudinary.com/ppkehl/image/upload/v1668933459/icons/mastodon_fhq4bo.svg
-      - label: pixelfed.de/ppkehl
-        url: https://pixelfed.de/ppkehl
-        icon: https://res.cloudinary.com/ppkehl/image/upload/v1668934012/icons/pixelfed-icon-black_vdzxpf.svg
-      - label: twitter.com/ppkehl
-        url: https://twitter.com/ppkehl
-        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icons/icon-twitter_tkrgzz.svg
       - label: linkedin.com/in/pedro-kehl
         url: https://www.linkedin.com/in/pedro-kehl/
         icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icons/icon-linkedin_ojsf6k.svg
@@ -176,12 +170,6 @@ pt:
       - label: techhub.social/@ppkehl
         url: https://techhub.social/@ppkehl
         icon: https://res.cloudinary.com/ppkehl/image/upload/v1668933459/icons/mastodon_fhq4bo.svg
-      - url: https://pixelfed.de/ppkehl
-        label: pixelfed.de/ppkehl
-        icon: https://res.cloudinary.com/ppkehl/image/upload/v1668934012/icons/pixelfed-icon-black_vdzxpf.svg
-      - label: twitter.com/ppkehl
-        url: https://twitter.com/ppkehl
-        icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icons/icon-twitter_tkrgzz.svg
       - label: linkedin.com/in/pedro-kehl
         url: https://www.linkedin.com/in/pedro-kehl/
         icon: https://res.cloudinary.com/ppkehl/image/upload/v1658934033/icons/icon-linkedin_ojsf6k.svg
