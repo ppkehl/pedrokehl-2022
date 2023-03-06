@@ -17,7 +17,7 @@ en:
       - label: Contact Me
         link: "#contact"
         type: Primary
-      - label: See what I do
+      - label: What I do
         link: "#projects"
         type: Secondary
     images:
